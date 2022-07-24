@@ -1,0 +1,6 @@
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.ExceptionManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.ExceptionManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionManager.csprojAssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionManager.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionManager.pdb

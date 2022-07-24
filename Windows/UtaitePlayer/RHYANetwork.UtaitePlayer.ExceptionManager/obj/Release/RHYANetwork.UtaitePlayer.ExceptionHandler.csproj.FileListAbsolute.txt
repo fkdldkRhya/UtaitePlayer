@@ -1,0 +1,11 @@
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.ExceptionManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.ExceptionManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.Registry.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\bin\Release\RHYANetwork.UtaitePlayer.Registry.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionHandler.csprojAssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj.CopyComplete
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ExceptionManager\obj\Release\RHYANetwork.UtaitePlayer.ExceptionManager.pdb

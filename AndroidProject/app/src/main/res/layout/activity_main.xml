@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topPanel"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/appLogoImageView"
+            android:layout_width="40dp"
+
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_marginBottom="10dp"
+
+            android:contentDescription="@null"
+
+            android:src="@drawable/img_up_logo_sub"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/appTextLogoImageView"
+            android:layout_width="80dp"
+
+            android:layout_height="35dp"
+
+            android:layout_marginTop="10dp"
+
+            android:layout_marginBottom="10dp"
+
+            android:contentDescription="@null"
+
+            android:scaleType="fitXY"
+
+            android:src="@drawable/img_up_logo_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appLogoImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/settingButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="10dp"
+
+            android:layout_marginEnd="10dp"
+
+            android:layout_marginBottom="10dp"
+
+            android:background="@drawable/button_circle_1"
+
+            android:contentDescription="@null"
+
+            android:padding="4dp"
+
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/ic_baseline_more_vert_24"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:tint="@color/custom_gray_3" />
+
+        <ImageButton
+            android:id="@+id/playlistDeleteButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="10dp"
+
+            android:layout_marginEnd="10dp"
+
+            android:layout_marginBottom="10dp"
+
+            android:background="@drawable/button_circle_1"
+
+            android:contentDescription="@null"
+
+            android:padding="4dp"
+
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/ic_baseline_playlist_remove_24"
+
+            android:visibility="invisible"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/settingButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/custom_gray_3" />
+
+        <ImageButton
+            android:id="@+id/playListButtonVer2"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="10dp"
+
+            android:layout_marginEnd="10dp"
+
+            android:layout_marginBottom="10dp"
+
+            android:background="@drawable/button_circle_1"
+
+            android:contentDescription="@null"
+
+            android:padding="3dp"
+
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/ic_baseline_playlist_play_24"
+
+            android:visibility="invisible"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/settingButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/custom_gray_3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="1"
+
+        android:background="@color/white">
+        <!--
+        <ImageView
+            android:layout_width="0dp"
+
+            android:layout_height="0dp"
+
+            android:alpha="0.4"
+
+            android:background="#00000000"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_now_play_list_background"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mainViewPager"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0dp"
+
+            android:background="@null"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/musicProgressBar"
+
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+
+        android:progressDrawable="@drawable/progressbar_1"
+
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playMusicPanel"
+
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+
+        android:background="@color/custom_gray_4">
+
+        <ImageButton
+            android:id="@+id/playListButton"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginStart="16dp"
+
+            android:layout_marginTop="10dp"
+
+            android:layout_marginBottom="10dp"
+
+            android:background="@drawable/button_square_1"
+
+            android:contentDescription="@null"
+
+            android:padding="3dp"
+
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/ic_baseline_playlist_play_24"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:tint="@color/black" />
+
+        <kro.kr.rhya_network.utaiteplayer.utils.RhyaMarqueeTextView
+            android:id="@+id/songName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="15dp"
+
+            android:layout_marginEnd="13dp"
+
+            android:layout_marginBottom="5dp"
+
+            android:ellipsize="marquee"
+
+            android:fontFamily="@font/esamanru_medium"
+
+            android:gravity="start"
+
+            android:includeFontPadding="false"
+
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:text="@string/no_info_song"
+
+            app:layout_constraintBottom_toTopOf="@+id/singerName"
+            app:layout_constraintEnd_toStartOf="@+id/nextArrowLImageView"
+            app:layout_constraintStart_toEndOf="@+id/playListButton"
+            app:layout_constraintTop_toTopOf="@+id/playListButton" />
+
+        <TextView
+            android:id="@+id/singerName"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="15dp"
+
+            android:layout_marginEnd="13dp"
+
+            android:fontFamily="@font/esamanru_light"
+
+            android:ellipsize="end"
+
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:text="@string/no_info_song"
+
+            app:layout_constraintBottom_toBottomOf="@+id/playListButton"
+            app:layout_constraintEnd_toStartOf="@+id/nextArrowLImageView"
+            app:layout_constraintStart_toEndOf="@+id/playListButton"
+            app:layout_constraintTop_toBottomOf="@+id/songName" />
+
+        <ImageButton
+            android:id="@+id/nextArrowRImageView"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginEnd="12dp"
+
+            android:contentDescription="@null"
+
+            android:padding="6dp"
+
+            android:src="@drawable/ic_baseline_next_arrow_r_24"
+
+            android:background="@null"
+
+            app:layout_constraintBottom_toBottomOf="@+id/playListButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/playListButton"
+            app:tint="@color/custom_gray_2"/>
+
+        <ImageButton
+            android:id="@+id/PlayAndPauseImageView"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginEnd="10dp"
+
+            android:contentDescription="@null"
+
+            android:src="@drawable/ic_baseline_play_arrow_24"
+
+            android:background="@null"
+
+            app:layout_constraintBottom_toBottomOf="@+id/playListButton"
+            app:layout_constraintEnd_toStartOf="@+id/nextArrowRImageView"
+            app:layout_constraintTop_toTopOf="@+id/playListButton"
+            app:tint="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/nextArrowLImageView"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginEnd="10dp"
+
+            android:contentDescription="@null"
+
+            android:padding="6dp"
+
+            android:src="@drawable/ic_baseline_next_arrow_l_24"
+
+            android:background="@null"
+
+            app:layout_constraintBottom_toBottomOf="@+id/playListButton"
+            app:layout_constraintEnd_toStartOf="@+id/PlayAndPauseImageView"
+            app:layout_constraintTop_toTopOf="@+id/playListButton"
+            app:tint="@color/custom_gray_2"/>
+
+        <ImageView
+            android:id="@+id/viewPlayInfoImageView"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:background="@null"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="13dp"
+            android:contentDescription="@null"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nextArrowLImageView"
+            app:layout_constraintStart_toEndOf="@+id/playListButton"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/playListSongRemoveButton"
+
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+
+        android:text="@string/menu_text_song_delete"
+        android:fontFamily="@font/esamanru_light"
+
+        android:ellipsize="end"
+
+        android:visibility="gone"
+
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:background="@drawable/button_7"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mainTabLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        app:tabTextAppearance="@style/TabTextStyle"
+
+        app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/white">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:icon="@drawable/ic_baseline_home_24"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:icon="@drawable/ic_baseline_search_24"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:icon="@drawable/ic_baseline_library_music_24"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:icon="@drawable/ic_baseline_more_24"/>
+    </com.google.android.material.tabs.TabLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

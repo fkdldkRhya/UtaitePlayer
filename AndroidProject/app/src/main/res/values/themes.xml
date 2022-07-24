@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.UtaitePlayer" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/custom_gray_2</item>
+        <item name="colorPrimaryVariant">@color/custom_gray_3</item>
+        <item name="colorOnPrimary">@color/custom_gray_5</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/custom_gray_2</item>
+        <item name="colorSecondaryVariant">@color/custom_gray_3</item>
+        <item name="colorOnSecondary">@color/custom_gray_5</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <!-- Handle color -->
+        <item name="colorControlActivated">@color/app_main_base_5</item>
+        <!-- PopupMenu style -->
+        <item name="android:popupMenuStyle">@style/RoundPopupMenuStyle</item>
+    </style>
+</resources>

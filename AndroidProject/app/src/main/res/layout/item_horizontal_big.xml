@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/songType"
+
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+
+        android:ellipsize="end"
+        android:fontFamily="@font/esamanru_medium"
+        android:maxLines="1"
+
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:background="@drawable/item_square_1"
+
+        android:gravity="center_vertical">
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/songImageView"
+
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+
+            android:contentDescription="@null"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:siRadius="6dp" />
+
+        <TextView
+            android:id="@+id/songName"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+
+            android:ellipsize="end"
+            android:fontFamily="@font/esamanru_bold"
+            android:gravity="center"
+            android:maxLines="1"
+
+            android:textColor="@color/black"
+            android:textSize="14sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songImageView" />
+
+        <TextView
+            android:id="@+id/songWriterName"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+
+            android:layout_marginBottom="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/esamanru_light"
+            android:gravity="center"
+
+            android:maxLines="1"
+
+            android:textColor="@color/black"
+
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songName" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

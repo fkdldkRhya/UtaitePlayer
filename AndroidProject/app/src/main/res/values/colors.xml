@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_main_base_1">#FFFFFF</color>
+    <color name="app_main_base_2">#05C3DE</color>
+    <color name="app_main_base_3">#007BA7</color>
+    <color name="app_main_base_4">#014D76</color>
+    <color name="app_main_base_5">#012A3A</color>
+    <color name="app_main_base_6">#FF4800</color>
+    <color name="custom_gray_1">#3C3C3C</color>
+    <color name="custom_gray_2">#5A5A5A</color>
+    <color name="custom_gray_3">#333333</color>
+    <color name="custom_gray_4">#E4E4E4</color>
+    <color name="custom_gray_5">#D5D5D5</color>
+    <color name="custom_gray_6">#979797</color>
+    <color name="custom_gray_7">#F4F4F4</color>
+    <color name="disable">#A1A1A1</color>
+    <color name="disable_1">#919191</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_1">#5EA8FF</color>
+    <color name="blue_2">#3F97FF</color>
+    <color name="blue_3">#0075FF</color>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "747487507217",
+    "project_id": "rhya-network-utaite-player",
+    "storage_bucket": "rhya-network-utaite-player.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747487507217:android:f6586311d7fd941532d2b0",
+        "android_client_info": {
+          "package_name": "kro.kr.rhya_network.utaiteplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747487507217-jre2ch83g4maffjpu0tkc75psdlb87i1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kro.kr.rhya_network.utaiteplayer",
+            "certificate_hash": "85eefb07a587c913c4646a46f1a5efb097b656d7"
+          }
+        },
+        {
+          "client_id": "747487507217-nhqdeajg9vmdmjrq854m1t2d9v4idur0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk6w0KoOD76wLXQm6oHSX3G6jVpG820Bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747487507217-nhqdeajg9vmdmjrq854m1t2d9v4idur0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SearchFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <kro.kr.rhya_network.utaiteplayer.lib.com_github_amarjain07_StickyScrollView_1_0_2.ui.StickyScrollView
+            android:id="@+id/nestedScrollView"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+
+            android:orientation="horizontal"
+
+            android:overScrollMode="never"
+
+            android:scrollbars="none"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:stickyHeader="@+id/searchLayoutShow">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/white"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/songSearchTitleText"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="15dp"
+
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_bold"
+
+                    android:maxLines="1"
+                    android:text="@string/text_search_title"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="18sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/searchLayoutShow"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/searchTextView"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="15dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/text_search_input_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+
+                        app:layout_constraintBottom_toTopOf="@+id/view"
+                        app:layout_constraintEnd_toStartOf="@+id/searchImageView"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/searchImageView"
+
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+
+                        android:layout_marginTop="20dp"
+
+                        android:contentDescription="@null"
+
+                        android:src="@drawable/ic_baseline_search_24"
+                        app:layout_constraintEnd_toEndOf="@+id/view"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/black" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="3dp"
+                        android:layout_marginStart="14dp"
+
+                        android:layout_marginTop="2dp"
+
+                        android:layout_marginEnd="14dp"
+
+                        android:layout_marginBottom="10dp"
+
+                        android:background="@color/black"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/searchImageView" />
+
+                    <View
+                        android:id="@+id/viewSelector"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+
+                        android:background="@color/custom_gray_5"
+                        android:visibility="invisible"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:id="@+id/subscribeText"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/esamanru_medium"
+                        android:gravity="center"
+                        android:text="@string/text_subscribe_title"
+                        android:textColor="@color/black"
+
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/subscribeLayout"
+
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+
+                        android:layout_marginStart="7dp"
+
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/subscribeText"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/subscribeIndex"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+
+                            android:fontFamily="@font/esamanru_medium"
+                            android:gravity="center"
+                            android:textColor="@color/app_main_base_6"
+                            android:textSize="13sp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/subscribeName"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+
+                            android:layout_marginStart="5dp"
+
+                            android:ellipsize="end"
+                            android:fontFamily="@font/esamanru_light"
+                            android:gravity="center"
+                            android:singleLine="true"
+
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/subscribeIndex"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/topSongTitleText"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+
+                    android:maxLines="1"
+                    android:text="@string/top_song_title_text"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="16sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/moreSubscribeLayout"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="5dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subscribeText">
+
+                    <!--뷰페이저 -->
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/mainViewPager"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+
+                        app:layout_constraintBottom_toTopOf="@+id/dots_indicator"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--인디케이터 타입1-->
+                    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                        android:id="@+id/dots_indicator"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="10dp"
+
+                        app:dotsColor="@color/custom_gray_2"
+                        app:dotsCornerRadius="8dp"
+                        app:dotsSize="10dp"
+                        app:dotsSpacing="4dp"
+                        app:dotsStrokeColor="@color/custom_gray_2"
+                        app:dotsStrokeWidth="2dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/loadImageView"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+
+                        android:src="@drawable/img_load_error"
+
+                        android:contentDescription="@null"
+
+                        android:alpha="0.6"
+
+                        app:layout_constraintBottom_toTopOf="@+id/dots_indicator"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <com.pnikosis.materialishprogress.ProgressWheel
+                        android:id="@+id/progressWheel"
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:matProg_barColor="@color/black"
+                        app:matProg_progressIndeterminate="true" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/typeSongTitleText"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+
+                    android:maxLines="1"
+                    android:text="@string/type_song_title_text"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="16sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="20dp"
+
+                    android:orientation="horizontal"
+
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/button_4"
+
+                        android:fontFamily="@font/esamanru_medium"
+
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btn2"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/button_4"
+
+                        android:fontFamily="@font/esamanru_medium"
+
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/button_4"
+
+                        android:fontFamily="@font/esamanru_medium"
+
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btn4"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/button_4"
+
+                        android:fontFamily="@font/esamanru_medium"
+
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btn5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/button_4"
+
+                        android:fontFamily="@font/esamanru_medium"
+
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btn6"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/button_4"
+
+                        android:enabled="false"
+
+                        android:fontFamily="@font/esamanru_medium"
+                        android:gravity="center"
+
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:visibility="invisible" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <!--
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+
+                    android:maxLines="1"
+                    android:text="@string/type_song_title_text"
+
+                    android:textColor="@color/black"
+
+                    android:textSize="16sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                -->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </kro.kr.rhya_network.utaiteplayer.lib.com_github_amarjain07_StickyScrollView_1_0_2.ui.StickyScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/playListImageView"
+
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        android:layout_marginTop="20dp"
+
+        android:contentDescription="@null"
+
+        android:src="@drawable/app_logo_for_black"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:siRadius="6dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/esamanru_medium"
+        android:gravity="start"
+        android:singleLine="true"
+
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/saveTextViewButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playListImageView" />
+
+    <View
+        android:id="@+id/view"
+
+        android:layout_width="0.7dp"
+        android:layout_height="0dp"
+
+        android:background="@color/custom_gray_6"
+
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toStartOf="@+id/saveTextViewButton"
+        app:layout_constraintStart_toEndOf="@+id/title"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/saveTextViewButton"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="15dp"
+
+        android:ellipsize="end"
+
+        android:fontFamily="@font/esamanru_light"
+        android:gravity="center"
+        android:maxLines="1"
+
+        android:padding="3dp"
+
+        android:singleLine="true"
+
+        android:text="@string/save"
+        android:textColor="@color/app_main_base_6"
+        android:textSize="14sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/userImageView"
+
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="15dp"
+
+        android:layout_marginTop="15dp"
+
+        android:contentDescription="@null"
+        android:src="@drawable/ic_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:siRadius="100dp" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="0dp"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/esamanru_medium"
+        android:gravity="start"
+        android:singleLine="true"
+
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/userID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userImageView"
+        app:layout_constraintTop_toTopOf="@+id/userImageView" />
+
+    <TextView
+        android:id="@+id/userID"
+        android:layout_width="0dp"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/esamanru_medium"
+        android:gravity="start"
+        android:singleLine="true"
+
+        android:textColor="@color/custom_gray_2"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userImageView"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userImageView">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="15dp"
+
+            android:background="@drawable/button_1"
+            android:fontFamily="@font/esamanru_medium"
+            android:text="@string/add_song"
+
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+
+            android:layout_marginStart="7dp"
+
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/button_1"
+            android:fontFamily="@font/esamanru_medium"
+            android:text="@string/all_play_song_text"
+            android:textColor="#FFFFFF"
+
+            android:textSize="14sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button1"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

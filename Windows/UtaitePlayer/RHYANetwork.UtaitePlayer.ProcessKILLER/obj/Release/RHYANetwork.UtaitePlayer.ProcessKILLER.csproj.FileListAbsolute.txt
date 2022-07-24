@@ -1,0 +1,8 @@
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.exe.config
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.exe
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.csprojAssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.CopyComplete
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.exe
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.pdb

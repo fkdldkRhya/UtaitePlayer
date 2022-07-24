@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tap layout Style -->
+    <style name="TabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="fontFamily">@font/esamanru_medium</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <!-- PopupMenu Style -->
+    <style name="RoundPopupMenuStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/popupmenu_round_layout</item>
+        <item name="android:fontFamily">@font/esamanru_medium</item>
+        <item name="android:textSize">13sp</item>
+        <item name="tabGravity">fill</item>
+    </style>
+
+    <!-- PopupDialog Style -->
+    <style name="AnimationPopupStyle">
+        <item name="android:windowEnterAnimation">@anim/anim_bottom_dialog_open</item>
+        <item name="android:windowExitAnimation">@anim/anim_bottom_dialog_close</item>
+    </style>
+</resources>

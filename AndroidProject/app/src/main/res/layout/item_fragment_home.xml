@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/newSongTitleTextView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="end"
+
+        android:fontFamily="@font/esamanru_bold"
+        android:maxLines="1"
+
+        android:text="@string/new_song_title_text"
+
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/newSongAllPlayerTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/newSongAllPlayerTitleTextView"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="15dp"
+
+        android:ellipsize="end"
+        android:fontFamily="@font/esamanru_light"
+        android:maxLines="1"
+
+        android:text="@string/all_play_song_text"
+        android:textColor="@color/black"
+
+        android:textSize="14sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/newSongTitleTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newSongRecyclerView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@null"
+
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+
+        android:scrollbars="none"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newSongTitleTextView" />
+
+    <TextView
+        android:id="@+id/mySubscribeTitleTextView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+
+        android:ellipsize="middle"
+        android:fontFamily="@font/esamanru_bold"
+
+        android:textColor="@color/black"
+
+        android:textSize="18sp"
+
+        android:singleLine="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newSongRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mySubscribeRecyclerView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+
+        android:minHeight="90dp"
+
+        android:orientation="horizontal"
+
+        android:overScrollMode="never"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mySubscribeTitleTextView" />
+
+    <TextView
+        android:id="@+id/mySubscribeCountTextView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+
+        android:ellipsize="middle"
+        android:fontFamily="@font/esamanru_light"
+
+        android:gravity="end"
+
+        android:singleLine="true"
+
+        android:textColor="@color/custom_gray_2"
+
+        android:textSize="12sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mySubscribeRecyclerView" />
+
+    <TextView
+        android:id="@+id/songListTitleTextView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+
+        android:layout_marginEnd="15dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/esamanru_bold"
+
+        android:maxLines="1"
+        android:text="@string/list_song_title_text"
+
+        android:textColor="@color/black"
+
+        android:textSize="18sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mySubscribeCountTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

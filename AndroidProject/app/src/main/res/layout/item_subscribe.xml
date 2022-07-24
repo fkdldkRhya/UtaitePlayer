@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+
+    android:padding="10dp"
+
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/background_1">
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/imageView"
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_marginStart="10dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:siRadius="50dp" />
+
+        <TextView
+            android:id="@+id/name"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+
+            android:layout_marginEnd="10dp"
+
+            android:ellipsize="end"
+            android:fontFamily="@font/esamanru_medium"
+
+            android:maxLines="2"
+
+            android:textColor="@color/black"
+
+            android:textSize="14sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_3"
+            android:fontFamily="@font/esamanru_medium"
+            android:text="@string/cancel_subscription"
+
+            android:textColor="@color/black"
+
+            android:textSize="14sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

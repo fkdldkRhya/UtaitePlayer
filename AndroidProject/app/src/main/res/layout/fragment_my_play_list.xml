@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <kro.kr.rhya_network.utaiteplayer.utils.RhyaSwipeRefreshLayout
+        android:id="@+id/swipeLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@null"
+
+            android:orientation="vertical"
+            android:overScrollMode="never"
+
+            android:scrollbars="none" />
+    </kro.kr.rhya_network.utaiteplayer.utils.RhyaSwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/noItemTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:ellipsize="end"
+
+        android:fontFamily="@font/esamanru_light"
+        android:maxLines="1"
+        android:singleLine="true"
+
+        android:text="@string/no_playlist_title"
+        android:textColor="@color/custom_gray_2"
+        android:textSize="15sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

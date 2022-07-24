@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_1"
+    android:orientation="vertical"
+
+    android:id="@+id/mainLayout"
+
+    android:backgroundTint="@color/white"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/title"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+
+        android:layout_gravity="center"
+
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:fontFamily="@font/esamanru_medium" />
+
+    <TextView
+        android:id="@+id/singer"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:fontFamily="@font/esamanru_light"
+        android:gravity="start"
+        android:textColor="@color/custom_gray_2"
+        android:textSize="13sp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/songInfoTextViewButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="25dp"
+
+            android:ellipsize="end"
+            android:fontFamily="@font/esamanru_light"
+            android:gravity="start"
+
+            android:maxLines="1"
+
+            android:padding="6dp"
+
+            android:singleLine="true"
+            android:text="@string/menu_text_song_info"
+            android:textColor="@color/custom_gray_3"
+
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/addPlayListTextViewButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="25dp"
+
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/esamanru_light"
+
+            android:gravity="start"
+
+            android:maxLines="1"
+
+            android:padding="6dp"
+            android:singleLine="true"
+            android:text="@string/menu_text_song_add_playlist"
+
+            android:textColor="@color/custom_gray_3"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/deleteTextViewButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="25dp"
+
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+
+            android:fontFamily="@font/esamanru_light"
+
+            android:gravity="start"
+
+            android:maxLines="1"
+            android:padding="6dp"
+            android:singleLine="true"
+
+            android:text="@string/menu_text_song_delete"
+            android:textColor="@color/app_main_base_6"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <android.widget.Button
+        android:id="@+id/closeButton"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
+
+        android:background="@drawable/button_6"
+
+        android:stateListAnimator="@null"
+
+        android:fontFamily="@font/esamanru_light"
+        android:gravity="center"
+        android:text="@string/close"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+</LinearLayout>

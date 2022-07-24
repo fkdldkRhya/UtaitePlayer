@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="CustomSliderControlTemplate" TargetType="{x:Type Slider}">
+        <Border Background="Transparent" SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{TemplateBinding MinHeight}" />
+                </Grid.RowDefinitions>
+
+                <DockPanel LastChildFill="True">
+                    <Border x:Name="PART_SelectionRange" Height="5" ClipToBounds="True" Visibility="Visible">
+                        <Rectangle Margin="0 0 -10 0" RadiusX="2" RadiusY="2" Fill="{StaticResource Color_Blue1}" />
+                    </Border>
+                    <Border ClipToBounds="True" Height="5" Visibility="Visible">
+                        <Rectangle Margin="0 0 0 0" RadiusX="2" RadiusY="2" Fill="{StaticResource Color_Gray2}" />
+                    </Border>
+                </DockPanel>
+
+                <Track x:Name="PART_Track">
+                    <Track.Thumb>
+                        <Thumb VerticalAlignment="Center" Width="0" Height="0" OverridesDefaultStyle="True" Focusable="False" />
+                    </Track.Thumb>
+                </Track>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type Slider}">
+        <Setter Property="Template" Value="{StaticResource CustomSliderControlTemplate}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="MinWidth" Value="30" />
+        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="MaxHeight" Value="20" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="AutoToolTipPlacement" Value="None" />
+        <Setter Property="IsMoveToPointEnabled" Value="True" />
+        <Setter Property="SelectionStart" Value="0" />
+        <Setter Property="SelectionEnd" Value="{Binding Path=Value, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
+    </Style>
+</ResourceDictionary>

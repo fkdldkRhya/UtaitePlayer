@@ -1,0 +1,7 @@
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csprojAssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj.CopyComplete
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.pdb

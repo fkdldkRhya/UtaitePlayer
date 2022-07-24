@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".fragment.NowPlayListFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/songSearchTitleText"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/esamanru_bold"
+            android:maxLines="1"
+            android:text="@string/setting"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_marginTop="10dp"
+
+            android:overScrollMode="never"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songSearchTitleText">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:text="@string/text_setting_resource_management"
+                    android:textSize="15sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/allDataReset"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:layout_marginTop="10dp"
+
+                    android:background="@drawable/button_8"
+                    android:stateListAnimator="@null"
+
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_refresh_24"
+                    android:fontFamily="@font/esamanru_light"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/menu_text_all_reload" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cacheClear"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:background="@drawable/button_8"
+                    android:stateListAnimator="@null"
+
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_delete_for_orange_24"
+                    android:fontFamily="@font/esamanru_light"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/menu_text_cash_delete" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:text="@string/setting_alarm"
+                    android:textSize="15sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/noticeNoOffImageView"
+                        android:layout_width="29dp"
+
+                        android:layout_height="29dp"
+
+                        android:layout_marginStart="15dp"
+                        android:contentDescription="@null"
+
+                        android:src="@drawable/ic_baseline_notifications_active_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/noticeNoOffTextView"
+
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:ellipsize="end"
+
+                        android:fontFamily="@font/esamanru_light"
+                        android:maxLines="1"
+                        android:text="@string/text_notification_get"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/noticeNoOffSubtitleTextView"
+                        app:layout_constraintEnd_toStartOf="@+id/noticeNoOffCheckbox"
+                        app:layout_constraintStart_toEndOf="@+id/noticeNoOffImageView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/noticeNoOffSubtitleTextView"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/esamanru_light"
+                        android:text="@string/text_notification_get_subtext"
+                        android:textColor="@color/custom_gray_6"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/noticeNoOffCheckbox"
+                        app:layout_constraintStart_toEndOf="@+id/noticeNoOffImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/noticeNoOffTextView" />
+
+                    <CheckBox
+                        android:id="@+id/noticeNoOffCheckbox"
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+
+                        android:layout_marginEnd="15dp"
+
+                        android:background="@drawable/checkbox_custom_ui"
+                        android:button="@null"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:text="@string/network_setting"
+                    android:textSize="15sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/networkDialogCheckImageView"
+                        android:layout_width="29dp"
+
+                        android:layout_height="29dp"
+
+                        android:layout_marginStart="15dp"
+                        android:contentDescription="@null"
+
+                        android:src="@drawable/ic_baseline_signal_cellular_connected_no_internet_4_bar_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/networkDialogCheckTextView"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:ellipsize="end"
+
+                        android:fontFamily="@font/esamanru_light"
+                        android:maxLines="1"
+                        android:text="@string/text_main_activity_network_access_check"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/networkDialogCheckSubtitleTextView"
+                        app:layout_constraintEnd_toStartOf="@+id/networkDialogCheckCheckbox"
+                        app:layout_constraintStart_toEndOf="@+id/networkDialogCheckImageView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/networkDialogCheckSubtitleTextView"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/esamanru_light"
+                        android:text="@string/text_network_access_check_subtext"
+                        android:textColor="@color/custom_gray_6"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/networkDialogCheckCheckbox"
+                        app:layout_constraintStart_toEndOf="@+id/networkDialogCheckImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/networkDialogCheckTextView" />
+
+                    <CheckBox
+                        android:id="@+id/networkDialogCheckCheckbox"
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+
+                        android:layout_marginEnd="15dp"
+
+                        android:background="@drawable/checkbox_custom_ui"
+                        android:button="@null"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:text="@string/text_setting_user_account_management"
+                    android:textSize="15sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/accountSetting"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:background="@drawable/button_8"
+                    android:stateListAnimator="@null"
+
+                    android:layout_marginTop="10dp"
+
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_manage_accounts_24"
+                    android:fontFamily="@font/esamanru_light"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/menu_text_account_setting" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/signOut"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:background="@drawable/button_8"
+                    android:stateListAnimator="@null"
+
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_logout_24"
+                    android:fontFamily="@font/esamanru_light"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/menu_text_logout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/accessCheck"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:background="@drawable/button_8"
+                    android:stateListAnimator="@null"
+
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_confirmation_number_24"
+                    android:fontFamily="@font/esamanru_light"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/text_setting_access_check" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:text="@string/advanced_settings"
+                    android:textSize="15sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/audioFocusSettingImageView"
+                        android:layout_width="29dp"
+
+                        android:layout_height="29dp"
+
+                        android:layout_marginStart="15dp"
+                        android:contentDescription="@null"
+
+                        android:src="@drawable/ic_baseline_surround_sound_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/audioFocusSettingTextView"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:ellipsize="end"
+
+                        android:fontFamily="@font/esamanru_light"
+                        android:maxLines="1"
+                        android:text="@string/audio_focus_setting"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/audioFocusSettingSubtitleTextView"
+                        app:layout_constraintEnd_toStartOf="@+id/audioFocusSettingCheckbox"
+                        app:layout_constraintStart_toEndOf="@+id/audioFocusSettingImageView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/audioFocusSettingSubtitleTextView"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/esamanru_light"
+                        android:text="@string/audio_focus_setting_subtext"
+                        android:textColor="@color/custom_gray_6"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/audioFocusSettingCheckbox"
+                        app:layout_constraintStart_toEndOf="@+id/audioFocusSettingImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/audioFocusSettingTextView" />
+
+                    <CheckBox
+                        android:id="@+id/audioFocusSettingCheckbox"
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+
+                        android:layout_marginEnd="15dp"
+
+                        android:background="@drawable/checkbox_custom_ui"
+                        android:button="@null"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_medium"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:text="@string/text_licenses"
+                    android:textSize="15sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/licensesButton"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:background="@drawable/button_8"
+                    android:stateListAnimator="@null"
+
+                    android:layout_marginTop="10dp"
+
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+
+                    android:fontFamily="@font/esamanru_light"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/text_open_source_licenses" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
+
+                    android:gravity="center"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/esamanru_light"
+                    android:maxLines="1"
+                    android:textColor="@color/custom_gray_6"
+                    android:text="@string/app_licenses"
+                    android:textSize="12sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

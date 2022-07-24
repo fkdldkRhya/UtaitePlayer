@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_1"
+    android:orientation="vertical"
+
+    android:id="@+id/mainLayout"
+
+    android:backgroundTint="@color/white"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+
+        android:layout_gravity="center"
+
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/esamanru_medium"
+        android:text="@string/image_select_title"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:fontFamily="@font/esamanru_light"
+        android:gravity="start"
+        android:textColor="@color/custom_gray_2"
+        android:text="@string/playlist_image_select_message"
+        android:textSize="13sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+
+            android:orientation="horizontal"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <android.widget.Button
+        android:id="@+id/okButton"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
+
+        android:background="@drawable/button_6"
+
+        android:stateListAnimator="@null"
+
+        android:fontFamily="@font/esamanru_light"
+        android:gravity="center"
+        android:text="@string/select"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+</LinearLayout>

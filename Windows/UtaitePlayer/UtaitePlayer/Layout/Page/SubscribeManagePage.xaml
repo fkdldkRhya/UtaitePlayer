@@ -1,0 +1,171 @@
+﻿<Page x:Class="UtaitePlayer.Layout.Page.SubscribeManagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
+      
+      xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      
+      
+      xmlns:local="clr-namespace:UtaitePlayer.Layout.Page"
+      
+      
+      mc:Ignorable="d" 
+      
+      d:DesignHeight="584" d:DesignWidth="613"
+
+      Title="SubscribeManagePage" 
+      
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <!-- Title -->
+        <TextBlock
+            x:Name="searchResultTitleForMusic"
+            Text="구독 관리"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"
+            FontFamily="/Resources/font/#esamanru Medium"
+            FontSize="16"
+            Foreground="{DynamicResource Color_White1}"
+            Margin="10,10,0,0" 
+            HorizontalAlignment="Left" />
+
+        <!-- No Data Panel -->
+        <Grid
+            x:Name="noResult"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="0,15">
+
+            <svgc:SvgViewbox 
+                Source="/Resources/drawable/img_character_1.svg"
+                Margin="0"
+                Width="225"
+                Height="175" 
+                VerticalAlignment="Top"/>
+
+            <!-- Title -->
+            <TextBlock
+                Text="구독 데이터가 존재하지 않습니다."
+                VerticalAlignment="Bottom"
+                TextWrapping="Wrap"
+                FontFamily="/Resources/font/#esamanru Medium"
+                FontSize="16"
+                Foreground="{DynamicResource Color_White1}"
+                Margin="0" 
+                HorizontalAlignment="Center" />
+        </Grid>
+
+        <!-- Table -->
+        <DataGrid
+            x:Name="subscribeDataGrid"
+            BorderBrush="{x:Null}"
+            HorizontalContentAlignment="Stretch" 
+            AutoGenerateColumns="False"
+            IsSynchronizedWithCurrentItem="False"
+            SelectionMode="Extended" 
+            CanUserAddRows="False"
+            FontFamily="/Resources/font/#esamanru Medium"
+            FontSize="12"
+            VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+            VirtualizingPanel.VirtualizationMode="Standard"
+            VirtualizingPanel.IsVirtualizing="True"
+            Resources="{StaticResource HandyControlThemes}"
+            ScrollViewer.CanContentScroll="True" 
+            HorizontalScrollBarVisibility="Disabled" 
+            Background="{x:Null}"
+            Margin="0,45,0,0">
+            
+            <DataGrid.Columns>
+                <!-- TemplateColumn -->
+                <DataGridTemplateColumn
+                    IsReadOnly="True" 
+                    CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image
+                                Stretch="UniformToFill"
+                                Source="{Binding artistImage}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Width="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- 아티스트 이름 -->
+                <DataGridTextColumn
+                    Width="*"
+                    Header="아티스트 이름"
+                    FontFamily="/Resources/font/#esamanru Light"
+                    FontSize="10"
+                    Binding="{Binding artistName}" 
+                    IsReadOnly="True"
+                    CanUserSort="False"/>
+
+                <!-- TemplateColumn -->
+                <DataGridTemplateColumn
+                        IsReadOnly="True" 
+                        CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Height="20"
+		                        Width="20"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Bottom" 
+                                MouseLeftButtonDown="SearchSubscribeArtistGrid_MouseLeftButtonDown">
+
+                                <Grid.Background>
+                                    <ImageBrush ImageSource="/UtaitePlayer;component/Resources/drawable/ic_go.png"/>
+                                </Grid.Background>
+
+                                <hc:Poptip.Instance>
+                                    <hc:Poptip
+                                        Resources="{StaticResource HandyControlThemes}"
+                                        Content="바로가기" 
+                                        PlacementType="TopLeft"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Foreground="{StaticResource Color_White1}"/>
+                                </hc:Poptip.Instance>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- TemplateColumn -->
+                <DataGridTemplateColumn
+                        IsReadOnly="True" 
+                        CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Button
+                                    Visibility="{Binding artistSubscribeButtonVisibility}"
+                                    Content="구독 취소"
+                                    Height="30"
+                                    Width="70"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" 
+                                    Click="ArtistSubscribeButton_Click"/>
+
+                                <hc:CircleProgressBar
+                                    Visibility="{Binding artistLoadingVisibility}"
+                                    Resources="{StaticResource HandyControlThemes}"
+                                    IsIndeterminate="True" 
+                                    Width="30"
+                                    Height="30"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

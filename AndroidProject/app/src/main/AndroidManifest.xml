@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="kro.kr.rhya_network.utaiteplayer">
+
+    <!-- 인터넷 사용 권한 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 인터넷 연결 확인 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- WakeLock 설정 권한 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- oreo 이상에서 foreground 서비스를 위한 권한-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- APK 설치 권한 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <!-- 전화 상태 가져오기 권한 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+
+        android:clearTaskOnLaunch="false"
+
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+
+        android:screenOrientation="portrait"
+
+        android:launchMode="singleTop"
+
+        android:icon="@mipmap/ic_up_launcher"
+        android:label="@string/app_name_kr"
+        android:roundIcon="@mipmap/ic_up_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UtaitePlayer"
+
+        android:resizeableActivity="false"
+
+        tools:targetApi="n">
+
+        <!-- FileProvider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+        <!-- Splash activity / MAIN -->
+        <activity
+            android:name=".activity.ActivitySplash"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- WebView activity -->
+        <activity android:name=".activity.ActivityWebView"
+            android:screenOrientation="portrait"/>
+
+        <!-- Main activity -->
+        <activity android:name=".activity.ActivityMain"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTop"/>
+
+
+        <!-- 리시버 등록 -->
+        <receiver android:name=".utils.RhyaNotificationActionService" />
+        <!-- 서비스 등록 -->
+        <service android:name=".service.PlayerService" />
+
+
+        <!-- FCM [ Firebase Cloud Message ] 서비스 -->
+        <service
+            android:name="kro.kr.rhya_network.utaiteplayer.service.FirebaseInstanceIDService"
+            android:directBootAware="true"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <!-- FCM [ Firebase Cloud Message ] 서비스 설정 -->
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+    </application>
+</manifest>

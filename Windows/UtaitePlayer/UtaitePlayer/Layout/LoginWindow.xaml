@@ -1,0 +1,55 @@
+﻿<Window x:Class="UtaitePlayer.Layout.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        
+        
+        xmlns:local="clr-namespace:UtaitePlayer"
+        
+        
+        mc:Ignorable="d"
+        
+        Title="우타이테 플레이어 (Utaite Player)" 
+        
+        Icon="/UtaitePlayer.ico"
+        
+        ResizeMode="NoResize"
+        
+        WindowStartupLocation="CenterScreen"
+        
+        Height="645" Width="427.5"
+        
+        Loaded="Window_Loaded">
+
+    <Grid Loaded="Grid_Loaded"
+          Background="{DynamicResource Color_Gray1}">
+        <TextBlock
+            Name="taskLabel"
+            Text="Loading page..."
+            FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light" 
+            FontSize="10" 
+            Foreground="{DynamicResource Color_White1}"
+            VerticalAlignment="Center"
+            Margin="121,0,119,25"/>
+
+        <ProgressBar
+            x:Name="taskProgressBar"
+            VerticalAlignment="Center" 
+            Height="3"
+            Resources="{StaticResource MaterialDesignThemeForBlueDark}"
+            Background="{DynamicResource Color_Gray4}" 
+            Foreground="{DynamicResource Color_Gray1}" 
+            BorderBrush="{x:Null}"
+            Grid.Row="1"
+            Margin="120,0"/>
+
+        <cefSharp:ChromiumWebBrowser
+            Name="chromiumWebBrowser" 
+            FrameLoadStart="chromiumWebBrowser_FrameLoadStart"
+            FrameLoadEnd="chromiumWebBrowser_FrameLoadEnd"/>
+    </Grid>
+</Window>
