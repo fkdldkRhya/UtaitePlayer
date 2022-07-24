@@ -193,7 +193,7 @@ SOFTWARE.
 
 </br>
 
-> Lbrary Licenses
+> Library Licenses
 >> Licenses : https://rhya-network.kro.kr/RhyaNetwork/webpage/jsp/service/utaite_player_open_sources_licenses.jsp
 
 </br></br>
