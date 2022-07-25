@@ -2383,8 +2383,7 @@
         <Rectangle
             x:Name="clickBlockPanelForDrawer"
             Visibility="Collapsed"
-            Grid.ColumnSpan="2" 
-            Grid.RowSpan="2"
+            Grid.ColumnSpan="2" Grid.RowSpan="2"
             Fill="{StaticResource Color_Black1}"
             Opacity="0.3" 
             Margin="0,35,0,0" 
