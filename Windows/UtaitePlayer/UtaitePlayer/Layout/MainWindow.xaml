@@ -2387,7 +2387,8 @@
             Grid.RowSpan="2"
             Fill="{StaticResource Color_Black1}"
             Opacity="0.3"
-            Margin="0,35,0,0" MouseDown="clickBlockPanelForDrawer_MouseDown"/>
+            Margin="0,35,0,0" 
+            MouseDown="clickBlockPanelForDrawer_MouseDown"/>
         <!-- Block Rect -->
         <Rectangle
             x:Name="clickBlockPanelForAuthCheckManager"
