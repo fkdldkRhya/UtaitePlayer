@@ -104,6 +104,7 @@
     <Compile Include="Classes\Core\PlayerService.cs" />
     <Compile Include="Classes\Core\PlayStateManager.cs" />
     <Compile Include="Classes\DataVO\ManyMusicDataVO.cs" />
+    <Compile Include="Classes\DataVO\MusicPlayCountDataVO.cs" />
     <Compile Include="Classes\DataVO\MyPlaylistDataVO.cs" />
     <Compile Include="Classes\DataVO\MyPlaylistItemDataVO.cs" />
     <Compile Include="Classes\DataVO\NewUtaiteDataVO.cs" />
@@ -132,6 +133,9 @@
     <Compile Include="Classes\Utils\YesOrNoDialogInfo.cs" />
     <Compile Include="Layout\Page\AnnouncementPage.xaml.cs">
       <DependentUpon>AnnouncementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Page\MusicPlayCountPage.xaml.cs">
+      <DependentUpon>MusicPlayCountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Layout\Page\MyPlaylistPage.xaml.cs">
       <DependentUpon>MyPlaylistPage.xaml</DependentUpon>
@@ -173,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Layout\Page\AnnouncementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layout\Page\MusicPlayCountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -378,6 +386,7 @@
     <Resource Include="Resources\drawable\img_up_logo_main.png" />
     <Resource Include="Resources\drawable\ic_edit.png" />
     <Resource Include="Resources\drawable\ic_plus_for_white.png" />
+    <Resource Include="Resources\drawable\ic_user_no_background.png" />
     <Content Include="RHYA.Network.UtaitePlayer.Launcher.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -415,6 +424,9 @@
     </PackageReference>
     <PackageReference Include="HandyControls.Lang.ko-KR">
       <Version>3.3.11</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.Wpf">
+      <Version>0.9.7</Version>
     </PackageReference>
     <PackageReference Include="MaterialDesignColors">
       <Version>2.0.6</Version>

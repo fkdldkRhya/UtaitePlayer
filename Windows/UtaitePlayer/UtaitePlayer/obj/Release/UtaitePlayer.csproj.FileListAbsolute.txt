@@ -266,3 +266,9 @@ A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\CefSharp.Core.Run
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\CefSharp.Core.Runtime.xml
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\VirtualizingWrapPanel.dll
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\Layout\Page\MusicPlayCountPage.g.cs
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\Layout\Page\MusicPlayCountPage.baml
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\LiveCharts.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\LiveCharts.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\LiveCharts.Wpf.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\LiveCharts.Wpf.pdb

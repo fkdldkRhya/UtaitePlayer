@@ -1399,10 +1399,13 @@
                         </hc:SideMenuItem.Icon>
                     </hc:SideMenuItem>
 
-                    <hc:SideMenuItem Header="구독 관리">
+                    <hc:SideMenuItem Header="내 정보">
                         <hc:SideMenuItem.Icon>
-                            <Image Source="/Resources/drawable/ic_subscribe.png" Width="14" Height="14"/>
+                            <Image Source="/Resources/drawable/ic_user_no_background.png" Width="16" Height="16"/>
                         </hc:SideMenuItem.Icon>
+
+                        <hc:SideMenuItem Header="      구독 관리"/>
+                        <hc:SideMenuItem Header="      노래 재생 횟수"/>
                     </hc:SideMenuItem>
 
                     <hc:SideMenuItem Header="플레이리스트">
@@ -1509,7 +1512,7 @@
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="15"/>
-                <RowDefinition Height="0.3*" MinHeight="70" MaxHeight="140"/>
+                <RowDefinition Height="0.3*" MinHeight="75" MaxHeight="145"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="2.7*"/>
             </Grid.RowDefinitions>
@@ -2069,7 +2072,7 @@
                 <svgc:SvgViewbox
                     x:Name="noPlaylistDataImage"
                     Source="/Resources/drawable/img_character_1.svg"
-                    Margin="0,15,0,0" 
+                    Margin="0,20,0,0" 
                     Opacity="0.7"
                     Width="225"
                     Height="175" 

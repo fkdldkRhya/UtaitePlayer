@@ -67,6 +67,7 @@ namespace UtaitePlayer.Layout
         private System.Windows.Controls.Page searchResultPage = null; // 검색 결과
         private System.Windows.Controls.Page utaitePlayerHomePage = null; // 메인 화면
         private System.Windows.Controls.Page subscribeManagePage = null; // 구독 관리 화면
+        private System.Windows.Controls.Page musicPlayCountPage = null; // 노래 재생 횟수 화면
         private System.Windows.Controls.Page myPlaylistPage = null; // 나의 플레이리스트 화면
         private System.Windows.Controls.Page songAddPage = null; // 노래 신청 화면
         private System.Windows.Controls.Page announcementPage = null; // 공지사항 화면
@@ -669,6 +670,7 @@ namespace UtaitePlayer.Layout
                 searchResultPage = new Page.SearchResultPage();
                 utaitePlayerHomePage = new Page.UtaitePlayerHomePage();
                 subscribeManagePage = new Page.SubscribeManagePage();
+                musicPlayCountPage = new Page.MusicPlayCountPage();
                 myPlaylistPage = new Page.MyPlaylistPage();
                 songAddPage = new Page.SongAddPage();
                 announcementPage = new Page.AnnouncementPage();
@@ -1570,6 +1572,9 @@ namespace UtaitePlayer.Layout
                 if (nowPage != null)
                 {
                     string inputPage = (string)((HandyControl.Controls.SideMenuItem)e.Info).Header;
+
+                    inputPage = inputPage.Trim();
+
                     if (!inputPage.Equals(nowPage))
                     {
                         switch (inputPage)
@@ -1587,6 +1592,14 @@ namespace UtaitePlayer.Layout
                                 {
                                     nowPage = "구독 관리";
                                     mainFrame.NavigationService.Navigate(subscribeManagePage);
+                                    break;
+                                }
+
+                            // 우타이테 플레이어 노래 재생 횟수 화면
+                            case "노래 재생 횟수":
+                                {
+                                    nowPage = "노래 재생 횟수";
+                                    mainFrame.NavigationService.Navigate(musicPlayCountPage);
                                     break;
                                 }
 

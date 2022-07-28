@@ -709,6 +709,35 @@ namespace RHYANetwork.UtaitePlayer.Client
 
 
         /// <summary>
+        /// 사용자 노래 재생 횟수 구하는 함수
+        /// </summary>
+        /// <param name="authToken">사용자 Auth Token</param>
+        /// <returns></returns>
+        public string getMusicPlayCount(string authToken)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                Stream stream = webClient.OpenRead(getFullServerUrl(18, new Dictionary<string, string> { { "auth", authToken } }));
+                StreamReader streamReader = new StreamReader(stream);
+
+                string result = streamReader.ReadToEnd();
+
+                streamReader.Dispose();
+                stream.Dispose();
+                webClient.Dispose();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
         /// 접속 URL 생성 함수
         /// </summary>
         /// <param name="mode">명령어 종류</param>

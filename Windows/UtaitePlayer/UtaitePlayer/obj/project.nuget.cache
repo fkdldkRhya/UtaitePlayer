@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+pZn5XDKEWyN+PNjOpcecnCHtVipFXnXVyfQidKZjNBX+q+oZR3AWvYrAS+oZjgkHOPyuaznk/DbWYqE97bkfg==",
+  "dgSpecHash": "tT1Zo8NqdO0rmtX8ReGI4L8po/QBb3es8LSre4AN/Aph/qHIYQ3SM5R/y8AVMNPf1JSpCYif1jNKfZQsbMerSA==",
   "success": true,
   "projectFilePath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "C:\\Users\\ji055\\.nuget\\packages\\cefsharp.wpf\\100.0.230\\cefsharp.wpf.100.0.230.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\handycontrol\\3.3.0\\handycontrol.3.3.0.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\handycontrols.lang.ko-kr\\3.3.11\\handycontrols.lang.ko-kr.3.3.11.nupkg.sha512",
+    "C:\\Users\\ji055\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\ji055\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

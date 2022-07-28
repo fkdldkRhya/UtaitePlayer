@@ -62,6 +62,27 @@
           }
         }
       },
+      "LiveCharts/0.9.7": {
+        "type": "package",
+        "compile": {
+          "lib/net45/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Wpf/0.9.7": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.9.7"
+        },
+        "compile": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
+        }
+      },
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
@@ -417,6 +438,27 @@
           }
         }
       },
+      "LiveCharts/0.9.7": {
+        "type": "package",
+        "compile": {
+          "lib/net45/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Wpf/0.9.7": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.9.7"
+        },
+        "compile": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
+        }
+      },
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
@@ -750,6 +792,27 @@
           }
         }
       },
+      "LiveCharts/0.9.7": {
+        "type": "package",
+        "compile": {
+          "lib/net45/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Wpf/0.9.7": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.9.7"
+        },
+        "compile": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
+        }
+      },
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
@@ -1081,6 +1144,27 @@
           "lib/net462/ko-KR/HandyControl.resources.dll": {
             "locale": "ko-KR"
           }
+        }
+      },
+      "LiveCharts/0.9.7": {
+        "type": "package",
+        "compile": {
+          "lib/net45/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Wpf/0.9.7": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.9.7"
+        },
+        "compile": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.Wpf.dll": {}
         }
       },
       "MaterialDesignColors/2.0.6": {
@@ -2203,6 +2287,46 @@
         "lib/netcoreapp3.1/ko-KR/HandyControl.resources.dll"
       ]
     },
+    "LiveCharts/0.9.7": {
+      "sha512": "p4xyBrUaNNfkWZSNsIle0r51cyVyFg0Yi0uBRZM5GQtdFiA/7guZHlffFyNUILIdux10Ch2hUaJpcZENVU9aaQ==",
+      "type": "package",
+      "path": "livecharts/0.9.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/LiveCharts.dll",
+        "lib/net40/LiveCharts.pdb",
+        "lib/net40/LiveCharts.xml",
+        "lib/net45/LiveCharts.dll",
+        "lib/net45/LiveCharts.pdb",
+        "lib/net45/LiveCharts.xml",
+        "lib/portable-net45+win8+wp8/LiveCharts.XML",
+        "lib/portable-net45+win8+wp8/LiveCharts.dll",
+        "lib/portable-net45+win8+wp8/LiveCharts.pdb",
+        "livecharts.0.9.7.nupkg.sha512",
+        "livecharts.nuspec",
+        "readme.txt"
+      ]
+    },
+    "LiveCharts.Wpf/0.9.7": {
+      "sha512": "lv6YZoK0B4yWykMq5b9grZXtIbTj+OWu4sVN9GDpdgV6zffu64m4d5CW8KSjfSl9rB8VU649x1NZvhoU67hCDg==",
+      "type": "package",
+      "path": "livecharts.wpf/0.9.7",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/LiveCharts.Wpf.XML",
+        "lib/net40/LiveCharts.Wpf.dll",
+        "lib/net40/LiveCharts.Wpf.pdb",
+        "lib/net45/LiveCharts.Wpf.XML",
+        "lib/net45/LiveCharts.Wpf.dll",
+        "lib/net45/LiveCharts.Wpf.pdb",
+        "livecharts.wpf.0.9.7.nupkg.sha512",
+        "livecharts.wpf.nuspec",
+        "tools/install.ps1"
+      ]
+    },
     "MaterialDesignColors/2.0.6": {
       "sha512": "eZNiLlMy7Ag9f3MnhVxSzkG2IIGCaRfqZKt6npEcEjLQ9kSgCYO5oUd8AgJjhpfCKwyf+GO5VDc5R88QSDTHHg==",
       "type": "package",
@@ -2750,6 +2874,7 @@
       "CefSharp.Wpf >= 100.0.230",
       "HandyControl >= 3.3.0",
       "HandyControls.Lang.ko-KR >= 3.3.11",
+      "LiveCharts.Wpf >= 0.9.7",
       "MaterialDesignColors >= 2.0.6",
       "MaterialDesignThemes >= 4.5.0",
       "Microsoft.Win32.Registry >= 4.7.0",
@@ -2852,6 +2977,10 @@
           "HandyControls.Lang.ko-KR": {
             "target": "Package",
             "version": "[3.3.11, )"
+          },
+          "LiveCharts.Wpf": {
+            "target": "Package",
+            "version": "[0.9.7, )"
           },
           "MaterialDesignColors": {
             "target": "Package",
