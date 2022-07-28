@@ -155,6 +155,13 @@ Youtube URL: https://youtu.be/05Ousk-c2Mk
 - 초기 배포 버전
 ```  
 
+</br>
+
+* Ver 1.0.0.1
+```
+- Side Menu UI/UX 변경
+- '노래 재생 횟수' 기능 추가
+```  
 
 ## License
 MIT License
