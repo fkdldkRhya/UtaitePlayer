@@ -149,6 +149,13 @@ Youtube URL: https://youtu.be/05Ousk-c2Mk
 - 긴급 버그 Fix
 ```
 
+</br>
+
+* Ver 1.1.4
+```
+- 노래 데이터 제거 기능 추가
+```
+
 ## Windows 업데이트 내역
 * Ver 1.0.0.0
 ```
