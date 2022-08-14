@@ -21,11 +21,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RHYANetwork.UtaitePlayer.Tr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RHYANetwork.UtaitePlayer.AuthCheckManager", "RHYANetwork.UtaitePlayer.AuthCheckManager\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj", "{A8E4955F-5480-42D7-B2EB-2D72539803EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor", "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj", "{6201B734-7619-42FA-A230-F2BBF1319A75}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RHYANetwork.UtaitePlayer.CrashHandler", "RHYANetwork.UtaitePlayer.CrashHandler\RHYANetwork.UtaitePlayer.CrashHandler.csproj", "{18E2AD2A-D5DB-471E-B895-B337E62E28D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RHYANetwork.UtaitePlayer.ProcessKILLER", "RHYANetwork.UtaitePlayer.ProcessKILLER\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj", "{040F6188-51A2-4E31-A39E-F24513978ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RHYANetwork.UtaitePlayer.MutexManager", "RHYANetwork.UtaitePlayer.MutexManager\RHYANetwork.UtaitePlayer.MutexManager.csproj", "{0CAD5B6C-DA78-4CC0-81AC-6B3880D924BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RHYANetwork.UtaitePlayer.ProcessManager", "RHYANetwork.UtaitePlayer.ProcessManager\RHYANetwork.UtaitePlayer.ProcessManager.csproj", "{6201B734-7619-42FA-A230-F2BBF1319A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,10 +71,6 @@ Global
 		{A8E4955F-5480-42D7-B2EB-2D72539803EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8E4955F-5480-42D7-B2EB-2D72539803EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8E4955F-5480-42D7-B2EB-2D72539803EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6201B734-7619-42FA-A230-F2BBF1319A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6201B734-7619-42FA-A230-F2BBF1319A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6201B734-7619-42FA-A230-F2BBF1319A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6201B734-7619-42FA-A230-F2BBF1319A75}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18E2AD2A-D5DB-471E-B895-B337E62E28D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18E2AD2A-D5DB-471E-B895-B337E62E28D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18E2AD2A-D5DB-471E-B895-B337E62E28D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +79,14 @@ Global
 		{040F6188-51A2-4E31-A39E-F24513978ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{040F6188-51A2-4E31-A39E-F24513978ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{040F6188-51A2-4E31-A39E-F24513978ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CAD5B6C-DA78-4CC0-81AC-6B3880D924BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CAD5B6C-DA78-4CC0-81AC-6B3880D924BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CAD5B6C-DA78-4CC0-81AC-6B3880D924BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CAD5B6C-DA78-4CC0-81AC-6B3880D924BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6201B734-7619-42FA-A230-F2BBF1319A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6201B734-7619-42FA-A230-F2BBF1319A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6201B734-7619-42FA-A230-F2BBF1319A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6201B734-7619-42FA-A230-F2BBF1319A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

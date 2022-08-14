@@ -10,6 +10,12 @@ namespace UtaitePlayer.Classes.Utils
 {
     public class IPCRemoteObject : MarshalByRefObject
     {
+        // 메시지 구분 키
+        public readonly string MESSAGE_KEY_AUTH_CHECK_MANAGER = "-RHYANetwork.AuthCheckManager.Value=";
+
+
+
+
         /// <summary>
         /// 메시지 전송
         /// </summary>
@@ -19,9 +25,6 @@ namespace UtaitePlayer.Classes.Utils
         {
             try
             {
-                // 메시지 구분 키
-                const string MESSAGE_KEY_AUTH_CHECK_MANAGER = "-RHYANetwork.AuthCheckManager.Value=";
-
                 // 메시지 확인
                 if (msg.Contains(MESSAGE_KEY_AUTH_CHECK_MANAGER))
                 {

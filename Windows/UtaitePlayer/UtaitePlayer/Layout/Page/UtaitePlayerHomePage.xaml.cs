@@ -29,6 +29,9 @@ namespace UtaitePlayer.Layout.Page
     /// </summary>
     public partial class UtaitePlayerHomePage : System.Windows.Controls.Page
     {
+        // 데이터 로딩 감지
+        public bool isLoaded = false;
+
         // 우타이테 제외 리스트
         private List<string> blockUtaiteUUIDs = new List<string>();
 
@@ -44,6 +47,8 @@ namespace UtaitePlayer.Layout.Page
         private List<UtaitePlayer.Classes.DataVO.TypeUtaiteDataVO> typeUtaiteDataVOs_3 = new List<Classes.DataVO.TypeUtaiteDataVO>();
         private List<UtaitePlayer.Classes.DataVO.TypeUtaiteDataVO> typeUtaiteDataVOs_4 = new List<Classes.DataVO.TypeUtaiteDataVO>();
         private List<UtaitePlayer.Classes.DataVO.TypeUtaiteDataVO> typeUtaiteDataVOs_5 = new List<Classes.DataVO.TypeUtaiteDataVO>();
+        // 
+        private List<UtaitePlayer.Classes.DataVO.MusicNgramForLyricsDataVO> musicNgramForLyricsDataVOs = new List<Classes.DataVO.MusicNgramForLyricsDataVO>();
         // 니코니코동 순위 데이터
         private List<UtaitePlayer.Classes.DataVO.NicoNicoDougaRankDataVO> nicoNicoDougaRankDataVOs = new List<Classes.DataVO.NicoNicoDougaRankDataVO>();
 
@@ -65,10 +70,22 @@ namespace UtaitePlayer.Layout.Page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            reload();
+        }
+
+
+
+        /// <summary>
+        /// 데이터 로딩
+        /// </summary>
+        public async void reload()
         {
             try
             {
+                if (isLoaded) return;
+
                 // 모듈 선언
                 RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
@@ -86,6 +103,8 @@ namespace UtaitePlayer.Layout.Page
                     manyMusicListDataGrid.Items.Clear();
                 if (topUtaiteListDataGrid.ItemsSource == null)
                     topUtaiteListDataGrid.Items.Clear();
+                if (userManyPlayNgramForLyricsListBox.ItemsSource == null)
+                    userManyPlayNgramForLyricsListBox.Items.Clear();
                 if (nicoNicoDougaRankListDataGrid.ItemsSource == null)
                     nicoNicoDougaRankListDataGrid.Items.Clear();
 
@@ -93,13 +112,14 @@ namespace UtaitePlayer.Layout.Page
                 manyMusicListDataGrid.ItemsSource = manyMusicDataVOs;
                 newUtaiteListBox.ItemsSource = newUtaiteDataVOs;
                 topUtaiteListDataGrid.ItemsSource = topUtaiteDataVOs;
+                userManyPlayNgramForLyricsListBox.ItemsSource = musicNgramForLyricsDataVOs;
                 nicoNicoDougaRankListDataGrid.ItemsSource = nicoNicoDougaRankDataVOs;
 
                 // 최신 우타이테 데이터 초기화
                 newUtaiteDataVOs.Clear();
                 // 최신 우타이테 데이터 불러오기
-                await Task.Run(() => 
-                { 
+                await Task.Run(() =>
+                {
                     try
                     {
                         string serverResponse = utaitePlayerClient.getNewUtaiteList(registryManager.getAuthToken().ToString());
@@ -111,7 +131,7 @@ namespace UtaitePlayer.Layout.Page
                             if (Regex.IsMatch(key, @"^[0-9]+$"))
                             {
                                 JObject musicInfo = JObject.Parse(jObject[key].ToString());
-                                if (musicInfo.ContainsKey("result") && ((string) musicInfo["result"]).Equals("success") && musicInfo.ContainsKey("uuid"))
+                                if (musicInfo.ContainsKey("result") && ((string)musicInfo["result"]).Equals("success") && musicInfo.ContainsKey("uuid"))
                                 {
                                     string uuid = musicInfo["uuid"].ToString();
 
@@ -144,15 +164,16 @@ namespace UtaitePlayer.Layout.Page
                             for (int count = 0; count < keysList.Count; count++)
                                 if (RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources[keysList[count]].singerUUID.Equals(singerKeysList[index]))
                                     tCount = tCount + 1;
-
                             manyMusicDataVOs.Add(new Classes.DataVO.ManyMusicDataVO(singerKeysList[index], tCount));
                         }
 
-                        manyMusicDataVOs.Sort((x, y) => x.musicCount.CompareTo(y.musicCount));
-                        if (manyMusicDataVOs.Count > 5)
-                            manyMusicDataVOs.RemoveRange(5, manyMusicDataVOs.Count - 5);
+                        manyMusicDataVOs.Sort((x, y) => x.musicCountForInt.CompareTo(y.musicCountForInt));
 
-                        for (int index = 0; index < manyMusicDataVOs.Count; index ++)
+                        if (manyMusicDataVOs.Count > 5)
+                            for (int index = manyMusicDataVOs.Count - 6; index >= 0; index--)
+                                manyMusicDataVOs.RemoveAt(index);
+
+                        for (int index = 0; index < manyMusicDataVOs.Count; index++)
                         {
                             int tempIndex = (manyMusicDataVOs.Count - 1) - index;
                             manyMusicDataVOs[tempIndex].musicCountRank = index + 1;
@@ -162,7 +183,7 @@ namespace UtaitePlayer.Layout.Page
                     catch (Exception ex)
                     {
                         // 예외 처리
-                        ExceptionManager.getInstance().showMessageBox(ex.ToString());
+                        ExceptionManager.getInstance().showMessageBox(ex);
                     }
                 });
                 // 인기 우타이테 데이터 초기화
@@ -190,6 +211,55 @@ namespace UtaitePlayer.Layout.Page
                                 }
                             }
                         }
+                    }
+                    catch (Exception ex)
+                    {
+                        // 예외 처리
+                        ExceptionManager.getInstance().showMessageBox(ex);
+                    }
+                });
+                // 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테 데이터 초기화
+                musicNgramForLyricsDataVOs.Clear();
+                // 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테 데이터 불러오기
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        string serverResponse = utaitePlayerClient.getUserManyPlayMusicNgramForLyrics(registryManager.getAuthToken().ToString());
+                        JObject jObject = JObject.Parse(serverResponse);
+
+                        if (jObject.ContainsKey("result") && jObject.ContainsKey("message") && jObject["result"].ToString().Equals("success"))
+                        {
+                            JArray jArray = JArray.Parse(HttpUtility.UrlDecode(jObject["message"].ToString()));
+                            for (int i = 0; i < jArray.Count; i++)
+                            {
+                                JArray temp = JArray.Parse(jArray[i].ToString());
+                                if (temp.Count >= 2)
+                                    musicNgramForLyricsDataVOs.Add(new Classes.DataVO.MusicNgramForLyricsDataVO(temp[1].ToString()));
+                            }
+                        }
+
+                        Application.Current.Dispatcher.Invoke(() =>
+                        {
+                            try
+                            {
+                                if (musicNgramForLyricsDataVOs.Count <= 0)
+                                {
+                                    userManyPlayNgramForLyricsNoData.Visibility = Visibility.Visible;
+                                    userManyPlayNgramForLyricsListBox.Visibility = Visibility.Collapsed;
+                                }
+                                else
+                                {
+                                    userManyPlayNgramForLyricsNoData.Visibility = Visibility.Collapsed;
+                                    userManyPlayNgramForLyricsListBox.Visibility = Visibility.Visible;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                // 예외 처리
+                                ExceptionManager.getInstance().showMessageBox(ex);
+                            }
+                        });
                     }
                     catch (Exception ex)
                     {
@@ -324,9 +394,12 @@ namespace UtaitePlayer.Layout.Page
                 topUtaiteListDataGrid.Items.Refresh();
                 nicoNicoDougaRankListDataGrid.Items.Refresh();
                 manyMusicListDataGrid.Items.Refresh();
+                userManyPlayNgramForLyricsListBox.Items.Refresh();
 
                 // Loading UI 설정
                 loadingPanel.Visibility = Visibility.Collapsed;
+
+                isLoaded = true;
             }
             catch (Exception ex)
             {
@@ -346,12 +419,11 @@ namespace UtaitePlayer.Layout.Page
         {
             try
             {
-                ListBox listBox = sender as ListBox;
-                ScrollViewer scrollviewer = FindVisualChildren<ScrollViewer>(listBox).FirstOrDefault();
                 if (e.Delta > 0)
-                    scrollviewer.LineLeft();
+                    rootHomeScrollViewer.LineUp();
                 else
-                    scrollviewer.LineRight();
+                    rootHomeScrollViewer.LineDown();
+
                 e.Handled = true;
             }
             catch (Exception ex)
@@ -726,15 +798,10 @@ namespace UtaitePlayer.Layout.Page
         {
             try
             {
-                ListBox listBox = sender as ListBox;
-                ScrollViewer scrollviewer = FindVisualChildren<ScrollViewer>(listBox).FirstOrDefault();
-
-                if (scrollviewer == null) return;
-
                 if (e.Delta > 0)
-                    scrollviewer.LineLeft();
+                    rootHomeScrollViewer.LineUp();
                 else
-                    scrollviewer.LineRight();
+                    rootHomeScrollViewer.LineDown();
                 e.Handled = true;
             }
             catch (Exception ex)
@@ -1129,6 +1196,139 @@ namespace UtaitePlayer.Layout.Page
             }
             catch (Exception ex)
             {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테 ListBox 스크롤 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void userManyPlayNgramForLyricsListBox_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            try
+            {
+                if (e.Delta > 0)
+                    rootHomeScrollViewer.LineUp();
+                else
+                    rootHomeScrollViewer.LineDown();
+                e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테 리스트 박스 더블 클릭 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void userManyPlayNgramForLyricsListBox_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                Control src = e.Source as Control;
+
+                // 좌클릭 확인
+                if (src != null && e.ChangedButton == MouseButton.Left && (((FrameworkElement)e.OriginalSource).DataContext as UtaitePlayer.Classes.DataVO.MusicNgramForLyricsDataVO != null))
+                {
+                    int selectedIndex = userManyPlayNgramForLyricsListBox.SelectedIndex;
+                    if (selectedIndex < 0) return;
+
+                    UtaitePlayer.Classes.DataVO.MusicNgramForLyricsDataVO musicNgramForLyricsDataVO = musicNgramForLyricsDataVOs[selectedIndex];
+
+                    // 전역 함수 호출
+                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_PLAY_MUSIC, musicNgramForLyricsDataVO.uuid);
+                }
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 노래 정보 보기 메뉴 클릭 이벤트 - 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowMusicInfoMenuItemForUserManyPlayNgramForLyricsListBox_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int selectedIndex = userManyPlayNgramForLyricsListBox.SelectedIndex;
+                if (selectedIndex < 0) return;
+
+                UtaitePlayer.Classes.DataVO.MusicNgramForLyricsDataVO musicNgramForLyricsData = musicNgramForLyricsDataVOs[selectedIndex];
+
+                // 전역 함수 호출
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_MUSIC_INFO_DRAWER, musicNgramForLyricsData.uuid);
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 커스텀 플레이리스트에 담기 메뉴 클릭 이벤트 - 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddMusicCustomMyPlayListMenuItemForUserManyPlayNgramForLyricsListBox_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int selectedIndex = userManyPlayNgramForLyricsListBox.SelectedIndex;
+                if (selectedIndex < 0) return;
+
+                UtaitePlayer.Classes.DataVO.MusicNgramForLyricsDataVO musicNgramForLyricsData = musicNgramForLyricsDataVOs[selectedIndex];
+
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_ADD_MUSIC_TO_PLAYLIST_DRAWER, musicNgramForLyricsData.uuid);
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 플레이리스트에 담기 메뉴 클릭 이벤트 - 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddMusicMyPlayListMenuItemForUserManyPlayNgramForLyricsListBox_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int selectedIndex = userManyPlayNgramForLyricsListBox.SelectedIndex;
+                if (selectedIndex < 0) return;
+
+                UtaitePlayer.Classes.DataVO.MusicNgramForLyricsDataVO musicNgramForLyricsData = musicNgramForLyricsDataVOs[selectedIndex];
+
+                // 전역 함수 호출
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_MUSIC_ADD_PLAYLIST, musicNgramForLyricsData.uuid);
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
                 ExceptionManager.getInstance().showMessageBox(ex);
             }
         }

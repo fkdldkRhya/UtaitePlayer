@@ -82,4 +82,5 @@
     <string name="text_licenses">라이센스</string>
     <string name="text_open_source_licenses">오픈 소스 라이센스</string>
     <string name="app_licenses">Copyright © 2022 RHYA.Network. All rights reserved.</string>
+    <string name="menu_text_song_data_delete">노래 정보 제거</string>
 </resources>

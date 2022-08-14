@@ -25,6 +25,8 @@ namespace UtaitePlayer.Layout.Page
     /// </summary>
     public partial class MyPlaylistPage : System.Windows.Controls.Page
     {
+        // 데이터 로딩 감지
+        public bool isLoaded = false;
         // 플레이리스트 데이터
         private List<MyPlaylistDataVO> myPlaylistDataVOs = new List<MyPlaylistDataVO>();
         // 현재 보여주고 있는 플레이리스트 데이터
@@ -50,15 +52,28 @@ namespace UtaitePlayer.Layout.Page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            reload();
+        }
+
+
+
+        /// <summary>
+        /// 데이터 로딩
+        /// </summary>
+        public async void reload()
         {
             try
             {
+                if (isLoaded) return;
 
                 // 창 닫기
                 x_PlaylistInfoLayout_HideLayout();
                 // 새로고침
                 await Task.Run(() => Refresh());
+
+                isLoaded = true;
             }
             catch (Exception ex)
             {
@@ -103,6 +118,7 @@ namespace UtaitePlayer.Layout.Page
                 {
                     myPlaylistRootGrid.Visibility = Visibility.Collapsed;
                     RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Loading...");
+                    x_PlaylistInfoLayout_MyPlaylistDataGrid_AllSelectedCheckbox.IsChecked = false;
                 });
 
                 // 데이터 다시 불러오기
@@ -366,6 +382,8 @@ namespace UtaitePlayer.Layout.Page
                 {
                     int selectedIndex = myPlaylistListBox.SelectedIndex;
                     if (selectedIndex < 0) return;
+
+                    x_PlaylistInfoLayout_MyPlaylistDataGrid_AllSelectedCheckbox.IsChecked = false;
 
                     MyPlaylistDataVO myPlaylistDataVO = myPlaylistDataVOs[selectedIndex];
                     if (RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userCustomPlaylistInfoVOs.ContainsKey(myPlaylistDataVO.uuid))

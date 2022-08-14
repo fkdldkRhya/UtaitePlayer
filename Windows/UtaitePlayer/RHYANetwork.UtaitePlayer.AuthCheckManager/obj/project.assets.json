@@ -295,19 +295,6 @@
           "lib/net45/YamlDotNet.dll": {}
         }
       },
-      "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
-          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        }
-      },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
         "type": "project",
         "compile": {
@@ -345,7 +332,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
         "compile": {
@@ -353,6 +340,28 @@
         },
         "runtime": {
           "bin/placeholder/RHYANetwork.UtaitePlayer.ExceptionHandler.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.MutexManager/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.ProcessManager/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
+          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
         }
       },
       "RHYANetwork.UtaitePlayer.Registry/1.0.0": {
@@ -394,11 +403,12 @@
           "NAudio.Wasapi": "2.1.0",
           "NAudio.WinMM": "2.1.0",
           "Newtonsoft.Json": "13.0.1",
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
           "RHYANetwork.UtaitePlayer.Client": "1.0.0",
           "RHYANetwork.UtaitePlayer.CryptoModule": "1.0.0",
           "RHYANetwork.UtaitePlayer.DataManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ExceptionHandler": "1.0.0",
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0",
           "RHYANetwork.UtaitePlayer.TrayIcon": "1.0.0",
           "SharpVectors": "1.7.7",
@@ -690,19 +700,6 @@
           "lib/net45/YamlDotNet.dll": {}
         }
       },
-      "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
-          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        }
-      },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
         "type": "project",
         "compile": {
@@ -740,7 +737,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
         "compile": {
@@ -748,6 +745,28 @@
         },
         "runtime": {
           "bin/placeholder/RHYANetwork.UtaitePlayer.ExceptionHandler.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.MutexManager/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.ProcessManager/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
+          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
         }
       },
       "RHYANetwork.UtaitePlayer.Registry/1.0.0": {
@@ -789,11 +808,12 @@
           "NAudio.Wasapi": "2.1.0",
           "NAudio.WinMM": "2.1.0",
           "Newtonsoft.Json": "13.0.1",
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
           "RHYANetwork.UtaitePlayer.Client": "1.0.0",
           "RHYANetwork.UtaitePlayer.CryptoModule": "1.0.0",
           "RHYANetwork.UtaitePlayer.DataManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ExceptionHandler": "1.0.0",
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0",
           "RHYANetwork.UtaitePlayer.TrayIcon": "1.0.0",
           "SharpVectors": "1.7.7",
@@ -1085,19 +1105,6 @@
           "lib/net45/YamlDotNet.dll": {}
         }
       },
-      "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
-          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        }
-      },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
         "type": "project",
         "compile": {
@@ -1135,7 +1142,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
         "compile": {
@@ -1143,6 +1150,28 @@
         },
         "runtime": {
           "bin/placeholder/RHYANetwork.UtaitePlayer.ExceptionHandler.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.MutexManager/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.ProcessManager/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
+          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
         }
       },
       "RHYANetwork.UtaitePlayer.Registry/1.0.0": {
@@ -1184,11 +1213,12 @@
           "NAudio.Wasapi": "2.1.0",
           "NAudio.WinMM": "2.1.0",
           "Newtonsoft.Json": "13.0.1",
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
           "RHYANetwork.UtaitePlayer.Client": "1.0.0",
           "RHYANetwork.UtaitePlayer.CryptoModule": "1.0.0",
           "RHYANetwork.UtaitePlayer.DataManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ExceptionHandler": "1.0.0",
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0",
           "RHYANetwork.UtaitePlayer.TrayIcon": "1.0.0",
           "SharpVectors": "1.7.7",
@@ -1480,19 +1510,6 @@
           "lib/net45/YamlDotNet.dll": {}
         }
       },
-      "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
-          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.dll": {}
-        }
-      },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
         "type": "project",
         "compile": {
@@ -1530,7 +1547,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
         "compile": {
@@ -1538,6 +1555,28 @@
         },
         "runtime": {
           "bin/placeholder/RHYANetwork.UtaitePlayer.ExceptionHandler.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.MutexManager/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.MutexManager.dll": {}
+        }
+      },
+      "RHYANetwork.UtaitePlayer.ProcessManager/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "RHYANetwork.UtaitePlayer.Client": "1.0.0",
+          "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RHYANetwork.UtaitePlayer.ProcessManager.dll": {}
         }
       },
       "RHYANetwork.UtaitePlayer.Registry/1.0.0": {
@@ -1579,11 +1618,12 @@
           "NAudio.Wasapi": "2.1.0",
           "NAudio.WinMM": "2.1.0",
           "Newtonsoft.Json": "13.0.1",
-          "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor": "1.0.0",
           "RHYANetwork.UtaitePlayer.Client": "1.0.0",
           "RHYANetwork.UtaitePlayer.CryptoModule": "1.0.0",
           "RHYANetwork.UtaitePlayer.DataManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ExceptionHandler": "1.0.0",
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
+          "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0",
           "RHYANetwork.UtaitePlayer.TrayIcon": "1.0.0",
           "SharpVectors": "1.7.7",
@@ -2996,11 +3036,6 @@
         "yamldotnet.nuspec"
       ]
     },
-    "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor/1.0.0": {
-      "type": "project",
-      "path": "../RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj",
-      "msbuildProject": "../RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor/RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj"
-    },
     "RHYANetwork.UtaitePlayer.Client/1.0.0": {
       "type": "project",
       "path": "../RHYANetwork.UtaitePlayer.Client/RHYANetwork.UtaitePlayer.Client.csproj",
@@ -3020,6 +3055,16 @@
       "type": "project",
       "path": "../RHYANetwork.UtaitePlayer.ExceptionManager/RHYANetwork.UtaitePlayer.ExceptionHandler.csproj",
       "msbuildProject": "../RHYANetwork.UtaitePlayer.ExceptionManager/RHYANetwork.UtaitePlayer.ExceptionHandler.csproj"
+    },
+    "RHYANetwork.UtaitePlayer.MutexManager/1.0.0": {
+      "type": "project",
+      "path": "../RHYANetwork.UtaitePlayer.MutexManager/RHYANetwork.UtaitePlayer.MutexManager.csproj",
+      "msbuildProject": "../RHYANetwork.UtaitePlayer.MutexManager/RHYANetwork.UtaitePlayer.MutexManager.csproj"
+    },
+    "RHYANetwork.UtaitePlayer.ProcessManager/1.0.0": {
+      "type": "project",
+      "path": "../RHYANetwork.UtaitePlayer.ProcessManager/RHYANetwork.UtaitePlayer.ProcessManager.csproj",
+      "msbuildProject": "../RHYANetwork.UtaitePlayer.ProcessManager/RHYANetwork.UtaitePlayer.ProcessManager.csproj"
     },
     "RHYANetwork.UtaitePlayer.Registry/1.0.0": {
       "type": "project",
@@ -3042,6 +3087,8 @@
       "Newtonsoft.Json >= 13.0.1",
       "RHYANetwork.UtaitePlayer.Client >= 1.0.0",
       "RHYANetwork.UtaitePlayer.ExceptionHandler >= 1.0.0",
+      "RHYANetwork.UtaitePlayer.MutexManager >= 1.0.0",
+      "RHYANetwork.UtaitePlayer.ProcessManager >= 1.0.0",
       "RHYANetwork.UtaitePlayer.Registry >= 1.0.0",
       "UtaitePlayer >= 1.0.0"
     ]
@@ -3084,6 +3131,12 @@
             },
             "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
               "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj"
+            },
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
+            },
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
             },
             "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
               "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{040F6188-51A2-4E31-A39E-F24513978ED5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>RHYANetwork.UtaitePlayer.ProcessKILLER</RootNamespace>
     <AssemblyName>RHYANetwork.UtaitePlayer.ProcessKILLER</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
@@ -44,6 +44,12 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>RHYA.Network.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,16 +66,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="app.manifest" />
     <None Include="RHYA.Network.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj">
-      <Project>{6201b734-7619-42fa-a230-f2bbf1319a75}</Project>
-      <Name>RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.ExceptionManager\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj">
       <Project>{0b39211c-827a-4794-8f67-e4a32dc1b5fc}</Project>
       <Name>RHYANetwork.UtaitePlayer.ExceptionHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RHYANetwork.UtaitePlayer.ProcessManager\RHYANetwork.UtaitePlayer.ProcessManager.csproj">
+      <Project>{6201b734-7619-42fa-a230-f2bbf1319a75}</Project>
+      <Name>RHYANetwork.UtaitePlayer.ProcessManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.Registry\RHYANetwork.UtaitePlayer.Registry.csproj">
       <Project>{a7cf5e7a-a6cd-4fa3-b3f6-3402d7dfcdf6}</Project>

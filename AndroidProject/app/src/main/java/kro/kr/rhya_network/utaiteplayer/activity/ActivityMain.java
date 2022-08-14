@@ -1089,6 +1089,51 @@ public class ActivityMain extends AppCompatActivity {
                     }.execute(null);
                 }else if (item.getTitle().equals("플레이리스트에 넣기") && version == 1) {
                     putNowPlayListSong(uuid);
+                }else if (item.getTitle().equals("노래 정보 제거")) {
+                    new RhyaAsyncTask<String, String>() {
+                        @Override
+                        protected void onPreExecute() {
+                        }
+
+                        @Override
+                        protected String doInBackground(String arg) {
+                            try {
+                                StringBuilder stringBuilder = new StringBuilder();
+                                stringBuilder.append(activity.getFilesDir().getAbsolutePath());
+                                stringBuilder.append(File.separator);
+                                stringBuilder.append("music");
+                                stringBuilder.append(File.separator);
+                                stringBuilder.append(uuid);
+                                stringBuilder.append(".rhya_music");
+
+                                File file = new File(stringBuilder.toString());
+                                if (file.exists()) {
+                                    if (file.delete()) {
+                                        return "";
+                                    }
+                                }
+
+                                return null;
+                            }catch (Exception ex) {
+                                ex.printStackTrace();
+
+                                return null;
+                            }
+                        }
+
+                        @Override
+                        protected void onPostExecute(String result) {
+                            if (result == null) {
+                                toast.cancel();
+                                toast.setText("노래 정보 제거 실패!");
+                                toast.show();
+                            }else {
+                                toast.cancel();
+                                toast.setText("노래 정보 제거 성공!");
+                                toast.show();
+                            }
+                        }
+                    }.execute(null);
                 }
 
                 return false;
@@ -1373,7 +1418,7 @@ public class ActivityMain extends AppCompatActivity {
                     StringBuilder sb = new StringBuilder();
                     sb.append(rhyaCore.getMusicInfoLyricsDirectory(activity));
                     sb.append(rhyaMusicInfoVO.getUuid());
-                    sb.append(".lyric");
+                    sb.append(".lyrics");
                     File file = new File(sb.toString());
 
                     if (file.exists()) {
@@ -1535,7 +1580,7 @@ public class ActivityMain extends AppCompatActivity {
                         StringBuilder sb = new StringBuilder();
                         sb.append(rhyaCore.getMusicInfoLyricsDirectory(activity));
                         sb.append(rhyaMusicInfoVO.getUuid());
-                        sb.append(".lyric");
+                        sb.append(".lyrics");
                         File file = new File(sb.toString());
 
                         if (file.exists()) {

@@ -4,28 +4,6 @@
     "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj": {}
   },
   "projects": {
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj": {
-      "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj",
-        "projectName": "RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj",
-        "frameworks": {
-          "net462": {
-            "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
-              },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
-              }
-            }
-          }
-        }
-      },
-      "frameworks": {
-        "net462": {}
-      }
-    },
     "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
       "restore": {
         "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj",
@@ -118,8 +96,40 @@
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj"
+              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
+              },
+              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
+                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net462": {}
+      }
+    },
+    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
+      "restore": {
+        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj",
+        "projectName": "RHYANetwork.UtaitePlayer.MutexManager",
+        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
+      },
+      "frameworks": {
+        "net462": {}
+      }
+    },
+    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+      "restore": {
+        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj",
+        "projectName": "RHYANetwork.UtaitePlayer.ProcessManager",
+        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj",
+        "frameworks": {
+          "net462": {
+            "projectReferences": {
+              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
+                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
               },
               "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
                 "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
@@ -190,9 +200,6 @@
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj"
-              },
               "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
                 "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
               },
@@ -204,6 +211,12 @@
               },
               "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
                 "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj"
+              },
+              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
+                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
+              },
+              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
               },
               "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
                 "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"

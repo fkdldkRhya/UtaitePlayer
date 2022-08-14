@@ -103,6 +103,8 @@
     </ApplicationDefinition>
     <Compile Include="Classes\Core\PlayerService.cs" />
     <Compile Include="Classes\Core\PlayStateManager.cs" />
+    <Compile Include="Classes\DataVO\AnimAirInfoDataVO.cs" />
+    <Compile Include="Classes\DataVO\AnimUploadInfoDataVO.cs" />
     <Compile Include="Classes\DataVO\ManyMusicDataVO.cs" />
     <Compile Include="Classes\DataVO\MusicPlayCountDataVO.cs" />
     <Compile Include="Classes\DataVO\MyPlaylistDataVO.cs" />
@@ -110,11 +112,12 @@
     <Compile Include="Classes\DataVO\NewUtaiteDataVO.cs" />
     <Compile Include="Classes\DataVO\NicoNicoDougaRankDataVO.cs" />
     <Compile Include="Classes\DataVO\OnlyImageDataVO.cs" />
-    <Compile Include="Classes\DataVO\RecommendUtaiteDataVO.cs" />
+    <Compile Include="Classes\DataVO\PixivTopImageDataVO.cs" />
     <Compile Include="Classes\DataVO\SearchResultDataVO.cs" />
     <Compile Include="Classes\DataVO\SubscribeArtistDataVO.cs" />
     <Compile Include="Classes\DataVO\TopUtaiteDataVO.cs" />
     <Compile Include="Classes\DataVO\TypeUtaiteDataVO.cs" />
+    <Compile Include="Classes\DataVO\MusicNgramForLyricsDataVO.cs" />
     <Compile Include="Classes\RNException\NotFoundArtistUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMusicUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMyPlaylistUUIDException.cs" />
@@ -125,12 +128,19 @@
     <Compile Include="Classes\Utils\RHYASearchHelper.cs" />
     <Compile Include="Classes\Utils\RHYAStringExtensions.cs" />
     <Compile Include="Classes\DataVO\SelectMyPlaylistDataVO.cs" />
+    <Compile Include="Classes\Utils\URLImageLoadManager.cs" />
     <Compile Include="Classes\Utils\WaveCallbackInfo.cs" />
     <Compile Include="Classes\Utils\WaveOut.cs" />
     <Compile Include="Classes\Utils\SettingManager.cs" />
     <Compile Include="Classes\Utils\StartAdministratorProcess.cs" />
     <Compile Include="Classes\Utils\WaveWindow.cs" />
     <Compile Include="Classes\Utils\YesOrNoDialogInfo.cs" />
+    <Compile Include="Layout\Page\AnimAirInfoPage.xaml.cs">
+      <DependentUpon>AnimAirInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Page\AnimUploadInfoPage.xaml.cs">
+      <DependentUpon>AnimUploadInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Layout\Page\AnnouncementPage.xaml.cs">
       <DependentUpon>AnnouncementPage.xaml</DependentUpon>
     </Compile>
@@ -139,6 +149,9 @@
     </Compile>
     <Compile Include="Layout\Page\MyPlaylistPage.xaml.cs">
       <DependentUpon>MyPlaylistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Page\PixivTopImagePage.xaml.cs">
+      <DependentUpon>PixivTopImagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Layout\Page\PlayerSettingPage.xaml.cs">
       <DependentUpon>PlayerSettingPage.xaml</DependentUpon>
@@ -176,6 +189,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Layout\Page\AnimAirInfoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Layout\Page\AnimUploadInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Layout\Page\AnnouncementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +206,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Layout\Page\MyPlaylistPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layout\Page\PixivTopImagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -285,10 +310,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.csproj">
-      <Project>{6201b734-7619-42fa-a230-f2bbf1319a75}</Project>
-      <Name>RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.Client\RHYANetwork.UtaitePlayer.Client.csproj">
       <Project>{c967fe9b-bd59-4199-8933-7ee24fe76a37}</Project>
       <Name>RHYANetwork.UtaitePlayer.Client</Name>
@@ -304,6 +325,14 @@
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.ExceptionManager\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj">
       <Project>{0b39211c-827a-4794-8f67-e4a32dc1b5fc}</Project>
       <Name>RHYANetwork.UtaitePlayer.ExceptionHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RHYANetwork.UtaitePlayer.MutexManager\RHYANetwork.UtaitePlayer.MutexManager.csproj">
+      <Project>{0cad5b6c-da78-4cc0-81ac-6b3880d924bf}</Project>
+      <Name>RHYANetwork.UtaitePlayer.MutexManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RHYANetwork.UtaitePlayer.ProcessManager\RHYANetwork.UtaitePlayer.ProcessManager.csproj">
+      <Project>{6201b734-7619-42fa-a230-f2bbf1319a75}</Project>
+      <Name>RHYANetwork.UtaitePlayer.ProcessManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.Registry\RHYANetwork.UtaitePlayer.Registry.csproj">
       <Project>{a7cf5e7a-a6cd-4fa3-b3f6-3402d7dfcdf6}</Project>
@@ -387,6 +416,8 @@
     <Resource Include="Resources\drawable\ic_edit.png" />
     <Resource Include="Resources\drawable\ic_plus_for_white.png" />
     <Resource Include="Resources\drawable\ic_user_no_background.png" />
+    <Resource Include="Resources\drawable\ic_pixiv.svg" />
+    <Resource Include="Resources\drawable\ic_pixiv_text.svg" />
     <Content Include="RHYA.Network.UtaitePlayer.Launcher.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

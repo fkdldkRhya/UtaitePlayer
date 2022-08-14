@@ -63,7 +63,17 @@ namespace UtaitePlayer.Layout.Page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            reload();
+        }
+
+
+
+        /// <summary>
+        /// 데이터 로딩
+        /// </summary>
+        public async void reload()
         {
             try
             {
@@ -83,7 +93,7 @@ namespace UtaitePlayer.Layout.Page
                 SettingManager settingManager = new SettingManager();
                 SettingManager.SettingData settingData = null;
 
-                await Task.Run(() => 
+                await Task.Run(() =>
                 {
                     try
                     {
@@ -101,6 +111,8 @@ namespace UtaitePlayer.Layout.Page
                     CrashHandlerRunToggleButton.IsChecked = settingData.gs_use_crash_handler;
                     CloseButtonSettingToggleButton.IsChecked = settingData.gs_close_button_event == 0 ? false : true;
                     TopMostToggleButton.IsChecked = settingData.gs_window_top_most;
+
+                    ReloadButtonEnableToggleButton.IsChecked = settingData.gs_enable_reload_btn;
 
                     if (settingData.gs_start_mod == 0)
                     {
@@ -159,7 +171,7 @@ namespace UtaitePlayer.Layout.Page
                                 if (jObject.ContainsKey("update_description_for_windows"))
                                 {
                                     string text = jObject["update_description_for_windows"].ToString();
-                                    Application.Current.Dispatcher.Invoke(() => 
+                                    Application.Current.Dispatcher.Invoke(() =>
                                     {
                                         FlowDocument flowDocument = new FlowDocument();
                                         flowDocument.Blocks.Add(new Paragraph(new Run(text)));
@@ -746,6 +758,42 @@ namespace UtaitePlayer.Layout.Page
                     StartModForWindowMODRadioButton.IsChecked = true;
                     StartModForBackgroundMODRadioButton.IsChecked = false;
                 }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+            finally
+            {
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 새로고침 버튼 활성화
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void ReloadButtonEnableToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Saving settings...");
+
+                bool value = (bool)((ToggleButton)sender).IsChecked;
+
+                await Task.Run(() =>
+                {
+                    SettingManager settingManager = new SettingManager();
+                    SettingManager.SettingData settingData = settingManager.readSettingData();
+
+                    settingData.gs_enable_reload_btn = value;
+                    settingManager.writeSettingData(settingData);
+                });
+
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
             }
             catch (Exception ex)
             {

@@ -32,9 +32,12 @@ namespace RHYANetwork.UtaitePlayer.AuthCheckManager
                 // Console 숨기기
                 ShowWindow(GetConsoleWindow(), 0);
 
+                IPCRemoteObject getVar = new IPCRemoteObject();
+                RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor authCheckManagerProcessor = new ProcessManager.AuthCheckManagerProcessor();
+
                 // 인자 정보
-                string ARG_NAME_SERVER_ADDRESS = "-server=";
-                string ARG_NAME_MAIN_PROCESS_NAME = "-process_name=";
+                string ARG_NAME_SERVER_ADDRESS = authCheckManagerProcessor.ARG_NAME_SERVER_ADDRESS;
+                string ARG_NAME_MAIN_PROCESS_NAME = authCheckManagerProcessor.ARG_NAME_MAIN_PROCESS_NAME;
                 // IPC 서버 주소
                 string ipcServerAddress = null;
                 string rootProcessName = null;
@@ -52,7 +55,8 @@ namespace RHYANetwork.UtaitePlayer.AuthCheckManager
 
                 // Mutex 확인
                 bool createNew;
-                Mutex mutex = new Mutex(true, "kro.kr.rhya-network.utaiteplayer.authcheckermanager", out createNew);
+                RHYANetwork.UtaitePlayer.MutexManager.MutexList mutexList = new RHYANetwork.UtaitePlayer.MutexManager.MutexList();
+                Mutex mutex = new Mutex(true, mutexList.GetMutexName(MutexManager.MutexList.ServiceList.SERVICE_AUTH_CHECK_MANAGER), out createNew);
                 if (!createNew)
                     Environment.Exit(0);
 
@@ -147,10 +151,11 @@ namespace RHYANetwork.UtaitePlayer.AuthCheckManager
                             {
                                 string jsonValue = utaitePlayerClient.userAccessVerify(registryManager.getAuthToken().ToString());
                                 JObject jObject = JObject.Parse(jsonValue);
+
                                 if (jObject.ContainsKey("result"))
                                 {
                                     StringBuilder stringBuilder = new StringBuilder();
-                                    stringBuilder.Append("-RHYANetwork.AuthCheckManager.Value=");
+                                    stringBuilder.Append(getVar.MESSAGE_KEY_AUTH_CHECK_MANAGER);
                                     stringBuilder.Append(jObject["result"].ToString());
 
                                     // 메시지 전송
@@ -158,8 +163,8 @@ namespace RHYANetwork.UtaitePlayer.AuthCheckManager
                                 }
                             }
 
-                            // 일정 시간 대기 [ 45초 ]
-                            Thread.Sleep(45000);
+                            // 일정 시간 대기 [ 10초 ]
+                            Thread.Sleep(10000);
                         }
                         catch (Exception) {}
                     }

@@ -30,6 +30,12 @@ namespace RHYANetwork.UtaitePlayer.Client
             SUBSCRIBE = 0,
             UNSUBSCRIBE = 1
         }
+        // 애니메이션 업로드 정보 Enum
+        public enum AnimeUploadInfo
+        {
+            GET_ALL_INFO = 0,
+            GET_DATE_CHECK_INFO = 1
+        }
 
 
 
@@ -405,6 +411,64 @@ namespace RHYANetwork.UtaitePlayer.Client
 
 
         /// <summary>
+        /// 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테 정보 불러오기
+        /// </summary>
+        /// <param name="authToken">사용자 Auth Token</param>
+        /// <returns></returns>
+        public string getUserManyPlayMusicNgramForLyrics(string authToken)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                Stream stream = webClient.OpenRead(getFullServerUrl(20, new Dictionary<string, string> { { "auth", authToken } }));
+                StreamReader streamReader = new StreamReader(stream);
+
+                string result = streamReader.ReadToEnd();
+
+                streamReader.Dispose();
+                stream.Dispose();
+                webClient.Dispose();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// OHLI 애니메이션 방영 정보 불러오기
+        /// </summary>
+        /// <param name="authToken">사용자 Auth Token</param>
+        /// <returns></returns>
+        public string getOHLIAnimAirInfo(string authToken)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                Stream stream = webClient.OpenRead(getFullServerUrl(21, new Dictionary<string, string> { { "auth", authToken } }));
+                StreamReader streamReader = new StreamReader(stream);
+
+                string result = streamReader.ReadToEnd();
+
+                streamReader.Dispose();
+                stream.Dispose();
+                webClient.Dispose();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
         /// 니코니코 동화 순위 데이터 불러오기
         /// </summary>
         /// <returns></returns>
@@ -479,7 +543,6 @@ namespace RHYANetwork.UtaitePlayer.Client
                 throw ex;
             }
         }
-
 
 
 
@@ -588,6 +651,37 @@ namespace RHYANetwork.UtaitePlayer.Client
             {
                 WebClient webClient = new WebClient();
                 Stream stream = webClient.OpenRead(getFullServerUrl(14, new Dictionary<string, string> { { "auth", authToken }, { "index", "1" }, { "value1", HttpUtility.UrlEncode(HttpUtility.UrlEncode(playlistName, Encoding.UTF8), Encoding.UTF8) }, { "value2", HttpUtility.UrlEncode(string.Format("_IMAGE_TYPE_{0}", playlistImage), Encoding.UTF8) }, { "value3", "" } }));
+                StreamReader streamReader = new StreamReader(stream);
+
+                string result = streamReader.ReadToEnd();
+
+                streamReader.Dispose();
+                stream.Dispose();
+                webClient.Dispose();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 애니메이션 업로드 데이터 불러오기
+        /// </summary>
+        /// <param name="authToken">사용자 Auth Token</param>
+        /// <param name="animeUploadInfo">작업 저리 인자</param>
+        /// <param name="date">날짜 정보</param>
+        /// <returns></returns>
+        public string getAnimUploadInfo(string authToken, AnimeUploadInfo animeUploadInfo, string date)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                Stream stream = webClient.OpenRead(getFullServerUrl(22, new Dictionary<string, string> { { "auth", authToken }, { "smode", (animeUploadInfo == AnimeUploadInfo.GET_ALL_INFO ? 0 : 1).ToString() }, { "date", HttpUtility.UrlEncode(date, Encoding.UTF8)  } }));
                 StreamReader streamReader = new StreamReader(stream);
 
                 string result = streamReader.ReadToEnd();
@@ -728,6 +822,55 @@ namespace RHYANetwork.UtaitePlayer.Client
                 webClient.Dispose();
 
                 return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Pixiv Top 이미지 정보 구하는 함수
+        /// </summary>
+        /// <param name="authToken">사용자 Auth Token</param>
+        /// <returns></returns>
+        public string getPixivTopImageList(string authToken)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                Stream stream = webClient.OpenRead(getFullServerUrl(19, new Dictionary<string, string> { { "auth", authToken }, { "smode", "1" } }));
+                StreamReader streamReader = new StreamReader(stream);
+
+                string result = streamReader.ReadToEnd();
+
+                streamReader.Dispose();
+                stream.Dispose();
+                webClient.Dispose();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Pixiv Top 이미지를 출력하는 함수
+        /// </summary>
+        /// <param name="authToken">사용자 Auth Token</param>
+        /// <param name="name">이미지 이름</param>
+        /// <returns></returns>
+        public string getPixivTopImageURL(string authToken, string name)
+        {
+            try
+            {
+                return getFullServerUrl(19, new Dictionary<string, string> { { "auth", authToken }, { "smode", "0" }, { "name", name } });
             }
             catch (Exception ex)
             {

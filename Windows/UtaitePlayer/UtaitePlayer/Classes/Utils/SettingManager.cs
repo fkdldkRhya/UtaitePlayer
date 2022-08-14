@@ -23,6 +23,8 @@ namespace UtaitePlayer.Classes.Utils
             public bool gs_use_crash_handler { get; set; }
             // 닫는 버튼 이벤트 변경
             public int gs_close_button_event { get; set; }
+            // 새로고침 버튼 활성화 여부
+            public bool gs_enable_reload_btn { get; set; }
             // Topmost 설정
             public bool gs_window_top_most { get; set; }
             // 프로그램 시작 모드
@@ -67,6 +69,7 @@ namespace UtaitePlayer.Classes.Utils
             {
                 RHYANetwork.UtaitePlayer.DataManager.MusicDataManager musicDataManager = new RHYANetwork.UtaitePlayer.DataManager.MusicDataManager();
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
+
                 return Path.Combine(Path.Combine(registryManager.getInstallPath().ToString(), musicDataManager.DATA_FILE_SAVE_DIRECTORY_NAME), "rnPlayerSetting.yml");
             }
             catch (Exception ex)
@@ -92,6 +95,7 @@ namespace UtaitePlayer.Classes.Utils
                     stringBuilder.AppendLine("gs_boot_start: false");
                     stringBuilder.AppendLine("gs_use_crash_handler: true");
                     stringBuilder.AppendLine("gs_close_button_event: 0");
+                    stringBuilder.AppendLine("gs_enable_reload_btn: true");
                     stringBuilder.AppendLine("gs_window_top_most: false");
                     stringBuilder.AppendLine("gs_start_mod: 0");
 

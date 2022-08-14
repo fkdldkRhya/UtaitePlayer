@@ -66,12 +66,12 @@
             HorizontalContentAlignment="Stretch" 
             AutoGenerateColumns="False"
             IsSynchronizedWithCurrentItem="False"
-            SelectionMode="Extended" 
+            SelectionMode="Single" 
             CanUserAddRows="False"
             FontFamily="/Resources/font/#esamanru Medium"
             FontSize="12"
             VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-            VirtualizingPanel.VirtualizationMode="Standard"
+            VirtualizingPanel.VirtualizationMode="Recycling"
             VirtualizingPanel.IsVirtualizing="True"
             Resources="{StaticResource HandyControlThemes}"
             ScrollViewer.CanContentScroll="True" 
@@ -88,7 +88,7 @@
                         <DataTemplate>
                             <Image
                                 Stretch="UniformToFill"
-                                Source="{Binding artistImage}"
+                                Source="{Binding bitmapImage}"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Width="30"/>

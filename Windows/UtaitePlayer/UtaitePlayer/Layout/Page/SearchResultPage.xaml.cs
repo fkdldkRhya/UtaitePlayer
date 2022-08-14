@@ -138,17 +138,17 @@ namespace UtaitePlayer.Layout.Page
 
                 loadingPanel.Visibility = Visibility.Visible;
 
-                // 변수 초기화
-                searchResultDataVOSForMusicTemp.Clear();
-                searchResultDataVOSForArtistTemp.Clear();
-                searchResultDataVOSForMusic.Clear();
-                searchResultDataVOSForArtist.Clear();
-
                 // 비동기 작업
                 await Task.Run(() => 
                 {
                     try
                     {
+                        // 변수 초기화
+                        searchResultDataVOSForMusicTemp.Clear();
+                        searchResultDataVOSForArtistTemp.Clear();
+                        searchResultDataVOSForMusic.Clear();
+                        searchResultDataVOSForArtist.Clear();
+
                         // 노래 제목, 아티스트, 작곡가, 태그 검색
                         foreach (string musicUUID in RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources.Keys)
                         {
@@ -242,41 +242,41 @@ namespace UtaitePlayer.Layout.Page
                                 new Classes.DataVO.SearchResultDataVO(
                                     Classes.DataVO.SearchResultDataVO.SearchResultDataType.ARTIST_RESULT,
                                     uuid));
+
+                        pageNowIndexForMusic = searchResultDataVOSForMusicTemp.Count > 0 ? 1 : 0;
+                        pageMaxIndexForMusic = searchResultDataVOSForMusicTemp.Count % 10 == 0 ? searchResultDataVOSForMusicTemp.Count / 10 : (searchResultDataVOSForMusicTemp.Count / 10) + 1;
+                        pageNowIndexForArtist = searchResultDataVOSForArtistTemp.Count > 0 ? 1 : 0;
+                        pageMaxIndexForArtist = searchResultDataVOSForArtistTemp.Count % 10 == 0 ? searchResultDataVOSForArtistTemp.Count / 10 : (searchResultDataVOSForArtistTemp.Count / 10) + 1;
+
+                        if (searchResultDataVOSForMusicTemp.Count > 0)
+                        {
+                            if (searchResultDataVOSForMusicTemp.Count >= 10)
+                            {
+                                searchResultDataVOSForMusic.AddRange(searchResultDataVOSForMusicTemp.GetRange(0, 10));
+                            }
+                            else
+                            {
+                                searchResultDataVOSForMusic.AddRange(searchResultDataVOSForMusicTemp.GetRange(0, searchResultDataVOSForMusicTemp.Count));
+                            }
+                        }
+
+                        if (searchResultDataVOSForArtistTemp.Count > 0)
+                        {
+                            if (searchResultDataVOSForArtistTemp.Count >= 10)
+                            {
+                                searchResultDataVOSForArtist.AddRange(searchResultDataVOSForArtistTemp.GetRange(0, 10));
+                            }
+                            else
+                            {
+                                searchResultDataVOSForArtist.AddRange(searchResultDataVOSForArtistTemp.GetRange(0, searchResultDataVOSForArtistTemp.Count));
+                            }
+                        }
                     }
                     catch (Exception ex)
                     {
                         ExceptionManager.getInstance().showMessageBox(ex);
                     }
                 });
-
-                pageNowIndexForMusic = searchResultDataVOSForMusicTemp.Count > 0 ? 1 : 0;
-                pageMaxIndexForMusic = searchResultDataVOSForMusicTemp.Count % 10 == 0 ? searchResultDataVOSForMusicTemp.Count / 10 : (searchResultDataVOSForMusicTemp.Count / 10) + 1;
-                pageNowIndexForArtist = searchResultDataVOSForArtistTemp.Count > 0 ? 1 : 0;
-                pageMaxIndexForArtist = searchResultDataVOSForArtistTemp.Count % 10 == 0 ? searchResultDataVOSForArtistTemp.Count / 10 : (searchResultDataVOSForArtistTemp.Count / 10) + 1;
-
-                if (searchResultDataVOSForMusicTemp.Count > 0)
-                {
-                    if (searchResultDataVOSForMusicTemp.Count >= 10)
-                    {
-                        searchResultDataVOSForMusic.AddRange(searchResultDataVOSForMusicTemp.GetRange(0, 10));
-                    }
-                    else
-                    {
-                        searchResultDataVOSForMusic.AddRange(searchResultDataVOSForMusicTemp.GetRange(0, searchResultDataVOSForMusicTemp.Count));
-                    }
-                }
-
-                if (searchResultDataVOSForArtistTemp.Count > 0)
-                {
-                    if (searchResultDataVOSForArtistTemp.Count >= 10)
-                    {
-                        searchResultDataVOSForArtist.AddRange(searchResultDataVOSForArtistTemp.GetRange(0, 10));
-                    }
-                    else
-                    {
-                        searchResultDataVOSForArtist.AddRange(searchResultDataVOSForArtistTemp.GetRange(0, searchResultDataVOSForArtistTemp.Count));
-                    }
-                }
 
                 // UI 변경 사항  적용
                 searchResultDataGridForMusic.Items.Refresh();

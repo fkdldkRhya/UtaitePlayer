@@ -52,7 +52,7 @@ namespace RHYANetwork.UtaitePlayer.ProcessKILLER
 
                 try
                 {
-                    AuthCheckManagerProcessor.AuthCheckManagerProcessor authCheckManagerProcessor = new AuthCheckManagerProcessor.AuthCheckManagerProcessor();
+                    RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor authCheckManagerProcessor = new RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor();
                     authCheckManagerProcessor.killProcess();
                 }
                 catch (Exception) { }

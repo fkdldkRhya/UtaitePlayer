@@ -304,10 +304,6 @@ public class RhyaCore {
             String result = jsonObject.getString("result");
             if (result.equals("success")) {
                 String subscribeList = URLDecoder.decode(jsonObject.getString("subscribe_list"), "UTF-8");
-                int accessVar = jsonObject.getInt("access_var");
-                String accessDate = URLDecoder.decode(jsonObject.getString("access_date"),"UTF-8");
-
-
 
                 // 구독 리스트
                 JSONArray subscribeListJsonArray = new JSONArray(new JSONObject(subscribeList).getString("list"));
@@ -804,43 +800,6 @@ public class RhyaCore {
                         sb.append("&uuid=");
                         sb.append(uuid);
 
-                        URL url = new URL(sb.toString());
-
-                        sb.setLength(0);
-
-                        sb.append(activity.getFilesDir().getAbsolutePath());
-                        sb.append(File.separator);
-                        sb.append("music");
-
-                        File dir = new File(sb.toString());
-                        if (!dir.exists()) //noinspection ResultOfMethodCallIgnored
-                            dir.mkdir();
-
-                        sb.append(File.separator);
-                        sb.append(uuid);
-                        sb.append(".rhya_music");
-
-                        File file = new File(sb.toString());
-
-                        URLConnection connection = url.openConnection();
-                        connection.connect();
-                        int count;
-                        // download the file
-                        InputStream input = new BufferedInputStream(url.openStream(),
-                                8192);
-                        // Output stream
-                        OutputStream output = new FileOutputStream(file, false);
-                        byte[] data = new byte[1024];
-                        while ((count = input.read(data)) != -1) {
-                            // writing data to file
-                            output.write(data, 0, count);
-                        }
-                        // flushing output
-                        output.flush();
-                        // closing streams
-                        output.close();
-                        input.close();
-
                         arrayListNew.add(rhyaMusicInfoVOGet);
                     }else {
                         arrayListNew.add(inputValues);
@@ -967,7 +926,7 @@ public class RhyaCore {
 
         sb.append(dirPath);
         sb.append(jsonObject.getString("uuid"));
-        sb.append(".lyric");
+        sb.append(".lyrics");
 
         dirPath = sb.toString();
 
@@ -1018,7 +977,7 @@ public class RhyaCore {
 
             sb.append(dirPath);
             sb.append(data.getString("uuid"));
-            sb.append(".lyric");
+            sb.append(".lyrics");
 
             if (data.getString("uuid").equals("[null]")) {
                 return null;
@@ -1332,7 +1291,7 @@ public class RhyaCore {
         sb.append("Lyrics");
         sb.append(File.separator);
         sb.append(uuid);
-        sb.append(".lyric");
+        sb.append(".lyrics");
 
         if (new File(sb.toString()).exists()) {
             return readFile(sb.toString());

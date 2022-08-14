@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using UtaitePlayer.Classes.RNException;
 
 namespace UtaitePlayer.Classes.DataVO
@@ -20,6 +21,9 @@ namespace UtaitePlayer.Classes.DataVO
 
         // UUID 데이터
         public string uuid { get; private set; }
+
+        // 노래 이미지 BitmapImage 형식
+        public BitmapImage bitmapImage { get; private set; }
 
         // 노래 이름
         public string musicName { get; private set; } = "Null";
@@ -65,6 +69,13 @@ namespace UtaitePlayer.Classes.DataVO
                         musicTag = musicInfoVO.type;
                         musicWriter = musicInfoVO.songWriter;
 
+                        // BitmapImage 변환
+                        try
+                        {
+                            bitmapImage = Utils.URLImageLoadManager.ImageURLToBitmapImage(musicInfoVO.image, musicInfoVO.uuid, 30, 30, Utils.URLImageLoadManager.ImageType.IMAGE_MUSIC);
+                        }
+                        catch (Exception) { }
+
                         // 아티스트 정보 설정
                         RHYANetwork.UtaitePlayer.DataManager.SingerInfoVO singerInfoVO = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources[musicInfoVO.singerUUID];
                         artistName = singerInfoVO.name;
@@ -92,7 +103,25 @@ namespace UtaitePlayer.Classes.DataVO
                         RHYANetwork.UtaitePlayer.DataManager.SingerInfoVO singerInfoVO = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources[uuid];
                         artistName = singerInfoVO.name;
                         if (!singerInfoVO.image.Equals("-"))
+                        {
                             artistImage = singerInfoVO.image;
+
+                            // BitmapImage 변환
+                            try
+                            {
+                                bitmapImage = Utils.URLImageLoadManager.ImageURLToBitmapImage(singerInfoVO.image, singerInfoVO.uuid, 30, 30, Utils.URLImageLoadManager.ImageType.IMAGE_SINGER);
+                            }
+                            catch (Exception) { }
+                        }
+                        else
+                        {
+                            // BitmapImage 변환
+                            try
+                            {
+                                bitmapImage = Utils.URLImageLoadManager.ResourceToBitmapImage("pack://application:,,,/UtaitePlayer;component/Resources/drawable/img_no_data.png", 30, 30);
+                            }
+                            catch (Exception) { }
+                        }
 
                         // 아티스트 구독 확인
                         bool subscribe = false;

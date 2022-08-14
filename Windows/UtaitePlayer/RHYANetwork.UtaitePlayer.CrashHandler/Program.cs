@@ -42,7 +42,9 @@ namespace RHYANetwork.UtaitePlayer.CrashHandler
 
                 // Mutex 확인
                 bool createNew;
-                new Mutex(true, "kro.kr.rhya-network.utaiteplayer.crashhandler", out createNew);
+                // Mutex 작업 진행
+                RHYANetwork.UtaitePlayer.MutexManager.MutexList mutexList = new RHYANetwork.UtaitePlayer.MutexManager.MutexList();
+                new Mutex(true, mutexList.GetMutexName(RHYANetwork.UtaitePlayer.MutexManager.MutexList.ServiceList.SERVICE_CRASH_HANDLER), out createNew);
                 if (!createNew)
                     Environment.Exit(0);
 

@@ -17,6 +17,8 @@ namespace UtaitePlayer.Layout.Page
     /// </summary>
     public partial class MusicPlayCountPage : System.Windows.Controls.Page
     {
+        // 데이터 로딩 감지
+        public bool isLoaded = false;
         // 구독 데이터
         private List<UtaitePlayer.Classes.DataVO.MusicPlayCountDataVO> musicPlayCountDataVOs = new List<Classes.DataVO.MusicPlayCountDataVO>();
 
@@ -38,10 +40,22 @@ namespace UtaitePlayer.Layout.Page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            reload();
+        }
+
+
+
+        /// <summary>
+        /// 데이터 로딩
+        /// </summary>
+        public async void reload()
         {
             try
             {
+                if (isLoaded) return;
+
                 // 데이터 초기화
                 musicPlayCountDataVOs.Clear();
 
@@ -64,8 +78,8 @@ namespace UtaitePlayer.Layout.Page
                 double musicTag5 = 0;
 
                 // 데이터 불러오기
-                await Task.Run(() => 
-                { 
+                await Task.Run(() =>
+                {
                     try
                     {
                         RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
@@ -102,7 +116,7 @@ namespace UtaitePlayer.Layout.Page
                     catch (Exception ex)
                     {
                         // 예외 처리
-                        ExceptionManager.getInstance().showMessageBox(ex.ToString());
+                        ExceptionManager.getInstance().showMessageBox(ex);
                     }
                 });
 
@@ -158,6 +172,8 @@ namespace UtaitePlayer.Layout.Page
 
                 // 전역 Dialog 설정
                 RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
+
+                isLoaded = true;
             }
             catch (Exception ex)
             {

@@ -1,7 +1,6 @@
 ﻿using HandyControl.Tools;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
-using RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor;
 using RHYANetwork.UtaitePlayer.ExceptionHandler;
 using System;
 using System.Collections.Generic;
@@ -59,7 +58,8 @@ namespace UtaitePlayer
             try
             {
                 // Mutex 작업 진행
-                ExceptionManager.getInstance().taskMutex(); 
+                RHYANetwork.UtaitePlayer.MutexManager.MutexList mutexList = new RHYANetwork.UtaitePlayer.MutexManager.MutexList();
+                ExceptionManager.getInstance().taskMutex(mutexList.GetMutexName(RHYANetwork.UtaitePlayer.MutexManager.MutexList.ServiceList.ROOT_SERVICE_UTAITE_PLAYER)); 
 
                 // 라이브러리 선언
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
@@ -105,14 +105,16 @@ namespace UtaitePlayer
                 await Task.Run(() => loadServiceData());
                 // IPC 서버 시작
                 // ===========================================
-                AuthCheckManagerProcessor authCheckManagerProcessor = new AuthCheckManagerProcessor();
-                IpcServerChannel chan = new IpcServerChannel(authCheckManagerProcessor.AUTH_CHECK_MANAGER_IPC_SERVER_CHANNEL_NAME);
+                RHYANetwork.UtaitePlayer.ProcessManager.IPCServerInfoManager iPCServerInfoManager = new RHYANetwork.UtaitePlayer.ProcessManager.IPCServerInfoManager();
+                RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor authCheckManagerProcessor = new RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor();
+
+                IpcServerChannel chan = new IpcServerChannel(iPCServerInfoManager.IPC_SERVER_CHANNEL_NAME);
                 //register channel
                 ChannelServices.RegisterChannel(chan, true);
                 //register remote object
                 RemotingConfiguration.RegisterWellKnownServiceType(
                        typeof(UtaitePlayer.Classes.Utils.IPCRemoteObject),
-                       authCheckManagerProcessor.AUTH_CHECK_MANAGER_IPC_SERVER_NAME,
+                       iPCServerInfoManager.IPC_SERVER_NAME,
                        WellKnownObjectMode.SingleCall);
                 // ===========================================
 
@@ -266,7 +268,7 @@ namespace UtaitePlayer
                                     // AuthCheckManager 종료
                                     try
                                     {
-                                        AuthCheckManagerProcessor authCheckManagerProcessor = new AuthCheckManagerProcessor();
+                                        RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor authCheckManagerProcessor = new RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor();
                                         authCheckManagerProcessor.killProcess();
                                     }
                                     catch (Exception ex) 

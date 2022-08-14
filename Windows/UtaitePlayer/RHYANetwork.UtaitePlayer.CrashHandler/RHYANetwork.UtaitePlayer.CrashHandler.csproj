@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{18E2AD2A-D5DB-471E-B895-B337E62E28D4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>RHYANetwork.UtaitePlayer.CrashHandler</RootNamespace>
     <AssemblyName>RHYANetwork.UtaitePlayer.CrashHandler</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
@@ -47,6 +47,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +73,10 @@
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.ExceptionManager\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj">
       <Project>{0b39211c-827a-4794-8f67-e4a32dc1b5fc}</Project>
       <Name>RHYANetwork.UtaitePlayer.ExceptionHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RHYANetwork.UtaitePlayer.MutexManager\RHYANetwork.UtaitePlayer.MutexManager.csproj">
+      <Project>{0cad5b6c-da78-4cc0-81ac-6b3880d924bf}</Project>
+      <Name>RHYANetwork.UtaitePlayer.MutexManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.Registry\RHYANetwork.UtaitePlayer.Registry.csproj">
       <Project>{a7cf5e7a-a6cd-4fa3-b3f6-3402d7dfcdf6}</Project>

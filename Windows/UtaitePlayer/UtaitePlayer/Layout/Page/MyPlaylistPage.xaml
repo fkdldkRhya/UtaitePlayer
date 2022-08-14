@@ -102,7 +102,7 @@
                 BorderThickness="0" 
                 Resources="{StaticResource HandyControlThemes}"
                 VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                VirtualizingPanel.VirtualizationMode="Standard"
+                VirtualizingPanel.VirtualizationMode="Recycling"
                 VirtualizingPanel.IsVirtualizing="True" 
                 PreviewMouseDoubleClick="myPlaylistListBox_PreviewMouseDoubleClick"
                 Margin="0,10,0,0">
@@ -515,14 +515,14 @@
                         HorizontalContentAlignment="Stretch" 
                         AutoGenerateColumns="False"
                         IsSynchronizedWithCurrentItem="False"
-                        SelectionMode="Extended" 
+                        SelectionMode="Single" 
                         CanUserAddRows="False"
                         Margin="5,20,5,0"
                         Grid.Row="1"
                         FontFamily="/Resources/font/#esamanru Medium"
                         FontSize="12"
                         VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                        VirtualizingPanel.VirtualizationMode="Standard"
+                        VirtualizingPanel.VirtualizationMode="Recycling"
                         VirtualizingPanel.IsVirtualizing="True"
                         Resources="{StaticResource HandyControlThemes}"
                         ScrollViewer.CanContentScroll="True" 
@@ -607,7 +607,7 @@
                                     <DataTemplate>
                                         <Image
                                             Stretch="UniformToFill"
-                                            Source="{Binding musicImage}"
+                                            Source="{Binding bitmapImage}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"
                                             Width="30"/>

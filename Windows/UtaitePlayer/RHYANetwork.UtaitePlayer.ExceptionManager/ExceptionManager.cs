@@ -93,7 +93,7 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
                     // 파일 생성
                     createNoErrorFile();
                     // 프로세스 종료
-                    RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.AuthCheckManagerProcessor authCheckManagerProcessor = new RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.AuthCheckManagerProcessor();
+                    RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor authCheckManagerProcessor = new RHYANetwork.UtaitePlayer.ProcessManager.AuthCheckManagerProcessor();
                     authCheckManagerProcessor.killProcess();
                 }
                 catch (Exception ex)
@@ -126,7 +126,7 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
         /// <returns></returns>
         public string getNoErrorFilePath()
         {
-            return System.IO.Path.Combine(new Registry.RegistryManager().getInstallPath().ToString(), "RHYANetwork.NoError.Exited.rhya");
+            return System.IO.Path.Combine(new Registry.RegistryManager().getInstallPath().ToString(), "RHYANetwork.NoError.Exited");
         }
 
 
@@ -134,14 +134,17 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
         /// <summary>
         /// Mutex 설정 확인
         /// </summary>
-        public void taskMutex()
+        /// <param name="name">Mutex 이름</param>
+        public void taskMutex(string name)
         {
             // Mutex 확인
             bool createNew = false;
-            mutex = new Mutex(true, "kro.kr.rhya-network.utaiteplayer", out createNew);
+
+            mutex = new Mutex(true, name, out createNew);
+
             if (!createNew)
                 // 종료
-                ExceptionManager.getInstance().exitProgram();
+                exitProgram();
         }
     }
 }

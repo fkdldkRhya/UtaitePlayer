@@ -214,7 +214,7 @@ public class PlayInfoFragment extends Fragment {
                             StringBuilder sb = new StringBuilder();
                             sb.append(((ActivityMain) requireActivity()).rhyaCore.getMusicInfoLyricsDirectory(requireActivity()));
                             sb.append(rhyaMusicInfoVO.getUuid());
-                            sb.append(".lyric");
+                            sb.append(".lyrics");
                             File file = new File(sb.toString());
 
                             if (file.exists()) {

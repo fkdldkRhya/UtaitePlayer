@@ -19,6 +19,7 @@ namespace RHYANetwork.UtaitePlayer.Registry
         private readonly string REGISTRY_MY_PLAYLIST_INDEX_KEY_NAME = "myPlaylistIndex";
         private readonly string REGISTRY_ROOT_PROGRAM_PID_KEY_NAME = "mainPID";
         private readonly string REGISTRY_AUTH_CHECK_MANAGER_PID_KEY_NAME = "acmPID";
+        private readonly string REGISTRY_RHYA_MESSAGE_RECEIVER_PID_KEY_NAME = "rmrPID";
         private readonly string REGISTRY_AUDIO_DEVICE_ID_KEY_NAME = "audioDevice";
         private readonly string REGISTRY_START_PROGRAM_KEY_NAME = "UtaitePlayer";
 
@@ -392,6 +393,63 @@ namespace RHYANetwork.UtaitePlayer.Registry
             {
                 RegistryKey registryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(REGISTRY_ROOT_SUB_KEY_NAME).CreateSubKey(REGISTRY_ROOT_KEY_NAME);
                 registryKey.SetValue(REGISTRY_AUTH_CHECK_MANAGER_PID_KEY_NAME, pid);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// RhyaMessageReceiver PID 불러오기
+        /// </summary>
+        /// <returns>AuthCheckManager PID</returns>
+        public int getRhyaMessageReceiverPID()
+        {
+            try
+            {
+                RegistryKey registryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(REGISTRY_ROOT_SUB_KEY_NAME).CreateSubKey(REGISTRY_ROOT_KEY_NAME);
+                return (int)registryKey.GetValue(REGISTRY_RHYA_MESSAGE_RECEIVER_PID_KEY_NAME);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// RhyaMessageReceiver PID 데이터 존재 여부 확인
+        /// </summary>
+        /// <returns>AuthCheckManager PID 존재 여부 확인</returns>
+        public bool isSetRhyaMessageReceiverPID()
+        {
+            try
+            {
+                RegistryKey registryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(REGISTRY_ROOT_SUB_KEY_NAME).CreateSubKey(REGISTRY_ROOT_KEY_NAME);
+                return registryKey.GetValueNames().Contains(REGISTRY_RHYA_MESSAGE_RECEIVER_PID_KEY_NAME);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// RhyaMessageReceiver PID 데이터 설정
+        /// </summary>
+        /// <param name="pid">AuthCheckManager PID</param>
+        public void setRhyaMessageReceiverPID(int pid)
+        {
+            try
+            {
+                RegistryKey registryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(REGISTRY_ROOT_SUB_KEY_NAME).CreateSubKey(REGISTRY_ROOT_KEY_NAME);
+                registryKey.SetValue(REGISTRY_RHYA_MESSAGE_RECEIVER_PID_KEY_NAME, pid);
             }
             catch (Exception ex)
             {

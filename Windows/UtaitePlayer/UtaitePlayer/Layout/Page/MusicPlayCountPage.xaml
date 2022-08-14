@@ -85,6 +85,17 @@
             </lvc:PieChart.DataTooltip>
         </lvc:PieChart>
 
+        <!-- Divider -->
+        <hc:Divider
+            LineStrokeThickness="1"
+            HorizontalContentAlignment="Left"
+            Resources="{StaticResource HandyControlThemes}"
+            VerticalAlignment="Top"
+            FontFamily="/Resources/font/#esamanru Light"
+            FontSize="14"
+            Foreground="{DynamicResource Color_White1}"
+            Margin="10,190,10,0" />
+
         <!-- Table -->
         <DataGrid
             x:Name="musicCountDataGrid"
@@ -92,18 +103,18 @@
             HorizontalContentAlignment="Stretch" 
             AutoGenerateColumns="False"
             IsSynchronizedWithCurrentItem="False"
-            SelectionMode="Extended" 
+            SelectionMode="Single" 
             CanUserAddRows="False"
             FontFamily="/Resources/font/#esamanru Medium"
             FontSize="12"
             VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-            VirtualizingPanel.VirtualizationMode="Standard"
+            VirtualizingPanel.VirtualizationMode="Recycling"
             VirtualizingPanel.IsVirtualizing="True"
             Resources="{StaticResource HandyControlThemes}"
             ScrollViewer.CanContentScroll="True" 
             HorizontalScrollBarVisibility="Disabled" 
             Background="{x:Null}"
-            Margin="0,190,0,0">
+            Margin="0,200,0,0">
 
             <DataGrid.ContextMenu>
                 <ContextMenu>
@@ -160,7 +171,7 @@
                         <DataTemplate>
                             <Image
                                 Stretch="UniformToFill"
-                                Source="{Binding musicImage}"
+                                Source="{Binding bitmapImage}"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Width="30"/>

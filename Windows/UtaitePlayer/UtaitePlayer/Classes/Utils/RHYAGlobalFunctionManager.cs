@@ -24,6 +24,7 @@ namespace UtaitePlayer.Classes.Utils
         public static readonly string FUNCTION_KEY_SHOW_EDIT_PLAYLIST_DRAWER = "_FUNCTION_KEY_SHOW_EDIT_PLAYLIST_DRAWER_"; // 플레이리스트 편집 DRAWER 보여주기
         public static readonly string FUNCTION_KEY_SHOW_CREATE_PLAYLIST_DRAWER = "_FUNCTION_KEY_SHOW_CREATE_PLAYLIST_DRAWER_"; // 플레이리스트 생성 DRAWER 보여주기
         public static readonly string FUNCTION_KEY_SHOW_ADD_MUSIC_TO_PLAYLIST_DRAWER = "_FUNCTION_KEY_SHOW_ADD_MUSIC_TO_PLAYLIST_DRAWER_"; // 플레이리스트에 노래 추가 DRAWER 보여주기
+        public static readonly string FUNCTION_KEY_SHOW_IMAGE_VIEWER_DRAWER = "_FUNCTION_KEY_SHOW_IMAGE_VIEWER_DRAWER_"; // 이미지 뷰여 DRAWER 보여주기
         public static readonly string FUNCTION_KEY_MUSIC_ADD_PLAYLIST = "_FUNCTION_KEY_MUSIC_ADD_PLAYLIST_"; // 현재 플레이리스트에 노래 추가하기
         public static readonly string FUNCTION_KEY_MUSIC_ADD_PLAYLIST_FOR_ARRAY = "_FUNCTION_KEY_MUSIC_ADD_PLAYLIST_FOR_ARRAY_"; // 현재 플레이리스트에 노래 추가하기 (배열)
         public static readonly string FUNCTION_KEY_PLAY_MUSIC = "_FUNCTION_KEY_PLAY_MUSIC_"; // 노래 재생하기
@@ -34,6 +35,7 @@ namespace UtaitePlayer.Classes.Utils
         public static readonly string FUNCTION_KEY_MAIN_WINDOW_TOP_MOST_SETTING = "_FUNCTION_KEY_MAIN_WINDOW_TOP_MOST_SETTING_"; // 메인 화면 Top most 설정
         public static readonly string FUNCTION_KEY_SHOW_DIALOG_YES_OR_NO = "_FUNCTION_KEY_SHOW_DIALOG_YES_OR_NO_"; // Dialog 보여주기 - Yes or No
         public static readonly string FUNCTION_KEY_HIDE_DIALOG_YES_OR_NO = "_FUNCTION_KEY_HIDE_DIALOG_YES_OR_NO_"; // Dialog 숨기기 - Yes or No
+        public static readonly string FUNCTION_KEY_RELOAD_BUTTON_STATE_SETTING = "_FUNCTION_KEY_RELOAD_BUTTON_STATE_SETTING_"; // 새로고침 버튼 활성화, 비활성화 여부
 
 
 

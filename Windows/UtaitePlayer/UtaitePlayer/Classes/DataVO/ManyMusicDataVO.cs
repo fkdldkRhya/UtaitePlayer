@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using UtaitePlayer.Classes.RNException;
 
 namespace UtaitePlayer.Classes.DataVO
@@ -13,8 +14,12 @@ namespace UtaitePlayer.Classes.DataVO
         public string uuid { get; private set; } = "Null";
         // 아티스트 이름
         public string artistName { get; private set; } = "Null";
+        // 아티스트 이미지 BitmapImage 형식
+        public BitmapImage bitmapImage { get; private set; }
         // 아티스트 이미지
-        public string artistImage { get; private set; } = "/UtaitePlayer;component/Resources/drawable/img_no_data.png";
+        public string artistImage { get; private set; }
+        // 아티스트 노래 개수
+        public int musicCountForInt { get; private set; } = -1;
         // 아티스트 노래 개수
         public string musicCount { get; private set; } = "0개";
         // 아티스트 노래 개수 순위
@@ -41,8 +46,27 @@ namespace UtaitePlayer.Classes.DataVO
                     RHYANetwork.UtaitePlayer.DataManager.SingerInfoVO singerInfoVO = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources[uuid];
                     artistName = singerInfoVO.name;
                     if (!singerInfoVO.image.Equals("-"))
+                    {
                         artistImage = singerInfoVO.image;
 
+                        // BitmapImage 변환
+                        try
+                        {
+                            bitmapImage = Utils.URLImageLoadManager.ImageURLToBitmapImage(singerInfoVO.image, singerInfoVO.uuid, 30, 30, Utils.URLImageLoadManager.ImageType.IMAGE_SINGER);
+                        }
+                        catch (Exception) { }
+                    }
+                    else
+                    {
+                        // BitmapImage 변환
+                        try
+                        {
+                            bitmapImage = Utils.URLImageLoadManager.ResourceToBitmapImage("pack://application:,,,/UtaitePlayer;component/Resources/drawable/img_no_data.png", 30, 30);
+                        }
+                        catch (Exception) { }
+                    }
+
+                    musicCountForInt = count;
                     musicCount = string.Format("{0}개", count);
                 }
                 else

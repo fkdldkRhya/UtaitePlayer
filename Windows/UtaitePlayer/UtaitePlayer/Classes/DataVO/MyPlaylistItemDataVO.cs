@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using UtaitePlayer.Classes.RNException;
 
 namespace UtaitePlayer.Classes.DataVO
@@ -17,6 +18,9 @@ namespace UtaitePlayer.Classes.DataVO
         public string uuid { get; private set; }
         // 노래 이름
         public string musicName { get; private set; } = "Null";
+        // 노래 이미지 BitmapImage 형식
+        public BitmapImage bitmapImage { get; private set; }
+
         // 노래 이미지
         public string musicImage { get; private set; } = "/UtaitePlayer;component/Resources/drawable/img_no_data.png";
         // 노래 태그
@@ -48,6 +52,13 @@ namespace UtaitePlayer.Classes.DataVO
                     musicImage = musicInfoVO.image;
                     musicTag = musicInfoVO.type;
                     musicWriter = musicInfoVO.songWriter;
+
+                    // BitmapImage 변환
+                    try
+                    {
+                        bitmapImage = Utils.URLImageLoadManager.ImageURLToBitmapImage(musicInfoVO.image, musicInfoVO.uuid, 30, 30, Utils.URLImageLoadManager.ImageType.IMAGE_MUSIC);
+                    }
+                    catch (Exception) { }
 
                     // 아티스트 정보 설정
                     RHYANetwork.UtaitePlayer.DataManager.SingerInfoVO singerInfoVO = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources[musicInfoVO.singerUUID];

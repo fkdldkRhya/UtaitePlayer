@@ -40,12 +40,24 @@
         <ContextMenu 
             x:Key="MyInfoContextMenu" 
             Resources="{StaticResource HandyControlThemes}">
-            
+
             <MenuItem
                 Header="플레이리스트에 추가"
                 FontFamily="/Resources/font/#esamanru Light"
                 FontSize="12"
                 Click="AddMyPlaylist_MenuitemRootPanel_Click"/>
+
+            <MenuItem
+                Header="이미지 보기"
+                FontFamily="/Resources/font/#esamanru Light"
+                FontSize="12"
+                Click="ViewMusicImage_MenuitemRootPanel_Click"/>
+
+            <MenuItem
+                Header="음원 파일 다운로드"
+                FontFamily="/Resources/font/#esamanru Light"
+                FontSize="12"
+                Click="MP3FileDownload_MenuitemRootPanel_Click"/>
         </ContextMenu>
     </Window.Resources>
 
@@ -425,7 +437,7 @@
             Dock="Left"
             ShowMode="Cover"
             Closed="Drawer_Closed">
-            
+
             <Border
                 Background="{DynamicResource Color_Gray1}" 
                 Width="310">
@@ -629,7 +641,7 @@
 
                                         <Image
                                             Stretch="UniformToFill"
-                                            Source="{Binding image}"
+                                            Source="{Binding image, IsAsync=True}"
                                             VerticalAlignment="Center" 
                                             HorizontalAlignment="Center" 
                                             Margin="5"/>
@@ -914,7 +926,7 @@
 
                                         <Image
                                             Stretch="UniformToFill"
-                                            Source="{Binding image}"
+                                            Source="{Binding image, IsAsync=True}"
                                             VerticalAlignment="Center" 
                                             HorizontalAlignment="Center" 
                                             Margin="5"/>
@@ -1248,6 +1260,114 @@
             </Border>
         </hc:Drawer>
 
+        <!-- Drawer / ShowImage (이미지 뷰어) -->
+        <hc:Drawer 
+            Name="DrawerBottomForShowImage" 
+            Dock="Bottom"
+            ShowMode="Cover"
+            Closed="Drawer_Closed">
+
+            <Border 
+                Background="{DynamicResource Color_Gray1}" 
+                Width="600"
+                Height="600"
+                CornerRadius="20"
+                Margin="0,0,0,20">
+
+                <Grid>
+                    <!-- Drawer 닫기 버튼 -->
+                    <Button
+                        Height="16"
+                        Width="16"
+                        Command="hc:ControlCommands.Close"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top" 
+                        Margin="0,15,24,0">
+
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+                                <Setter Property="Foreground" Value="{DynamicResource Color_White1}" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <!-- Button - Mouse color event Triggers -->
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="0.7" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter Property="Opacity" Value="0.5" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Resources>
+
+                        <Path
+                            Stretch="Fill"
+			                Width="15"
+			                Height="15"
+			                Data="M 18,11 27,20 M 18,20 27,11"
+			                Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+			                StrokeThickness="2" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" />
+                    </Button>
+
+                    <TextBlock
+                        Text="Image Viewer"
+                        VerticalAlignment="Top"
+                        TextWrapping="Wrap"
+                        FontFamily="/Resources/font/#esamanru Medium"
+                        FontSize="14"
+                        Foreground="{DynamicResource Color_White1}"
+                        Margin="20,14,15,0" 
+                        HorizontalAlignment="Left" />
+
+                    <!-- Loading ProgressBar -->
+                    <hc:CircleProgressBar
+                        x:Name="x_DrawerBottomForImageViewer_LoadingProgressBar"
+                        Resources="{StaticResource HandyControlThemes}"
+                        IsIndeterminate="True" 
+                        Visibility="Collapsed"
+                        Width="60"
+                        Height="60"/>
+
+                    <Grid Margin="20,50,20,15">
+                        <cefSharp:ChromiumWebBrowser
+                            x:Name="x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser" 
+                            Margin="0,0,0,15"/>
+
+                        <TextBlock
+                            VerticalAlignment="Bottom"
+                            TextWrapping="NoWrap"
+                            TextTrimming="CharacterEllipsis"
+                            FontFamily="/Resources/font/#esamanru Light"
+                            FontSize="12"
+                            Foreground="{DynamicResource Color_White3}"
+                            Margin="0" 
+                            HorizontalAlignment="Left">
+                        
+                            <Hyperlink 
+                                Foreground="{DynamicResource Color_Blue1}"
+                                Click="x_DrawerBottomForImageViewer_ImageDownloadHyperlink_Click">>
+                                이미지 다운로드
+                            </Hyperlink>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Border>
+        </hc:Drawer>
+
         <!-- Window panel -->
         <DockPanel LastChildFill="False"
                    Grid.ColumnSpan="2">
@@ -1414,6 +1534,31 @@
                         </hc:SideMenuItem.Icon>
                     </hc:SideMenuItem>
 
+                    <hc:SideMenuItem Header="애니메이션">
+                        <hc:SideMenuItem.Icon>
+                            <Path
+			                    Width="12"
+			                    Height="16"
+			                    Data="M17.2,8.6L4.8,1.4C3.7,0.8,2.4,1.6,2.4,2.8v14.3c0,1.2,1.3,2,2.4,1.4l12.4-7.2C18.2,10.7,18.2,9.2,17.2,8.6z"
+                                Fill="White"
+                                Stretch="Fill"/>
+                        </hc:SideMenuItem.Icon>
+
+                        <hc:SideMenuItem Header="      OHLI 방영 정보"/>
+                        <hc:SideMenuItem Header="      애니 업로드 정보"/>
+                    </hc:SideMenuItem>
+
+                    <hc:SideMenuItem Header="Pixiv Top 50">
+                        <hc:SideMenuItem.Icon>
+                            <Image
+                                Source="{svgc:SvgImage /UtaitePlayer;component/Resources/drawable/ic_pixiv.svg}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Width="14"
+                                Height="14" />
+                        </hc:SideMenuItem.Icon>
+                    </hc:SideMenuItem>
+
                     <hc:SideMenuItem Header="노래 신청">
                         <hc:SideMenuItem.Icon>
                             <Image Source="/Resources/drawable/ic_music_application.png" Width="14" Height="14"/>
@@ -1491,11 +1636,33 @@
                             </ContextMenu>
                         </hc:TextBox.ContextMenu>
                     </hc:TextBox>
+
+                    <Button
+                        x:Name="PageReloadButton"
+                        Resources="{StaticResource HandyControlThemes}"
+                        Width="80"
+                        Height="30"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top" 
+                        Margin="0,14,10,0"
+                        Click="PageReloadButton_Click">
+
+                        <StackPanel
+                            Orientation="Horizontal">
+
+                            <TextBlock
+                                VerticalAlignment="Bottom"
+                                FontFamily="/Resources/font/#esamanru Light"
+                                FontSize="10"
+                                Foreground="{DynamicResource Color_White1}"
+                                Text="새로고침" />
+                        </StackPanel>
+                    </Button>
                 </Grid>
 
                 <!-- Sub Menu Root Panel -->
                 <Grid Grid.Row="1">
-                    <Frame 
+                    <Frame
                         Name="mainFrame"
                         NavigationUIVisibility="Hidden" 
                         Navigated="mainFrame_Navigated"/>
@@ -2107,7 +2274,7 @@
                             </MenuItem>
                         </ContextMenu>
                     </ListView.ContextMenu>
-                    
+
                     <!-- ListView Resources -->
                     <ListView.Resources>
                         <ResourceDictionary>
@@ -2375,6 +2542,15 @@
         <!--===========================================-->
         <!-- Block Rect -->
         <Rectangle
+            x:Name="clickBlockPanelForDownloadManagerDialog"
+            Visibility="Collapsed"
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="2"
+            Fill="{StaticResource Color_Black1}"
+            Opacity="0.3"
+            Margin="0,35,0,0"/>
+        <!-- Block Rect -->
+        <Rectangle
             x:Name="clickBlockPanelForYesOrNoDialog"
             Visibility="Collapsed"
             Grid.ColumnSpan="2" 
@@ -2400,6 +2576,91 @@
             Fill="{StaticResource Color_Black1}"
             Opacity="0.3"
             Margin="0,35,0,0"/>
+        <!-- Download Manager Dialog-->
+        <Grid
+            x:Name="x_DownloadManagerDialog"
+            Visibility="Collapsed"
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="2"
+            Width="400"
+            Height="160" 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+
+            <Grid Background="{StaticResource Color_Gray1}">
+                <Grid Background="{StaticResource Color_Gray1}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <DockPanel>
+                        <DockPanel.Resources>
+                            <!-- Label style -->
+                            <Style TargetType="{x:Type Label}">
+                                <Setter Property="Margin" Value="5,0,0,0" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="DockPanel.Dock" Value="Left" />
+                                <Setter Property="FontFamily" Value="/Resources/font/#esamanru Medium" />
+                                <Setter Property="Width" Value="Auto" />
+                                <Setter Property="Foreground" Value="{DynamicResource Color_White1}" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Background" Value="Transparent" />
+                            </Style>
+                        </DockPanel.Resources>
+
+                        <DockPanel.Background>
+                            <StaticResource ResourceKey="Color_Gray3"/>
+                        </DockPanel.Background>
+
+                        <!-- App title -->
+                        <Label
+                            Content="File Download Manager"
+                            FontSize="11"
+                            HorizontalAlignment="Left"/>
+                    </DockPanel>
+
+                    <Grid Grid.Row="1">
+                        <ProgressBar
+                            x:Name="x_DownloadManagerDialog_ProgressBar"
+                            Resources="{StaticResource HandyControlThemes}"
+                            Height="15"
+                            Margin="25,0,25,50"
+                            VerticalAlignment="Bottom"/>
+
+                        <TextBlock
+                            x:Name="x_DownloadManagerDialog_Title"
+                            VerticalAlignment="Top"
+                            TextWrapping="NoWrap"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="14"
+                            TextTrimming="CharacterEllipsis"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="25,25,25,0" />
+
+                        <TextBlock
+                            x:Name="x_DownloadManagerDialog_Message"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Light"
+                            FontSize="11"
+                            TextTrimming="CharacterEllipsis"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="25,45,25,0" />
+
+                        <TextBlock
+                            x:Name="x_DownloadManagerDialog_DownloadSize"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Light"
+                            FontSize="8"
+                            TextTrimming="CharacterEllipsis"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="25,87,25,0" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
         <!-- YesOrNo Dialog-->
         <Grid
             x:Name="x_YesOrNoDialog"
@@ -2601,7 +2862,7 @@
 
                     <!-- App title -->
                     <Label 
-                        Content="사용자 인증"
+                        Content="사용자 인증 실패"
                         FontSize="11"
                         HorizontalAlignment="Left"/>
                 </DockPanel>
@@ -2649,7 +2910,7 @@
                         Width="100"/>
 
                     <TextBlock
-                        Text="경고! 해당 사용자의 계정이 로그아웃되었거나 우타이테 플레이어에 대한 이용 권한이 없습니다. 우타이테 플레이어 서비스를 이용하기 위해서는 이용권이 필요합니다. &#xA;&#xA; 만약 우타이테 플레이어 이용권을 이미 소유하고 있는 상태에서 해당 메시지가 사라지지 않는다면 관리자께 문의하여 주십시오. 아래 버튼을 통해 이용권을 부여 받았을 때 이 메시지가 바로 사라지지 않을 수 있습니다. 프로그램을 재시작하거나 최대 45초 정도 대기하면 해당 메시지는 사라집니다."
+                        Text="경고! 해당 사용자의 계정이 로그아웃되었거나 우타이테 플레이어에 대한 이용 권한이 없습니다. 우타이테 플레이어 서비스를 이용하기 위해서는 이용권이 필요합니다. &#xA;&#xA; 만약 우타이테 플레이어 이용권을 이미 소유하고 있는 상태에서 해당 메시지가 사라지지 않는다면 관리자께 문의하여 주십시오. 아래 버튼을 통해 이용권을 부여 받았을 때 이 메시지가 바로 사라지지 않을 수 있습니다. 프로그램을 재시작하거나 최대 10초 정도 대기하면 해당 메시지는 사라집니다."
                         VerticalAlignment="Top"
                         TextWrapping="Wrap"
                         FontFamily="/Resources/font/#esamanru Light"

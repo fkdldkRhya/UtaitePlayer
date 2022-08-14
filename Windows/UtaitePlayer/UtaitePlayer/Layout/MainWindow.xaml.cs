@@ -12,6 +12,7 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,6 +21,7 @@ using System.Windows.Media.Imaging;
 using UtaitePlayer.Classes.Core;
 using UtaitePlayer.Classes.DataVO;
 using UtaitePlayer.Classes.Utils;
+using System.Text;
 
 namespace UtaitePlayer.Layout
 {
@@ -68,7 +70,10 @@ namespace UtaitePlayer.Layout
         private System.Windows.Controls.Page utaitePlayerHomePage = null; // 메인 화면
         private System.Windows.Controls.Page subscribeManagePage = null; // 구독 관리 화면
         private System.Windows.Controls.Page musicPlayCountPage = null; // 노래 재생 횟수 화면
+        private System.Windows.Controls.Page animAirInfoPage = null; // 애니 방영 정보 화면
+        private System.Windows.Controls.Page animUploadInfoPage = null; // 애니 업로드 정보 화면
         private System.Windows.Controls.Page myPlaylistPage = null; // 나의 플레이리스트 화면
+        private System.Windows.Controls.Page pixivTopImagePage = null; // 픽시브 이미지 하면
         private System.Windows.Controls.Page songAddPage = null; // 노래 신청 화면
         private System.Windows.Controls.Page announcementPage = null; // 공지사항 화면
         private System.Windows.Controls.Page settingPage = null; // 설정 화면
@@ -104,7 +109,6 @@ namespace UtaitePlayer.Layout
 
 
 
-
         /// <summary>
         /// 생성자
         /// </summary>
@@ -119,6 +123,7 @@ namespace UtaitePlayer.Layout
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_EDIT_PLAYLIST_DRAWER, x_DrawerRightForEditMyPlaylist);
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_CREATE_PLAYLIST_DRAWER, x_DrawerRightForCreateMyPlaylist);
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_ADD_MUSIC_TO_PLAYLIST_DRAWER, showAddMusicToMyPlaylistDrawer);
+            RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_IMAGE_VIEWER_DRAWER, showImageViewerDrawer);
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS, showGrowlMessageForSuccess);
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_MUSIC_ADD_PLAYLIST, musicAddPlaylist);
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_MUSIC_ADD_PLAYLIST_FOR_ARRAY, musicAddPlaylistForArray);
@@ -129,6 +134,7 @@ namespace UtaitePlayer.Layout
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_MAIN_WINDOW_TOP_MOST_SETTING, thisWindowTopmostSetting);
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_DIALOG_YES_OR_NO, x_YesOrNoDailogSettingForShow);
             RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_DIALOG_YES_OR_NO, x_YesOrNoDailogSettingForHide);
+            RHYAGlobalFunctionManager.Register(RHYAGlobalFunctionManager.FUNCTION_KEY_RELOAD_BUTTON_STATE_SETTING, reloadButtonStateSetting);
 
             // 이벤트 설정
             ((INotifyCollectionChanged) currentPlaylist.Items).CollectionChanged += CurrentPlayListView_CollectionChanged;
@@ -147,7 +153,7 @@ namespace UtaitePlayer.Layout
             {
                 // 초기화 UI 설정
                 showLoadingDialog("Initializing...");
-
+                
                 // 시작 위치 설정
                 this.Left = (SystemParameters.WorkArea.Width) / 2 + SystemParameters.WorkArea.Left - Width / 2;
                 this.Top = (SystemParameters.WorkArea.Height) / 2 + SystemParameters.WorkArea.Left - Height / 2;
@@ -177,6 +183,8 @@ namespace UtaitePlayer.Layout
                         thisWindowTopmostSetting(settingData.gs_window_top_most);
                         // isBackground
                         if (settingData.gs_start_mod == 1) Hide();
+                        // isEnableReloadBtn
+                        RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_RELOAD_BUTTON_STATE_SETTING, settingData.gs_enable_reload_btn ? Visibility.Visible : Visibility.Collapsed);
                     }
                 }
                 catch (Exception ex)
@@ -672,9 +680,35 @@ namespace UtaitePlayer.Layout
                 subscribeManagePage = new Page.SubscribeManagePage();
                 musicPlayCountPage = new Page.MusicPlayCountPage();
                 myPlaylistPage = new Page.MyPlaylistPage();
+                animAirInfoPage = new Page.AnimAirInfoPage();
+                animUploadInfoPage = new Page.AnimUploadInfoPage();
+                pixivTopImagePage = new Page.PixivTopImagePage();
                 songAddPage = new Page.SongAddPage();
                 announcementPage = new Page.AnnouncementPage();
                 settingPage = new Page.PlayerSettingPage();
+
+                // ChromiumWebBrowser 설정 (ImageViewer)
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.MenuHandler = new CefSharpContextMenu();
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.LifeSpanHandler = new MyCustomLifeSpanHandler();
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomLevelIncrement = 0.5;
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.PreviewMouseWheel += CefBrowserForImageViewer_PreviewMouseWheel;
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.KeyUp += CefBrowserForImageViewer_KeyUp;
+                RHYANetwork.UtaitePlayer.CryptoModule.AESCrypto aesCrypto = new RHYANetwork.UtaitePlayer.CryptoModule.AESCrypto();
+                RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager1 = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
+
+                // 기타 작업
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        // 이미지 파일 초기화
+                        URLImageLoadManager.ClearAnimationDirectory();
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionManager.getInstance().showMessageBox(ex);
+                    }
+                });
 
                 // 초기화 UI 설정
                 hideLoadingDialog();
@@ -1564,7 +1598,7 @@ namespace UtaitePlayer.Layout
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SideMenu_SelectionChanged(object sender, HandyControl.Data.FunctionEventArgs<object> e)
+        private async void SideMenu_SelectionChanged(object sender, HandyControl.Data.FunctionEventArgs<object> e)
         {
             try
             {
@@ -1577,11 +1611,35 @@ namespace UtaitePlayer.Layout
 
                     if (!inputPage.Equals(nowPage))
                     {
+                        // 새로고침 버튼 활성화 여부
+                        SettingManager.SettingData settingData = null;
+                        bool isEnable = false;
+                        await Task.Run(() =>
+                        {
+                            try
+                            {
+                                SettingManager settingManager = new SettingManager();
+
+                                settingData = settingManager.readSettingData();
+                            }
+                            catch (Exception ex)
+                            {
+                                // 예외 처리
+                                ExceptionManager.getInstance().showMessageBox(ex);
+                            }
+                        });
+                        isEnable = settingData.gs_enable_reload_btn;
+
                         switch (inputPage)
                         {
                             // 우타이테 플레이어 홈 화면
                             case "홈":
                                 {
+                                    if (isEnable)
+                                        PageReloadButton.Visibility = Visibility.Visible;
+                                    else
+                                        ((Page.UtaitePlayerHomePage)utaitePlayerHomePage).isLoaded = false;
+
                                     nowPage = "홈";
                                     mainFrame.NavigationService.Navigate(utaitePlayerHomePage);
                                     break;
@@ -1590,6 +1648,11 @@ namespace UtaitePlayer.Layout
                             // 우타이테 플레이어 구독 관리 화면
                             case "구독 관리":
                                 {
+                                    if (isEnable)
+                                        PageReloadButton.Visibility = Visibility.Visible;
+                                    else
+                                        ((Page.SubscribeManagePage)subscribeManagePage).isLoaded = false;
+
                                     nowPage = "구독 관리";
                                     mainFrame.NavigationService.Navigate(subscribeManagePage);
                                     break;
@@ -1598,22 +1661,71 @@ namespace UtaitePlayer.Layout
                             // 우타이테 플레이어 노래 재생 횟수 화면
                             case "노래 재생 횟수":
                                 {
+                                    if (isEnable)
+                                        PageReloadButton.Visibility = Visibility.Visible;
+                                    else
+                                        ((Page.MusicPlayCountPage)musicPlayCountPage).isLoaded = false;
+
                                     nowPage = "노래 재생 횟수";
                                     mainFrame.NavigationService.Navigate(musicPlayCountPage);
+                                    break;
+                                }
+
+                            // 우타이테 플레이어 애니메이션 방영 정보 화면
+                            case "OHLI 방영 정보":
+                                {
+                                    if (isEnable)
+                                        PageReloadButton.Visibility = Visibility.Visible;
+                                    else
+                                        ((Page.AnimAirInfoPage)animAirInfoPage).isLoaded = false;
+
+                                    nowPage = "OHLI 방영 정보";
+                                    ((Page.AnimAirInfoPage)animAirInfoPage).isInitSuccess = false;
+                                    mainFrame.NavigationService.Navigate(animAirInfoPage);
+                                    break;
+                                }
+
+                            // 우타이테 플레이어 애니메이션 업로드 정보
+                            case "애니 업로드 정보":
+                                {
+                                    if (isEnable)
+                                        PageReloadButton.Visibility = Visibility.Visible;
+                                    else
+                                        ((Page.AnimUploadInfoPage)animUploadInfoPage).isLoaded = false;
+
+                                    nowPage = "애니 업로드 정보";
+                                    mainFrame.NavigationService.Navigate(animUploadInfoPage);
                                     break;
                                 }
 
                             // 우타이테 플레이어 플레이리스트 화면
                             case "플레이리스트":
                                 {
+                                    if (isEnable)
+                                        PageReloadButton.Visibility = Visibility.Visible;
+                                    else
+                                        ((Page.MyPlaylistPage)myPlaylistPage).isLoaded = false;
+
                                     nowPage = "플레이리스트";
                                     mainFrame.NavigationService.Navigate(myPlaylistPage);
+                                    break;
+                                }
+
+                            // Pixiv Top 50 이미지 화면
+                            case "Pixiv Top 50":
+                                {
+                                    PageReloadButton.Visibility = Visibility.Collapsed;
+
+                                    nowPage = "Pixiv Top 50";
+                                    mainFrame.NavigationService.Navigate(pixivTopImagePage);
                                     break;
                                 }
 
                             // 우타이테 플레이어 노래 신청 화면
                             case "노래 신청":
                                 {
+                                    PageReloadButton.Visibility = Visibility.Collapsed;
+
                                     nowPage = "노래 신청";
                                     mainFrame.NavigationService.Navigate(songAddPage);
                                     break;
@@ -1622,6 +1734,8 @@ namespace UtaitePlayer.Layout
                             // 우타이테 플레이어 공지사항 화면
                             case "공지사항":
                                 {
+                                    PageReloadButton.Visibility = Visibility.Collapsed;
+
                                     nowPage = "공지사항";
                                     mainFrame.NavigationService.Navigate(announcementPage);
                                     break;
@@ -1630,6 +1744,8 @@ namespace UtaitePlayer.Layout
                             // 우타이테 플레이어 설정 화면
                             case "설정":
                                 {
+                                    PageReloadButton.Visibility = Visibility.Collapsed;
+
                                     nowPage = "설정";
                                     mainFrame.NavigationService.Navigate(settingPage);
                                     break;
@@ -1664,8 +1780,8 @@ namespace UtaitePlayer.Layout
                     // 길이 확인
                     if (!(inputText.Replace(" ", "").Length <= 0))
                     {
-                        mainSideMenuNowSelectDisable();
-   
+                        PageReloadButton.Visibility = Visibility.Collapsed;
+
                         nowPage = "검색";
                         mainFrame.NavigationService.Navigate(searchResultPage);
                         ((Page.SearchResultPage)searchResultPage).searchForText(inputText);
@@ -1968,28 +2084,6 @@ namespace UtaitePlayer.Layout
             catch (Exception ex)
             {
                 ExceptionManager.getInstance().showMessageBox(ex);
-            }
-        }
-
-
-
-        /// <summary>
-        /// Main SideMenu 현재 선택된 아이템 선택 비활성화
-        /// </summary>
-        private void mainSideMenuNowSelectDisable()
-        {
-            try
-            {
-                ((HandyControl.Controls.SideMenuItem)mainSideMenu.Items[0]).IsSelected = false;
-                ((HandyControl.Controls.SideMenuItem)mainSideMenu.Items[1]).IsSelected = false;
-                ((HandyControl.Controls.SideMenuItem)mainSideMenu.Items[2]).IsSelected = false;
-                ((HandyControl.Controls.SideMenuItem)mainSideMenu.Items[3]).IsSelected = false;
-                ((HandyControl.Controls.SideMenuItem)mainSideMenu.Items[4]).IsSelected = false;
-                ((HandyControl.Controls.SideMenuItem)mainSideMenu.Items[5]).IsSelected = false;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
         }
 
@@ -2352,8 +2446,6 @@ namespace UtaitePlayer.Layout
         {
             try
             {
-                mainSideMenuNowSelectDisable();
-
                 nowPage = "검색";
                 mainFrame.NavigationService.Navigate(searchResultPage);
                 ((Page.SearchResultPage)searchResultPage).searchForText((string)text);
@@ -2773,6 +2865,7 @@ namespace UtaitePlayer.Layout
             {
                 clickBlockPanelForDrawer.Visibility = Visibility.Collapsed;
 
+                DrawerBottomForShowImage.IsOpen = false;
                 DrawerRightForMusicInfo.IsOpen = false;
                 DrawerBottomForAddMusicPlaylist.IsOpen = false;
                 DrawerRightForCreateMyPlaylist.IsOpen = false;
@@ -2965,6 +3058,33 @@ namespace UtaitePlayer.Layout
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        
+
+        /// <summary>
+        /// 이미지 뷰어 Drawer 보여주기
+        /// </summary>
+        /// <param name="url"></param>
+        private async void showImageViewerDrawer(object url)
+        {
+            try
+            {
+                clickBlockPanelForDrawer.Visibility = Visibility.Visible;
+                DrawerBottomForShowImage.IsOpen = true;
+
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.Visibility = Visibility.Hidden;
+                x_DrawerBottomForImageViewer_LoadingProgressBar.Visibility = Visibility.Visible;
+
+                await x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.LoadUrlAsync(url.ToString());
+
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.Visibility = Visibility.Visible;
+                x_DrawerBottomForImageViewer_LoadingProgressBar.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
             }
         }
 
@@ -3219,6 +3339,320 @@ namespace UtaitePlayer.Layout
             {
                 // 전역 Dialog 설정
                 RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
+            }
+        }
+
+
+
+        /// <summary>
+        /// CefSharp Browser For ImageViewer Key up event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CefBrowserForImageViewer_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Keyboard.Modifiers != ModifierKeys.Control)
+                    return;
+
+                if (e.Key == Key.Add)
+                    x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomInCommand.Execute(null);
+                if (e.Key == Key.Subtract)
+                    x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomOutCommand.Execute(null);
+                if (e.Key == Key.NumPad0)
+                    x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomLevel = 0;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// CefSharp Browser For ImageViewer mouse wheel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CefBrowserForImageViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            try
+            {
+                if (Keyboard.Modifiers != ModifierKeys.Control)
+                    return;
+
+                if (e.Delta > 0)
+                    x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomInCommand.Execute(null);
+                else
+                    x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomOutCommand.Execute(null);
+                e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 이미지 뷰여 Drawer 이미지 다운로드 버튼 클릭 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void x_DrawerBottomForImageViewer_ImageDownloadHyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Windows.Forms.FolderBrowserDialog fbd = new System.Windows.Forms.FolderBrowserDialog();
+                RHYANetwork.UtaitePlayer.CryptoModule.MD5Crypto MD5Crypto = new RHYANetwork.UtaitePlayer.CryptoModule.MD5Crypto();
+
+                if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string path = fbd.SelectedPath;
+                    string url = x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.Address;
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.Append(MD5Crypto.getMD5Hash(url));
+                    stringBuilder.Append(".png");
+                    string save = Path.Combine(path, stringBuilder.ToString());
+
+                    try
+                    {
+                        using (WebClient client = new WebClient())
+                            await client.DownloadFileTaskAsync(new Uri(url), save);
+
+                        // 메시지 출력
+                        RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS,
+                            new GrowlInfo()
+                            {
+                                Message = "이미지 다운로드를 성공적으로 완료하였습니다."
+                            });
+                    }
+                    catch (Exception ex)
+                    {
+                        // 메시지 출력
+                        RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS,
+                            new GrowlInfo()
+                            {
+                                Message = string.Format("이미지 다운로드 중 오류가 발생하였습니다. 다시 시도하여 주십시오. (%s)", ex.Message)
+                            });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 노래 정보 화면에서 이미지 보기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ViewMusicImage_MenuitemRootPanel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (PlayerService.getInstance().getMusicInfo() != null)
+                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_IMAGE_VIEWER_DRAWER, PlayerService.getInstance().getMusicInfo().image);
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 노래 정보 화면에서 MP3 파일 다운로드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MP3FileDownload_MenuitemRootPanel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (PlayerService.getInstance().getMusicInfo() != null)
+                {
+                    RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
+                    RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
+                    string url = utaitePlayerClient.getFullServerUrl(8, new Dictionary<string, string>() { { "uuid", PlayerService.getInstance().getMusicInfo().uuid }, { "auth", registryManager.getAuthToken().ToString() } });
+
+                    System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog();
+
+                    sfd.Filter = "Music files (*.mp3)|*.mp3";
+                    sfd.FilterIndex = 0;
+                    sfd.RestoreDirectory = true;
+                    sfd.FileName = PlayerService.getInstance().getMusicInfo().name;
+
+                    if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        fileDownloadManager(url, sfd.FileName);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+       
+        /// <summary>
+        /// 파일 다운로드 관리자 실행
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="fileName"></param>
+        private async void fileDownloadManager(string url, string save)
+        {
+            try
+            {
+                x_DownloadManagerDialog.Visibility = Visibility.Visible;
+                clickBlockPanelForDownloadManagerDialog.Visibility = Visibility.Visible;
+                x_DownloadManagerDialog_ProgressBar.Value = 0;
+
+                StringBuilder stringBuilder = new StringBuilder();
+
+                x_DownloadManagerDialog_Title.Text = "음원 다운로드";
+                x_DownloadManagerDialog_Message.Text = "음원 다운로드를 진행하고 있습니다. 잠시만 기다려 주십시오.";
+                using (WebClient client = new WebClient())
+                {
+                    client.DownloadFileCompleted += (sender, e) => 
+                    { 
+                        try
+                        {
+                            x_DownloadManagerDialog.Visibility = Visibility.Collapsed;
+                            clickBlockPanelForDownloadManagerDialog.Visibility = Visibility.Collapsed;
+                        }
+                        catch (Exception ex)
+                        {
+                            ExceptionManager.getInstance().showMessageBox(ex);
+                        }
+                    };
+                    client.DownloadProgressChanged += (sender, e) =>
+                    {
+                        try
+                        {
+                            stringBuilder.Append(Convert.ToInt32((e.BytesReceived / 1024f) / 1024f));
+                            stringBuilder.Append(" Mb");
+
+                            x_DownloadManagerDialog_DownloadSize.Text = stringBuilder.ToString();
+                            x_DownloadManagerDialog_ProgressBar.Value = e.ProgressPercentage;
+
+                            stringBuilder.Clear();
+                        }
+                        catch (Exception ex)
+                        {
+                            ExceptionManager.getInstance().showMessageBox(ex);
+                        }
+                    };
+
+                    // 파일 다운로드
+                    await client.DownloadFileTaskAsync(new Uri(url), save);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 페이지 데이터 새로고침 버튼 클릭 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PageReloadButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                switch (nowPage)
+                {
+                    // 우타이테 플레이어 홈 화면
+                    case "홈":
+                        {
+                            ((Page.UtaitePlayerHomePage)utaitePlayerHomePage).isLoaded = false;
+                            ((Page.UtaitePlayerHomePage)utaitePlayerHomePage).reload();
+
+                            break;
+                        }
+
+                    // 우타이테 플레이어 구독 관리 화면
+                    case "구독 관리":
+                        {
+                            ((Page.SubscribeManagePage)subscribeManagePage).isLoaded = false;
+                            ((Page.SubscribeManagePage)subscribeManagePage).reload();
+
+                            break;
+                        }
+
+                    // 우타이테 플레이어 노래 재생 횟수 화면
+                    case "노래 재생 횟수":
+                        {
+                            ((Page.MusicPlayCountPage)musicPlayCountPage).isLoaded = false;
+                            ((Page.MusicPlayCountPage)musicPlayCountPage).reload();
+
+                            break;
+                        }
+
+                    // 우타이테 플레이어 애니메이션 방영 정보 화면
+                    case "OHLI 방영 정보":
+                        {
+                            ((Page.AnimAirInfoPage)animAirInfoPage).isLoaded = false;
+                            ((Page.AnimAirInfoPage)animAirInfoPage).reload();
+                            
+                            break;
+                        }
+
+                    // 우타이테 플레이어 애니메이션 업로드 정보
+                    case "애니 업로드 정보":
+                        {
+                            ((Page.AnimUploadInfoPage)animUploadInfoPage).isLoaded = false;
+                            ((Page.AnimUploadInfoPage)animUploadInfoPage).reload();
+
+                            break;
+                        }
+
+                    // 우타이테 플레이어 플레이리스트 화면
+                    case "플레이리스트":
+                        {
+                            ((Page.MyPlaylistPage)myPlaylistPage).isLoaded = false;
+                            ((Page.MyPlaylistPage)myPlaylistPage).reload();
+
+                            break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 새로고침 버튼 상태 변경
+        /// </summary>
+        /// <param name="state">버튼 상태</param>
+        private void reloadButtonStateSetting(object state)
+        {
+            try
+            {
+                PageReloadButton.Visibility = (Visibility) state;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
             }
         }
     }

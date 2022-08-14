@@ -130,7 +130,7 @@
                         <Grid Margin="0,10,0,0">
                             <ToggleButton
                                 x:Name="BootStartUtaitePlayerToggleButton"
-                                Style="{StaticResource ToggleButtonSwitch}"
+                                Style="{DynamicResource ToggleButtonSwitch}"
                                 VerticalAlignment="Top"
                                 HorizontalAlignment="Left"
                                 Width="40" 
@@ -162,7 +162,7 @@
                         <Grid Margin="0,10,0,0">
                             <ToggleButton
                                 x:Name="CrashHandlerRunToggleButton"
-                                Style="{StaticResource ToggleButtonSwitch}"
+                                Style="{DynamicResource ToggleButtonSwitch}"
                                 VerticalAlignment="Stretch"
                                 HorizontalAlignment="Left"
                                 Width="40" 
@@ -194,8 +194,8 @@
                         <Grid Margin="0,10,0,0">
                             <ToggleButton
                                 x:Name="CloseButtonSettingToggleButton"
-                                Style="{StaticResource ToggleButtonSwitch}"
-                                VerticalAlignment="Top"
+                                Style="{DynamicResource ToggleButtonSwitch}"
+                                VerticalAlignment="Center"
                                 HorizontalAlignment="Left"
                                 Width="40" 
                                 Margin="0" 
@@ -222,12 +222,34 @@
                                 HorizontalAlignment="Left" />
                         </Grid>
 
+                        <!-- 새로고침 버튼 활성화 -->
+                        <Grid Margin="0,10,0,0">
+                            <ToggleButton
+                                x:Name="ReloadButtonEnableToggleButton"
+                                Style="{DynamicResource ToggleButtonSwitch}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Width="40" 
+                                Margin="0" 
+                                Click="ReloadButtonEnableToggleButton_Click"/>
+
+                            <TextBlock
+                                Text="새로고침 버튼 활성화"
+                                VerticalAlignment="Center"
+                                TextWrapping="Wrap"
+                                FontFamily="/Resources/font/#esamanru Light"
+                                FontSize="12"
+                                Foreground="{DynamicResource Color_White1}"
+                                Margin="50,0,0,0" 
+                                HorizontalAlignment="Left" />
+                        </Grid>
+
                         <!-- 우타이테 플레이어를 가장 위에 있게 하기 -->
                         <Grid Margin="0,10,0,0">
                             <ToggleButton
                                 x:Name="TopMostToggleButton"
-                                Style="{StaticResource ToggleButtonSwitch}"
-                                VerticalAlignment="Top"
+                                Style="{DynamicResource ToggleButtonSwitch}"
+                                VerticalAlignment="Center"
                                 HorizontalAlignment="Left"
                                 Width="40" 
                                 Margin="0" 

@@ -9,4 +9,8 @@
     <item
         android:title="@string/menu_text_song_add_playlist"
         android:icon="@drawable/ic_baseline_add_24" />
+
+    <item
+        android:title="@string/menu_text_song_data_delete"
+        android:icon="@drawable/ic_baseline_refresh_24_for_black"/>
 </menu>

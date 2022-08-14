@@ -66,8 +66,6 @@ namespace UtaitePlayer.Layout.Page
             {
                 // 예외 처리
                 ExceptionManager.getInstance().showMessageBox(ex);
-                // 프로그램 종료
-                ExceptionManager.getInstance().exitProgram();
             }
         }
 
