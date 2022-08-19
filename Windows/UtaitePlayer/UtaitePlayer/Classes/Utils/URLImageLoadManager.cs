@@ -37,29 +37,13 @@ namespace UtaitePlayer.Classes.Utils
         /// <param name="uuid">이미지 UUID</param>
         /// <param name="wSize">DecodePixelWidth 설정</param>
         /// <param name="hSize">DecodePixelHeight 설정</param>
+        /// <param name="imageType">이미지 형식</param>
         /// <returns></returns>
         public static BitmapImage ImageURLToBitmapImage(string url, string uuid, int wSize, int hSize, ImageType imageType)
         {
             try
             {
-                // 데이터 파일 경로
-                RHYANetwork.UtaitePlayer.DataManager.MusicDataManager musicDataManager = new RHYANetwork.UtaitePlayer.DataManager.MusicDataManager();
-
-                string directoryName = null;
-                switch (imageType)
-                {
-                    case ImageType.IMAGE_MUSIC:
-                        directoryName = IMAGE_MUSIC_DIRECTORY_NAME;
-                        break;
-                    case ImageType.IMAGE_SINGER:
-                        directoryName = IMAGE_SINGER_DIRECTORY_NAME;
-                        break;
-                    case ImageType.IMAGE_ANIMATION:
-                        directoryName = IMAGE_ANIMATION_DIRECTORY_NAME;
-                        break;
-                }
-
-                string imageFilePath = System.IO.Path.Combine(musicDataManager.DATA_FILE_SAVE_DIRECTORY_NAME, directoryName);
+                string imageFilePath = getImageSavePath(imageType);
                 string imageName = string.Format("{0}.png", uuid);
                 string imagePath = System.IO.Path.Combine(imageFilePath, imageName);
 
@@ -151,6 +135,35 @@ namespace UtaitePlayer.Classes.Utils
             {
                 throw ex;
             }
+        }
+
+
+
+        /// <summary>
+        /// 이미지 다운로드 경로 출력
+        /// </summary>
+        /// <param name="imageType"></param>
+        /// <param name="imageType">이미지 형식</param>
+        public static string getImageSavePath(ImageType imageType)
+        {
+            // 데이터 파일 경로
+            RHYANetwork.UtaitePlayer.DataManager.MusicDataManager musicDataManager = new RHYANetwork.UtaitePlayer.DataManager.MusicDataManager();
+
+            string directoryName = null;
+            switch (imageType)
+            {
+                case ImageType.IMAGE_MUSIC:
+                    directoryName = IMAGE_MUSIC_DIRECTORY_NAME;
+                    break;
+                case ImageType.IMAGE_SINGER:
+                    directoryName = IMAGE_SINGER_DIRECTORY_NAME;
+                    break;
+                case ImageType.IMAGE_ANIMATION:
+                    directoryName = IMAGE_ANIMATION_DIRECTORY_NAME;
+                    break;
+            }
+
+            return System.IO.Path.Combine(musicDataManager.DATA_FILE_SAVE_DIRECTORY_NAME, directoryName);
         }
     }
 }

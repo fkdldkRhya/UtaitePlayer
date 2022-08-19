@@ -4,6 +4,7 @@ using RHYANetwork.UtaitePlayer.ExceptionHandler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -90,6 +91,8 @@ namespace UtaitePlayer.Layout.Page
                 if (animInfolistListBox.ItemsSource == null)
                     animInfolistListBox.ItemsSource = animUploadInfoDataVOsForSelected;
 
+                JArray jArray = null;
+
                 await Task.Run(() =>
                 {
                     try
@@ -101,21 +104,7 @@ namespace UtaitePlayer.Layout.Page
                         {
                             isReloadData = false;
 
-                            JArray jArray = JArray.Parse(HttpUtility.UrlDecode(jObject["message"].ToString()));
-                            for (int i = 0; i < jArray.Count; i++)
-                            {
-                                JObject temp = JObject.Parse(jArray[i].ToString());
-                                animUploadInfoDataVOs.Add(new Classes.DataVO.AnimUploadInfoDataVO()
-                                {
-                                    uuid = temp["uuid"].ToString(),
-                                    image = temp["image"].ToString(),
-                                    name = temp["name"].ToString(),
-                                    episode = temp["episode"].ToString(),
-                                    url = temp["url"].ToString(),
-                                    date = temp["date"].ToString(),
-                                    dayOfTheWeek = (int)temp["yoil"]
-                                });
-                            }
+                            jArray = JArray.Parse(HttpUtility.UrlDecode(jObject["message"].ToString()));
                         }
                         else
                         {
@@ -146,6 +135,50 @@ namespace UtaitePlayer.Layout.Page
                         ExceptionManager.getInstance().showMessageBox(ex);
                     }
                 });
+
+                if (jArray != null)
+                {
+                    int downloadCount = jArray.Count / 5;
+
+                    string downloadPath = URLImageLoadManager.getImageSavePath(URLImageLoadManager.ImageType.IMAGE_ANIMATION);
+
+                    ImageDownloadForParallel imageDownloadForParallel = new ImageDownloadForParallel();
+                    imageDownloadForParallel.downloadAction1 = new Action(() => imageDownloader(downloadPath, 0, downloadCount, jArray));
+                    imageDownloadForParallel.downloadAction2 = new Action(() => imageDownloader(downloadPath, downloadCount, downloadCount * 2, jArray));
+                    imageDownloadForParallel.downloadAction3 = new Action(() => imageDownloader(downloadPath, downloadCount * 2, downloadCount * 3, jArray));
+                    imageDownloadForParallel.downloadAction4 = new Action(() => imageDownloader(downloadPath, downloadCount * 3, downloadCount * 4, jArray));
+                    imageDownloadForParallel.downloadAction5 = new Action(() => imageDownloader(downloadPath, downloadCount * 4, jArray.Count, jArray));
+
+                    imageDownloadForParallel.startDownload();
+
+                    await Task.Run(() =>
+                    {
+                        try
+                        {
+                            imageDownloadForParallel.waitDownloadEnd();
+
+                            for (int i = 0; i < jArray.Count; i++)
+                            {
+                                JObject temp = JObject.Parse(jArray[i].ToString());
+                                animUploadInfoDataVOs.Add(new Classes.DataVO.AnimUploadInfoDataVO()
+                                {
+                                    uuid = temp["uuid"].ToString(),
+                                    image = temp["image"].ToString(),
+                                    name = temp["name"].ToString(),
+                                    episode = temp["episode"].ToString(),
+                                    url = temp["url"].ToString(),
+                                    date = temp["date"].ToString(),
+                                    dayOfTheWeek = (int)temp["yoil"]
+                                });
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // 예외 처리
+                            ExceptionManager.getInstance().showMessageBox(ex);
+                        }
+                    });
+                }
 
                 if (animUploadInfoDataVOs.Count <= 0)
                 {
@@ -330,6 +363,43 @@ namespace UtaitePlayer.Layout.Page
                             {
                                 Message = "해당 애니메이션은 사이트 주소 데이터가 없습니다."
                             });
+                }
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 이미지 다운로더
+        /// </summary>
+        /// <param name="rootPath">ROOT 경로</param>
+        /// <param name="startIndex">시작 인덱스</param>
+        /// <param name="endIndex">종료 인덱스</param>
+        /// <param name="sources">다운로드 데이터</param>
+        private void imageDownloader(string rootPath, int startIndex, int endIndex, JArray sources)
+        {
+            try
+            {
+                RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
+                RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
+
+                for (int i = startIndex; i < endIndex; i++)
+                {
+                    JObject temp = JObject.Parse(sources[i].ToString());
+
+                    string imageName = string.Format("{0}.png", temp["uuid"].ToString());
+                    string imagePath = System.IO.Path.Combine(rootPath, imageName);
+
+                    if (!new System.IO.FileInfo(imagePath).Exists && !temp["image"].ToString().Equals("[null]"))
+                    {
+                        using (WebClient client = new WebClient())
+                            client.DownloadFile(new Uri(temp["image"].ToString()), imagePath);
+                    }
                 }
             }
             catch (Exception ex)

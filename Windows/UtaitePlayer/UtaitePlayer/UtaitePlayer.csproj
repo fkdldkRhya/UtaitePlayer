@@ -121,6 +121,7 @@
     <Compile Include="Classes\RNException\NotFoundArtistUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMusicUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMyPlaylistUUIDException.cs" />
+    <Compile Include="Classes\Utils\ImageDownloadForParallel.cs" />
     <Compile Include="Classes\Utils\IPCRemoteObject.cs" />
     <Compile Include="Classes\Utils\MyPlaylistImageManager.cs" />
     <Compile Include="Classes\Utils\RHYAGlobalFunctionManager.cs" />

@@ -86,6 +86,13 @@ namespace UtaitePlayer.Layout.Page
             {
                 if (isLoaded) return;
 
+                // 메시지 출력
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS,
+                    new GrowlInfo()
+                    {
+                        Message = "이미지 데이터 로딩 중입니다. 해당 작업은 시간이 소요될 수 있습니다. 잠시만 기다려 주세요."
+                    });
+
                 // 모듈 선언
                 RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
