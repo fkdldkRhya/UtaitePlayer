@@ -85,6 +85,7 @@ namespace UtaitePlayer.Layout.Page
                 // ChromiumWebBrowser 설정
                 chromiumWebBrowser.MenuHandler = new CefSharpContextMenu();
                 chromiumWebBrowser.LifeSpanHandler = new MyCustomLifeSpanHandler();
+                chromiumWebBrowser.ZoomLevel = 0;
                 // URL 로딩
                 await chromiumWebBrowser.LoadUrlAsync(ANNOUNCEMENT_URL);
             }

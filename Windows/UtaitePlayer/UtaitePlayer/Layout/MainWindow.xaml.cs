@@ -3387,6 +3387,7 @@ namespace UtaitePlayer.Layout
                     x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomInCommand.Execute(null);
                 else
                     x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomOutCommand.Execute(null);
+
                 e.Handled = true;
             }
             catch (Exception ex)

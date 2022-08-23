@@ -85,6 +85,7 @@ namespace UtaitePlayer.Layout.Page
                 // ChromiumWebBrowser 설정
                 chromiumWebBrowser.MenuHandler = new CefSharpContextMenu();
                 chromiumWebBrowser.LifeSpanHandler = new MyCustomLifeSpanHandler();
+                chromiumWebBrowser.ZoomLevel = 0;
                 // URL 설정
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
                 SONG_ADD_URL = string.Format("https://rhya-network.kro.kr/RhyaNetwork/webpage/jsp/service/utaite_player_song_add.jsp?auth={0}", registryManager.getAuthToken());
