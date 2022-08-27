@@ -2649,7 +2649,7 @@
                             Margin="25,45,25,0" />
 
                         <TextBlock
-                            x:Name="x_DownloadManagerDialog_DownloadSize"
+                            x:Name="x_DownloadManagerDialog_DownloadMetaInfo"
                             VerticalAlignment="Top"
                             TextWrapping="Wrap"
                             FontFamily="/Resources/font/#esamanru Light"

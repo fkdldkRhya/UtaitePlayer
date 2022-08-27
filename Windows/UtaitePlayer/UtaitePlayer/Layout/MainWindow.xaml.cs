@@ -106,6 +106,10 @@ namespace UtaitePlayer.Layout
         // 플레이리스트 노래 추가 Drawer 변수 - 요청한 노래 리스트 타입
         private int x_DrawerBottomForAddMusicToMyPlaylist_MusicUUIDType = 0;
 
+        // 리소스 다운로드 상태
+        private int imageResourceDownloadCountForMusic = 0;
+        private int imageResourceDownloadCountForSinger = 0;
+
 
 
 
@@ -712,6 +716,109 @@ namespace UtaitePlayer.Layout
 
                 // 초기화 UI 설정
                 hideLoadingDialog();
+
+                int imageResourceDownloadCountForMusic = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources.Count / 5;
+
+                x_DownloadManagerDialog.Visibility = Visibility.Visible;
+                clickBlockPanelForDownloadManagerDialog.Visibility = Visibility.Visible;
+                x_DownloadManagerDialog_ProgressBar.Value = 0;
+
+                x_DownloadManagerDialog_Title.Text = "이미지 리소스 다운로드 (노래)";
+                x_DownloadManagerDialog_Message.Text = "이미지 리소스 다운로드를 진행하고 있습니다. 잠시만 기다려 주십시오.";
+                
+                ImageDownloadForParallel imageDownloadForParallel1 = new ImageDownloadForParallel();
+                imageDownloadForParallel1.downloadAction1 = new Action(() => imageResourceDownloadForMusic(0, imageResourceDownloadCountForMusic));
+                imageDownloadForParallel1.downloadAction2 = new Action(() => imageResourceDownloadForMusic(imageResourceDownloadCountForMusic, imageResourceDownloadCountForMusic * 2));
+                imageDownloadForParallel1.downloadAction3 = new Action(() => imageResourceDownloadForMusic(imageResourceDownloadCountForMusic * 2, imageResourceDownloadCountForMusic * 3));
+                imageDownloadForParallel1.downloadAction4 = new Action(() => imageResourceDownloadForMusic(imageResourceDownloadCountForMusic * 3, imageResourceDownloadCountForMusic * 4));
+                imageDownloadForParallel1.downloadAction5 = new Action(() => imageResourceDownloadForMusic(imageResourceDownloadCountForMusic * 4, RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources.Count));
+                imageDownloadForParallel1.startDownload();
+
+                x_DownloadManagerDialog_ProgressBar.Maximum = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources.Count;
+
+                // 필요 리소스 다운로드
+                await Task.Run(() => 
+                {
+                    try
+                    {
+                        while (imageDownloadForParallel1.checkDownloadEnd())
+                        {
+                            Application.Current.Dispatcher.Invoke(() => 
+                            {
+                                try
+                                {
+                                    x_DownloadManagerDialog_DownloadMetaInfo.Text = "";
+                                    x_DownloadManagerDialog_ProgressBar.Value = this.imageResourceDownloadCountForMusic;
+                                }
+                                catch (Exception ex)
+                                {
+                                    ExceptionManager.getInstance().showMessageBox(ex);
+                                }
+                            });
+
+                            Thread.Sleep(10);
+                        }
+
+                        imageDownloadForParallel1.checkDownloadEnd();
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionManager.getInstance().showMessageBox(ex);
+                    }
+                });
+
+                int imageResourceDownloadCountForSinger = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources.Count / 5;
+
+                x_DownloadManagerDialog.Visibility = Visibility.Visible;
+                clickBlockPanelForDownloadManagerDialog.Visibility = Visibility.Visible;
+                x_DownloadManagerDialog_ProgressBar.Value = 0;
+
+                x_DownloadManagerDialog_Title.Text = "이미지 리소스 다운로드 (아티스트)";
+                x_DownloadManagerDialog_Message.Text = "이미지 리소스 다운로드를 진행하고 있습니다. 잠시만 기다려 주십시오.";
+
+                ImageDownloadForParallel imageDownloadForParallel2 = new ImageDownloadForParallel();
+                imageDownloadForParallel2.downloadAction1 = new Action(() => imageResourceDownloadForSinger(0, imageResourceDownloadCountForSinger));
+                imageDownloadForParallel2.downloadAction2 = new Action(() => imageResourceDownloadForSinger(imageResourceDownloadCountForSinger, imageResourceDownloadCountForSinger * 2));
+                imageDownloadForParallel2.downloadAction3 = new Action(() => imageResourceDownloadForSinger(imageResourceDownloadCountForSinger * 2, imageResourceDownloadCountForSinger * 3));
+                imageDownloadForParallel2.downloadAction4 = new Action(() => imageResourceDownloadForSinger(imageResourceDownloadCountForSinger * 3, imageResourceDownloadCountForSinger * 4));
+                imageDownloadForParallel2.downloadAction5 = new Action(() => imageResourceDownloadForSinger(imageResourceDownloadCountForSinger * 4, RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources.Count));
+                imageDownloadForParallel2.startDownload();
+
+                x_DownloadManagerDialog_ProgressBar.Maximum = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources.Count;
+
+                // 필요 리소스 다운로드
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        while (imageDownloadForParallel2.checkDownloadEnd())
+                        {
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+                                try
+                                {
+                                    x_DownloadManagerDialog_DownloadMetaInfo.Text = "";
+                                    x_DownloadManagerDialog_ProgressBar.Value = this.imageResourceDownloadCountForSinger;
+                                }
+                                catch (Exception ex)
+                                {
+                                    ExceptionManager.getInstance().showMessageBox(ex);
+                                }
+                            });
+
+                            Thread.Sleep(10);
+                        }
+
+                        imageDownloadForParallel2.checkDownloadEnd();
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionManager.getInstance().showMessageBox(ex);
+                    }
+                });
+
+                x_DownloadManagerDialog.Visibility = Visibility.Collapsed;
+                clickBlockPanelForDownloadManagerDialog.Visibility = Visibility.Collapsed;
 
                 // 페이지 로딩
                 mainFrame.Navigate(utaitePlayerHomePage);
@@ -3544,7 +3651,7 @@ namespace UtaitePlayer.Layout
                             stringBuilder.Append(Convert.ToInt32((e.BytesReceived / 1024f) / 1024f));
                             stringBuilder.Append(" Mb");
 
-                            x_DownloadManagerDialog_DownloadSize.Text = stringBuilder.ToString();
+                            x_DownloadManagerDialog_DownloadMetaInfo.Text = stringBuilder.ToString();
                             x_DownloadManagerDialog_ProgressBar.Value = e.ProgressPercentage;
 
                             stringBuilder.Clear();
@@ -3650,6 +3757,84 @@ namespace UtaitePlayer.Layout
             try
             {
                 PageReloadButton.Visibility = (Visibility) state;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+        
+        /// <summary>
+        /// 이미지 리소스 다운로드 (노래)
+        /// </summary>
+        /// <param name="start">시작 범위</param>
+        /// <param name="end">종료 범위</param>
+        private void imageResourceDownloadForMusic(int start, int end)
+        {
+            try
+            {
+                RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
+                RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
+
+                for (int i = start; i < end; i ++)
+                {
+                    string key = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources.Keys.ToList()[i];
+
+                    RHYANetwork.UtaitePlayer.DataManager.MusicInfoVO musicInfoVO = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources[key];
+
+                    string rootPath = URLImageLoadManager.getImageSavePath(URLImageLoadManager.ImageType.IMAGE_MUSIC);
+                    string imageName = string.Format("{0}.png", musicInfoVO.uuid);
+                    string imagePath = System.IO.Path.Combine(rootPath, imageName);
+
+                    if (!new System.IO.FileInfo(imagePath).Exists && !musicInfoVO.image.Equals("[null]"))
+                    {
+                        using (WebClient client = new WebClient())
+                            client.DownloadFile(new Uri(musicInfoVO.image), imagePath);
+                    }
+
+                    imageResourceDownloadCountForMusic++;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// 이미지 리소스 다운로드 (아티스트)
+        /// </summary>
+        /// <param name="start">시작 범위</param>
+        /// <param name="end">종료 범위</param>
+        private void imageResourceDownloadForSinger(int start, int end)
+        {
+            try
+            {
+                RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
+                RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
+
+                for (int i = start; i < end; i++)
+                {
+                    string key = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources.Keys.ToList()[i];
+
+                    RHYANetwork.UtaitePlayer.DataManager.SingerInfoVO singerInfoVO = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources[key];
+
+                    string rootPath = URLImageLoadManager.getImageSavePath(URLImageLoadManager.ImageType.IMAGE_SINGER);
+                    string imageName = string.Format("{0}.png", singerInfoVO.uuid);
+                    string imagePath = System.IO.Path.Combine(rootPath, imageName);
+
+                    if (!new System.IO.FileInfo(imagePath).Exists && !singerInfoVO.image.Equals("[null]") && !singerInfoVO.image.Equals("-"))
+                    {
+                        using (WebClient client = new WebClient())
+                            client.DownloadFile(new Uri(singerInfoVO.image), imagePath);
+                    }
+
+                    imageResourceDownloadCountForSinger++;
+                }
             }
             catch (Exception ex)
             {

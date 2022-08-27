@@ -163,7 +163,10 @@ namespace UtaitePlayer.Classes.Utils
                     break;
             }
 
-            return System.IO.Path.Combine(musicDataManager.DATA_FILE_SAVE_DIRECTORY_NAME, directoryName);
+            string path = System.IO.Path.Combine(musicDataManager.DATA_FILE_SAVE_DIRECTORY_NAME, directoryName);
+            if (!new DirectoryInfo(path).Exists) Directory.CreateDirectory(path);
+
+            return path;
         }
     }
 }

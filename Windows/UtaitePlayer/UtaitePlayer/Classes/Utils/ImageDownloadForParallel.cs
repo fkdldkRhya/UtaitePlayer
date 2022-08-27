@@ -129,5 +129,22 @@ namespace UtaitePlayer.Classes.Utils
                 throw ex;
             }
         }
+
+
+
+        /// <summary>
+        /// 다운로드 종료 확인
+        /// </summary>
+        public bool checkDownloadEnd()
+        {
+            try
+            {
+                return th1.IsAlive && th2.IsAlive && th3.IsAlive && th4.IsAlive && th5.IsAlive;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
