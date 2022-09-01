@@ -784,7 +784,7 @@ namespace UtaitePlayer.Layout
                 imageDownloadForParallel2.downloadAction5 = new Action(() => imageResourceDownloadForSinger(imageResourceDownloadCountForSinger * 4, RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources.Count));
                 imageDownloadForParallel2.startDownload();
 
-                x_DownloadManagerDialog_ProgressBar.Maximum = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().musicResources.Count;
+                x_DownloadManagerDialog_ProgressBar.Maximum = RHYANetwork.UtaitePlayer.DataManager.MusicResourcesVO.getInstance().singerResources.Count;
 
                 // 필요 리소스 다운로드
                 await Task.Run(() =>
@@ -849,6 +849,7 @@ namespace UtaitePlayer.Layout
                 // 프로그램 종료
                 isNoExit = false;
                 RHYANetwork.UtaitePlayer.TrayIcon.RhyaTrayIcon.getInstance().hide();
+
                 ExceptionManager.getInstance().showMessageBox(ex);
                 ExceptionManager.getInstance().exitProgram();
             }
@@ -3185,6 +3186,8 @@ namespace UtaitePlayer.Layout
                 x_DrawerBottomForImageViewer_LoadingProgressBar.Visibility = Visibility.Visible;
 
                 await x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.LoadUrlAsync(url.ToString());
+
+                x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.ZoomLevel = 0;
 
                 x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.Visibility = Visibility.Visible;
                 x_DrawerBottomForImageViewer_LoadingProgressBar.Visibility = Visibility.Collapsed;
