@@ -63,6 +63,7 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 import javax.crypto.BadPaddingException;
@@ -138,6 +139,7 @@ public class ActivityMain extends AppCompatActivity {
     private ViewPager2 viewPager2;
     public ProgressBar musicProgressBar = null;
     public Button playListSongRemoveButton;
+    public ImageButton playListAddRandomSongButton;
     // Task Dialog
     private Dialog mainActivityTaskDialog;
     // 강제 재생 확인
@@ -178,6 +180,7 @@ public class ActivityMain extends AppCompatActivity {
         musicProgressBar = findViewById(R.id.musicProgressBar);
         playMusicPanel = findViewById(R.id.playMusicPanel);
         playListSongRemoveButton = findViewById(R.id.playListSongRemoveButton);
+        playListAddRandomSongButton = findViewById(R.id.playlistAddRandomMusicButton);
 
         toast = Toast.makeText(getApplicationContext(), null, Toast.LENGTH_SHORT);
 
@@ -336,6 +339,7 @@ public class ActivityMain extends AppCompatActivity {
                 playMusicPanel.setVisibility(View.VISIBLE);
 
                 playlistAllDelete.setVisibility(View.INVISIBLE);
+                playListAddRandomSongButton.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -418,6 +422,94 @@ public class ActivityMain extends AppCompatActivity {
 
         // 리스너 설정
         playListButton.setOnClickListener(v -> showPlayListFragment());
+
+        playListAddRandomSongButton.setOnClickListener(v -> rhyaDialogManager.createDialog_YesOrNo(context,
+                "Add Random Music",
+                "플레이리스트에 20개의 무작위 노래를 추가하시겠습니까?",
+                "추가",
+                "취소",
+                true,
+                new RhyaDialogManager.DialogListener_YesOrNo() {
+                    @Override
+                    public void onClickListenerButtonYes(Dialog dialog) {
+
+                        dialog.dismiss();
+
+                        rhyaDialogManager.createDialog_Task(context,
+                                "작업 처리 중...",
+                                false,
+                                dialogSub -> {
+                                    try {
+                                        new RhyaAsyncTask<String, String>() {
+                                            private final ArrayList<RhyaMusicInfoVO> rhyaMusicInfoVOS = new ArrayList<>();
+                                            @Override
+                                            protected void onPreExecute() {
+                                            }
+
+                                            @Override
+                                            protected String doInBackground(String arg) {
+                                                try {
+
+                                                    ArrayList<String> uuids = new ArrayList<>();
+
+                                                    for (String key : RhyaApplication.rhyaMusicInfoVOHashMap.keySet()) {
+                                                        RhyaMusicInfoVO rhyaMusicInfoVO = RhyaApplication.rhyaMusicInfoVOHashMap.get(key);
+                                                        if (rhyaMusicInfoVO != null && rhyaMusicInfoVO.getType() != null && !rhyaMusicInfoVO.getType().contains("#모음집")) {
+                                                            uuids.add(key);
+                                                        }
+                                                    }
+
+                                                    Collections.shuffle(uuids);
+
+                                                    for (int i = 0; i < 20; i++)
+                                                        rhyaMusicInfoVOS.add(RhyaApplication.rhyaMusicInfoVOHashMap.get(uuids.get(i)));
+
+                                                    return "success";
+                                                }catch (Exception ex) {
+                                                    ex.printStackTrace();
+                                                }
+
+                                                return null;
+                                            }
+
+                                            @Override
+                                            protected void onPostExecute(String result) {
+                                                try {
+                                                    if (result.equals("success")) {
+                                                        putMusicArrayListRhyaMusicVO(rhyaMusicInfoVOS);
+
+                                                        toast.cancel();
+                                                        toast.setText("노래 추가 성공!");
+                                                        toast.show();
+
+                                                        ((NowPlayListFragment) nowPlayListFragment).loadData(false);
+                                                    }
+                                                }catch (Exception ex) {
+                                                    ex.printStackTrace();
+
+                                                    toast.cancel();
+                                                    toast.setText("로딩 중 오류가 발생하였습니다. (00092)");
+                                                    toast.show();
+                                                }
+
+                                                dialogSub.dismiss();
+                                            }
+                                        }.execute(null);
+                                    }catch (Exception ex) {
+                                        ex.printStackTrace();
+
+                                        toast.cancel();
+                                        toast.setText("로딩 중 오류가 발생하였습니다. (00091)");
+                                        toast.show();
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onClickListenerButtonNo(Dialog dialog) {
+                        dialog.dismiss();
+                    }
+                }));
 
         playlistAllDelete.setOnClickListener(v -> {
             if (RhyaApplication.getRhyaNowPlayMusicUUIDArrayList().size() == 0) {
@@ -518,6 +610,7 @@ public class ActivityMain extends AppCompatActivity {
                 if (playerService.mMediaPlayer != null && playerService.nowPlayMusicUUID != null) {
                     if (viewPager2.getCurrentItem() == 5) {
                         playlistAllDelete.setVisibility(View.INVISIBLE);
+                        playListAddRandomSongButton.setVisibility(View.INVISIBLE);
                         musicProgressBar.setVisibility(View.VISIBLE);
                         playMusicPanel.setVisibility(View.VISIBLE);
 
@@ -527,6 +620,7 @@ public class ActivityMain extends AppCompatActivity {
                         return;
                     }
 
+                    playListAddRandomSongButton.setVisibility(View.INVISIBLE);
                     playlistAllDelete.setVisibility(View.INVISIBLE);
                     playMusicPanel.setVisibility(View.GONE);
                     musicProgressBar.setVisibility(View.GONE);
@@ -718,6 +812,7 @@ public class ActivityMain extends AppCompatActivity {
         // Fragment 종료 확인
         if (nowFragmentIndex == 4) {
             playlistAllDelete.setVisibility(View.INVISIBLE);
+            playListAddRandomSongButton.setVisibility(View.INVISIBLE);
 
             changeBackFragment();
 
@@ -817,6 +912,7 @@ public class ActivityMain extends AppCompatActivity {
 
         if (viewPager2.getCurrentItem() == 4) {
             playlistAllDelete.setVisibility(View.INVISIBLE);
+            playListAddRandomSongButton.setVisibility(View.INVISIBLE);
 
             changeBackFragment();
 
@@ -832,6 +928,7 @@ public class ActivityMain extends AppCompatActivity {
         nowFragmentIndex = 4;
 
         playlistAllDelete.setVisibility(View.VISIBLE);
+        playListAddRandomSongButton.setVisibility(View.VISIBLE);
 
         topPanel.setVisibility(View.VISIBLE);
 

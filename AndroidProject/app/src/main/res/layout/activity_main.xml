@@ -108,7 +108,7 @@
             app:tint="@color/custom_gray_3" />
 
         <ImageButton
-            android:id="@+id/playListButtonVer2"
+            android:id="@+id/playlistAddRandomMusicButton"
 
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -123,16 +123,15 @@
 
             android:contentDescription="@null"
 
-            android:padding="3dp"
+            android:padding="6dp"
 
             android:scaleType="fitCenter"
 
-            android:src="@drawable/ic_baseline_playlist_play_24"
+            android:src="@drawable/ic_random_for_black"
 
             android:visibility="invisible"
-
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/settingButton"
+            app:layout_constraintEnd_toStartOf="@+id/playlistDeleteButton"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/custom_gray_3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -145,24 +144,7 @@
         android:layout_weight="1"
 
         android:background="@color/white">
-        <!--
-        <ImageView
-            android:layout_width="0dp"
 
-            android:layout_height="0dp"
-
-            android:alpha="0.4"
-
-            android:background="#00000000"
-            android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_now_play_list_background"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        -->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/mainViewPager"
 
