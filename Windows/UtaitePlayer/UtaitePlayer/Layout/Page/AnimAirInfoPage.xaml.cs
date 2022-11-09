@@ -376,11 +376,7 @@ namespace UtaitePlayer.Layout.Page
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                // 예외 처리
-                ExceptionManager.getInstance().showMessageBox(ex);
-            }
+            catch (Exception) {}
         }
     }
 }
