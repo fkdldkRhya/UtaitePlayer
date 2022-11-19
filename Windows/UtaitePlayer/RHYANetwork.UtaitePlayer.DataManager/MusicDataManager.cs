@@ -566,7 +566,6 @@ namespace RHYANetwork.UtaitePlayer.DataManager
         /// <summary>
         /// 플레이리스트 데이터 -> JSON 변환 및 저장 [플레이리스트 데이터]
         /// </summary>
-        /// <param name="userPlaylistInfoVOs">플레이리스트 데이터</param>
         public void writePlaylistResourcesFile()
         {
             try

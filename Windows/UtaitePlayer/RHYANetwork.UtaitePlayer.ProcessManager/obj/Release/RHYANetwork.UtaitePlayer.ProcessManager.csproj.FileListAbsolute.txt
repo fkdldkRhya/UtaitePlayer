@@ -1,10 +1,10 @@
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.ProcessManager.dll
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.ProcessManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.csprojAssemblyReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.dll
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.ProcessManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Release\RHYANetwork.UtaitePlayer.ProcessManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.csprojAssemblyReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CopyComplete

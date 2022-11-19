@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FhnI90CHDH0H576Muey+6Jihu4q2rkfP/pw+1TgsynUkB4Rh+el1OLXcaURf74MqJm5Aq9IGeDjdPrin8oNDlQ==",
+  "dgSpecHash": "g05Qs7/h3ZdNpnfRLo1HIHSK6ivDBjdOklFWVDOJUagTnq6DrKYA2c3RrxmXha/ejFJR+Q0WClw1udm82DcE1g==",
   "success": true,
   "projectFilePath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.UpdateManager\\RHYANetwork.UtaitePlayer.UpdateManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ji055\\.nuget\\packages\\ionic.zip\\1.9.1.8\\ionic.zip.1.9.1.8.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
-    "C:\\Users\\ji055\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",
-    "C:\\Users\\ji055\\.nuget\\packages\\sharpvectors\\1.7.7\\sharpvectors.1.7.7.nupkg.sha512"
+    "C:\\Users\\ji055\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1571,6 +1571,12 @@
                         </hc:SideMenuItem.Icon>
                     </hc:SideMenuItem>
 
+                    <hc:SideMenuItem Header="EQ 설정">
+                        <hc:SideMenuItem.Icon>
+                            <Image Source="/Resources/drawable/ic_equalizer.png" Width="16" Height="16"/>
+                        </hc:SideMenuItem.Icon>
+                    </hc:SideMenuItem>
+
                     <hc:SideMenuItem Header="설정">
                         <hc:SideMenuItem.Icon>
                             <Image Source="/Resources/drawable/ic_setting.png" Width="14" Height="14"/>

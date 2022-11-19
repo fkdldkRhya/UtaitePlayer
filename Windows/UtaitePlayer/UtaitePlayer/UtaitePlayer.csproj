@@ -118,55 +118,65 @@
     <Compile Include="Classes\DataVO\TopUtaiteDataVO.cs" />
     <Compile Include="Classes\DataVO\TypeUtaiteDataVO.cs" />
     <Compile Include="Classes\DataVO\MusicNgramForLyricsDataVO.cs" />
+    <Compile Include="Classes\NAudioModule\AudioFileReader.cs" />
+    <Compile Include="Classes\NAudioModule\Equalizer.cs" />
+    <Compile Include="Classes\NAudioModule\EqualizerBand.cs" />
+    <Compile Include="Classes\NAudioModule\Mp3FileReader.cs" />
+    <Compile Include="Classes\NAudioModule\ViewModelBase.cs" />
+    <Compile Include="Classes\RNException\EqualizerBandOutOfIndexException.cs" />
     <Compile Include="Classes\RNException\NotFoundArtistUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMusicUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMyPlaylistUUIDException.cs" />
     <Compile Include="Classes\Utils\ImageDownloadForParallel.cs" />
     <Compile Include="Classes\Utils\IPCRemoteObject.cs" />
     <Compile Include="Classes\Utils\MyPlaylistImageManager.cs" />
+    <Compile Include="Classes\Utils\PixivImageDownloadForParallel.cs" />
     <Compile Include="Classes\Utils\RHYAGlobalFunctionManager.cs" />
     <Compile Include="Classes\Utils\MouseLeftButtonContextMenuSupportBehavior.cs" />
     <Compile Include="Classes\Utils\RHYASearchHelper.cs" />
     <Compile Include="Classes\Utils\RHYAStringExtensions.cs" />
     <Compile Include="Classes\DataVO\SelectMyPlaylistDataVO.cs" />
     <Compile Include="Classes\Utils\URLImageLoadManager.cs" />
-    <Compile Include="Classes\Utils\WaveCallbackInfo.cs" />
-    <Compile Include="Classes\Utils\WaveOut.cs" />
+    <Compile Include="Classes\NAudioModule\WaveCallbackInfo.cs" />
+    <Compile Include="Classes\NAudioModule\WaveOut.cs" />
     <Compile Include="Classes\Utils\SettingManager.cs" />
     <Compile Include="Classes\Utils\StartAdministratorProcess.cs" />
-    <Compile Include="Classes\Utils\WaveWindow.cs" />
+    <Compile Include="Classes\NAudioModule\WaveWindow.cs" />
     <Compile Include="Classes\Utils\YesOrNoDialogInfo.cs" />
-    <Compile Include="Layout\Page\AnimAirInfoPage.xaml.cs">
+    <Compile Include="Layout\Pages\AnimAirInfoPage.xaml.cs">
       <DependentUpon>AnimAirInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\AnimUploadInfoPage.xaml.cs">
+    <Compile Include="Layout\Pages\AnimUploadInfoPage.xaml.cs">
       <DependentUpon>AnimUploadInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\AnnouncementPage.xaml.cs">
+    <Compile Include="Layout\Pages\AnnouncementPage.xaml.cs">
       <DependentUpon>AnnouncementPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\MusicPlayCountPage.xaml.cs">
+    <Compile Include="Layout\Pages\MusicPlayCountPage.xaml.cs">
       <DependentUpon>MusicPlayCountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\MyPlaylistPage.xaml.cs">
+    <Compile Include="Layout\Pages\MyPlaylistPage.xaml.cs">
       <DependentUpon>MyPlaylistPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\PixivTopImagePage.xaml.cs">
+    <Compile Include="Layout\Pages\PixivTopImagePage.xaml.cs">
       <DependentUpon>PixivTopImagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\PlayerSettingPage.xaml.cs">
+    <Compile Include="Layout\Pages\PlayerSettingPage.xaml.cs">
       <DependentUpon>PlayerSettingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\SearchResultPage.xaml.cs">
+    <Compile Include="Layout\Pages\SearchResultPage.xaml.cs">
       <DependentUpon>SearchResultPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\SongAddPage.xaml.cs">
+    <Compile Include="Layout\Pages\SongAddPage.xaml.cs">
       <DependentUpon>SongAddPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\SubscribeManagePage.xaml.cs">
+    <Compile Include="Layout\Pages\SubscribeManagePage.xaml.cs">
       <DependentUpon>SubscribeManagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page\UtaitePlayerHomePage.xaml.cs">
+    <Compile Include="Layout\SubSplashWindow.xaml.cs">
+      <DependentUpon>SubSplashWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Pages\UtaitePlayerHomePage.xaml.cs">
       <DependentUpon>UtaitePlayerHomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Themes\ColourfulDarkTheme.xaml.cs">
@@ -190,47 +200,51 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\AnimAirInfoPage.xaml">
+    <Page Include="Layout\Pages\AnimAirInfoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Layout\Page\AnimUploadInfoPage.xaml">
+    <Page Include="Layout\Pages\AnimUploadInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\AnnouncementPage.xaml">
+    <Page Include="Layout\Pages\AnnouncementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\MusicPlayCountPage.xaml">
+    <Page Include="Layout\Pages\MusicPlayCountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\MyPlaylistPage.xaml">
+    <Page Include="Layout\Pages\MyPlaylistPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\PixivTopImagePage.xaml">
+    <Page Include="Layout\Pages\PixivTopImagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\PlayerSettingPage.xaml">
+    <Page Include="Layout\Pages\PlayerSettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\SearchResultPage.xaml">
+    <Page Include="Layout\Pages\SearchResultPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\SongAddPage.xaml">
+    <Page Include="Layout\Pages\SongAddPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\SubscribeManagePage.xaml">
+    <Page Include="Layout\Pages\SubscribeManagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Layout\Page\UtaitePlayerHomePage.xaml">
+    <Page Include="Layout\SubSplashWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layout\Pages\UtaitePlayerHomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -302,6 +316,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\font\techno_hideo_bold.ttf" />
     <None Include="RHYA.Network.pfx" />
     <Resource Include="Resources\font\esamanru_bold.ttf" />
     <Resource Include="Resources\font\esamanru_light.ttf" />
@@ -389,6 +404,7 @@
   <ItemGroup>
     <Content Include="DLL\System.Windows.Interactivity.dll" />
     <Content Include="Driver\ndp462-kb3151802-web.exe" />
+    <Content Include="Driver\vc_redist.x64.exe" />
     <Content Include="Driver\vc_redist.x86.exe" />
     <Resource Include="Resources\drawable\img_rhya_network_x200.png" />
     <Resource Include="Resources\drawable\playlist-mdpi\ic_playlist_custom_1.png" />
@@ -419,6 +435,7 @@
     <Resource Include="Resources\drawable\ic_user_no_background.png" />
     <Resource Include="Resources\drawable\ic_pixiv.svg" />
     <Resource Include="Resources\drawable\ic_pixiv_text.svg" />
+    <Resource Include="Resources\drawable\ic_equalizer.png" />
     <Content Include="RHYA.Network.UtaitePlayer.Launcher.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -506,6 +523,7 @@
       <Version>11.2.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

@@ -110,6 +110,8 @@ namespace UtaitePlayer.Layout
         private int imageResourceDownloadCountForMusic = 0;
         private int imageResourceDownloadCountForSinger = 0;
 
+        private YesOrNoDialogInfo yesOrNoDialogInfo;
+
 
 
 
@@ -157,7 +159,7 @@ namespace UtaitePlayer.Layout
             {
                 // 초기화 UI 설정
                 showLoadingDialog("Initializing...");
-                
+
                 // 시작 위치 설정
                 this.Left = (SystemParameters.WorkArea.Width) / 2 + SystemParameters.WorkArea.Left - Width / 2;
                 this.Top = (SystemParameters.WorkArea.Height) / 2 + SystemParameters.WorkArea.Left - Height / 2;
@@ -679,17 +681,17 @@ namespace UtaitePlayer.Layout
                 syncThread.Start();
 
                 // 페이지 초기화
-                searchResultPage = new Page.SearchResultPage();
-                utaitePlayerHomePage = new Page.UtaitePlayerHomePage();
-                subscribeManagePage = new Page.SubscribeManagePage();
-                musicPlayCountPage = new Page.MusicPlayCountPage();
-                myPlaylistPage = new Page.MyPlaylistPage();
-                animAirInfoPage = new Page.AnimAirInfoPage();
-                animUploadInfoPage = new Page.AnimUploadInfoPage();
-                pixivTopImagePage = new Page.PixivTopImagePage();
-                songAddPage = new Page.SongAddPage();
-                announcementPage = new Page.AnnouncementPage();
-                settingPage = new Page.PlayerSettingPage();
+                searchResultPage = new Pages.SearchResultPage();
+                utaitePlayerHomePage = new Pages.UtaitePlayerHomePage();
+                subscribeManagePage = new Pages.SubscribeManagePage();
+                musicPlayCountPage = new Pages.MusicPlayCountPage();
+                myPlaylistPage = new Pages.MyPlaylistPage();
+                animAirInfoPage = new Pages.AnimAirInfoPage();
+                animUploadInfoPage = new Pages.AnimUploadInfoPage();
+                pixivTopImagePage = new Pages.PixivTopImagePage();
+                songAddPage = new Pages.SongAddPage();
+                announcementPage = new Pages.AnnouncementPage();
+                settingPage = new Pages.PlayerSettingPage();
 
                 // ChromiumWebBrowser 설정 (ImageViewer)
                 x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.MenuHandler = new CefSharpContextMenu();
@@ -1746,7 +1748,7 @@ namespace UtaitePlayer.Layout
                                     if (isEnable)
                                         PageReloadButton.Visibility = Visibility.Visible;
                                     else
-                                        ((Page.UtaitePlayerHomePage)utaitePlayerHomePage).isLoaded = false;
+                                        ((Pages.UtaitePlayerHomePage)utaitePlayerHomePage).isLoaded = false;
 
                                     nowPage = "홈";
                                     mainFrame.NavigationService.Navigate(utaitePlayerHomePage);
@@ -1759,7 +1761,7 @@ namespace UtaitePlayer.Layout
                                     if (isEnable)
                                         PageReloadButton.Visibility = Visibility.Visible;
                                     else
-                                        ((Page.SubscribeManagePage)subscribeManagePage).isLoaded = false;
+                                        ((Pages.SubscribeManagePage)subscribeManagePage).isLoaded = false;
 
                                     nowPage = "구독 관리";
                                     mainFrame.NavigationService.Navigate(subscribeManagePage);
@@ -1772,7 +1774,7 @@ namespace UtaitePlayer.Layout
                                     if (isEnable)
                                         PageReloadButton.Visibility = Visibility.Visible;
                                     else
-                                        ((Page.MusicPlayCountPage)musicPlayCountPage).isLoaded = false;
+                                        ((Pages.MusicPlayCountPage)musicPlayCountPage).isLoaded = false;
 
                                     nowPage = "노래 재생 횟수";
                                     mainFrame.NavigationService.Navigate(musicPlayCountPage);
@@ -1785,10 +1787,10 @@ namespace UtaitePlayer.Layout
                                     if (isEnable)
                                         PageReloadButton.Visibility = Visibility.Visible;
                                     else
-                                        ((Page.AnimAirInfoPage)animAirInfoPage).isLoaded = false;
+                                        ((Pages.AnimAirInfoPage)animAirInfoPage).isLoaded = false;
 
                                     nowPage = "OHLI 방영 정보";
-                                    ((Page.AnimAirInfoPage)animAirInfoPage).isInitSuccess = false;
+                                    ((Pages.AnimAirInfoPage)animAirInfoPage).isInitSuccess = false;
                                     mainFrame.NavigationService.Navigate(animAirInfoPage);
                                     break;
                                 }
@@ -1799,7 +1801,7 @@ namespace UtaitePlayer.Layout
                                     if (isEnable)
                                         PageReloadButton.Visibility = Visibility.Visible;
                                     else
-                                        ((Page.AnimUploadInfoPage)animUploadInfoPage).isLoaded = false;
+                                        ((Pages.AnimUploadInfoPage)animUploadInfoPage).isLoaded = false;
 
                                     nowPage = "애니 업로드 정보";
                                     mainFrame.NavigationService.Navigate(animUploadInfoPage);
@@ -1812,7 +1814,7 @@ namespace UtaitePlayer.Layout
                                     if (isEnable)
                                         PageReloadButton.Visibility = Visibility.Visible;
                                     else
-                                        ((Page.MyPlaylistPage)myPlaylistPage).isLoaded = false;
+                                        ((Pages.MyPlaylistPage)myPlaylistPage).isLoaded = false;
 
                                     nowPage = "플레이리스트";
                                     mainFrame.NavigationService.Navigate(myPlaylistPage);
@@ -1892,7 +1894,7 @@ namespace UtaitePlayer.Layout
 
                         nowPage = "검색";
                         mainFrame.NavigationService.Navigate(searchResultPage);
-                        ((Page.SearchResultPage)searchResultPage).searchForText(inputText);
+                        ((Pages.SearchResultPage)searchResultPage).searchForText(inputText);
                     }
                 }
             }
@@ -2556,7 +2558,7 @@ namespace UtaitePlayer.Layout
             {
                 nowPage = "검색";
                 mainFrame.NavigationService.Navigate(searchResultPage);
-                ((Page.SearchResultPage)searchResultPage).searchForText((string)text);
+                ((Pages.SearchResultPage)searchResultPage).searchForText((string)text);
             }
             catch (Exception ex)
             {
@@ -2614,9 +2616,15 @@ namespace UtaitePlayer.Layout
             try
             {
                 clickBlockPanelForYesOrNoDialog.Visibility = Visibility.Visible;
-                x_YesOrNoDialog.Visibility = Visibility.Visible; 
+                x_YesOrNoDialog.Visibility = Visibility.Visible;
 
-                YesOrNoDialogInfo yesOrNoDialogInfo = (YesOrNoDialogInfo)data;
+                if (yesOrNoDialogInfo != null)
+                {
+                    yesOrNoDialogInfo.button1Event = null;
+                    yesOrNoDialogInfo.button2Event = null;
+                }
+
+                yesOrNoDialogInfo = (YesOrNoDialogInfo)data;
                 x_YesOrNoDialogTitle.Content = yesOrNoDialogInfo.title;
                 x_YesOrNoDialogMessage.Text = yesOrNoDialogInfo.message;
                 x_YesOrNoDialogButton1.Content = yesOrNoDialogInfo.button1Title;
@@ -2782,7 +2790,7 @@ namespace UtaitePlayer.Layout
 
                 if (isSuccess)
                     if (nowPage.Equals("플레이리스트"))
-                        await Task.Run(() => ((Layout.Page.MyPlaylistPage)myPlaylistPage).Refresh());
+                        await Task.Run(() => ((Layout.Pages.MyPlaylistPage)myPlaylistPage).Refresh());
 
                 DrawerRightForEditMyPlaylist.IsOpen = false;
 
@@ -2928,7 +2936,7 @@ namespace UtaitePlayer.Layout
 
                 if (isSuccess)
                     if (nowPage.Equals("플레이리스트"))
-                        await Task.Run(() => ((Layout.Page.MyPlaylistPage)myPlaylistPage).Refresh());
+                        await Task.Run(() => ((Layout.Pages.MyPlaylistPage)myPlaylistPage).Refresh());
 
                 DrawerRightForCreateMyPlaylist.IsOpen = false;
 
@@ -3293,7 +3301,7 @@ namespace UtaitePlayer.Layout
 
                             if (isSuccess)
                             {
-                                await Task.Run(() => ((Layout.Page.MyPlaylistPage)myPlaylistPage).Refresh());
+                                await Task.Run(() => ((Layout.Pages.MyPlaylistPage)myPlaylistPage).Refresh());
 
                                 // 메시지 출력
                                 RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS,
@@ -3339,7 +3347,7 @@ namespace UtaitePlayer.Layout
 
                             if (isSuccess)
                             {
-                                await Task.Run(() => ((Layout.Page.MyPlaylistPage)myPlaylistPage).Refresh());
+                                await Task.Run(() => ((Layout.Pages.MyPlaylistPage)myPlaylistPage).Refresh());
 
                                 // 메시지 출력
                                 RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS,
@@ -3691,8 +3699,8 @@ namespace UtaitePlayer.Layout
                     // 우타이테 플레이어 홈 화면
                     case "홈":
                         {
-                            ((Page.UtaitePlayerHomePage)utaitePlayerHomePage).isLoaded = false;
-                            ((Page.UtaitePlayerHomePage)utaitePlayerHomePage).reload();
+                            ((Pages.UtaitePlayerHomePage)utaitePlayerHomePage).isLoaded = false;
+                            ((Pages.UtaitePlayerHomePage)utaitePlayerHomePage).reload();
 
                             break;
                         }
@@ -3700,8 +3708,8 @@ namespace UtaitePlayer.Layout
                     // 우타이테 플레이어 구독 관리 화면
                     case "구독 관리":
                         {
-                            ((Page.SubscribeManagePage)subscribeManagePage).isLoaded = false;
-                            ((Page.SubscribeManagePage)subscribeManagePage).reload();
+                            ((Pages.SubscribeManagePage)subscribeManagePage).isLoaded = false;
+                            ((Pages.SubscribeManagePage)subscribeManagePage).reload();
 
                             break;
                         }
@@ -3709,8 +3717,8 @@ namespace UtaitePlayer.Layout
                     // 우타이테 플레이어 노래 재생 횟수 화면
                     case "노래 재생 횟수":
                         {
-                            ((Page.MusicPlayCountPage)musicPlayCountPage).isLoaded = false;
-                            ((Page.MusicPlayCountPage)musicPlayCountPage).reload();
+                            ((Pages.MusicPlayCountPage)musicPlayCountPage).isLoaded = false;
+                            ((Pages.MusicPlayCountPage)musicPlayCountPage).reload();
 
                             break;
                         }
@@ -3718,8 +3726,8 @@ namespace UtaitePlayer.Layout
                     // 우타이테 플레이어 애니메이션 방영 정보 화면
                     case "OHLI 방영 정보":
                         {
-                            ((Page.AnimAirInfoPage)animAirInfoPage).isLoaded = false;
-                            ((Page.AnimAirInfoPage)animAirInfoPage).reload();
+                            ((Pages.AnimAirInfoPage)animAirInfoPage).isLoaded = false;
+                            ((Pages.AnimAirInfoPage)animAirInfoPage).reload();
                             
                             break;
                         }
@@ -3727,8 +3735,8 @@ namespace UtaitePlayer.Layout
                     // 우타이테 플레이어 애니메이션 업로드 정보
                     case "애니 업로드 정보":
                         {
-                            ((Page.AnimUploadInfoPage)animUploadInfoPage).isLoaded = false;
-                            ((Page.AnimUploadInfoPage)animUploadInfoPage).reload();
+                            ((Pages.AnimUploadInfoPage)animUploadInfoPage).isLoaded = false;
+                            ((Pages.AnimUploadInfoPage)animUploadInfoPage).reload();
 
                             break;
                         }
@@ -3736,8 +3744,8 @@ namespace UtaitePlayer.Layout
                     // 우타이테 플레이어 플레이리스트 화면
                     case "플레이리스트":
                         {
-                            ((Page.MyPlaylistPage)myPlaylistPage).isLoaded = false;
-                            ((Page.MyPlaylistPage)myPlaylistPage).reload();
+                            ((Pages.MyPlaylistPage)myPlaylistPage).isLoaded = false;
+                            ((Pages.MyPlaylistPage)myPlaylistPage).reload();
 
                             break;
                         }

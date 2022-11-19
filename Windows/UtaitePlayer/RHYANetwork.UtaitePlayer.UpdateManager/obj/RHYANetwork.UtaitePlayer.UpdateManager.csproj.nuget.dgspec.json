@@ -73,10 +73,6 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.5.0, )"
-            },
-            "SharpVectors": {
-              "target": "Package",
-              "version": "[1.7.7, )"
             }
           }
         }

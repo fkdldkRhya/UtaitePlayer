@@ -10,6 +10,7 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dll/system.windows.interactivity.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("driver/ndp462-kb3151802-web.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("driver/vc_redist.x64.exe")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("driver/vc_redist.x86.exe")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("rhya.network.utaiteplayer.launcher.exe")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("chrome_100_percent.pak")]

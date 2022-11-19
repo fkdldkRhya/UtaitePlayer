@@ -71,6 +71,10 @@ namespace UtaitePlayer.Layout
             // 변수 초기화
             mIsSuccessUser = false;
 
+            // SubSplash 화면 보여주기
+            SubSplashWindow subSplashWindow = new SubSplashWindow();
+            subSplashWindow.Show();
+
             // 캐시 제거
             await Cef.GetGlobalCookieManager().DeleteCookiesAsync("", "");
             // ChromiumWebBrowser 설정

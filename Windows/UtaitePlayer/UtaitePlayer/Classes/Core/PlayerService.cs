@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UtaitePlayer.Classes.RNException;
-using UtaitePlayer.Classes.Utils;
+using UtaitePlayer.Classes.NAudioModule;
+using System.ComponentModel;
 
 namespace UtaitePlayer.Classes.Core
 {
@@ -15,9 +16,22 @@ namespace UtaitePlayer.Classes.Core
         private static PlayerService playerService;
 
         // Media Player
-        private MediaFoundationReader mediaFoundationReader = null;
-        private VolumeWaveProvider16 volumeWaveProvider16 = null;
+        private AudioFileReader audioFileReader = null;
         private WaveOutEvent wasapiOut = null;
+        private Equalizer equalizer;
+        private readonly EqualizerBand[] EQUALIZERBANDS = new EqualizerBand[]
+        {
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 60, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 170, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 310, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 600, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 1000, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 3000, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 3000, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 12000, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 14000, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 16000, Gain = 0}
+        };
 
         // Event call back delegate
         public delegate void PlaybackStoppedListener();
@@ -29,6 +43,14 @@ namespace UtaitePlayer.Classes.Core
 
         // Music info
         private RHYANetwork.UtaitePlayer.DataManager.MusicInfoVO musicInfoVO = null;
+
+        /// <summary>
+        /// EqualizerBand 선택 Enum
+        /// </summary>
+        public enum EqualizerBandSelect
+        {
+            Band1, Band2, Band3, Band4, Band5, Band6, Band7, Band8, Band9, Band10
+        }
 
 
 
@@ -161,15 +183,15 @@ namespace UtaitePlayer.Classes.Core
                 string url = utaitePlayerClient.getFullServerUrl(8, new Dictionary<string, string>() {{ "uuid", uuid } , { "auth", authToken } });
                 utaitePlayerClient.applyUtaitePlayCount(authToken, uuid);
 
-                if (mediaFoundationReader == null)
+                if (audioFileReader == null)
                 {
-                    mediaFoundationReader = new MediaFoundationReader(url);
+                    audioFileReader = new AudioFileReader(url);
                 }
                 else
                 {
-                    mediaFoundationReader.Close();
-                    mediaFoundationReader = null;
-                    mediaFoundationReader = new MediaFoundationReader(url);
+                    audioFileReader.Close();
+                    audioFileReader = null;
+                    audioFileReader = new AudioFileReader(url);
                 }
 
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
@@ -197,14 +219,14 @@ namespace UtaitePlayer.Classes.Core
                     wasapiOut = new WaveOutEvent() { DeviceNumber = registryManager.getAudioDeviceID() };
                 }
 
-                if (volumeWaveProvider16 == null)
+                if (equalizer == null)
                 {
-                    volumeWaveProvider16 = new VolumeWaveProvider16(mediaFoundationReader);
+                    equalizer = new Equalizer(audioFileReader, EQUALIZERBANDS);
                 }
                 else
                 {
-                    volumeWaveProvider16 = null;
-                    volumeWaveProvider16 = new VolumeWaveProvider16(mediaFoundationReader);
+                    equalizer = null;
+                    equalizer = new Equalizer(audioFileReader, EQUALIZERBANDS);
                 }
 
                 musicInfoVO = null;
@@ -213,7 +235,7 @@ namespace UtaitePlayer.Classes.Core
                     musicInfoSettingListener();
 
                 wasapiOut.PlaybackStopped += WasapiOut_PlaybackStopped;
-                wasapiOut.Init(volumeWaveProvider16);
+                wasapiOut.Init(equalizer);
             }
             catch (Exception ex)
             {
@@ -243,9 +265,9 @@ namespace UtaitePlayer.Classes.Core
         /// <param name="volume">볼륨 설정 값</param>
         public void setVolume(float volume)
         {
-            if (volumeWaveProvider16 == null) return;
+            if (audioFileReader == null) return;
 
-            volumeWaveProvider16.Volume = volume;
+            audioFileReader.Volume = volume;
         }
 
 
@@ -256,10 +278,10 @@ namespace UtaitePlayer.Classes.Core
         /// <returns>현재 재생 시간</returns>
         public TimeSpan getCurrentTime()
         {
-            if (mediaFoundationReader == null)
+            if (audioFileReader == null)
                 return TimeSpan.Zero;
 
-            return mediaFoundationReader.CurrentTime;
+            return audioFileReader.CurrentTime;
         }
 
 
@@ -270,10 +292,10 @@ namespace UtaitePlayer.Classes.Core
         /// <returns>전체 재생 시간</returns>
         public TimeSpan getTotalTime()
         {
-            if (mediaFoundationReader == null)
+            if (audioFileReader == null)
                 return TimeSpan.Zero;
 
-            return mediaFoundationReader.TotalTime;
+            return audioFileReader.TotalTime;
         }
 
 
@@ -284,10 +306,10 @@ namespace UtaitePlayer.Classes.Core
         /// <returns>최대 길이</returns>
         public long getLength()
         {
-            if (mediaFoundationReader == null)
+            if (audioFileReader == null)
                 return 0;
 
-            return mediaFoundationReader.Length;
+            return audioFileReader.Length;
         }
 
 
@@ -298,10 +320,10 @@ namespace UtaitePlayer.Classes.Core
         /// <returns>현재 길이</returns>
         public long getPosition()
         {
-            if (mediaFoundationReader == null)
+            if (audioFileReader == null)
                 return 0;
 
-            return mediaFoundationReader.Position;
+            return audioFileReader.Position;
         }
 
 
@@ -314,7 +336,7 @@ namespace UtaitePlayer.Classes.Core
         {
             try
             {
-                mediaFoundationReader.Position = position;
+                audioFileReader.Position = position;
             }
             catch (Exception ex)
             {
@@ -366,15 +388,15 @@ namespace UtaitePlayer.Classes.Core
                 RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
                 string url = utaitePlayerClient.getFullServerUrl(8, new Dictionary<string, string>() { { "uuid", musicInfoVO.uuid }, { "auth", registryManager.getAuthToken().ToString() } });
 
-                if (mediaFoundationReader == null)
+                if (audioFileReader == null)
                 {
-                    mediaFoundationReader = new MediaFoundationReader(url);
+                    audioFileReader = new AudioFileReader(url);
                 }
                 else
                 {
-                    mediaFoundationReader.Close();
-                    mediaFoundationReader = null;
-                    mediaFoundationReader = new MediaFoundationReader(url);
+                    audioFileReader.Close();
+                    audioFileReader = null;
+                    audioFileReader = new AudioFileReader(url);
                 }
 
                 // Audio ID 설정
@@ -400,21 +422,21 @@ namespace UtaitePlayer.Classes.Core
                     wasapiOut = new WaveOutEvent() { DeviceNumber = registryManager.getAudioDeviceID() };
                 }
 
-                if (volumeWaveProvider16 == null)
-                {
-                    volumeWaveProvider16 = new VolumeWaveProvider16(mediaFoundationReader);
-                }
-                else
-                {
-                    volumeWaveProvider16 = null;
-                    volumeWaveProvider16 = new VolumeWaveProvider16(mediaFoundationReader);
-                }
-
                 if (musicInfoSettingListener != null)
                     musicInfoSettingListener();
 
+                if (equalizer == null)
+                {
+                    equalizer = new Equalizer(audioFileReader, EQUALIZERBANDS);
+                }
+                else
+                {
+                    equalizer = null;
+                    equalizer = new Equalizer(audioFileReader, EQUALIZERBANDS);
+                }
+
                 wasapiOut.PlaybackStopped += WasapiOut_PlaybackStopped;
-                wasapiOut.Init(volumeWaveProvider16);
+                wasapiOut.Init(equalizer);
 
                 this.musicInfoVO = musicInfoVO;
 
@@ -427,5 +449,75 @@ namespace UtaitePlayer.Classes.Core
             }
             catch (Exception){ }
         }
+
+
+
+        // =====================================================================
+        // =====================================================================
+        // ======================== Equalizer 제어 변수 ========================
+        // =====================================================================
+        // =====================================================================
+        // Equalizer 설정 최솟 값
+        public const float MinimumGain = -30;
+        // Equalizer 설정 최대 값
+        public const float MaximumGain = 30;
+        /// <summary>
+        /// Equalizer PropertyChanged Event
+        /// </summary>
+        private void OnPropertyChanged()
+        {
+            if (equalizer != null)
+                equalizer?.Update();
+        }
+        /// <summary>
+        /// Set equalizer band gain vlaue
+        /// </summary>
+        public void SetEqualizerBandGainValue(EqualizerBandSelect equalizerBandSelect, float gain)
+        {
+            try
+            {
+                int bandsIndex = (int)equalizerBandSelect;
+
+                if (bandsIndex >= 0 && bandsIndex <= EQUALIZERBANDS.Length - 1 && EQUALIZERBANDS[bandsIndex].Gain != gain)
+                {
+                    EQUALIZERBANDS[bandsIndex].Gain = gain;
+                    OnPropertyChanged();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// Get equalizer band gain vlaue
+        /// </summary>
+        public float GetEqualizerBandGainValue(EqualizerBandSelect equalizerBandSelect)
+        {
+            try
+            {
+                int bandsIndex = (int)equalizerBandSelect;
+
+                if (bandsIndex >= 0 && bandsIndex <= EQUALIZERBANDS.Length - 1)
+                {
+                    return EQUALIZERBANDS[bandsIndex].Gain;
+                }
+                else
+                {
+                    // 예외 발생
+                    EqualizerBandOutOfIndexException equalizerBandOutOfIndexException = new EqualizerBandOutOfIndexException("Equalizer를 설정하는 과정에서 배열의 길이를 넘어선 참조 및 설정이 발생하였습니다.");
+                    equalizerBandOutOfIndexException.Index = bandsIndex;
+                    throw equalizerBandOutOfIndexException;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        // =====================================================================
+        // =====================================================================
+        // =====================================================================
+        // =====================================================================
     }
 }

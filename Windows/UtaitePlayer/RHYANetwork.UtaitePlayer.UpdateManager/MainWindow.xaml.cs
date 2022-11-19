@@ -132,9 +132,9 @@ namespace RHYANetwork.UtaitePlayer.UpdateManager
         {
             try
             {
-                // 2.5초 대기
                 taskLog.Text = "업데이트 준비 중...";
                 taskProgressBar.IsIndeterminate = true;
+                // 2.5초 대기
                 await Task.Run(() => Thread.Sleep(2500));
 
                 // 파일 이름
@@ -185,6 +185,9 @@ namespace RHYANetwork.UtaitePlayer.UpdateManager
 
                 // 작업 마무리
                 taskLog.Text = "Starting UtaitePlayer service...";
+
+                // 2.5초 대기
+                await Task.Run(() => Thread.Sleep(2500));
 
                 new Thread(() =>
                 {

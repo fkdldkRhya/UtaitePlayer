@@ -94,9 +94,6 @@ namespace UtaitePlayer
                 // 라이브러리 초기 작업
                 ConfigHelper.Instance.SetLang("ko-kr");
 
-                // 1.5초 대기
-                await Task.Run(() => Thread.Sleep(1500));
-
                 // 프로그램 정보 확인
                 await Task.Run(() => checkProgramInfo());
                 // 로그인 확인
@@ -162,9 +159,13 @@ namespace UtaitePlayer
                 }).Start();
                 // ===========================================
 
+                // 1.5초 대기
+                await Task.Run(() => Thread.Sleep(1000));
+
                 // 메인 화면 전환
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+
                 // 창 닫기
                 this.Close();
             }

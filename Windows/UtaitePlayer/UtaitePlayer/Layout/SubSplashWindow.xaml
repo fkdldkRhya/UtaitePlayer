@@ -1,0 +1,59 @@
+﻿<Window x:Class="UtaitePlayer.Layout.SubSplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UtaitePlayer"
+        
+        mc:Ignorable="d"
+        
+        Title="우타이테 플레이어 (Utaite Player)"
+        
+        Height="130" Width="270"
+        
+        Visibility="Hidden"
+        Topmost="True"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+
+    <Window.Background>
+        <SolidColorBrush Opacity="0" Color="White" />
+    </Window.Background>
+
+    <Grid>
+        <!-- Animation -->
+        <Grid 
+            x:Name="AnimationGrid"
+            Background="{DynamicResource Color_Gray1}"
+            Width="700">
+
+            <!-- Title 1 -->
+            <TextBlock
+                VerticalAlignment="Center"
+                TextWrapping="Wrap"
+                FontFamily="/UtaitePlayer;component/Resources/font/#Techno Hideo"
+                FontSize="37"
+                Foreground="{DynamicResource Color_White1}"
+                Margin="20,28,0,28" 
+                HorizontalAlignment="Left"
+                Height="68"
+                Width="217">
+                
+                <Run Text="RHYA"/>
+                <LineBreak/>
+                <Run Text="Network"/>
+                <LineBreak/>
+                <Run Text="Service"/>
+            </TextBlock>
+
+            <!-- Rectangle -->
+            <Rectangle 
+                Margin="257,0,0,0"
+                Fill="{DynamicResource Color_Gray3}"/>
+        </Grid>
+    </Grid>
+</Window>

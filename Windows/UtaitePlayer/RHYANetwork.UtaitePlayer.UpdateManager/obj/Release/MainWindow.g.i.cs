@@ -10,7 +10,6 @@
 //------------------------------------------------------------------------------
 
 using RHYANetwork.UtaitePlayer.UpdateManager;
-using SharpVectors.Converters;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -42,7 +41,7 @@ namespace RHYANetwork.UtaitePlayer.UpdateManager {
     public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 31 "..\..\MainWindow.xaml"
+        #line 28 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock taskLog;
         
@@ -50,7 +49,7 @@ namespace RHYANetwork.UtaitePlayer.UpdateManager {
         #line hidden
         
         
-        #line 40 "..\..\MainWindow.xaml"
+        #line 37 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ProgressBar taskProgressBar;
         
@@ -89,13 +88,13 @@ namespace RHYANetwork.UtaitePlayer.UpdateManager {
             {
             case 1:
             
-            #line 21 "..\..\MainWindow.xaml"
+            #line 18 "..\..\MainWindow.xaml"
             ((RHYANetwork.UtaitePlayer.UpdateManager.MainWindow)(target)).Loaded += new System.Windows.RoutedEventHandler(this.Window_Loaded);
             
             #line default
             #line hidden
             
-            #line 22 "..\..\MainWindow.xaml"
+            #line 19 "..\..\MainWindow.xaml"
             ((RHYANetwork.UtaitePlayer.UpdateManager.MainWindow)(target)).Activated += new System.EventHandler(this.Window_Activated);
             
             #line default
@@ -103,7 +102,7 @@ namespace RHYANetwork.UtaitePlayer.UpdateManager {
             return;
             case 2:
             
-            #line 24 "..\..\MainWindow.xaml"
+            #line 21 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Grid)(target)).Loaded += new System.Windows.RoutedEventHandler(this.Grid_Loaded);
             
             #line default

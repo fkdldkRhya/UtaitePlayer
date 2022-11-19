@@ -35,29 +35,6 @@
           "build/MaterialDesignThemes.targets": {}
         }
       },
-      "SharpVectors/1.7.7": {
-        "type": "package",
-        "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
-        },
-        "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
-        }
-      },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
         "type": "project",
         "compile": {
@@ -109,29 +86,6 @@
         },
         "build": {
           "build/MaterialDesignThemes.targets": {}
-        }
-      },
-      "SharpVectors/1.7.7": {
-        "type": "package",
-        "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
-        },
-        "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
         }
       },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
@@ -187,29 +141,6 @@
           "build/MaterialDesignThemes.targets": {}
         }
       },
-      "SharpVectors/1.7.7": {
-        "type": "package",
-        "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
-        },
-        "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
-        }
-      },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
         "type": "project",
         "compile": {
@@ -261,29 +192,6 @@
         },
         "build": {
           "build/MaterialDesignThemes.targets": {}
-        }
-      },
-      "SharpVectors/1.7.7": {
-        "type": "package",
-        "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
-        },
-        "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
         }
       },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
@@ -375,131 +283,6 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "SharpVectors/1.7.7": {
-      "sha512": "jMGVqc/HvxlDo5kSm24VdNd3yi+QaeY9ubSFcksDleBnGWXMoW/jCtAc6u3k1EzY7uKjwb/e//8fWiRZC80OHw==",
-      "type": "package",
-      "path": "sharpvectors/1.7.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "images/SharpVectors64.png",
-        "lib/License.txt",
-        "lib/net40/SharpVectors.Converters.Wpf.dll",
-        "lib/net40/SharpVectors.Converters.Wpf.xml",
-        "lib/net40/SharpVectors.Core.dll",
-        "lib/net40/SharpVectors.Core.xml",
-        "lib/net40/SharpVectors.Css.dll",
-        "lib/net40/SharpVectors.Css.xml",
-        "lib/net40/SharpVectors.Dom.dll",
-        "lib/net40/SharpVectors.Dom.xml",
-        "lib/net40/SharpVectors.Model.dll",
-        "lib/net40/SharpVectors.Model.xml",
-        "lib/net40/SharpVectors.Rendering.Gdi.dll",
-        "lib/net40/SharpVectors.Rendering.Gdi.xml",
-        "lib/net40/SharpVectors.Rendering.Wpf.dll",
-        "lib/net40/SharpVectors.Rendering.Wpf.xml",
-        "lib/net40/SharpVectors.Runtime.Wpf.dll",
-        "lib/net40/SharpVectors.Runtime.Wpf.xml",
-        "lib/net45/SharpVectors.Converters.Wpf.dll",
-        "lib/net45/SharpVectors.Converters.Wpf.xml",
-        "lib/net45/SharpVectors.Core.dll",
-        "lib/net45/SharpVectors.Core.xml",
-        "lib/net45/SharpVectors.Css.dll",
-        "lib/net45/SharpVectors.Css.xml",
-        "lib/net45/SharpVectors.Dom.dll",
-        "lib/net45/SharpVectors.Dom.xml",
-        "lib/net45/SharpVectors.Model.dll",
-        "lib/net45/SharpVectors.Model.xml",
-        "lib/net45/SharpVectors.Rendering.Gdi.dll",
-        "lib/net45/SharpVectors.Rendering.Gdi.xml",
-        "lib/net45/SharpVectors.Rendering.Wpf.dll",
-        "lib/net45/SharpVectors.Rendering.Wpf.xml",
-        "lib/net45/SharpVectors.Runtime.Wpf.dll",
-        "lib/net45/SharpVectors.Runtime.Wpf.xml",
-        "lib/net46/SharpVectors.Converters.Wpf.dll",
-        "lib/net46/SharpVectors.Converters.Wpf.xml",
-        "lib/net46/SharpVectors.Core.dll",
-        "lib/net46/SharpVectors.Core.xml",
-        "lib/net46/SharpVectors.Css.dll",
-        "lib/net46/SharpVectors.Css.xml",
-        "lib/net46/SharpVectors.Dom.dll",
-        "lib/net46/SharpVectors.Dom.xml",
-        "lib/net46/SharpVectors.Model.dll",
-        "lib/net46/SharpVectors.Model.xml",
-        "lib/net46/SharpVectors.Rendering.Gdi.dll",
-        "lib/net46/SharpVectors.Rendering.Gdi.xml",
-        "lib/net46/SharpVectors.Rendering.Wpf.dll",
-        "lib/net46/SharpVectors.Rendering.Wpf.xml",
-        "lib/net46/SharpVectors.Runtime.Wpf.dll",
-        "lib/net46/SharpVectors.Runtime.Wpf.xml",
-        "lib/net47/SharpVectors.Converters.Wpf.dll",
-        "lib/net47/SharpVectors.Converters.Wpf.xml",
-        "lib/net47/SharpVectors.Core.dll",
-        "lib/net47/SharpVectors.Core.xml",
-        "lib/net47/SharpVectors.Css.dll",
-        "lib/net47/SharpVectors.Css.xml",
-        "lib/net47/SharpVectors.Dom.dll",
-        "lib/net47/SharpVectors.Dom.xml",
-        "lib/net47/SharpVectors.Model.dll",
-        "lib/net47/SharpVectors.Model.xml",
-        "lib/net47/SharpVectors.Rendering.Gdi.dll",
-        "lib/net47/SharpVectors.Rendering.Gdi.xml",
-        "lib/net47/SharpVectors.Rendering.Wpf.dll",
-        "lib/net47/SharpVectors.Rendering.Wpf.xml",
-        "lib/net47/SharpVectors.Runtime.Wpf.dll",
-        "lib/net47/SharpVectors.Runtime.Wpf.xml",
-        "lib/net48/SharpVectors.Converters.Wpf.dll",
-        "lib/net48/SharpVectors.Converters.Wpf.xml",
-        "lib/net48/SharpVectors.Core.dll",
-        "lib/net48/SharpVectors.Core.xml",
-        "lib/net48/SharpVectors.Css.dll",
-        "lib/net48/SharpVectors.Css.xml",
-        "lib/net48/SharpVectors.Dom.dll",
-        "lib/net48/SharpVectors.Dom.xml",
-        "lib/net48/SharpVectors.Model.dll",
-        "lib/net48/SharpVectors.Model.xml",
-        "lib/net48/SharpVectors.Rendering.Gdi.dll",
-        "lib/net48/SharpVectors.Rendering.Gdi.xml",
-        "lib/net48/SharpVectors.Rendering.Wpf.dll",
-        "lib/net48/SharpVectors.Rendering.Wpf.xml",
-        "lib/net48/SharpVectors.Runtime.Wpf.dll",
-        "lib/net48/SharpVectors.Runtime.Wpf.xml",
-        "lib/net5.0-windows/SharpVectors.Converters.Wpf.dll",
-        "lib/net5.0-windows/SharpVectors.Converters.Wpf.xml",
-        "lib/net5.0-windows/SharpVectors.Core.dll",
-        "lib/net5.0-windows/SharpVectors.Core.xml",
-        "lib/net5.0-windows/SharpVectors.Css.dll",
-        "lib/net5.0-windows/SharpVectors.Css.xml",
-        "lib/net5.0-windows/SharpVectors.Dom.dll",
-        "lib/net5.0-windows/SharpVectors.Dom.xml",
-        "lib/net5.0-windows/SharpVectors.Model.dll",
-        "lib/net5.0-windows/SharpVectors.Model.xml",
-        "lib/net5.0-windows/SharpVectors.Rendering.Gdi.dll",
-        "lib/net5.0-windows/SharpVectors.Rendering.Gdi.xml",
-        "lib/net5.0-windows/SharpVectors.Rendering.Wpf.dll",
-        "lib/net5.0-windows/SharpVectors.Rendering.Wpf.xml",
-        "lib/net5.0-windows/SharpVectors.Runtime.Wpf.dll",
-        "lib/net5.0-windows/SharpVectors.Runtime.Wpf.xml",
-        "lib/netcoreapp3.1/SharpVectors.Converters.Wpf.dll",
-        "lib/netcoreapp3.1/SharpVectors.Converters.Wpf.xml",
-        "lib/netcoreapp3.1/SharpVectors.Core.dll",
-        "lib/netcoreapp3.1/SharpVectors.Core.xml",
-        "lib/netcoreapp3.1/SharpVectors.Css.dll",
-        "lib/netcoreapp3.1/SharpVectors.Css.xml",
-        "lib/netcoreapp3.1/SharpVectors.Dom.dll",
-        "lib/netcoreapp3.1/SharpVectors.Dom.xml",
-        "lib/netcoreapp3.1/SharpVectors.Model.dll",
-        "lib/netcoreapp3.1/SharpVectors.Model.xml",
-        "lib/netcoreapp3.1/SharpVectors.Rendering.Gdi.dll",
-        "lib/netcoreapp3.1/SharpVectors.Rendering.Gdi.xml",
-        "lib/netcoreapp3.1/SharpVectors.Rendering.Wpf.dll",
-        "lib/netcoreapp3.1/SharpVectors.Rendering.Wpf.xml",
-        "lib/netcoreapp3.1/SharpVectors.Runtime.Wpf.dll",
-        "lib/netcoreapp3.1/SharpVectors.Runtime.Wpf.xml",
-        "sharpvectors.1.7.7.nupkg.sha512",
-        "sharpvectors.nuspec"
-      ]
-    },
     "RHYANetwork.UtaitePlayer.Client/1.0.0": {
       "type": "project",
       "path": "../RHYANetwork.UtaitePlayer.Client/RHYANetwork.UtaitePlayer.Client.csproj",
@@ -516,8 +299,7 @@
       "Ionic.Zip >= 1.9.1.8",
       "MaterialDesignThemes >= 4.5.0",
       "RHYANetwork.UtaitePlayer.Client >= 1.0.0",
-      "RHYANetwork.UtaitePlayer.Registry >= 1.0.0",
-      "SharpVectors >= 1.7.7"
+      "RHYANetwork.UtaitePlayer.Registry >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -573,10 +355,6 @@
           "MaterialDesignThemes": {
             "target": "Package",
             "version": "[4.5.0, )"
-          },
-          "SharpVectors": {
-            "target": "Package",
-            "version": "[1.7.7, )"
           }
         }
       }

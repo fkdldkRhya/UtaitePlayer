@@ -22,7 +22,7 @@ android {
         releaseWithSignedKey {
             keyAlias 'RHYA.Network'
             keyPassword 'Cks0983pop@'
-            storeFile file('A:\\Utaite_Player\\keysotre\\keysotre.jks')
+            storeFile file('A:\\Dev Resources\\Java_Android_Keystore\\keysotre.jks')
             storePassword 'Cks0983pop@'
         }
     }

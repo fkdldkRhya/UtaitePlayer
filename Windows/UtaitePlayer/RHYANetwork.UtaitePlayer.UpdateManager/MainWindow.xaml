@@ -3,9 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
-        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-        
         xmlns:local="clr-namespace:RHYANetwork.UtaitePlayer.UpdateManager"
         
         mc:Ignorable="d"
@@ -48,6 +45,5 @@
             Foreground="{DynamicResource Color_Blue1}" 
             BorderBrush="{x:Null}"
             Grid.Row="1"/>
-
     </Grid>
 </Window>

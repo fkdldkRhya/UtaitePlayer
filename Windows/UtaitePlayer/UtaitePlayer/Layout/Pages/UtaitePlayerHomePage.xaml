@@ -1,0 +1,1114 @@
+﻿<Page x:Class="UtaitePlayer.Layout.Pages.UtaitePlayerHomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
+      
+      xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      
+      
+      xmlns:local="clr-namespace:UtaitePlayer.Layout.Pages"
+    
+      
+      mc:Ignorable="d" 
+      
+      d:DesignHeight="584" d:DesignWidth="613"
+      
+      Title="UtaitePlayerHomePage"
+      
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <!-- Root panel -->
+        <Grid>
+            <!-- ScrollViewer -->
+            <hc:ScrollViewer
+                x:Name="rootHomeScrollViewer"
+                Resources="{StaticResource HandyControlThemes}">
+
+                <!-- ScrollViewer Root Panel -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- 최신 우타이테 Panel -->
+                    <Grid>
+                        <!-- Title -->
+                        <TextBlock
+                            Text="최신 우타이테"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="16"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="10,10,0,0" 
+                            HorizontalAlignment="Left" />
+
+                        <!-- All music play button -->
+                        <Button
+                            Resources="{StaticResource HandyControlThemes}"
+                            Width="80"
+                            Height="30"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top" 
+                            Margin="0,3,10,0" 
+                            Click="AllMusicPlayButtonForNewUtaite_Click">
+
+                            <StackPanel
+                                Orientation="Horizontal">
+
+                                <Path		                       
+                                    Width="8"
+			                        Height="10"
+			                        Data="M17.2,8.6L4.8,1.4C3.7,0.8,2.4,1.6,2.4,2.8v14.3c0,1.2,1.3,2,2.4,1.4l12.4-7.2C18.2,10.7,18.2,9.2,17.2,8.6z"
+                                    Fill="White"
+                                    Stretch="Fill"/>
+
+                                <TextBlock
+                                    VerticalAlignment="Bottom"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="9"
+                                    Foreground="{DynamicResource Color_White1}"
+                                    Text="전체 재생" 
+                                    Margin="5,0,0,0" />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Table -->
+                        <ListBox
+                            x:Name="newUtaiteListBox"
+                            BorderThickness="0" 
+                            Resources="{StaticResource HandyControlThemes}"
+                            Margin="0,45,0,0"
+                            VerticalAlignment="Top"
+                            Height="170"
+                            VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                            VirtualizingPanel.VirtualizationMode="Standard"
+                            VirtualizingPanel.IsVirtualizing="True"
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                            PreviewMouseWheel="newUtaiteListBox_PreviewMouseWheel" 
+                            PreviewMouseDoubleClick="newUtaiteListBox_PreviewMouseDoubleClick">
+
+                            <!-- ListBox Horizontal Panel -->
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Stretch" 
+                                        Height="160"/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+
+                            <!-- ListBox ContextMenu -->
+                            <ListBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem 
+                                        Header="현재 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="AddMusicMyPlayListMenuItemForNewUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem 
+                                        Header="사용자 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="AddMusicCustomMyPlayListMenuItemForNewUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem
+                                        Header="노래 정보 보기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="ShowMusicInfoMenuItemForNewUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_info.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </ListBox.ContextMenu>
+
+                            <!-- ListBox ItemTemplate -->
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid
+                                        Width="120"
+                                        Height="150"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Margin="0,10,0,0">
+
+                                        <!-- Music Image -->
+                                        <Image
+                                            Margin="0"
+                                            Stretch="UniformToFill"
+                                            Source="{Binding bitmapImage}" 
+                                            Width="120" 
+                                            Height="120"
+                                            VerticalAlignment="Top" 
+                                            HorizontalAlignment="Center"/>
+
+                                        <!-- Music Name -->
+                                        <TextBlock
+                                            VerticalAlignment="Bottom"
+                                            TextWrapping="NoWrap"
+                                            TextTrimming="CharacterEllipsis"
+                                            FontFamily="/Resources/font/#esamanru Light"
+                                            FontSize="10"
+                                            Foreground="{DynamicResource Color_White1}"
+                                            Margin="0,10,0,15" 
+                                            Text="{Binding musicName}" />
+
+                                        <!-- Artist Name -->
+                                        <TextBlock
+                                            VerticalAlignment="Bottom"
+                                            TextWrapping="NoWrap"
+                                            TextTrimming="CharacterEllipsis"
+                                            FontFamily="/Resources/font/#esamanru Light"
+                                            FontSize="8"
+                                            Foreground="{DynamicResource Color_White3}"
+                                            Margin="0,0,0,3" 
+                                            Text="{Binding artistName}" />
+
+                                        <!-- Click Rect -->
+                                        <Rectangle 
+                                            Fill="{DynamicResource Color_White1}"
+                                            Opacity="0"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+
+                    <!-- 노래가 가장 많은 아티스트 리스트 Panel -->
+                    <Grid 
+                        Grid.Row="1">
+
+                        <!-- Title -->
+                        <TextBlock
+                            Text="노래가 가장 많은 아티스트"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="16"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="10,10,0,0" 
+                            HorizontalAlignment="Left" />
+
+                        <!-- Table -->
+                        <DataGrid
+                            x:Name="manyMusicListDataGrid"
+                            BorderBrush="{x:Null}"
+                            HorizontalContentAlignment="Stretch" 
+                            AutoGenerateColumns="False"
+                            IsSynchronizedWithCurrentItem="False"
+                            SelectionMode="Single" 
+                            CanUserAddRows="False"
+                            Margin="0,45,0,0"
+                            Grid.Row="1"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="12"
+                            Resources="{StaticResource HandyControlThemes}"
+                            ScrollViewer.CanContentScroll="False" 
+                            HorizontalScrollBarVisibility="Disabled" 
+                            VerticalScrollBarVisibility="Disabled" 
+                            Background="{x:Null}" 
+                            PreviewMouseWheel="manyMusicListDataGrid_PreviewMouseWheel">
+
+                            <DataGrid.Columns>
+                                <!-- 순위 -->
+                                <DataGridTextColumn
+                                    Width="50"
+                                    Header="순위"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Binding="{Binding musicCountRank}" 
+                                    CanUserSort="False"
+                                    IsReadOnly="True"/>
+
+                                <!-- TemplateColumn -->
+                                <DataGridTemplateColumn
+                                    IsReadOnly="True" 
+                                    CanUserResize="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image
+                                                Stretch="UniformToFill"
+                                                Source="{Binding bitmapImage}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Width="30"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <!-- 아티스트 이름 -->
+                                <DataGridTextColumn
+                                    Width="1.5*"
+                                    Header="아티스트 이름"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Binding="{Binding artistName}" 
+                                    IsReadOnly="True"/>
+
+                                <!-- 노래 개수 -->
+                                <DataGridTextColumn
+                                    Width="*"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Header="노래 개수"
+                                    Binding="{Binding musicCount}" 
+                                    IsReadOnly="True"/>
+
+                                <!-- TemplateColumn -->
+                                <DataGridTemplateColumn
+                                    IsReadOnly="True" 
+                                    CanUserResize="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid
+                                                Grid.Column="1"
+                                                Height="20"
+		                                        Width="20"
+                                                HorizontalAlignment="Center" 
+                                                VerticalAlignment="Bottom"
+                                                MouseLeftButtonDown="manyMusicLinkDataGrid_MouseLeftButtonDown">
+
+                                                <Grid.Background>
+                                                    <ImageBrush ImageSource="/UtaitePlayer;component/Resources/drawable/ic_go.png"/>
+                                                </Grid.Background>
+
+                                                <hc:Poptip.Instance>
+                                                    <hc:Poptip
+                                                        Resources="{StaticResource HandyControlThemes}"
+                                                        Content="바로가기" 
+                                                        PlacementType="TopLeft"
+                                                        FontFamily="/Resources/font/#esamanru Light"
+                                                        FontSize="12"
+                                                        Foreground="{StaticResource Color_White1}"/>
+                                                </hc:Poptip.Instance>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!-- 사용자별 가장 많이 듣는 노래 가사별 유사도 Top30 우타이테 리스트 Panel -->
+                    <Grid
+                         Grid.Row="2">
+
+                        <!-- Title -->
+                        <TextBlock
+                            Text="즐겨듣는 우타이테와 유사한 가사"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="16"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="10,10,0,0" 
+                            HorizontalAlignment="Left" />
+
+                        <!-- No Data Panel -->
+                        <Grid
+                            x:Name="userManyPlayNgramForLyricsNoData"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="0,15">
+
+                            <svgc:SvgViewbox 
+                                Source="/Resources/drawable/img_character_1.svg"
+                                Margin="0,0,0,15" 
+                                Width="170"
+                                Height="130" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+
+                            <!-- Title -->
+                            <TextBlock
+                                Text="데이터가 존재하지 않습니다."
+                                VerticalAlignment="Bottom"
+                                TextWrapping="Wrap"
+                                FontFamily="/Resources/font/#esamanru Medium"
+                                FontSize="16"
+                                Foreground="{DynamicResource Color_White1}"
+                                Margin="0" 
+                                HorizontalAlignment="Center" />
+                        </Grid>
+
+                        <!-- Table -->
+                        <ListBox
+                            x:Name="userManyPlayNgramForLyricsListBox"
+                            BorderThickness="0" 
+                            Resources="{StaticResource HandyControlThemes}"
+                            Margin="0,45,0,0"
+                            VerticalAlignment="Top"
+                            Height="170"
+                            VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                            VirtualizingPanel.VirtualizationMode="Recycling"
+                            VirtualizingPanel.IsVirtualizing="True"
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                            PreviewMouseWheel="userManyPlayNgramForLyricsListBox_PreviewMouseWheel" 
+                            PreviewMouseDoubleClick="userManyPlayNgramForLyricsListBox_PreviewMouseDoubleClick">
+
+                            <!-- ListBox Horizontal Panel -->
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Stretch" 
+                                        Height="160"/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+
+                            <!-- ListBox ContextMenu -->
+                            <ListBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem 
+                                        Header="현재 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="AddMusicMyPlayListMenuItemForUserManyPlayNgramForLyricsListBox_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem 
+                                        Header="사용자 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="AddMusicCustomMyPlayListMenuItemForUserManyPlayNgramForLyricsListBox_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem
+                                        Header="노래 정보 보기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="ShowMusicInfoMenuItemForUserManyPlayNgramForLyricsListBox_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_info.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </ListBox.ContextMenu>
+
+                            <!-- ListBox ItemTemplate -->
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid
+                                        Width="120"
+                                        Height="150"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Margin="0,10,0,0">
+
+                                        <!-- Music Image -->
+                                        <Image
+                                            Margin="0"
+                                            Stretch="UniformToFill"
+                                            Source="{Binding bitmapImage}" 
+                                            Width="120" 
+                                            Height="120"
+                                            VerticalAlignment="Top" 
+                                            HorizontalAlignment="Center"/>
+
+                                        <!-- Music Name -->
+                                        <TextBlock
+                                            VerticalAlignment="Bottom"
+                                            TextWrapping="NoWrap"
+                                            TextTrimming="CharacterEllipsis"
+                                            FontFamily="/Resources/font/#esamanru Light"
+                                            FontSize="10"
+                                            Foreground="{DynamicResource Color_White1}"
+                                            Margin="0,10,0,15" 
+                                            Text="{Binding musicName}" />
+
+                                        <!-- Artist Name -->
+                                        <TextBlock
+                                            VerticalAlignment="Bottom"
+                                            TextWrapping="NoWrap"
+                                            TextTrimming="CharacterEllipsis"
+                                            FontFamily="/Resources/font/#esamanru Light"
+                                            FontSize="8"
+                                            Foreground="{DynamicResource Color_White3}"
+                                            Margin="0,0,0,3" 
+                                            Text="{Binding artistName}" />
+
+                                        <!-- Click Rect -->
+                                        <Rectangle 
+                                            Fill="{DynamicResource Color_White1}"
+                                            Opacity="0"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+
+                    <!-- 인기 우타이테 리스트 Panel -->
+                    <Grid 
+                        Grid.Row="3">
+
+                        <!-- Title -->
+                        <TextBlock
+                            Text="인기 우타이테"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="16"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="10,10,0,0" 
+                            HorizontalAlignment="Left" />
+
+                        <!-- All music play button -->
+                        <Button
+                            Resources="{StaticResource HandyControlThemes}"
+                            Width="80"
+                            Height="30"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top" 
+                            Margin="0,3,10,0" 
+                            Click="AllMusicPlayButtonForTopUtaite_Click">
+
+                            <StackPanel
+                                Orientation="Horizontal">
+
+                                <Path		                       
+                                    Width="8"
+			                        Height="10"
+			                        Data="M17.2,8.6L4.8,1.4C3.7,0.8,2.4,1.6,2.4,2.8v14.3c0,1.2,1.3,2,2.4,1.4l12.4-7.2C18.2,10.7,18.2,9.2,17.2,8.6z"
+                                    Fill="White"
+                                    Stretch="Fill"/>
+
+                                <TextBlock
+                                    VerticalAlignment="Bottom"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="9"
+                                    Foreground="{DynamicResource Color_White1}"
+                                    Text="전체 재생" 
+                                    Margin="5,0,0,0" />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Table -->
+                        <DataGrid
+                            x:Name="topUtaiteListDataGrid"
+                            BorderBrush="{x:Null}"
+                            HorizontalContentAlignment="Stretch" 
+                            AutoGenerateColumns="False"
+                            IsSynchronizedWithCurrentItem="False"
+                            SelectionMode="Single" 
+                            CanUserAddRows="False"
+                            Margin="5,45,5,0"
+                            Grid.Row="1"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="12"
+                            Resources="{StaticResource HandyControlThemes}"
+                            ScrollViewer.CanContentScroll="False" 
+                            HorizontalScrollBarVisibility="Disabled" 
+                            VerticalScrollBarVisibility="Disabled" 
+                            Background="{x:Null}" 
+                            PreviewMouseWheel="topUtaiteListDataGrid_PreviewMouseWheel">
+
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem 
+                                        Header="현재 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12" 
+                                        Click="AddMusicMyPlayListMenuItemForTopUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem 
+                                        Header="사용자 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="AddMusicCustomMyPlayListMenuItemForTopUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem
+                                        Header="노래 정보 보기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="ShowMusicInfoMenuItemForTopUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_info.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+
+                            <DataGrid.Columns>
+                                <!-- 순위 -->
+                                <DataGridTextColumn
+                                    Width="50"
+                                    Header="순위"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Binding="{Binding musicRank}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- TemplateColumn -->
+                                <DataGridTemplateColumn
+                                    IsReadOnly="True" 
+                                    CanUserResize="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image
+                                                Stretch="UniformToFill"
+                                                Source="{Binding bitmapImage}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Width="30"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <!-- 노래 이름 -->
+                                <DataGridTextColumn
+                                    Width="1.5*"
+                                    Header="제목"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Binding="{Binding musicName}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- 아티스트 -->
+                                <DataGridTextColumn
+                                    Width="*"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Header="아티스트"
+                                    Binding="{Binding artistName}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- 태그 -->
+                                <DataGridTextColumn
+                                    Width="*"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Header="태그"
+                                    Binding="{Binding musicTag}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- 작곡가 -->
+                                <DataGridTextColumn
+                                    Width="*"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Header="작곡가"
+                                    Binding="{Binding musicWriter}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- TemplateColumn -->
+                                <DataGridTemplateColumn
+                                    IsReadOnly="True" 
+                                    CanUserResize="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <!-- Play button -->
+                                            <Grid
+                                                Grid.Column="1"
+                                                Height="20"
+		                                        Width="20"
+                                                HorizontalAlignment="Center" 
+                                                VerticalAlignment="Bottom"
+                                                Background="Transparent">
+
+                                                <Path
+                                                    MouseLeftButtonDown="PlayButtonForTopUtaite_MouseLeftButtonDown"
+			                                        Width="14"
+			                                        Height="18"
+			                                        Data="M17.2,8.6L4.8,1.4C3.7,0.8,2.4,1.6,2.4,2.8v14.3c0,1.2,1.3,2,2.4,1.4l12.4-7.2C18.2,10.7,18.2,9.2,17.2,8.6z"
+                                                    Fill="White"
+                                                    Stretch="Fill">
+
+                                                    <hc:Poptip.Instance>
+                                                        <hc:Poptip
+                                                            Resources="{StaticResource HandyControlThemes}"
+                                                            Content="재생" 
+                                                            PlacementType="TopLeft"
+                                                            FontFamily="/Resources/font/#esamanru Light"
+                                                            FontSize="12"
+                                                            Foreground="{StaticResource Color_White1}"/>
+                                                    </hc:Poptip.Instance>
+                                                </Path>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!-- 분위기별 우타이테 리스트 Panel -->
+                    <Grid
+                         Grid.Row="4">
+
+                        <!-- Title -->
+                        <TextBlock
+                            Text="분위기별 우타이테"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="16"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="10,10,0,0" 
+                            HorizontalAlignment="Left" />
+
+                        <!-- All music play button -->
+                        <Button
+                            Resources="{StaticResource HandyControlThemes}"
+                            Width="80"
+                            Height="30"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top" 
+                            Margin="0,3,10,0" 
+                            Click="AllMusicPlayButtonForTypeUtaite_Click">
+
+                            <StackPanel
+                                Orientation="Horizontal">
+
+                                <Path		                       
+                                    Width="8"
+			                        Height="10"
+			                        Data="M17.2,8.6L4.8,1.4C3.7,0.8,2.4,1.6,2.4,2.8v14.3c0,1.2,1.3,2,2.4,1.4l12.4-7.2C18.2,10.7,18.2,9.2,17.2,8.6z"
+                                    Fill="White"
+                                    Stretch="Fill"/>
+
+                                <TextBlock
+                                    VerticalAlignment="Bottom"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="9"
+                                    Foreground="{DynamicResource Color_White1}"
+                                    Text="전체 재생" 
+                                    Margin="5,0,0,0" />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Music type selecter -->
+                        <hc:TagContainer
+                            VerticalAlignment="Top"
+                            Margin="10,40,0,0"
+                            HorizontalAlignment="Left"
+                            BorderBrush="{x:Null}"
+                            Foreground="{x:Null}">
+
+                            <hc:Tag 
+                                x:Name="musicTag_1"
+                                IsSelected="True"
+                                ShowCloseButton="False"
+                                Content="#신남" 
+                                PreviewMouseLeftButtonDown="musicTag_PreviewMouseLeftButtonDown"/>
+                            <hc:Tag
+                                x:Name="musicTag_2"
+                                ShowCloseButton="False"
+                                Content="#슬픔"
+                                Margin="10,0,0,0"
+                                PreviewMouseLeftButtonDown="musicTag_PreviewMouseLeftButtonDown"/>
+                            <hc:Tag
+                                x:Name="musicTag_3"
+                                ShowCloseButton="False"
+                                Content="#즐거움"
+                                Margin="10,0,0,0"
+                                PreviewMouseLeftButtonDown="musicTag_PreviewMouseLeftButtonDown"/>
+                            <hc:Tag
+                                x:Name="musicTag_4"
+                                ShowCloseButton="False"
+                                Content="#잔잔" 
+                                Margin="10,0,0,0"
+                                PreviewMouseLeftButtonDown="musicTag_PreviewMouseLeftButtonDown"/>
+                            <hc:Tag
+                                x:Name="musicTag_5"
+                                Resources="{StaticResource HandyControlThemes}" 
+                                ShowCloseButton="False"
+                                Content="#모음집" 
+                                Margin="10,0,0,0"
+                                PreviewMouseLeftButtonDown="musicTag_PreviewMouseLeftButtonDown"/>
+                        </hc:TagContainer>
+
+                        <!-- Table -->
+                        <ListBox
+                            x:Name="typeUtaiteListBox"
+                            BorderThickness="0" 
+                            Resources="{StaticResource HandyControlThemes}"
+                            Margin="0,80,0,0"
+                            VerticalAlignment="Top"
+                            Height="170"
+                            VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                            VirtualizingPanel.VirtualizationMode="Standard"
+                            VirtualizingPanel.IsVirtualizing="True"
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                            PreviewMouseWheel="typeUtaiteListBox_PreviewMouseWheel" 
+                            PreviewMouseDoubleClick="typeUtaiteListBox_PreviewMouseDoubleClick">
+
+                            <!-- ListBox Horizontal Panel -->
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Stretch" 
+                                        Height="160"/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+
+                            <!-- ListBox ContextMenu -->
+                            <ListBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem 
+                                        Header="현재 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="AddMusicMyPlayListMenuItemForTypeUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem 
+                                        Header="사용자 플레이리스트에 담기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="AddMusicCustomMyPlayListMenuItemForTypeUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_playlist.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem
+                                        Header="노래 정보 보기"
+                                        FontFamily="/Resources/font/#esamanru Light"
+                                        FontSize="12"
+                                        Click="ShowMusicInfoMenuItemForTypeUtaite_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image 
+                                                Height="15"
+                                                Width="15"
+                                                Source="/UtaitePlayer;component/Resources/drawable/ic_info.png"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </ListBox.ContextMenu>
+
+                            <!-- ListBox ItemTemplate -->
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid
+                                        Width="120"
+                                        Height="150"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Margin="0,10,0,0">
+
+                                        <!-- Music Image -->
+                                        <Image
+                                            Margin="0"
+                                            Stretch="UniformToFill"
+                                            Source="{Binding bitmapImage}" 
+                                            Width="120" 
+                                            Height="120"
+                                            VerticalAlignment="Top" 
+                                            HorizontalAlignment="Center"/>
+
+                                        <!-- Music Name -->
+                                        <TextBlock
+                                            VerticalAlignment="Bottom"
+                                            TextWrapping="NoWrap"
+                                            TextTrimming="CharacterEllipsis"
+                                            FontFamily="/Resources/font/#esamanru Light"
+                                            FontSize="10"
+                                            Foreground="{DynamicResource Color_White1}"
+                                            Margin="0,10,0,15" 
+                                            Text="{Binding musicName}" />
+
+                                        <!-- Artist Name -->
+                                        <TextBlock
+                                            VerticalAlignment="Bottom"
+                                            TextWrapping="NoWrap"
+                                            TextTrimming="CharacterEllipsis"
+                                            FontFamily="/Resources/font/#esamanru Light"
+                                            FontSize="8"
+                                            Foreground="{DynamicResource Color_White3}"
+                                            Margin="0,0,0,3" 
+                                            Text="{Binding artistName}" />
+
+                                        <!-- Click Rect -->
+                                        <Rectangle 
+                                            Fill="{DynamicResource Color_White1}"
+                                            Opacity="0"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+
+                    <!-- 니코니코동 순위 리스트 Panel -->
+                    <Grid
+                         Grid.Row="5">
+
+                        <!-- Title -->
+                        <TextBlock
+                            Text="니코니코 동화 순위"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="16"
+                            Foreground="{DynamicResource Color_White1}"
+                            Margin="10,10,0,0" 
+                            HorizontalAlignment="Left" />
+
+                        <!-- Table -->
+                        <DataGrid
+                            x:Name="nicoNicoDougaRankListDataGrid"
+                            BorderBrush="{x:Null}"
+                            HorizontalContentAlignment="Stretch" 
+                            AutoGenerateColumns="False"
+                            IsSynchronizedWithCurrentItem="False"
+                            SelectionMode="Single" 
+                            CanUserAddRows="False"
+                            Margin="5,45,5,0"
+                            FontFamily="/Resources/font/#esamanru Medium"
+                            FontSize="12"
+                            Resources="{StaticResource HandyControlThemes}"
+                            ScrollViewer.CanContentScroll="False" 
+                            HorizontalScrollBarVisibility="Disabled" 
+                            VerticalScrollBarVisibility="Disabled" 
+                            Background="{x:Null}" 
+                            PreviewMouseWheel="nicoNicoDougaRank_ListDataGrid_PreviewMouseWheel">]
+
+                            <DataGrid.Columns>
+                                <!-- 순위 -->
+                                <DataGridTextColumn
+                                    Width="50"
+                                    Header="순위"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Binding="{Binding rank}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- 제목 -->
+                                <DataGridTextColumn
+                                    Width="1.5*"
+                                    Header="제목"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Binding="{Binding title}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- 조회수 -->
+                                <DataGridTextColumn
+                                    Width="130"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Header="조회수"
+                                    Binding="{Binding viewCounter}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False"/>
+
+                                <!-- 좋아요 -->
+                                <DataGridTextColumn
+                                    Width="100"
+                                    FontFamily="/Resources/font/#esamanru Light"
+                                    FontSize="10"
+                                    Binding="{Binding likeCounter}" 
+                                    IsReadOnly="True"
+                                    CanUserSort="False">
+
+                                    <DataGridTextColumn.Header>
+                                        <Path
+			                                Width="18"
+			                                Height="18"
+			                                Data="M0,28.9c0-0.4,0-0.7,0-1.1c0.1-0.3,0.1-0.6,0.2-1c0.1-2.4,0.6-4.7,1.6-6.8C5.7,12,12,7.5,20.9,7.3c7.4-0.2,13.2,2.9,17.6,8.8c0.2,0.2,0.3,0.4,0.5,0.7c0.2-0.2,0.3-0.4,0.4-0.6c6.2-8.6,17.2-11.4,26.7-6.7c9.9,4.9,14.7,16.8,10,27.3c-2.5,5.7-6.3,10.4-10.7,14.7C57.7,59,49,65.2,39.7,70.6c-0.5,0.3-0.8,0.3-1.3,0c-5.7-3.4-11.2-7-16.4-11.1C16.3,55,10.9,50.2,6.5,44.3c-3-4.1-5.5-8.4-6.2-13.5C0.2,30.2,0.1,29.5,0,28.9z"
+                                            Fill="{DynamicResource Color_Red1}"
+                                            Stretch="Fill">
+
+                                            <hc:Poptip.Instance>
+                                                <hc:Poptip
+                                                    Resources="{StaticResource HandyControlThemes}"
+                                                    Content="좋아요" 
+                                                    PlacementType="TopLeft"
+                                                    FontFamily="/Resources/font/#esamanru Light"
+                                                    FontSize="12"
+                                                    Foreground="{StaticResource Color_White1}"/>
+                                            </hc:Poptip.Instance>
+                                        </Path>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+
+                                <!-- 바로가기 -->
+                                <DataGridTemplateColumn
+                                    IsReadOnly="True" 
+                                    CanUserResize="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid
+                                                Grid.Column="1"
+                                                Height="20"
+		                                        Width="20"
+                                                HorizontalAlignment="Center" 
+                                                VerticalAlignment="Bottom" 
+                                                MouseLeftButtonDown="NicoNicoDougaLinkGrid_MouseLeftButtonDown">
+
+                                                <Grid.Background>
+                                                    <ImageBrush ImageSource="/UtaitePlayer;component/Resources/drawable/ic_go.png"/>
+                                                </Grid.Background>
+
+                                                <hc:Poptip.Instance>
+                                                    <hc:Poptip
+                                                        Resources="{StaticResource HandyControlThemes}"
+                                                        Content="바로가기" 
+                                                        PlacementType="TopLeft"
+                                                        FontFamily="/Resources/font/#esamanru Light"
+                                                        FontSize="12"
+                                                        Foreground="{StaticResource Color_White1}"/>
+                                                </hc:Poptip.Instance>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </hc:ScrollViewer>
+
+
+            <!-- Scroll Viewer GoToTop Control -->
+            <hc:GotoTop
+                Resources="{StaticResource HandyControlThemes}"
+                Animated="True"
+                AutoHiding="True"
+                AnimationTime="500" 
+                Target="{Binding ElementName=rootHomeScrollViewer}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom" 
+                Margin="20,0,0,20"/>
+        </Grid>
+
+        <!-- Loading Panel -->
+        <Grid
+            Visibility="Collapsed"
+            x:Name="loadingPanel"
+            Background="{DynamicResource Color_Gray3}">
+
+            <hc:AnimationPath
+                Width="150"
+                Height="220"
+                Data="M158.4,476.2c-5.6,2.2-10.3,7.5-15,1.3c-3.4-4.4,0.9-9.9-1-14.9c-2.8,0.5-3.7,2.9-5.2,4.6c-3.8,4.4-7.9,8.4-12.8,11.5
+	                  c-2.2,1.4-4.7,2.4-7.1,0.5c-2.2-1.7-1.9-4.1-1.3-6.4c7.9-32.3,4.7-65.3,5.3-98c0.1-2.8-0.7-5.3-3.9-5.7c-5.2-0.7-9-4.8-14.3-5.3
+	                  c-0.8-0.1-2.1-0.6-2.2-1.1c-1.4-7-8.4-12.2-5.8-20.7c8.8-29,10.7-58.9,10.8-89.1c0-25.8-0.5-51.6,1.4-77.3
+	                  c0.8-10.8,2.4-21.6,4.1-32.3c0.6-3.7,0.1-6-3.2-7.9c-3.3-1.9-6.1-4.7-8.5-7.7c-3.8-4.9-5.5-10.3-2.7-16.1c2.9-6,2.3-12,0.7-18
+	                  c-4.4-16.3-5.8-33.1-8.2-49.8c-1.4-9.6,2.6-13.1,12.3-11.2c28.6,5.6,57.3,11,84.7,21.5c5,1.9,10,1.4,15.1,0.4
+	                  c22.9-4.6,46-6.8,69.1-1.2c4.4,1.1,5.6-1.4,6.9-4.7c4.1-10.6,6.8-21.5,9.8-32.4c1-3.5,2.3-6.9,4.1-10c3.9-7,8.7-7.9,14.3-2.2
+	                  c33.7,34.8,60.8,73.6,73.3,121.2c4,15.3,10.4,29.8,12.9,45.4c3.7,23,4.4,46.2,5,69.4c1,41.3,1.7,82.7,1.1,124c0,0.9-0.1,1.7,0,2.6
+	                  c0.5,2.9-2.4,7.3,0.1,8.3c3.2,1.3,5.4-3.2,7.7-5.5c12.9-13.4,28.1-24.2,41.5-37c2-1.9,4.2-4.1,7.3-2.5c3.1,1.6,3.4,4.8,3.2,7.8
+	                  c-1.2,12.9-2.9,25.7-7.4,38.1c-5.5,15.2-9.3,30.9-13.1,46.7c-2.8,12-9.2,22.9-15.2,33.7c-0.8,1.5-1.6,2.9-2.8,5.2
+	                  c7.8-0.8,14-4,20.6-5.7c3.4-0.9,7.3-2.8,10.1,0.7c2.8,3.4,0.6,7.1-1,10.2c-11.3,21.4-29,34-53.2,35.5c-24.7,1.6-49.4-0.2-74-3.3
+	                  c-11.4-1.4-22.5,1.4-33.7,2.8c-28.1,3.5-56.3,6.1-84.5,8.4c-8.1,0.7-16.1,1.4-24.2,2.1c-7,0.7-13.9-2.6-15-9.1
+	                  C163,494,157.2,486.4,158.4,476.2z"
+                PathLength="40"
+                Resources="{StaticResource HandyControlThemes}"
+                Duration="00:00:3" 
+                Stretch="Uniform"
+                StrokeThickness="2"
+                Stroke="{DynamicResource Color_White1}"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center"/>
+
+            <!-- Title -->
+            <TextBlock
+                Text="Loading..."
+                VerticalAlignment="Center"
+                TextWrapping="Wrap"
+                FontFamily="/Resources/font/#esamanru Medium"
+                FontSize="16"
+                Foreground="{DynamicResource Color_White1}"
+                Margin="243,282,268,282" 
+                HorizontalAlignment="Center"
+                Width="150" 
+                TextAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Page>
