@@ -76,6 +76,7 @@ namespace UtaitePlayer.Layout
         private System.Windows.Controls.Page pixivTopImagePage = null; // 픽시브 이미지 하면
         private System.Windows.Controls.Page songAddPage = null; // 노래 신청 화면
         private System.Windows.Controls.Page announcementPage = null; // 공지사항 화면
+        private System.Windows.Controls.Page equalizerSettingPage = null; // Equalizer 설정 화면
         private System.Windows.Controls.Page settingPage = null; // 설정 화면
         // ----------------------------------------------
         // ----------------------------------------------
@@ -691,6 +692,7 @@ namespace UtaitePlayer.Layout
                 pixivTopImagePage = new Pages.PixivTopImagePage();
                 songAddPage = new Pages.SongAddPage();
                 announcementPage = new Pages.AnnouncementPage();
+                equalizerSettingPage = new Pages.EqualizerSettingPage();
                 settingPage = new Pages.PlayerSettingPage();
 
                 // ChromiumWebBrowser 설정 (ImageViewer)
@@ -1848,6 +1850,16 @@ namespace UtaitePlayer.Layout
 
                                     nowPage = "공지사항";
                                     mainFrame.NavigationService.Navigate(announcementPage);
+                                    break;
+                                }
+
+                            // 우타이테 플레이어 Equalizer 설정 화면
+                            case "EQ 설정":
+                                {
+                                    PageReloadButton.Visibility = Visibility.Collapsed;
+
+                                    nowPage = "EQ 설정";
+                                    mainFrame.NavigationService.Navigate(equalizerSettingPage);
                                     break;
                                 }
 

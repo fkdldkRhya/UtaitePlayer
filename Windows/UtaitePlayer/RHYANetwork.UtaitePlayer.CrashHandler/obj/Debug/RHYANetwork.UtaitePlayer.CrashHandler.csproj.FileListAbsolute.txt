@@ -7,7 +7,6 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\Debug\RHYANetwork.UtaitePlayer.ExceptionManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\Debug\RHYANetwork.UtaitePlayer.Registry.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.pdb
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csprojAssemblyReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\Debug\RHYANetwork.UtaitePlayer.CrashHandler.exe
@@ -15,3 +14,4 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.CrashHandler.exe.config
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.CrashHandler.exe
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.CrashHandler.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.AssemblyReference.cache

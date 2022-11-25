@@ -1,8 +1,24 @@
 미리캔버스 자료/
 metadata/
 Windows/SetupMakeZIP/
+Windows/Rust Library/
 Windows/UtaitePlayer/UtaitePlayer/bin/
-keysotre/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.AuthCheckManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.Client/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.CrashHandler/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.CryptoModule/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.DataManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.ExceptionManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.MutexManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.ProcessKILLER/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.ProcessManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.Registry/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.Setup/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.TrayIcon/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.DataManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.ExceptionManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.MutexManager/bin/
+Windows/UtaitePlayer/RHYANetwork.UtaitePlayer.UpdateManager/bin/
 Premiere Pro Project/
 
 Licenses.txt

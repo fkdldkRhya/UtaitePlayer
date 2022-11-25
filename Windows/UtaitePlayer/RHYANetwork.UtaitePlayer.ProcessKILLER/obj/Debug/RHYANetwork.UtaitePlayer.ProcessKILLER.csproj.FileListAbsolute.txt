@@ -7,7 +7,6 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\bin
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\bin\Debug\RHYANetwork.UtaitePlayer.AuthCheckManagerProcessor.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\bin\Debug\RHYANetwork.UtaitePlayer.ExceptionManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\bin\Debug\RHYANetwork.UtaitePlayer.Registry.pdb
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.csprojAssemblyReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.exe
@@ -15,3 +14,4 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.exe.config
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.exe
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.AssemblyReference.cache

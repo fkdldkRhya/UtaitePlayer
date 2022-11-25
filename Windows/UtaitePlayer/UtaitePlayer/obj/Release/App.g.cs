@@ -9,18 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using HandyControl.Controls;
-using HandyControl.Data;
-using HandyControl.Expression.Media;
-using HandyControl.Expression.Shapes;
-using HandyControl.Interactivity;
-using HandyControl.Media.Animation;
-using HandyControl.Media.Effects;
-using HandyControl.Properties.Langs;
-using HandyControl.Themes;
-using HandyControl.Tools;
-using HandyControl.Tools.Converter;
-using HandyControl.Tools.Extension;
 using System;
 using System.Diagnostics;
 using System.Windows;

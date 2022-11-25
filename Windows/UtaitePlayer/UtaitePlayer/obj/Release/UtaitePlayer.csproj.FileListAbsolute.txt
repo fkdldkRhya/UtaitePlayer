@@ -282,3 +282,5 @@ A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\UtaitePlayer.cspr
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\UtaitePlayer.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\UtaitePlayer.exe
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\UtaitePlayer.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\Layout\Pages\EqualizerSettingPage.g.cs
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\Release\Layout\Pages\EqualizerSettingPage.baml

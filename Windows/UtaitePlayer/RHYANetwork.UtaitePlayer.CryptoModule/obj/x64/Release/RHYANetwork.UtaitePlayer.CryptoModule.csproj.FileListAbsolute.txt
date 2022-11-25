@@ -1,0 +1,8 @@
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CryptoModule\bin\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CryptoModule\bin\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CryptoModule\obj\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CryptoModule\obj\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CryptoModule\obj\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CryptoModule\obj\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.csproj.AssemblyReference.cache

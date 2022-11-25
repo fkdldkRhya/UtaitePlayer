@@ -18,6 +18,8 @@ namespace UtaitePlayer.Classes.Core
         // Media Player
         private AudioFileReader audioFileReader = null;
         private WaveOutEvent wasapiOut = null;
+
+        // Equalizer
         private Equalizer equalizer;
         private readonly EqualizerBand[] EQUALIZERBANDS = new EqualizerBand[]
         {

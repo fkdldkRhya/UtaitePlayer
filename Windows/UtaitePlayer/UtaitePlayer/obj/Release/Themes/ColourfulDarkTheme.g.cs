@@ -30,6 +30,8 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using UtaitePlayer;
+using UtaitePlayer.Layout.Pages;
 
 
 namespace REghZyFramework.Themes {

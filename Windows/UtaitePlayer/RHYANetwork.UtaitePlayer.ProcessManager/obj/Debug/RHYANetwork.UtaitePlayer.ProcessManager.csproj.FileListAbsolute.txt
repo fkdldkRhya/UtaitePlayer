@@ -1,0 +1,7 @@
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.ProcessManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.ProcessManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Debug\RHYANetwork.UtaitePlayer.ProcessManager.csproj.AssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Debug\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Debug\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CopyComplete
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Debug\RHYANetwork.UtaitePlayer.ProcessManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\Debug\RHYANetwork.UtaitePlayer.ProcessManager.pdb

@@ -1,0 +1,355 @@
+﻿<Page x:Class="UtaitePlayer.Layout.Pages.EqualizerSettingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
+      
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+      
+      
+      xmlns:local="clr-namespace:UtaitePlayer.Layout.Pages"
+      
+      
+      mc:Ignorable="d" 
+      
+      d:DesignHeight="584" d:DesignWidth="613"
+      
+      Title="EqualizerSettingPage">
+
+    <Grid>
+        <!-- RowDefinitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="471*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock
+            Text="Equalizer 설정"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"
+            FontFamily="/Resources/font/#esamanru Medium"
+            FontSize="16"
+            Foreground="{DynamicResource Color_White1}"
+            Margin="10,10,0,0" 
+            HorizontalAlignment="Left" />
+
+        <!-- Title -->
+        <hc:Divider
+            Grid.Row="2"
+            LineStrokeThickness="1"
+            HorizontalContentAlignment="Right"
+            Resources="{StaticResource HandyControlThemes}"
+            Content="Equalizer 세부 설정"
+            VerticalAlignment="Center"
+            FontFamily="/Resources/font/#esamanru Light"
+            FontSize="15"
+            Foreground="{DynamicResource Color_White1}"
+            Margin="10,0" />
+
+        <!-- Slider stack panel -->
+        <Grid
+            Grid.Row="3"
+            Height="400"
+            VerticalAlignment="Top">
+
+            <!-- ColumnDefinitions -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Equalizer value / 60 -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0" 
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="60"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 170 -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0"
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="170"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 310 -->
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0"
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="310"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 600 -->
+            <Grid Grid.Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0" 
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="600"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 1K -->
+            <Grid Grid.Column="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0"
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="1K"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 3K -->
+            <Grid Grid.Column="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0" 
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="3K"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 6K -->
+            <Grid Grid.Column="7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0" 
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="6K"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 12K -->
+            <Grid Grid.Column="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0"
+                    Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="12K"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 14K -->
+            <Grid Grid.Column="9">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0" Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="14K"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+
+            <!-- Equalizer value / 16K -->
+            <Grid Grid.Column="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Slider
+                    Resources="{StaticResource HandyControlThemes}"
+                    Orientation="Vertical"
+                    Value="30"
+                    Maximum="60"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0" Margin="0,10,0,0"/>
+
+                <TextBlock
+                    Text="16K"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"
+                    FontFamily="/UtaitePlayer;component/Resources/font/#esamanru Light"
+                    FontSize="13"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="0" 
+                    HorizontalAlignment="Center"
+                    Grid.Row="1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

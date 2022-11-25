@@ -9,8 +9,8 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\bin\Debu
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\bin\Debug\RHYANetwork.UtaitePlayer.Registry.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\bin\Debug\RHYANetwork.UtaitePlayer.CryptoModule.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\bin\Debug\RHYANetwork.UtaitePlayer.Client.pdb
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\obj\Debug\RHYANetwork.UtaitePlayer.TrayIcon.csprojAssemblyReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\obj\Debug\RHYANetwork.UtaitePlayer.TrayIcon.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\obj\Debug\RHYANetwork.UtaitePlayer.TrayIcon.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\obj\Debug\RHYANetwork.UtaitePlayer.TrayIcon.dll
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\obj\Debug\RHYANetwork.UtaitePlayer.TrayIcon.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.TrayIcon\obj\Debug\RHYANetwork.UtaitePlayer.TrayIcon.csproj.AssemblyReference.cache

@@ -1,0 +1,6 @@
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\bin\Debug\RHYANetwork.UtaitePlayer.MutexManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\bin\Debug\RHYANetwork.UtaitePlayer.MutexManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\Debug\RHYANetwork.UtaitePlayer.MutexManager.csproj.AssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\Debug\RHYANetwork.UtaitePlayer.MutexManager.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\Debug\RHYANetwork.UtaitePlayer.MutexManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\Debug\RHYANetwork.UtaitePlayer.MutexManager.pdb

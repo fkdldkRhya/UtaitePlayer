@@ -1,0 +1,11 @@
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\bin\x64\Release\RHYANetwork.UtaitePlayer.Client.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\bin\x64\Release\RHYANetwork.UtaitePlayer.Client.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\bin\x64\Release\Newtonsoft.Json.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\bin\x64\Release\Newtonsoft.Json.xml
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\obj\x64\Release\RHYANetwork.UtaitePlayer.Client.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\obj\x64\Release\RHYANetwork.UtaitePlayer.Client.csproj.CopyComplete
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\obj\x64\Release\RHYANetwork.UtaitePlayer.Client.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\obj\x64\Release\RHYANetwork.UtaitePlayer.Client.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.Client.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.Client.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Client\obj\x64\Release\RHYANetwork.UtaitePlayer.Client.csproj.AssemblyReference.cache

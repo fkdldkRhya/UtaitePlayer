@@ -34,7 +34,6 @@ A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaiteP
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\RHYANetwork.UtaitePlayer.UpdateManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\update\RHYANetwork.UtaitePlayer.UpdateManager.exe.config
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\Debug\update\RHYANetwork.UtaitePlayer.UpdateManager.exe
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csprojAssemblyReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\MainWindow.g.cs
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\App.g.cs
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\RHYANetwork.UtaitePlayer.UpdateManager_MarkupCompile.cache
@@ -47,3 +46,4 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\RHYANetwork.UtaitePlayer.UpdateManager.exe
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csproj.AssemblyReference.cache

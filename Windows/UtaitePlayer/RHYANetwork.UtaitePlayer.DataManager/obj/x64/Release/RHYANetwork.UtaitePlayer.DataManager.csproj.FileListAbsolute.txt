@@ -1,0 +1,16 @@
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.DataManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.DataManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\Newtonsoft.Json.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.Client.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.Registry.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.Client.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\bin\x64\Release\RHYANetwork.UtaitePlayer.Registry.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\obj\x64\Release\RHYANetwork.UtaitePlayer.DataManager.csproj.AssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\obj\x64\Release\RHYANetwork.UtaitePlayer.DataManager.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\obj\x64\Release\RHYANetwork.UtaitePlayer.DataManager.csproj.CopyComplete
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\obj\x64\Release\RHYANetwork.UtaitePlayer.DataManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.DataManager\obj\x64\Release\RHYANetwork.UtaitePlayer.DataManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.DataManager.dll
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.DataManager.pdb
