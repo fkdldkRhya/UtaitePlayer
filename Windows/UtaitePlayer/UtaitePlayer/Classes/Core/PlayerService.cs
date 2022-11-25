@@ -23,7 +23,7 @@ namespace UtaitePlayer.Classes.Core
         private Equalizer equalizer;
         private readonly EqualizerBand[] EQUALIZERBANDS = new EqualizerBand[]
         {
-            new EqualizerBand {Bandwidth = 0.8f, Frequency = 60, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 60, Gain = 1},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 170, Gain = 0},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 310, Gain = 0},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 600, Gain = 0},
