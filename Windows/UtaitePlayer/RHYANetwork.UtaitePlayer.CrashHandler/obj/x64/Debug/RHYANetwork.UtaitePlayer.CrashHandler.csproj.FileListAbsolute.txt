@@ -1,0 +1,8 @@
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.AssemblyReference.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.exe.config
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.exe
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.CoreCompileInputs.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.CopyComplete
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.exe
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.pdb

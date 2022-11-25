@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj": {}
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj": {}
   },
   "projects": {
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.Client",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj",
         "frameworks": {
           "net462": {
             "projectReferences": {}
@@ -19,11 +19,11 @@
         "net462": {}
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj": {
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.CryptoModule",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj",
         "frameworks": {
           "net462": {
             "projectReferences": {}
@@ -34,14 +34,14 @@
         "net462": {}
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.DataManager",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj",
         "packagesPath": "C:\\Users\\ji055\\.nuget\\packages\\",
-        "outputPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\obj\\",
+        "outputPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -58,14 +58,14 @@
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
               }
             }
           }
@@ -93,19 +93,19 @@
         }
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.ExceptionHandler",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj",
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
               }
             }
           }
@@ -115,11 +115,11 @@
         "net462": {}
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.MutexManager",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj",
         "frameworks": {
           "net462": {
             "projectReferences": {}
@@ -130,19 +130,19 @@
         "net462": {}
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.ProcessManager",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj",
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
               }
             }
           }
@@ -152,11 +152,11 @@
         "net462": {}
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.Registry",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj",
         "frameworks": {
           "net462": {
             "projectReferences": {}
@@ -167,16 +167,16 @@
         "net462": {}
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj": {
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj",
         "projectName": "RHYANetwork.UtaitePlayer.TrayIcon",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj",
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj"
               }
             }
           }
@@ -186,14 +186,14 @@
         "net462": {}
       }
     },
-    "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj": {
+    "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj",
+        "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj",
         "projectName": "UtaitePlayer",
-        "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj",
+        "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj",
         "packagesPath": "C:\\Users\\ji055\\.nuget\\packages\\",
-        "outputPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\obj\\",
+        "outputPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -210,29 +210,29 @@
         "frameworks": {
           "net462": {
             "projectReferences": {
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.CryptoModule\\RHYANetwork.UtaitePlayer.CryptoModule.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
               },
-              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj": {
-                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj"
+              "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj": {
+                "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.TrayIcon\\RHYANetwork.UtaitePlayer.TrayIcon.csproj"
               }
             }
           }
