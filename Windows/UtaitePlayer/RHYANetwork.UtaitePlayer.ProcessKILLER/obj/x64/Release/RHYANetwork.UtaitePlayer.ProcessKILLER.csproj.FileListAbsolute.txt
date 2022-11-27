@@ -15,3 +15,4 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.exe.config
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.exe
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.SuggestedBindingRedirects.cache

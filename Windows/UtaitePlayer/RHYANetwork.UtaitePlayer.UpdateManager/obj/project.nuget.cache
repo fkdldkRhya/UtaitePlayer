@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O34nK/Lhq2nRgpINgHHGFbP9smI754UpCO2CO8vgTaHtoqDbrcvOUO15lhIwYlefZI7D+sEAPlReH6e4neAK5Q==",
+  "dgSpecHash": "NUHyilXWCHzQCX0WW7MWMzCehY4gX4sV+f/WZEMW6uTQQNmL0wupX83kX+hiP7qKBFcMWdp1GCbkK/ZlL/yoAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.UpdateManager\\RHYANetwork.UtaitePlayer.UpdateManager.csproj",
+  "projectFilePath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.UpdateManager\\RHYANetwork.UtaitePlayer.UpdateManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ji055\\.nuget\\packages\\ionic.zip\\1.9.1.8\\ionic.zip.1.9.1.8.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",

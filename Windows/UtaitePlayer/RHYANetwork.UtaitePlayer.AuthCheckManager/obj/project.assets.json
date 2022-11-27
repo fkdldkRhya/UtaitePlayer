@@ -45,7 +45,7 @@
           "lib/net462/CefSharp.Wpf.dll": {}
         }
       },
-      "HandyControl/3.3.0": {
+      "HandyControl/3.4.0": {
         "type": "package",
         "compile": {
           "lib/net462/HandyControl.dll": {}
@@ -54,7 +54,7 @@
           "lib/net462/HandyControl.dll": {}
         }
       },
-      "HandyControls.Lang.ko-KR/3.3.11": {
+      "HandyControls.Lang.ko-KR/3.4.4": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -391,8 +391,8 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.3.0",
-          "HandyControls.Lang.ko-KR": "3.3.11",
+          "HandyControl": "3.4.0",
+          "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
           "MaterialDesignThemes": "4.5.0",
@@ -472,7 +472,7 @@
           "lib/net462/CefSharp.Wpf.dll": {}
         }
       },
-      "HandyControl/3.3.0": {
+      "HandyControl/3.4.0": {
         "type": "package",
         "compile": {
           "lib/net462/HandyControl.dll": {}
@@ -481,7 +481,7 @@
           "lib/net462/HandyControl.dll": {}
         }
       },
-      "HandyControls.Lang.ko-KR/3.3.11": {
+      "HandyControls.Lang.ko-KR/3.4.4": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -796,8 +796,8 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.3.0",
-          "HandyControls.Lang.ko-KR": "3.3.11",
+          "HandyControl": "3.4.0",
+          "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
           "MaterialDesignThemes": "4.5.0",
@@ -877,7 +877,7 @@
           "lib/net462/CefSharp.Wpf.dll": {}
         }
       },
-      "HandyControl/3.3.0": {
+      "HandyControl/3.4.0": {
         "type": "package",
         "compile": {
           "lib/net462/HandyControl.dll": {}
@@ -886,7 +886,7 @@
           "lib/net462/HandyControl.dll": {}
         }
       },
-      "HandyControls.Lang.ko-KR/3.3.11": {
+      "HandyControls.Lang.ko-KR/3.4.4": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -1201,8 +1201,8 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.3.0",
-          "HandyControls.Lang.ko-KR": "3.3.11",
+          "HandyControl": "3.4.0",
+          "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
           "MaterialDesignThemes": "4.5.0",
@@ -1282,7 +1282,7 @@
           "lib/net462/CefSharp.Wpf.dll": {}
         }
       },
-      "HandyControl/3.3.0": {
+      "HandyControl/3.4.0": {
         "type": "package",
         "compile": {
           "lib/net462/HandyControl.dll": {}
@@ -1291,7 +1291,7 @@
           "lib/net462/HandyControl.dll": {}
         }
       },
-      "HandyControls.Lang.ko-KR/3.3.11": {
+      "HandyControls.Lang.ko-KR/3.4.4": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -1606,8 +1606,8 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.3.0",
-          "HandyControls.Lang.ko-KR": "3.3.11",
+          "HandyControl": "3.4.0",
+          "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
           "MaterialDesignThemes": "4.5.0",
@@ -2416,16 +2416,16 @@
         "src/CefSharp.Wpf/obj/Release/net462/GeneratedInternalTypeHelper.g.cs"
       ]
     },
-    "HandyControl/3.3.0": {
-      "sha512": "LY38yByPYXOP2kfQkneedgSE+Ps6XWsXId9hBoEgvef4/mdToqWNSueA6kg1u/nKCV1E8zdpI+ZvevDnlyF10Q==",
+    "HandyControl/3.4.0": {
+      "sha512": "MgD5lxIm23oCv3+mFWH6EARLCOmR/spFaWeb813QtUDIQeUsbGK02xm1xDQEd0UGBcba6aho1FgCtiU4q7hHDw==",
       "type": "package",
-      "path": "handycontrol/3.3.0",
+      "path": "handycontrol/3.4.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "handycontrol.3.3.0.nupkg.sha512",
+        "handycontrol.3.4.0.nupkg.sha512",
         "handycontrol.nuspec",
         "icon.png",
         "lib/net40/HandyControl.dll",
@@ -2450,10 +2450,17 @@
         "lib/net472/HandyControl.xml",
         "lib/net48/HandyControl.dll",
         "lib/net48/HandyControl.xml",
+        "lib/net481/HandyControl.dll",
+        "lib/net481/HandyControl.xml",
         "lib/net5.0/HandyControl.deps.json",
         "lib/net5.0/HandyControl.dll",
         "lib/net5.0/HandyControl.xml",
-        "lib/net5.0/ref/HandyControl.dll",
+        "lib/net6.0/HandyControl.deps.json",
+        "lib/net6.0/HandyControl.dll",
+        "lib/net6.0/HandyControl.xml",
+        "lib/net7.0/HandyControl.deps.json",
+        "lib/net7.0/HandyControl.dll",
+        "lib/net7.0/HandyControl.xml",
         "lib/netcoreapp3.0/HandyControl.deps.json",
         "lib/netcoreapp3.0/HandyControl.dll",
         "lib/netcoreapp3.0/HandyControl.xml",
@@ -2463,15 +2470,15 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "HandyControls.Lang.ko-KR/3.3.11": {
-      "sha512": "RF5ydB8o3K5QfCvpYe1sqjzxJCUz5fgFAPRSSgbkOpzzD1bcQag/KGhQalJDjUF3znjnfnAWnIrWCuyfALPcGQ==",
+    "HandyControls.Lang.ko-KR/3.4.4": {
+      "sha512": "i7GT3q/q3EY184dyLwBQ1ilFLbtJL0Qw5TzlV59b1VdKaVTim1/00Z62CQMN5Bi8JyJ+u+59KdiB1Kvbqr2fMQ==",
       "type": "package",
-      "path": "handycontrols.lang.ko-kr/3.3.11",
+      "path": "handycontrols.lang.ko-kr/3.4.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "handycontrols.lang.ko-kr.3.3.11.nupkg.sha512",
+        "handycontrols.lang.ko-kr.3.4.4.nupkg.sha512",
         "handycontrols.lang.ko-kr.nuspec",
         "icon.png",
         "lib/net40/ko-KR/HandyControl.resources.dll",
@@ -2485,8 +2492,10 @@
         "lib/net471/ko-KR/HandyControl.resources.dll",
         "lib/net472/ko-KR/HandyControl.resources.dll",
         "lib/net48/ko-KR/HandyControl.resources.dll",
+        "lib/net481/ko-KR/HandyControl.resources.dll",
         "lib/net5.0/ko-KR/HandyControl.resources.dll",
         "lib/net6.0/ko-KR/HandyControl.resources.dll",
+        "lib/net7.0/ko-KR/HandyControl.resources.dll",
         "lib/netcoreapp3.0/ko-KR/HandyControl.resources.dll",
         "lib/netcoreapp3.1/ko-KR/HandyControl.resources.dll"
       ]
@@ -3099,11 +3108,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj",
+      "projectUniqueName": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj",
       "projectName": "RHYANetwork.UtaitePlayer.AuthCheckManager",
-      "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj",
+      "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj",
       "packagesPath": "C:\\Users\\ji055\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\obj\\",
+      "outputPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -3120,23 +3129,23 @@
       "frameworks": {
         "net462": {
           "projectReferences": {
-            "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
-              "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Client\\RHYANetwork.UtaitePlayer.Client.csproj"
             },
-            "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
-              "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj"
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ExceptionManager\\RHYANetwork.UtaitePlayer.ExceptionHandler.csproj"
             },
-            "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
-              "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
             },
-            "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
-              "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
             },
-            "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
-              "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.Registry\\RHYANetwork.UtaitePlayer.Registry.csproj"
             },
-            "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj": {
-              "projectPath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj"
+            "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj": {
+              "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj"
             }
           }
         }

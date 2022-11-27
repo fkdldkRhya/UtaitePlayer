@@ -111,6 +111,7 @@ namespace UtaitePlayer.Layout
         private int imageResourceDownloadCountForMusic = 0;
         private int imageResourceDownloadCountForSinger = 0;
 
+        // Yes or No dialog 정보
         private YesOrNoDialogInfo yesOrNoDialogInfo;
 
 

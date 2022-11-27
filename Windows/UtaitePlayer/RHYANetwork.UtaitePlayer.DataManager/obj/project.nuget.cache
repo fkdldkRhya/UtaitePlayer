@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C7LUCi2zg87OvC3CUDjETGUKoAOAOxCfycBU9aOAl5ks3gi+HAYfJl8zaTMXo5AtJG67G5pwXiNt2pxDs8WojQ==",
+  "dgSpecHash": "3254JrAJoo59NL4xtuLre5xWCh5vxJ6z1jSw+g10+xx1sVf0BcGS0TlZM1zT8AgysDLsrgRRT5lig95MXfcbuQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj",
+  "projectFilePath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.DataManager\\RHYANetwork.UtaitePlayer.DataManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ji055\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

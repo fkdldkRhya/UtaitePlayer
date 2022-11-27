@@ -23,6 +23,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\ji055\.nuget\packages\materialdesignthemes\4.5.0</PkgMaterialDesignThemes>
     <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\ji055\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
-    <PkgHandyControl Condition=" '$(PkgHandyControl)' == '' ">C:\Users\ji055\.nuget\packages\handycontrol\3.3.0</PkgHandyControl>
+    <PkgHandyControl Condition=" '$(PkgHandyControl)' == '' ">C:\Users\ji055\.nuget\packages\handycontrol\3.4.0</PkgHandyControl>
   </PropertyGroup>
 </Project>

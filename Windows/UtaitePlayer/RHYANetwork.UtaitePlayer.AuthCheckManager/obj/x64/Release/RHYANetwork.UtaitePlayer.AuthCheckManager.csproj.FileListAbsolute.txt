@@ -319,3 +319,4 @@ A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYA.Network.
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe.config
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.SuggestedBindingRedirects.cache
