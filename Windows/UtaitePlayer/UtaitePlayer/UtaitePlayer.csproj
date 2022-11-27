@@ -150,7 +150,6 @@
     <Compile Include="Classes\RNException\NotFoundArtistUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMusicUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMyPlaylistUUIDException.cs" />
-    <Compile Include="Classes\RustLoader\RustLibraryLoader.cs" />
     <Compile Include="Classes\Utils\ImageDownloadForParallel.cs" />
     <Compile Include="Classes\Utils\IPCRemoteObject.cs" />
     <Compile Include="Classes\Utils\MyPlaylistImageManager.cs" />
@@ -433,10 +432,8 @@
     <Resource Include="Resources\drawable\ic_mute.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\System.Windows.Interactivity.dll" />
-    <Content Include="Driver\ndp462-kb3151802-web.exe" />
-    <Content Include="Driver\vc_redist.x64.exe" />
-    <Content Include="Driver\vc_redist.x86.exe" />
+    <Content Include="Driver\up_windows_driver_vcredist_x64.exe" />
+    <Content Include="Lib\System.Windows.Interactivity.dll" />
     <Resource Include="Resources\drawable\img_rhya_network_x200.png" />
     <Resource Include="Resources\drawable\playlist-mdpi\ic_playlist_custom_1.png" />
     <Resource Include="Resources\drawable\playlist-mdpi\ic_playlist_custom_10.png" />
