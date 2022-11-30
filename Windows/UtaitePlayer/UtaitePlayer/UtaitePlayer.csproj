@@ -147,9 +147,11 @@
     <Compile Include="Classes\NAudioModule\Mp3FileReader.cs" />
     <Compile Include="Classes\NAudioModule\ViewModelBase.cs" />
     <Compile Include="Classes\RNException\EqualizerBandOutOfIndexException.cs" />
+    <Compile Include="Classes\RNException\EqualizerUnknownDataVlaueException.cs" />
     <Compile Include="Classes\RNException\NotFoundArtistUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMusicUUIDException.cs" />
     <Compile Include="Classes\RNException\NotFoundMyPlaylistUUIDException.cs" />
+    <Compile Include="Classes\DataVO\EqualizerSettingDataVO.cs" />
     <Compile Include="Classes\Utils\ImageDownloadForParallel.cs" />
     <Compile Include="Classes\Utils\IPCRemoteObject.cs" />
     <Compile Include="Classes\Utils\MyPlaylistImageManager.cs" />
@@ -464,6 +466,8 @@
     <Resource Include="Resources\drawable\ic_pixiv.svg" />
     <Resource Include="Resources\drawable\ic_pixiv_text.svg" />
     <Resource Include="Resources\drawable\ic_equalizer.png" />
+    <Resource Include="Resources\drawable\ic_equalizer.svg" />
+    <Resource Include="Resources\drawable\ic_calendar.svg" />
     <Content Include="RHYA.Network.UtaitePlayer.Launcher.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

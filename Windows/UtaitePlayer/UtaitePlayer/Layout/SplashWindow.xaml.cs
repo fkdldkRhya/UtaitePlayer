@@ -2,7 +2,6 @@
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using RHYANetwork.UtaitePlayer.ExceptionHandler;
-using RHYANetwork.UtaitePlayer.RustLibrary;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -94,13 +93,6 @@ namespace UtaitePlayer
             {
                 // 라이브러리 초기 작업
                 ConfigHelper.Instance.SetLang("ko-kr");
-
-                Vec2 vec;
-                vec.x = 10;
-                vec.y = 20;
-                Vec2 output = Interop.my_function(vec);
-                Console.WriteLine("X : " + output.x);
-                Console.WriteLine("Y : " + output.y);
 
                 // 1.0초 대기
                 await Task.Run(() => Thread.Sleep(1000));

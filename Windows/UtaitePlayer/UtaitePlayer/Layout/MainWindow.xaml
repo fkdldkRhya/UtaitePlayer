@@ -814,7 +814,6 @@
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
 
-                        <!-- Playlist Image -->
                         <Image
                             x:Name="x_DrawerRightForCreateMyPlaylist_PlaylistImage"
                             Margin="80,80,80,0"
@@ -1366,6 +1365,14 @@
                     </Grid>
                 </Grid>
             </Border>
+        </hc:Drawer>
+
+        <!-- Drawer / Music Info (노래 정보) -->
+        <hc:Drawer 
+            Name="DrawerRightForEQSetting" 
+            Dock="Left"
+            ShowMode="Cover"
+            Closed="Drawer_Closed">
         </hc:Drawer>
 
         <!-- Window panel -->
@@ -2956,7 +2963,160 @@
         <!--===========================================-->
         <!--===========================================-->
 
+        <Grid
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2" 
+            Width="506"
+            Height="330" 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
 
+            <Grid Background="{StaticResource Color_Gray1}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+
+                <!-- Dialog 닫기 버튼 -->
+                <Button
+                    Height="16"
+                    Width="16"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top" 
+                    Margin="0,15,15,0">
+
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+                            <Setter Property="Foreground" Value="{DynamicResource Color_White1}" />
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <!-- Button - Mouse color event Triggers -->
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Opacity" Value="0.5" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Resources>
+
+                    <Path
+                        Stretch="Fill"
+			            Width="15"
+			            Height="15"
+			            Data="M 18,11 27,20 M 18,20 27,11"
+			            Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+			            StrokeThickness="2" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" />
+                </Button>
+
+                <!-- Icon -->
+                <Image
+                    Margin="16,15,0,15" 
+                    HorizontalAlignment="Left"
+                    Width="20"
+                    Source="{svgc:SvgImage /UtaitePlayer;component/Resources/drawable/ic_equalizer.svg}" />
+                <!-- Title -->
+                <TextBlock
+                    Text="Equalizer 설정"
+                    TextWrapping="Wrap"
+                    FontFamily="/Resources/font/#esamanru Medium"
+                    FontSize="16"
+                    Foreground="{DynamicResource Color_White1}"
+                    Margin="42,17,0,14" 
+                    HorizontalAlignment="Left" />
+
+                <!-- Main panel -->
+                <Grid Grid.Row="1">
+                    <!-- Select eq setting mode select combobox -->
+                    <hc:ComboBox
+                        x:Name="x_DrawerRightForEQSetting_EQSettingModeComboBox"
+                        Resources="{StaticResource HandyControlThemes}"
+                        Margin="20,15,0,0"
+                        Width="216"
+                        Height="30"
+                        FontFamily="/Resources/font/#esamanru Light"
+                        FontSize="12"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top"/>
+                    <!-- Select eq setting mode load button -->
+                    <Button
+                        x:Name="x_DrawerRightForEQSetting_EQSettingModeButton"
+                        Resources="{StaticResource HandyControlThemes}"
+                        Width="80"
+                        Height="30"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top" 
+                        Margin="0,15,177,0">
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                VerticalAlignment="Bottom"
+                                FontFamily="/Resources/font/#esamanru Light"
+                                FontSize="10"
+                                Foreground="{DynamicResource Color_White1}"
+                                Text="불러오기" 
+                                Margin="5,0,0,0" />
+                        </StackPanel>
+                    </Button>
+
+                    <!-- EQ Date info panel -->
+                    <Grid
+                        Margin="0,15,20,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Height="31" 
+                        Width="146">
+
+                        <!-- Icon -->
+                        <Image
+                            Margin="0,6,0,5" 
+                            HorizontalAlignment="Right"
+                            Width="20"
+                            Height="20"
+                            Source="{svgc:SvgImage /Resources/drawable/ic_calendar.svg}"/>
+
+                        <!-- EQ Setting date -->
+                        <TextBlock
+                            x:Name="x_DrawerRightForEQSetting_EQSettingDateTextBlock"
+                            FontFamily="/Resources/font/#esamanru Light"
+                            FontSize="11"
+                            Foreground="{DynamicResource Color_White1}"
+                            Text="2020-10-10" 
+                            Margin="0,10,26,8"
+                            TextAlignment="Right" 
+                            TextTrimming="CharacterEllipsis" />
+                    </Grid>
+                </Grid>
+
+                <!-- Loading ProgressBar -->
+                <ProgressBar
+                    x:Name="x_DrawerRightForEQSetting_LoadingProgressBar"
+                    Grid.Row="2"
+                    Resources="{StaticResource HandyControlThemes}"
+                    Style="{StaticResource ProgressBarFlat}"
+                    Background="{x:Null}"
+                    IsIndeterminate="True"
+                    VerticalAlignment="Bottom"
+                    Height="5"
+                    BorderBrush="{x:Null}"/>
+            </Grid>
+        </Grid>
 
         <!-- Growl Panel -->
         <ScrollViewer

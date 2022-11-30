@@ -36,6 +36,15 @@ namespace RHYANetwork.UtaitePlayer.Client
             GET_ALL_INFO = 0,
             GET_DATE_CHECK_INFO = 1
         }
+        // 이퀄라이저 설정 Mode Enum
+        public enum EQSettingDataMode
+        {
+            EQ_CREATE = 0,
+            EQ_DELETE = 1,
+            EQ_EDIT = 2,
+            EQ_GET_ALL = 3,
+            EQ_GET = 4
+        }
 
 
 
@@ -871,6 +880,62 @@ namespace RHYANetwork.UtaitePlayer.Client
             try
             {
                 return getFullServerUrl(19, new Dictionary<string, string> { { "auth", authToken }, { "smode", "0" }, { "name", name } });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        /// <summary>
+        /// EQ 설정 데이터 클라이언트
+        /// </summary>
+        /// <param name="authToken">Auth token</param>
+        /// <param name="iEQSettingDataMode">EQ 클라이언트 설정 모드</param>
+        /// <param name="eq_name">EQ 설정 데이터 이름</param>
+        /// <param name="eq_id">EQ 설정 데이터 아이디</param>
+        /// <param name="eq_value_60">EQ 값 (Frequency: 60)</param>
+        /// <param name="eq_value_170">EQ 값 (Frequency: 170)</param>
+        /// <param name="eq_value_310">EQ 값 (Frequency: 310)</param>
+        /// <param name="eq_value_600">EQ 값 (Frequency: 600)</param>
+        /// <param name="eq_value_1000">EQ 값 (Frequency: 1000)</param>
+        /// <param name="eq_value_3000">EQ 값 (Frequency: 3000)</param>
+        /// <param name="eq_value_6000">EQ 값 (Frequency: 6000)</param>
+        /// <param name="eq_value_12000">EQ 값 (Frequency: 12000)</param>
+        /// <param name="eq_value_14000">EQ 값 (Frequency: 14000)</param>
+        /// <param name="eq_value_16000">EQ 값 (Frequency: 16000)</param>
+        /// <returns>EQ 설정 데이터</returns>
+        public string winEQSettingManager(string authToken, EQSettingDataMode iEQSettingDataMode, string eq_name, int eq_id, double eq_value_60, double eq_value_170, double eq_value_310, double eq_value_600, double eq_value_1000, double eq_value_3000, double eq_value_6000, double eq_value_12000, double eq_value_14000, double eq_value_16000)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                Stream stream = webClient.OpenRead(getFullServerUrl(25, new Dictionary<string, string> {
+                    { "auth", authToken },
+                    { "smode", ((int)iEQSettingDataMode).ToString() },
+                    { "eq_name", eq_name },
+                    { "eq_id", eq_id.ToString() },
+                    { "eq_value_60", eq_value_60.ToString() },
+                    { "eq_value_170", eq_value_170.ToString() },
+                    { "eq_value_310", eq_value_310.ToString() },
+                    { "eq_value_600", eq_value_600.ToString() },
+                    { "eq_value_1000", eq_value_1000.ToString() },
+                    { "eq_value_3000", eq_value_3000.ToString() },
+                    { "eq_value_6000", eq_value_6000.ToString() },
+                    { "eq_value_12000", eq_value_12000.ToString() },
+                    { "eq_value_14000", eq_value_14000.ToString() },
+                    { "eq_value_16000", eq_value_16000.ToString() } }));
+                StreamReader streamReader = new StreamReader(stream);
+
+                string result = streamReader.ReadToEnd();
+
+                streamReader.Dispose();
+                stream.Dispose();
+                webClient.Dispose();
+
+                return result;
             }
             catch (Exception ex)
             {

@@ -1857,7 +1857,10 @@ namespace UtaitePlayer.Layout
                             // 우타이테 플레이어 Equalizer 설정 화면
                             case "EQ 설정":
                                 {
-                                    PageReloadButton.Visibility = Visibility.Collapsed;
+                                    if (isEnable)
+                                        PageReloadButton.Visibility = Visibility.Visible;
+                                    else
+                                        ((Pages.EqualizerSettingPage)equalizerSettingPage).isLoaded = false;
 
                                     nowPage = "EQ 설정";
                                     mainFrame.NavigationService.Navigate(equalizerSettingPage);
@@ -3759,6 +3762,15 @@ namespace UtaitePlayer.Layout
                         {
                             ((Pages.MyPlaylistPage)myPlaylistPage).isLoaded = false;
                             ((Pages.MyPlaylistPage)myPlaylistPage).reload();
+
+                            break;
+                        }
+
+                    // 우타이테 플레이어 Equalizer 설정 화면
+                    case "EQ 설정":
+                        {
+                            ((Pages.EqualizerSettingPage)equalizerSettingPage).isLoaded = false;
+                            ((Pages.EqualizerSettingPage)equalizerSettingPage).reload();
 
                             break;
                         }

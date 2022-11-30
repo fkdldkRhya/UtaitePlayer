@@ -29,6 +29,26 @@ namespace UtaitePlayer.Classes.Utils
             public bool gs_window_top_most { get; set; }
             // 프로그램 시작 모드
             public int gs_start_mod { get; set; }
+            // Equalizer Gain 60 Value
+            public float ps_equalizer_gain_60 { get; set; }
+            // Equalizer Gain 170 Value
+            public float ps_equalizer_gain_170 { get; set; }
+            // Equalizer Gain 310 Value
+            public float ps_equalizer_gain_310 { get; set; }
+            // Equalizer Gain 600 Value
+            public float ps_equalizer_gain_600 { get; set; }
+            // Equalizer Gain 1K Value
+            public float ps_equalizer_gain_1000 { get; set; }
+            // Equalizer Gain 3K Value
+            public float ps_equalizer_gain_3000 { get; set; }
+            // Equalizer Gain 6K Value
+            public float ps_equalizer_gain_6000 { get; set; }
+            // Equalizer Gain 120 Value
+            public float ps_equalizer_gain_12000 { get; set; }
+            // Equalizer Gain 140 Value
+            public float ps_equalizer_gain_14000 { get; set; }
+            // Equalizer Gain 16K Value
+            public float ps_equalizer_gain_16000 { get; set; }
         }
 
 
@@ -98,6 +118,16 @@ namespace UtaitePlayer.Classes.Utils
                     stringBuilder.AppendLine("gs_enable_reload_btn: true");
                     stringBuilder.AppendLine("gs_window_top_most: false");
                     stringBuilder.AppendLine("gs_start_mod: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_60: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_170: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_310: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_600: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_1000: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_3000: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_6000: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_12000: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_14000: 0");
+                    stringBuilder.AppendLine("ps_equalizer_gain_16000: 0");
 
                     File.WriteAllText(getSettingFilePath(), stringBuilder.ToString());
                 }

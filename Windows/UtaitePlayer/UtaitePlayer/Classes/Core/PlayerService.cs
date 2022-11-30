@@ -29,7 +29,7 @@ namespace UtaitePlayer.Classes.Core
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 600, Gain = 0},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 1000, Gain = 0},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 3000, Gain = 0},
-            new EqualizerBand {Bandwidth = 0.8f, Frequency = 3000, Gain = 0},
+            new EqualizerBand {Bandwidth = 0.8f, Frequency = 6000, Gain = 0},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 12000, Gain = 0},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 14000, Gain = 0},
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 16000, Gain = 0}
@@ -460,9 +460,9 @@ namespace UtaitePlayer.Classes.Core
         // =====================================================================
         // =====================================================================
         // Equalizer 설정 최솟 값
-        public const float MinimumGain = -30;
+        private const float EqualizerMinimumGain = -30;
         // Equalizer 설정 최대 값
-        public const float MaximumGain = 30;
+        private const float EqualizerMaximumGain = 30;
         /// <summary>
         /// Equalizer PropertyChanged Event
         /// </summary>
@@ -480,7 +480,7 @@ namespace UtaitePlayer.Classes.Core
             {
                 int bandsIndex = (int)equalizerBandSelect;
 
-                if (bandsIndex >= 0 && bandsIndex <= EQUALIZERBANDS.Length - 1 && EQUALIZERBANDS[bandsIndex].Gain != gain)
+                if (bandsIndex >= 0 && bandsIndex <= EQUALIZERBANDS.Length - 1 && EQUALIZERBANDS[bandsIndex].Gain != gain && gain >= EqualizerMinimumGain && gain <= EqualizerMaximumGain)
                 {
                     EQUALIZERBANDS[bandsIndex].Gain = gain;
                     OnPropertyChanged();
