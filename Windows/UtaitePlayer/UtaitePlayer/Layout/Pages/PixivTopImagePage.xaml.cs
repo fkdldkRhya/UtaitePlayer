@@ -55,9 +55,6 @@ namespace UtaitePlayer.Layout.Pages
             {
                 if (pixivTopImageDatVOs.Count <= 0)
                 {
-                    // 전역 Dialog 설정
-                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Image loading...");
-
                     // 데이터 파일 경로
                     RHYANetwork.UtaitePlayer.DataManager.MusicDataManager musicDataManager = new RHYANetwork.UtaitePlayer.DataManager.MusicDataManager();
                     string imageFilePath = System.IO.Path.Combine(musicDataManager.DATA_FILE_SAVE_DIRECTORY_NAME, "images_pixivtop");
@@ -179,9 +176,6 @@ namespace UtaitePlayer.Layout.Pages
 
                     // 데이터 새로고침
                     pixivTopImageListBox.Items.Refresh();
-
-                    // 전역 Dialog 설정
-                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
                 }
             }
             catch (Exception ex)

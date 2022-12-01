@@ -35,6 +35,10 @@ namespace UtaitePlayer.Classes.Core
             new EqualizerBand {Bandwidth = 0.8f, Frequency = 16000, Gain = 0}
         };
 
+        private NAudio.CoreAudioApi.MMDeviceEnumerator deviceEnum = null;
+        private NotificationClientImplementation notificationClient;
+        private NAudio.CoreAudioApi.Interfaces.IMMNotificationClient notifyClient;
+
         // Event call back delegate
         public delegate void PlaybackStoppedListener();
         public delegate void MusicInfoSettingListener();
@@ -132,7 +136,7 @@ namespace UtaitePlayer.Classes.Core
                 if (musicInfoSettingListener != null)
                     musicInfoSettingListener();
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 throw ex;
             }
@@ -219,6 +223,25 @@ namespace UtaitePlayer.Classes.Core
 
                     wasapiOut = null;
                     wasapiOut = new WaveOutEvent() { DeviceNumber = registryManager.getAudioDeviceID() };
+                }
+
+                if (notificationClient == null)
+                {
+                    deviceEnum = new NAudio.CoreAudioApi.MMDeviceEnumerator();
+                    notificationClient = new NotificationClientImplementation();
+                    notifyClient = (NAudio.CoreAudioApi.Interfaces.IMMNotificationClient)notificationClient;
+                    deviceEnum.RegisterEndpointNotificationCallback(notifyClient);
+                }
+                else
+                {
+                    notificationClient = null;
+                    notifyClient = null;
+                    deviceEnum = null;
+
+                    deviceEnum = new NAudio.CoreAudioApi.MMDeviceEnumerator();
+                    notificationClient = new NotificationClientImplementation();
+                    notifyClient = (NAudio.CoreAudioApi.Interfaces.IMMNotificationClient)notificationClient;
+                    deviceEnum.RegisterEndpointNotificationCallback(notifyClient);
                 }
 
                 if (equalizer == null)
@@ -381,7 +404,6 @@ namespace UtaitePlayer.Classes.Core
             try
             {
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
-
                 RHYANetwork.UtaitePlayer.DataManager.MusicInfoVO musicInfoVO = this.musicInfoVO;
 
                 PlaybackState playbackState = getPlaybackState();

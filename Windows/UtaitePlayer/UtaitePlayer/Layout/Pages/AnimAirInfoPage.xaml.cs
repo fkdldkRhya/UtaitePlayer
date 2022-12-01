@@ -75,9 +75,6 @@ namespace UtaitePlayer.Layout.Pages
                 RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
 
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Data loading...");
-
                 // 데이터 초기화
                 animAirInfoDataVOs.Clear();
 
@@ -206,11 +203,6 @@ namespace UtaitePlayer.Layout.Pages
             {
                 // 예외 처리
                 ExceptionManager.getInstance().showMessageBox(ex);
-            }
-            finally
-            {
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
             }
         }
 

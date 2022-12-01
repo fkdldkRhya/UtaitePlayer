@@ -32,10 +32,13 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
 
         /// <summary>
         /// Exception message box 출력
+        /// 
+        /// ** 함수 기능 일시적으로 비활성화
         /// </summary>
         /// <param name="exception">Exception</param>
         public void showMessageBox(Exception exception)
         {
+            /*
             const string DEFAULT_TITLE = "RHYA.Network ExceptionManager";
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -44,6 +47,7 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
             stringBuilder.AppendLine(exception.Message);
 
             System.Windows.MessageBox.Show(stringBuilder.ToString(), DEFAULT_TITLE, MessageBoxButton.OK, MessageBoxImage.Error);
+            */
         }
 
 

@@ -166,6 +166,10 @@ namespace UtaitePlayer.Layout
                 this.Left = (SystemParameters.WorkArea.Width) / 2 + SystemParameters.WorkArea.Left - Width / 2;
                 this.Top = (SystemParameters.WorkArea.Height) / 2 + SystemParameters.WorkArea.Left - Height / 2;
 
+                // 라이브러리 선언
+                RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
+                RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
+
                 // 설정 반영
                 try
                 {
@@ -232,7 +236,6 @@ namespace UtaitePlayer.Layout
                             musicDataManager.deletePlaylistFile();
 
                             // 레지스트리 제거
-                            RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
                             registryManager.deleteAuthToken();
                         });
                     }
@@ -274,9 +277,6 @@ namespace UtaitePlayer.Layout
                 // ChromiumWebBrowser 설정
                 musicInfoChromiumWebBrowser.MenuHandler = new CefSharpContextMenu();
                 musicInfoChromiumWebBrowser.LifeSpanHandler = new MyCustomLifeSpanHandler();
-
-                // 라이브러리 선언
-                RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
 
                 // 노래 정보 설정 이벤트 리스너
                 PlayerService.getInstance().setMusicInfoSettingListener(async () =>
@@ -359,7 +359,6 @@ namespace UtaitePlayer.Layout
                                     {
                                         string musicUUID = PlayerService.getInstance().getMusicInfo().uuid;
                                         PlayerService.getInstance().stopMusic();
-                                        RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
                                         PlayerService.getInstance().putMusicForURL(musicUUID, (string)registryManager.getAuthToken());
                                         PlayerService.getInstance().playMusic();
                                     }
@@ -404,7 +403,6 @@ namespace UtaitePlayer.Layout
                                         new RHYANetwork.UtaitePlayer.Registry.RegistryManager().setMyPlaylistIndex(randomIndex);
 
                                         PlayerService.getInstance().stopMusic();
-                                        RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
                                         PlayerService.getInstance().putMusicForURL(
                                             userPlaylistInfoVO.uuid,
                                             (string)registryManager.getAuthToken());
@@ -454,7 +452,6 @@ namespace UtaitePlayer.Layout
                                             new RHYANetwork.UtaitePlayer.Registry.RegistryManager().setMyPlaylistIndex(0);
 
                                             PlayerService.getInstance().stopMusic();
-                                            RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
                                             PlayerService.getInstance().putMusicForURL(
                                                 userPlaylistInfoVO.uuid,
                                                 (string)registryManager.getAuthToken());
@@ -504,7 +501,6 @@ namespace UtaitePlayer.Layout
                                         new RHYANetwork.UtaitePlayer.Registry.RegistryManager().setMyPlaylistIndex(nextMusicIndex);
 
                                         PlayerService.getInstance().stopMusic();
-                                        RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
                                         PlayerService.getInstance().putMusicForURL(
                                             userPlaylistInfoVO.uuid,
                                             (string)registryManager.getAuthToken());
@@ -550,7 +546,6 @@ namespace UtaitePlayer.Layout
                     {
                         try
                         {
-                            RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
                             PlayerService.getInstance().putMusicForURL(RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userPlaylistInfoVOs[RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().myPlaylistIndex].uuid, (string)registryManager.getAuthToken());
                         }
                         catch (Exception ex)
@@ -703,7 +698,6 @@ namespace UtaitePlayer.Layout
                 x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.PreviewMouseWheel += CefBrowserForImageViewer_PreviewMouseWheel;
                 x_DrawerBottomForImageViewer_ImageShowChromiumWebBrowser.KeyUp += CefBrowserForImageViewer_KeyUp;
                 RHYANetwork.UtaitePlayer.CryptoModule.AESCrypto aesCrypto = new RHYANetwork.UtaitePlayer.CryptoModule.AESCrypto();
-                RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager1 = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
 
                 // 기타 작업
                 await Task.Run(() =>
@@ -718,6 +712,60 @@ namespace UtaitePlayer.Layout
                         ExceptionManager.getInstance().showMessageBox(ex);
                     }
                 });
+
+
+                try
+                {
+                    string result = utaitePlayerClient.winEQSettingManager(
+                    registryManager.getAuthToken().ToString(),
+                    RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient.EQSettingDataMode.EQ_GET_ALL,
+                    null,
+                    -1,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+                    // 서버 응답 확인
+                    JObject jObjectForGetUserMoreInfoJsonValue = JObject.Parse(result);
+                    if (jObjectForGetUserMoreInfoJsonValue.ContainsKey("result"))
+                    {
+                        if (((string)jObjectForGetUserMoreInfoJsonValue["result"]).Equals("fail"))
+                        {
+                            // 예외 처리
+                            ExceptionManager.getInstance().showMessageBox("사용자 EQ 설정 데이터 JSON 구문을 분석하는 도중 알 수 없는 오류가 발생하였습니다. 프로그램을 종료 후 다시 실행하여 주십시오.");
+
+                            return;
+                        }
+                        else
+                        {
+                            // 데이터 설정
+                            string account = RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userInfoVO.id;
+                            JArray array = (JArray)jObjectForGetUserMoreInfoJsonValue.GetValue("message");
+                            foreach (object obj in array)
+                            {
+                                JObject data = JObject.Parse(((JObject)obj).ToString());
+
+                                EqualizerSettingDataVO equalizerSettingDataVO = new EqualizerSettingDataVO((int)data["eq_id"], (string)data["eq_setting_name"], (string)data["eq_setting_date"]);
+                                equalizerSettingDataVO.eq_value_1 = Convert.ToDouble(data["eq_value_60"]);
+                                equalizerSettingDataVO.eq_value_2 = Convert.ToDouble(data["eq_value_170"]);
+                                equalizerSettingDataVO.eq_value_3 = Convert.ToDouble(data["eq_value_300"]);
+                                equalizerSettingDataVO.eq_value_4 = Convert.ToDouble(data["eq_value_600"]);
+                                equalizerSettingDataVO.eq_value_5 = Convert.ToDouble(data["eq_value_1000"]);
+                                equalizerSettingDataVO.eq_value_6 = Convert.ToDouble(data["eq_value_3000"]);
+                                equalizerSettingDataVO.eq_value_7 = Convert.ToDouble(data["eq_value_6000"]);
+                                equalizerSettingDataVO.eq_value_8 = Convert.ToDouble(data["eq_value_12000"]);
+                                equalizerSettingDataVO.eq_value_9 = Convert.ToDouble(data["eq_value_14000"]);
+                                equalizerSettingDataVO.eq_value_10 = Convert.ToDouble(data["eq_value_16000"]);
+                                equalizerSettingDataVO.account = account;
+
+                                ((Pages.EqualizerSettingPage) equalizerSettingPage).equalizerSettingDataVOs.Add(equalizerSettingDataVO);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ExceptionManager.getInstance().showMessageBox(ex);
+                }
+             
 
                 // 초기화 UI 설정
                 hideLoadingDialog();
@@ -3871,6 +3919,77 @@ namespace UtaitePlayer.Layout
 
                     imageResourceDownloadCountForSinger++;
                 }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// Equalizer 설정 Dialog 출력
+        /// </summary>
+        /// <param name="type">Open 형식</param>
+        private async void showEqualizerSettingDialog(object type)
+        {
+            try
+            {
+                // ComboBox 설정
+                x_EQSettingDialog_EQSettingModeComboBox.Items.Clear();
+
+                await Task.Run(() => 
+                {
+                    try
+                    {
+
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionManager.getInstance().showMessageBox(ex);
+                    }
+                });
+
+                if (type == null)
+                {
+
+                }
+
+                clickBlockPanelForEQSettingDialog.Visibility = Visibility.Visible;
+                x_EQSettingDialog.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// Equalizer 설정 버튼 클릭 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EqualizerSetting_MenuitemRootPanel_Click(object sender, RoutedEventArgs e)
+        {
+            showEqualizerSettingDialog(null);
+        }
+
+
+
+        /// <summary>
+        /// Equalizer 설정 닫기 버튼 클릭 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void x_EQSettingDialog_CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                clickBlockPanelForEQSettingDialog.Visibility = Visibility.Collapsed;
+                x_EQSettingDialog.Visibility = Visibility.Collapsed;
             }
             catch (Exception ex)
             {

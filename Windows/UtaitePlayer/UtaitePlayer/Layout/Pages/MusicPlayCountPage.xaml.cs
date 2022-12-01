@@ -63,9 +63,6 @@ namespace UtaitePlayer.Layout.Pages
                 musicCountDataGrid.Visibility = Visibility.Collapsed;
                 noResult.Visibility = Visibility.Collapsed;
 
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Initializing...");
-
                 // 데이터 설정
                 if (musicCountDataGrid.ItemsSource == null)
                     musicCountDataGrid.ItemsSource = musicPlayCountDataVOs;
@@ -170,8 +167,6 @@ namespace UtaitePlayer.Layout.Pages
                 // 데이터 새로고침
                 musicCountDataGrid.Items.Refresh();
 
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
 
                 isLoaded = true;
             }

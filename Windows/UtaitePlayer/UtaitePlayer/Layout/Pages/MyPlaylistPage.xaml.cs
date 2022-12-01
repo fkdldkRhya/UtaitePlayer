@@ -117,7 +117,6 @@ namespace UtaitePlayer.Layout.Pages
                 Application.Current.Dispatcher.Invoke(() => 
                 {
                     myPlaylistRootGrid.Visibility = Visibility.Collapsed;
-                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Loading...");
                     x_PlaylistInfoLayout_MyPlaylistDataGrid_AllSelectedCheckbox.IsChecked = false;
                 });
 
@@ -198,9 +197,6 @@ namespace UtaitePlayer.Layout.Pages
                     }
 
                     myPlaylistListBox.Items.Refresh();
-
-                    // 전역 Dialog 설정
-                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
 
                     // UI 설정
                     myPlaylistRootGrid.Visibility = Visibility.Visible;

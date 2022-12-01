@@ -69,9 +69,6 @@ namespace UtaitePlayer.Layout.Pages
                 subscribeDataGrid.Visibility = Visibility.Collapsed;
                 noResult.Visibility = Visibility.Collapsed;
 
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Initializing...");
-
                 // 데이터 다시 불러오기
                 await Task.Run(() =>
                 {
@@ -135,11 +132,6 @@ namespace UtaitePlayer.Layout.Pages
             catch (Exception ex)
             {
                 ExceptionManager.getInstance().showMessageBox(ex);
-            }
-            finally
-            {
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
             }
         }
 

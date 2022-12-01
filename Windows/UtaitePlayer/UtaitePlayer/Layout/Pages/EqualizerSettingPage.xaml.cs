@@ -29,7 +29,7 @@ namespace UtaitePlayer.Layout.Pages
         // 데이터 로딩 감지
         public bool isLoaded = false;
         // Equalizer 설정 데이터
-        private List<EqualizerSettingDataVO> equalizerSettingDataVOs = new List<EqualizerSettingDataVO>();
+        public List<EqualizerSettingDataVO> equalizerSettingDataVOs = new List<EqualizerSettingDataVO>();
 
 
 
@@ -89,7 +89,6 @@ namespace UtaitePlayer.Layout.Pages
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     equalizerSettingDataListBox.Visibility = Visibility.Hidden;
-                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Loading...");
                 });
 
                 // EQ 데이터 초기화
@@ -125,6 +124,7 @@ namespace UtaitePlayer.Layout.Pages
                         }
                         else
                         {
+                            // 데이터 설정
                             string account = RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userInfoVO.id;
                             JArray array = (JArray)jObjectForGetUserMoreInfoJsonValue.GetValue("message");
                             foreach (object obj in array)
@@ -148,7 +148,6 @@ namespace UtaitePlayer.Layout.Pages
                             }
                         }
                     }
-                    // 데이터 설정
                 }
                 catch (Exception ex)
                 {
@@ -169,9 +168,6 @@ namespace UtaitePlayer.Layout.Pages
                     }
 
                     equalizerSettingDataListBox.Items.Refresh();
-
-                    // 전역 Dialog 설정
-                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
 
                     // UI 설정
                     myPlaylistRootGrid.Visibility = Visibility.Visible;
