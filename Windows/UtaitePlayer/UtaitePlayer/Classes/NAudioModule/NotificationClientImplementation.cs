@@ -1,9 +1,11 @@
 ﻿using NAudio.CoreAudioApi;
+using RHYANetwork.UtaitePlayer.ExceptionHandler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UtaitePlayer.Classes.Core;
 
 namespace UtaitePlayer.Classes.NAudioModule
 {
@@ -29,10 +31,41 @@ namespace UtaitePlayer.Classes.NAudioModule
             //Do some Work
         }
 
-        public void OnDeviceStateChanged(string deviceId, DeviceState newState)
+        public async void OnDeviceStateChanged(string deviceId, DeviceState newState)
         {
-            Console.WriteLine("OnDeviceStateChanged\n Device Id -->{0} : Device State {1}", deviceId, newState);
             //Do some Work
+            if (newState == DeviceState.Active)
+            {
+                try
+                {
+                    await Task.Run(() =>
+                    {
+                        try
+                        {
+                            PlayerService.getInstance().changeAudioDevice();
+                        }
+                        catch (Exception ex)
+                        {
+                            ExceptionManager.getInstance().showMessageBox(ex);
+                        }
+                    });
+                }
+                catch (Exception) { }
+            }
+            else if (newState == DeviceState.Unplugged)
+            {
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        PlayerService.getInstance().changeAudioDevice();
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionManager.getInstance().showMessageBox(ex);
+                    }
+                });
+            }
         }
 
         public NotificationClientImplementation()
