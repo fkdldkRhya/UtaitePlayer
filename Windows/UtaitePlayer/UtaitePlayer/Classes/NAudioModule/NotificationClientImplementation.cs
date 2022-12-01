@@ -12,47 +12,10 @@ namespace UtaitePlayer.Classes.NAudioModule
     class NotificationClientImplementation : NAudio.CoreAudioApi.Interfaces.IMMNotificationClient
     {
 
-        public void OnDefaultDeviceChanged(DataFlow dataFlow, Role deviceRole, string defaultDeviceId)
+        public async void OnDefaultDeviceChanged(DataFlow dataFlow, Role deviceRole, string defaultDeviceId)
         {
             //Do some Work
-            //Console.WriteLine("OnDefaultDeviceChanged --> {0}", dataFlow.ToString());
-        }
-
-        public void OnDeviceAdded(string deviceId)
-        {
-            //Do some Work
-            //Console.WriteLine("OnDeviceAdded -->");
-        }
-
-        public void OnDeviceRemoved(string deviceId)
-        {
-
-            //Console.WriteLine("OnDeviceRemoved -->");
-            //Do some Work
-        }
-
-        public async void OnDeviceStateChanged(string deviceId, DeviceState newState)
-        {
-            //Do some Work
-            if (newState == DeviceState.Active)
-            {
-                try
-                {
-                    await Task.Run(() =>
-                    {
-                        try
-                        {
-                            PlayerService.getInstance().changeAudioDevice();
-                        }
-                        catch (Exception ex)
-                        {
-                            ExceptionManager.getInstance().showMessageBox(ex);
-                        }
-                    });
-                }
-                catch (Exception) { }
-            }
-            else if (newState == DeviceState.Unplugged)
+            if (deviceRole == Role.Multimedia)
             {
                 await Task.Run(() =>
                 {
@@ -66,6 +29,22 @@ namespace UtaitePlayer.Classes.NAudioModule
                     }
                 });
             }
+        }
+
+        public void OnDeviceAdded(string deviceId)
+        {
+            //Do some Work
+        }
+
+        public void OnDeviceRemoved(string deviceId)
+        {
+
+            //Do some Work
+        }
+
+        public void OnDeviceStateChanged(string deviceId, DeviceState newState)
+        {
+            //Do some Work
         }
 
         public NotificationClientImplementation()
