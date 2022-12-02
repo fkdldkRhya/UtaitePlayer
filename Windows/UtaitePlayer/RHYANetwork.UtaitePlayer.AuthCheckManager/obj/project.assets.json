@@ -21,12 +21,20 @@
           "cef.redist.x86": "[100.0.23]"
         },
         "compile": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "build": {
           "buildTransitive/CefSharp.Common.props": {},
@@ -39,19 +47,27 @@
           "CefSharp.Common": "[100.0.230]"
         },
         "compile": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
-      "HandyControl/3.4.0": {
+      "HandyControl/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         }
       },
       "HandyControls.Lang.ko-KR/3.4.4": {
@@ -65,10 +81,14 @@
       "LiveCharts/0.9.7": {
         "type": "package",
         "compile": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "LiveCharts.Wpf/0.9.7": {
@@ -77,19 +97,27 @@
           "LiveCharts": "0.9.7"
         },
         "compile": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -98,10 +126,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -117,10 +149,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/Microsoft.Win32.Registry.dll": {}
+          "ref/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/Microsoft.Win32.Registry.dll": {}
+          "lib/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -195,33 +231,69 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpVectors/1.7.7": {
         "type": "package",
         "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Security.AccessControl/4.7.0": {
@@ -233,10 +305,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.AccessControl.dll": {}
+          "ref/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/System.Security.AccessControl.dll": {}
+          "lib/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net461/System.Security.AccessControl.dll": {
@@ -252,10 +328,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.Principal.Windows.dll": {}
+          "ref/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/System.Security.Principal.Windows.dll": {}
+          "lib/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net461/System.Security.Principal.Windows.dll": {
@@ -274,7 +354,9 @@
           "ref/net461/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net461/System.ValueTuple.dll": {
+            "related": ".xml"
+          }
         }
       },
       "VirtualizingWrapPanel/1.5.7": {
@@ -289,10 +371,14 @@
       "YamlDotNet/11.2.1": {
         "type": "package",
         "compile": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         }
       },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
@@ -391,7 +477,7 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.4.0",
+          "HandyControl": "3.3.0",
           "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
@@ -448,12 +534,20 @@
           "cef.redist.x86": "[100.0.23]"
         },
         "compile": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "build": {
           "buildTransitive/CefSharp.Common.props": {},
@@ -466,19 +560,27 @@
           "CefSharp.Common": "[100.0.230]"
         },
         "compile": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
-      "HandyControl/3.4.0": {
+      "HandyControl/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         }
       },
       "HandyControls.Lang.ko-KR/3.4.4": {
@@ -492,10 +594,14 @@
       "LiveCharts/0.9.7": {
         "type": "package",
         "compile": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "LiveCharts.Wpf/0.9.7": {
@@ -504,19 +610,27 @@
           "LiveCharts": "0.9.7"
         },
         "compile": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -525,10 +639,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -544,10 +662,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/Microsoft.Win32.Registry.dll": {}
+          "ref/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "runtimes/win/lib/net461/Microsoft.Win32.Registry.dll": {}
+          "runtimes/win/lib/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         }
       },
       "NAudio.Asio/2.1.0": {
@@ -612,33 +734,69 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpVectors/1.7.7": {
         "type": "package",
         "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Security.AccessControl/4.7.0": {
@@ -650,10 +808,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.AccessControl.dll": {}
+          "ref/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "runtimes/win/lib/net461/System.Security.AccessControl.dll": {}
+          "runtimes/win/lib/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Security.Principal.Windows/4.7.0": {
@@ -663,10 +825,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.Principal.Windows.dll": {}
+          "ref/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "runtimes/win/lib/net461/System.Security.Principal.Windows.dll": {}
+          "runtimes/win/lib/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.ValueTuple/4.5.0": {
@@ -679,7 +845,9 @@
           "ref/net461/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net461/System.ValueTuple.dll": {
+            "related": ".xml"
+          }
         }
       },
       "VirtualizingWrapPanel/1.5.7": {
@@ -694,10 +862,14 @@
       "YamlDotNet/11.2.1": {
         "type": "package",
         "compile": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         }
       },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
@@ -796,7 +968,7 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.4.0",
+          "HandyControl": "3.3.0",
           "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
@@ -853,12 +1025,20 @@
           "cef.redist.x86": "[100.0.23]"
         },
         "compile": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "build": {
           "buildTransitive/CefSharp.Common.props": {},
@@ -871,19 +1051,27 @@
           "CefSharp.Common": "[100.0.230]"
         },
         "compile": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
-      "HandyControl/3.4.0": {
+      "HandyControl/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         }
       },
       "HandyControls.Lang.ko-KR/3.4.4": {
@@ -897,10 +1085,14 @@
       "LiveCharts/0.9.7": {
         "type": "package",
         "compile": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "LiveCharts.Wpf/0.9.7": {
@@ -909,19 +1101,27 @@
           "LiveCharts": "0.9.7"
         },
         "compile": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -930,10 +1130,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -949,10 +1153,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/Microsoft.Win32.Registry.dll": {}
+          "ref/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/Microsoft.Win32.Registry.dll": {}
+          "lib/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         }
       },
       "NAudio.Asio/2.1.0": {
@@ -1017,33 +1225,69 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpVectors/1.7.7": {
         "type": "package",
         "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Security.AccessControl/4.7.0": {
@@ -1055,10 +1299,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.AccessControl.dll": {}
+          "ref/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/System.Security.AccessControl.dll": {}
+          "lib/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Security.Principal.Windows/4.7.0": {
@@ -1068,10 +1316,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.Principal.Windows.dll": {}
+          "ref/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/System.Security.Principal.Windows.dll": {}
+          "lib/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.ValueTuple/4.5.0": {
@@ -1084,7 +1336,9 @@
           "ref/net461/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net461/System.ValueTuple.dll": {
+            "related": ".xml"
+          }
         }
       },
       "VirtualizingWrapPanel/1.5.7": {
@@ -1099,10 +1353,14 @@
       "YamlDotNet/11.2.1": {
         "type": "package",
         "compile": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         }
       },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
@@ -1201,7 +1459,7 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.4.0",
+          "HandyControl": "3.3.0",
           "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
@@ -1258,12 +1516,20 @@
           "cef.redist.x86": "[100.0.23]"
         },
         "compile": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net452/CefSharp.Core.dll": {},
-          "lib/net452/CefSharp.dll": {}
+          "lib/net452/CefSharp.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net452/CefSharp.dll": {
+            "related": ".Core.pdb;.Core.XML;.pdb;.XML"
+          }
         },
         "build": {
           "buildTransitive/CefSharp.Common.props": {},
@@ -1276,19 +1542,27 @@
           "CefSharp.Common": "[100.0.230]"
         },
         "compile": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net462/CefSharp.Wpf.dll": {}
+          "lib/net462/CefSharp.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
-      "HandyControl/3.4.0": {
+      "HandyControl/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/HandyControl.dll": {}
+          "lib/net462/HandyControl.dll": {
+            "related": ".xml"
+          }
         }
       },
       "HandyControls.Lang.ko-KR/3.4.4": {
@@ -1302,10 +1576,14 @@
       "LiveCharts/0.9.7": {
         "type": "package",
         "compile": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.dll": {}
+          "lib/net45/LiveCharts.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "LiveCharts.Wpf/0.9.7": {
@@ -1314,19 +1592,27 @@
           "LiveCharts": "0.9.7"
         },
         "compile": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         },
         "runtime": {
-          "lib/net45/LiveCharts.Wpf.dll": {}
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "related": ".pdb;.XML"
+          }
         }
       },
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -1335,10 +1621,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -1354,10 +1644,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/Microsoft.Win32.Registry.dll": {}
+          "ref/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/Microsoft.Win32.Registry.dll": {}
+          "lib/net461/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         }
       },
       "NAudio.Asio/2.1.0": {
@@ -1422,33 +1716,69 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpVectors/1.7.7": {
         "type": "package",
         "compile": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/SharpVectors.Converters.Wpf.dll": {},
-          "lib/net46/SharpVectors.Core.dll": {},
-          "lib/net46/SharpVectors.Css.dll": {},
-          "lib/net46/SharpVectors.Dom.dll": {},
-          "lib/net46/SharpVectors.Model.dll": {},
-          "lib/net46/SharpVectors.Rendering.Gdi.dll": {},
-          "lib/net46/SharpVectors.Rendering.Wpf.dll": {},
-          "lib/net46/SharpVectors.Runtime.Wpf.dll": {}
+          "lib/net46/SharpVectors.Converters.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Css.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Dom.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Model.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Gdi.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Rendering.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net46/SharpVectors.Runtime.Wpf.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Security.AccessControl/4.7.0": {
@@ -1460,10 +1790,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.AccessControl.dll": {}
+          "ref/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/System.Security.AccessControl.dll": {}
+          "lib/net461/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Security.Principal.Windows/4.7.0": {
@@ -1473,10 +1807,14 @@
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Security.Principal.Windows.dll": {}
+          "ref/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net461/System.Security.Principal.Windows.dll": {}
+          "lib/net461/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.ValueTuple/4.5.0": {
@@ -1489,7 +1827,9 @@
           "ref/net461/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net461/System.ValueTuple.dll": {
+            "related": ".xml"
+          }
         }
       },
       "VirtualizingWrapPanel/1.5.7": {
@@ -1504,10 +1844,14 @@
       "YamlDotNet/11.2.1": {
         "type": "package",
         "compile": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/YamlDotNet.dll": {}
+          "lib/net45/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         }
       },
       "RHYANetwork.UtaitePlayer.Client/1.0.0": {
@@ -1606,7 +1950,7 @@
         "dependencies": {
           "CefSharp.Common": "100.0.230",
           "CefSharp.Wpf": "100.0.230",
-          "HandyControl": "3.4.0",
+          "HandyControl": "3.3.0",
           "HandyControls.Lang.ko-KR": "3.4.4",
           "LiveCharts.Wpf": "0.9.7",
           "MaterialDesignColors": "2.0.6",
@@ -2416,16 +2760,16 @@
         "src/CefSharp.Wpf/obj/Release/net462/GeneratedInternalTypeHelper.g.cs"
       ]
     },
-    "HandyControl/3.4.0": {
-      "sha512": "MgD5lxIm23oCv3+mFWH6EARLCOmR/spFaWeb813QtUDIQeUsbGK02xm1xDQEd0UGBcba6aho1FgCtiU4q7hHDw==",
+    "HandyControl/3.3.0": {
+      "sha512": "LY38yByPYXOP2kfQkneedgSE+Ps6XWsXId9hBoEgvef4/mdToqWNSueA6kg1u/nKCV1E8zdpI+ZvevDnlyF10Q==",
       "type": "package",
-      "path": "handycontrol/3.4.0",
+      "path": "handycontrol/3.3.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "handycontrol.3.4.0.nupkg.sha512",
+        "handycontrol.3.3.0.nupkg.sha512",
         "handycontrol.nuspec",
         "icon.png",
         "lib/net40/HandyControl.dll",
@@ -2450,17 +2794,10 @@
         "lib/net472/HandyControl.xml",
         "lib/net48/HandyControl.dll",
         "lib/net48/HandyControl.xml",
-        "lib/net481/HandyControl.dll",
-        "lib/net481/HandyControl.xml",
         "lib/net5.0/HandyControl.deps.json",
         "lib/net5.0/HandyControl.dll",
         "lib/net5.0/HandyControl.xml",
-        "lib/net6.0/HandyControl.deps.json",
-        "lib/net6.0/HandyControl.dll",
-        "lib/net6.0/HandyControl.xml",
-        "lib/net7.0/HandyControl.deps.json",
-        "lib/net7.0/HandyControl.dll",
-        "lib/net7.0/HandyControl.xml",
+        "lib/net5.0/ref/HandyControl.dll",
         "lib/netcoreapp3.0/HandyControl.deps.json",
         "lib/netcoreapp3.0/HandyControl.dll",
         "lib/netcoreapp3.0/HandyControl.xml",

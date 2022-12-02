@@ -22,13 +22,27 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
+        <ProgressBar
+            x:Name="LoadingProgressBar"
+            Grid.Row="0"
+            Visibility="Collapsed"
+            Resources="{StaticResource HandyControlThemes}"
+            Style="{StaticResource ProgressBarFlat}"
+            Background="{x:Null}"
+            IsIndeterminate="True"
+            VerticalAlignment="Bottom"
+            Height="5"
+            BorderBrush="{x:Null}"/>
+
         <!-- Title -->
         <TextBlock
+            Grid.Row="1"
             Text="애니메이션 방영 정보"
             VerticalAlignment="Center"
             TextWrapping="Wrap"
@@ -40,7 +54,7 @@
         
         <TabControl
             x:Name="yoilSelectedTabControl"
-            Grid.Row="1" 
+            Grid.Row="2" 
             Margin="5,5,5,0" 
             Resources="{StaticResource HandyControlThemes}" 
             Style="{DynamicResource TabControlInLine}" 
@@ -64,7 +78,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Margin="0,15" 
-            Grid.RowSpan="3">
+            Grid.RowSpan="4">
 
             <svgc:SvgViewbox 
                 Source="/Resources/drawable/img_character_1.svg"
@@ -88,7 +102,7 @@
         <ListBox
             x:Name="animInfolistListBox"
             BorderThickness="0" 
-            Grid.Row="2"
+            Grid.Row="4"
             Resources="{StaticResource HandyControlThemes}"
             VirtualizingPanel.IsVirtualizingWhenGrouping="True"
             VirtualizingPanel.VirtualizationMode="Recycling"

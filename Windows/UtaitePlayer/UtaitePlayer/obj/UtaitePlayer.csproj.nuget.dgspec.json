@@ -251,7 +251,7 @@
             },
             "HandyControl": {
               "target": "Package",
-              "version": "[3.4.0, )"
+              "version": "[3.3.0, )"
             },
             "HandyControls.Lang.ko-KR": {
               "target": "Package",

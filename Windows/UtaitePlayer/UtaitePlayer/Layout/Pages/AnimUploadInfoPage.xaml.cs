@@ -71,7 +71,11 @@ namespace UtaitePlayer.Layout.Pages
         {
             try
             {
-                if (isLoaded) { isInitSuccess = true; return; }
+                if (isLoaded) { return; }
+
+                isLoaded = true;
+
+                LoadingProgressBar.Visibility = Visibility.Visible;
 
                 // 모듈 선언
                 RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient utaitePlayerClient = new RHYANetwork.UtaitePlayer.Client.UtaitePlayerClient();
@@ -220,15 +224,18 @@ namespace UtaitePlayer.Layout.Pages
                     });
                 }
 
-                isInitSuccess = true;
-
                 if (!isReloadData)
+                {
+                    isInitSuccess = true;
                     isNoRun = false;
+                }
 
-                isLoaded = true;
+                LoadingProgressBar.Visibility = Visibility.Collapsed;
             }
             catch (Exception ex)
             {
+                isLoaded = false;
+
                 // 예외 처리
                 ExceptionManager.getInstance().showMessageBox(ex);
             }

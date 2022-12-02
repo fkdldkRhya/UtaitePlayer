@@ -30,6 +30,8 @@ namespace UtaitePlayer.Layout.Pages
     {
         // 리스트 설정
         private List<Classes.DataVO.PixivTopImageDataVO> pixivTopImageDatVOs = new List<Classes.DataVO.PixivTopImageDataVO>();
+        // Load checker
+        private bool isLoaded = false;
 
 
 
@@ -53,8 +55,12 @@ namespace UtaitePlayer.Layout.Pages
         {
             try
             {
-                if (pixivTopImageDatVOs.Count <= 0)
+                if (pixivTopImageDatVOs.Count <= 0 && !isLoaded)
                 {
+                    isLoaded = true;
+
+                    LoadingProgressBar.Visibility = Visibility.Visible;
+
                     // 데이터 파일 경로
                     RHYANetwork.UtaitePlayer.DataManager.MusicDataManager musicDataManager = new RHYANetwork.UtaitePlayer.DataManager.MusicDataManager();
                     string imageFilePath = System.IO.Path.Combine(musicDataManager.DATA_FILE_SAVE_DIRECTORY_NAME, "images_pixivtop");
@@ -173,6 +179,8 @@ namespace UtaitePlayer.Layout.Pages
                         noResult.Visibility = Visibility.Collapsed;
                         pixivTopImageListBox.Visibility = Visibility.Visible;
                     }
+
+                    LoadingProgressBar.Visibility = Visibility.Collapsed;
 
                     // 데이터 새로고침
                     pixivTopImageListBox.Items.Refresh();

@@ -24,15 +24,29 @@
     <Grid>
         <!-- RowDefinitions -->
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <ProgressBar
+            x:Name="LoadingProgressBar"
+            Grid.Row="0"
+            Visibility="Collapsed"
+            Resources="{StaticResource HandyControlThemes}"
+            Style="{StaticResource ProgressBarFlat}"
+            Background="{x:Null}"
+            IsIndeterminate="True"
+            VerticalAlignment="Bottom"
+            Height="5"
+            BorderBrush="{x:Null}"/>
 
         <!-- Title -->
         <TextBlock
             Text="Equalizer 설정"
             VerticalAlignment="Top"
             TextWrapping="Wrap"
+            Grid.Row="1"
             FontFamily="/Resources/font/#esamanru Medium"
             FontSize="16"
             Foreground="{DynamicResource Color_White1}"
@@ -41,7 +55,7 @@
 
         <Grid 
             x:Name="myPlaylistRootGrid"
-            Grid.Row="1">
+            Grid.Row="2">
 
             <!-- No Data Panel -->
             <Grid
@@ -78,7 +92,6 @@
                 VirtualizingPanel.VirtualizationMode="Recycling"
                 VirtualizingPanel.IsVirtualizing="True" 
                 PreviewMouseDoubleClick="equalizerSettingDataListBox_PreviewMouseDoubleClick"
-                Grid.Row="1"
                 Margin="0,10,0,0">
 
                 <!-- ListBox Horizontal Panel -->

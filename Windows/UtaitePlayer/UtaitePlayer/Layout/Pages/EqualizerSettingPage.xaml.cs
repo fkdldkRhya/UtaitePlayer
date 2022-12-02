@@ -65,10 +65,10 @@ namespace UtaitePlayer.Layout.Pages
             {
                 if (isLoaded) return;
 
+                isLoaded = true;
+
                 // 새로고침
                 await Task.Run(() => Refresh());
-
-                isLoaded = true;
             }
             catch (Exception ex)
             {
@@ -89,6 +89,7 @@ namespace UtaitePlayer.Layout.Pages
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     equalizerSettingDataListBox.Visibility = Visibility.Hidden;
+                    LoadingProgressBar.Visibility = Visibility.Visible;
                 });
 
                 // EQ 데이터 초기화
@@ -171,6 +172,7 @@ namespace UtaitePlayer.Layout.Pages
 
                     // UI 설정
                     myPlaylistRootGrid.Visibility = Visibility.Visible;
+                    LoadingProgressBar.Visibility = Visibility.Collapsed;
                 });
             }
             catch (Exception ex)

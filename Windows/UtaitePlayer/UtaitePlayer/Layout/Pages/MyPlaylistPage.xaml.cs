@@ -68,12 +68,16 @@ namespace UtaitePlayer.Layout.Pages
             {
                 if (isLoaded) return;
 
+                isLoaded = true;
+
+                LoadingProgressBar.Visibility = Visibility.Visible;
+
                 // 창 닫기
                 x_PlaylistInfoLayout_HideLayout();
                 // 새로고침
                 await Task.Run(() => Refresh());
 
-                isLoaded = true;
+                LoadingProgressBar.Visibility = Visibility.Collapsed;
             }
             catch (Exception ex)
             {

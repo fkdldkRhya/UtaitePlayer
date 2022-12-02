@@ -62,6 +62,10 @@ namespace UtaitePlayer.Layout.Pages
             {
                 if (isLoaded) return;
 
+                isLoaded = true;
+
+                LoadingProgressBar.Visibility = Visibility.Visible;
+
                 // 데이터 초기화
                 subscribeArtistDataVOs.Clear();
 
@@ -127,7 +131,7 @@ namespace UtaitePlayer.Layout.Pages
                     noResult.Visibility = Visibility.Collapsed;
                 }
 
-                isLoaded = true;
+                LoadingProgressBar.Visibility = Visibility.Collapsed;
             }
             catch (Exception ex)
             {

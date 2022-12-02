@@ -1,4 +1,5 @@
 ﻿using NAudio.CoreAudioApi;
+using NAudio.Wave;
 using RHYANetwork.UtaitePlayer.ExceptionHandler;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace UtaitePlayer.Classes.NAudioModule
         public async void OnDefaultDeviceChanged(DataFlow dataFlow, Role deviceRole, string defaultDeviceId)
         {
             //Do some Work
-            if (deviceRole == Role.Multimedia)
+            if (deviceRole == Role.Multimedia && (PlayerService.getInstance().getPlaybackState() == PlaybackState.Paused || PlayerService.getInstance().getPlaybackState() == PlaybackState.Playing))
             {
                 await Task.Run(() =>
                 {
@@ -38,7 +39,6 @@ namespace UtaitePlayer.Classes.NAudioModule
 
         public void OnDeviceRemoved(string deviceId)
         {
-
             //Do some Work
         }
 

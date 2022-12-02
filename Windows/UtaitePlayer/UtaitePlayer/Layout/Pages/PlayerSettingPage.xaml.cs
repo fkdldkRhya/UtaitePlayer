@@ -80,15 +80,13 @@ namespace UtaitePlayer.Layout.Pages
             {
                 // UI 설정
                 rootResultScrollViewer.Visibility = Visibility.Collapsed;
+                LoadingProgressBar.Visibility = Visibility.Visible;
 
                 isInit = true;
 
                 // 계정 정보 설정
                 accountIDTextBlock.Text = RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userInfoVO.id;
                 accountEmailTextBlock.Text = RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userInfoVO.email;
-
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Initializing...");
 
                 // 설정 파일 읽기
                 SettingManager settingManager = new SettingManager();
@@ -198,6 +196,7 @@ namespace UtaitePlayer.Layout.Pages
 
                     // UI 설정
                     rootResultScrollViewer.Visibility = Visibility.Visible;
+                    LoadingProgressBar.Visibility = Visibility.Collapsed;
 
                     isInit = false;
                 }
@@ -209,11 +208,6 @@ namespace UtaitePlayer.Layout.Pages
             catch (Exception ex)
             {
                 ExceptionManager.getInstance().showMessageBox(ex);
-            }
-            finally
-            {
-                // 전역 Dialog 설정
-                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
             }
         }
 

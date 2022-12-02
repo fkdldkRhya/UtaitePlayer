@@ -1684,7 +1684,7 @@
                     <Frame
                         Name="mainFrame"
                         NavigationUIVisibility="Hidden" 
-                        Navigated="mainFrame_Navigated" Margin="0,2,0,-2"/>
+                        Navigated="mainFrame_Navigated"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -2749,8 +2749,7 @@
                                 FontFamily="/Resources/font/#esamanru Light"
                                 FontSize="10"
                                 Foreground="{DynamicResource Color_White1}"
-                                Text="불러오기" 
-                                Margin="5,0,0,0" />
+                                Text="불러오기" />
                         </StackPanel>
                     </Button>
 
@@ -3104,7 +3103,7 @@
                 </Grid>
 
                 <Button
-                    Content="프로그램 종료" 
+                    Content="설정 적용" 
                     Margin="0,310,19,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"

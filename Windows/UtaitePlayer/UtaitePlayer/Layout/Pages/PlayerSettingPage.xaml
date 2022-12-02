@@ -21,6 +21,18 @@
       Loaded="Page_Loaded">
 
     <Grid>
+        <ProgressBar
+            x:Name="LoadingProgressBar"
+            Grid.Row="0"
+            Visibility="Collapsed"
+            Resources="{StaticResource HandyControlThemes}"
+            Style="{StaticResource ProgressBarFlat}"
+            Background="{x:Null}"
+            IsIndeterminate="True"
+            VerticalAlignment="Top"
+            Height="5"
+            BorderBrush="{x:Null}"/>
+
         <!-- Scroll Viewer -->
         <hc:ScrollViewer
             Name="rootResultScrollViewer"

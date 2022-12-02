@@ -33,6 +33,18 @@
             Margin="10,10,0,0" 
             HorizontalAlignment="Left" />
 
+        <ProgressBar
+            x:Name="LoadingProgressBar"
+            Grid.Row="0"
+            Visibility="Collapsed"
+            Resources="{StaticResource HandyControlThemes}"
+            Style="{StaticResource ProgressBarFlat}"
+            Background="{x:Null}"
+            IsIndeterminate="True"
+            VerticalAlignment="Top"
+            Height="5"
+            BorderBrush="{x:Null}"/>
+
         <!-- No Data Panel -->
         <Grid
             x:Name="noResult"

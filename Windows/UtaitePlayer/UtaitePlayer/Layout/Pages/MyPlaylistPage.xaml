@@ -23,9 +23,22 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MaxHeight="5"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <ProgressBar
+            x:Name="LoadingProgressBar"
+            Grid.Row="0"
+            Visibility="Collapsed"
+            Resources="{StaticResource HandyControlThemes}"
+            Style="{StaticResource ProgressBarFlat}"
+            Background="{x:Null}"
+            IsIndeterminate="True"
+            VerticalAlignment="Bottom"
+            Height="5"
+            BorderBrush="{x:Null}"/>
 
         <!-- Title -->
         <TextBlock
@@ -34,6 +47,7 @@
             TextWrapping="Wrap"
             FontFamily="/Resources/font/#esamanru Medium"
             FontSize="16"
+            Grid.Row="1"
             Foreground="{DynamicResource Color_White1}"
             Margin="10,0,0,0" 
             HorizontalAlignment="Left" />
@@ -43,6 +57,7 @@
             Resources="{StaticResource HandyControlThemes}"
             Width="123"
             Height="30"
+            Grid.RowSpan="2"
             HorizontalAlignment="Right"
             VerticalAlignment="Center" 
             Margin="0,5,10,5"
@@ -68,7 +83,7 @@
 
         <Grid 
             x:Name="myPlaylistRootGrid"
-            Grid.Row="1">
+            Grid.Row="2">
 
             <!-- No Data Panel -->
             <Grid

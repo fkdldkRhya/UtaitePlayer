@@ -56,12 +56,15 @@ namespace UtaitePlayer.Layout.Pages
             {
                 if (isLoaded) return;
 
+                isLoaded = true;
+
                 // 데이터 초기화
                 musicPlayCountDataVOs.Clear();
 
                 // UI 기본 설정
                 musicCountDataGrid.Visibility = Visibility.Collapsed;
                 noResult.Visibility = Visibility.Collapsed;
+                LoadingProgressBar.Visibility = Visibility.Visible;
 
                 // 데이터 설정
                 if (musicCountDataGrid.ItemsSource == null)
@@ -164,11 +167,10 @@ namespace UtaitePlayer.Layout.Pages
                     musicCountDataGrid.Visibility = Visibility.Visible;
                 }
 
+                LoadingProgressBar.Visibility = Visibility.Collapsed;
+
                 // 데이터 새로고침
                 musicCountDataGrid.Items.Refresh();
-
-
-                isLoaded = true;
             }
             catch (Exception ex)
             {

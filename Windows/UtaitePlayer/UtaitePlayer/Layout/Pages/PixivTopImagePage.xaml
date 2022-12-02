@@ -23,15 +23,29 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <ProgressBar
+            x:Name="LoadingProgressBar"
+            Grid.Row="0"
+            Visibility="Collapsed"
+            Resources="{StaticResource HandyControlThemes}"
+            Style="{StaticResource ProgressBarFlat}"
+            Background="{x:Null}"
+            IsIndeterminate="True"
+            VerticalAlignment="Bottom"
+            Height="5"
+            BorderBrush="{x:Null}"/>
 
         <!-- Title -->
         <TextBlock
             Text="Pixiv daily Top 50"
             VerticalAlignment="Center"
             TextWrapping="Wrap"
+            Grid.Row="1"
             FontFamily="/Resources/font/#esamanru Medium"
             FontSize="16"
             Foreground="{DynamicResource Color_White1}"
@@ -43,10 +57,11 @@
             Source="{svgc:SvgImage /UtaitePlayer;component/Resources/drawable/ic_pixiv_text.svg}"
             HorizontalAlignment="Right"
             Width="98"
+            Grid.Row="1"
             Margin="0,0,15,0" />
 
         <Grid
-            Grid.Row="1">
+            Grid.Row="2">
 
             <!-- No Data Panel -->
             <Grid
