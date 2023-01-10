@@ -64,6 +64,8 @@ namespace UtaitePlayer.Layout.Pages
                 // UI 기본 설정
                 musicCountDataGrid.Visibility = Visibility.Collapsed;
                 noResult.Visibility = Visibility.Collapsed;
+                LoadingProgressBar.IsIndeterminate = false;
+                LoadingProgressBar.IsIndeterminate = true;
                 LoadingProgressBar.Visibility = Visibility.Visible;
 
                 // 데이터 설정

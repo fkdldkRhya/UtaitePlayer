@@ -1583,13 +1583,14 @@
                             <Image Source="/Resources/drawable/ic_announcement.png" Width="16" Height="16"/>
                         </hc:SideMenuItem.Icon>
                     </hc:SideMenuItem>
-
+                    <!-- Equalizer 설정 / 비활성화 -->
+                    <!--
                     <hc:SideMenuItem Header="EQ 설정">
                         <hc:SideMenuItem.Icon>
                             <Image Source="/Resources/drawable/ic_equalizer.png" Width="16" Height="16"/>
                         </hc:SideMenuItem.Icon>
                     </hc:SideMenuItem>
-
+                    -->
                     <hc:SideMenuItem Header="설정">
                         <hc:SideMenuItem.Icon>
                             <Image Source="/Resources/drawable/ic_setting.png" Width="14" Height="14"/>
@@ -2609,7 +2610,7 @@
             x:Name="x_EQSettingDialog"
             Grid.RowSpan="2"
             Grid.ColumnSpan="2" 
-            Width="500"
+            Width="470"
             Height="410"
             Visibility="Collapsed"
             VerticalAlignment="Center"
@@ -2704,12 +2705,6 @@
                         VerticalAlignment="Center" />
                 </Button>
 
-                <!-- Icon -->
-                <Image
-                    Margin="16,15,0,15" 
-                    HorizontalAlignment="Left"
-                    Width="20"
-                    Source="{svgc:SvgImage /UtaitePlayer;component/Resources/drawable/ic_equalizer.svg}" />
                 <!-- Title -->
                 <TextBlock
                     Text="Equalizer 설정"
@@ -2717,73 +2712,13 @@
                     FontFamily="/Resources/font/#esamanru Medium"
                     FontSize="16"
                     Foreground="{DynamicResource Color_White1}"
-                    Margin="42,17,0,14" 
+                    Margin="22,17,0,14" 
                     HorizontalAlignment="Left" />
 
                 <!-- Main panel -->
                 <Grid Grid.Row="1">
-                    <!-- Select eq setting mode select combobox -->
-                    <hc:ComboBox
-                        x:Name="x_EQSettingDialog_EQSettingModeComboBox"
-                        Resources="{StaticResource HandyControlThemes}"
-                        Margin="20,15,0,0"
-                        Width="216"
-                        Height="30"
-                        FontFamily="/Resources/font/#esamanru Light"
-                        FontSize="12"
-                        HorizontalAlignment="Left" 
-                        VerticalAlignment="Top"/>
-                    <!-- Select eq setting mode load button -->
-                    <Button
-                        x:Name="x_EQSettingDialog_EQSettingModeButton"
-                        Resources="{StaticResource HandyControlThemes}"
-                        Width="80"
-                        Height="30"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top" 
-                        Margin="0,15,177,0">
-
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock
-                                VerticalAlignment="Bottom"
-                                FontFamily="/Resources/font/#esamanru Light"
-                                FontSize="10"
-                                Foreground="{DynamicResource Color_White1}"
-                                Text="불러오기" />
-                        </StackPanel>
-                    </Button>
-
-                    <!-- EQ Date info panel -->
-                    <Grid
-                        Margin="0,15,20,0"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        Height="31" 
-                        Width="146">
-
-                        <!-- Icon -->
-                        <Image
-                            Margin="0,6,0,5" 
-                            HorizontalAlignment="Right"
-                            Width="20"
-                            Height="20"
-                            Source="{svgc:SvgImage /Resources/drawable/ic_calendar.svg}"/>
-
-                        <!-- EQ Setting date -->
-                        <TextBlock
-                            x:Name="x_EQSettingDialog_EQSettingDateTextBlock"
-                            FontFamily="/Resources/font/#esamanru Light"
-                            FontSize="11"
-                            Foreground="{DynamicResource Color_White1}"
-                            Text="2020-10-10" 
-                            Margin="0,10,26,8"
-                            TextAlignment="Right" 
-                            TextTrimming="CharacterEllipsis" />
-                    </Grid>
-
-
                     <!-- Slider stack panel -->
-                    <Grid Margin="0,50,0,55">
+                    <Grid Margin="0,0,0,55">
                         <!-- ColumnDefinitions -->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="10"/>
@@ -3103,6 +3038,21 @@
                 </Grid>
 
                 <Button
+                    x:Name="x_EQSettingDialog_SettingReset"
+                    Content="설정 초기화" 
+                    Margin="0,310,150,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Height="32"
+                    Width="115"
+                    FontSize="11"
+                    FontFamily="/Resources/font/#esamanru Light"
+                    Foreground="{StaticResource Color_White1}" 
+                    Click="x_EQSettingDialog_SettingReset_Click"
+                    Grid.Row="1"/>
+
+                <Button
+                    x:Name="x_EQSettingDialog_SaveSettingForServerButton"
                     Content="설정 적용" 
                     Margin="0,310,19,0"
                     HorizontalAlignment="Right"
@@ -3112,6 +3062,7 @@
                     FontSize="11"
                     FontFamily="/Resources/font/#esamanru Light"
                     Foreground="{StaticResource Color_White1}" 
+                    Click="x_EQSettingDialog_SaveSettingForServerButton_Click"
                     Grid.Row="1"/>
 
                 <!-- Loading ProgressBar -->

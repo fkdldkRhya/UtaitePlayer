@@ -101,6 +101,9 @@
         "frameworks": {
           "net462": {
             "projectReferences": {
+              "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj": {
+                "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.MutexManager\\RHYANetwork.UtaitePlayer.MutexManager.csproj"
+              },
               "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj": {
                 "projectPath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.ProcessManager\\RHYANetwork.UtaitePlayer.ProcessManager.csproj"
               },
@@ -253,9 +256,9 @@
               "target": "Package",
               "version": "[3.3.0, )"
             },
-            "HandyControls.Lang.ko-KR": {
+            "HandyControl.Lang.ko-KR": {
               "target": "Package",
-              "version": "[3.4.4, )"
+              "version": "[3.3.0, )"
             },
             "LiveCharts.Wpf": {
               "target": "Package",

@@ -14,10 +14,14 @@
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -26,10 +30,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/MaterialDesignThemes.targets": {}
@@ -67,10 +75,14 @@
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -79,10 +91,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/MaterialDesignThemes.targets": {}
@@ -120,10 +136,14 @@
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -132,10 +152,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/MaterialDesignThemes.targets": {}
@@ -173,10 +197,14 @@
       "MaterialDesignColors/2.0.6": {
         "type": "package",
         "compile": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignColors.dll": {}
+          "lib/net452/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.5.0": {
@@ -185,10 +213,14 @@
           "MaterialDesignColors": "[2.0.6, 3.0.0)"
         },
         "compile": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net452/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net452/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/MaterialDesignThemes.targets": {}

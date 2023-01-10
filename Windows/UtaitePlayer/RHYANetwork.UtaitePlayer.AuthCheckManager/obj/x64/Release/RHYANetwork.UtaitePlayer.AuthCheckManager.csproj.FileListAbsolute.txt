@@ -231,12 +231,6 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\bin\x64\Release\RHYANetwork.UtaitePlayer.DataManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\bin\x64\Release\RHYANetwork.UtaitePlayer.CryptoModule.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\bin\x64\Release\RHYANetwork.UtaitePlayer.TrayIcon.pdb
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.AssemblyReference.cache
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe.config
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.CoreCompileInputs.cache
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.CopyComplete
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\chrome_100_percent.pak
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\chrome_200_percent.pak
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\chrome_elf.dll
@@ -319,4 +313,10 @@ A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYA.Network.
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe.config
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.AssemblyReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.SuggestedBindingRedirects.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe.config
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.CoreCompileInputs.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.CopyComplete
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.exe
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Release\RHYANetwork.UtaitePlayer.AuthCheckManager.pdb

@@ -75,6 +75,8 @@ namespace UtaitePlayer.Layout.Pages
 
                 isLoaded = true;
 
+                LoadingProgressBar.IsIndeterminate = false;
+                LoadingProgressBar.IsIndeterminate = true;
                 LoadingProgressBar.Visibility = Visibility.Visible;
 
                 // 모듈 선언

@@ -9,12 +9,12 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\x64\Release\RHYANetwork.UtaitePlayer.Registry.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\bin\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.pdb
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.exe.config
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.exe
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.csproj.AssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.csproj.SuggestedBindingRedirects.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.exe
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.pdb
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.exe.config
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.exe
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.pdb
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Release\RHYANetwork.UtaitePlayer.CrashHandler.csproj.SuggestedBindingRedirects.cache

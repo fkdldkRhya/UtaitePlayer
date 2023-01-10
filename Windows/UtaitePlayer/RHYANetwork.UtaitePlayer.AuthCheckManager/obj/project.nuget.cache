@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "01R+Q8owz57/BmsRX6mNZZvsypN38B7//aKdwnguZk1REkU02hQvNH+HWCHNK0jgpGB0z8zzZSAEshdMQWXmgQ==",
+  "dgSpecHash": "e7WY6ZCUTY0RDEedA5c6YEb0/5J5hpurnyILWf6s65+oV7OhXkC+tBxloDpkAS3zgqheUaV6LWu9Ex+DDVCKuQ==",
   "success": true,
   "projectFilePath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,7 @@
     "C:\\Users\\ji055\\.nuget\\packages\\cefsharp.common\\100.0.230\\cefsharp.common.100.0.230.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\cefsharp.wpf\\100.0.230\\cefsharp.wpf.100.0.230.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\handycontrol\\3.3.0\\handycontrol.3.3.0.nupkg.sha512",
-    "C:\\Users\\ji055\\.nuget\\packages\\handycontrols.lang.ko-kr\\3.4.4\\handycontrols.lang.ko-kr.3.4.4.nupkg.sha512",
+    "C:\\Users\\ji055\\.nuget\\packages\\handycontrol.lang.ko-kr\\3.3.0\\handycontrol.lang.ko-kr.3.3.0.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",

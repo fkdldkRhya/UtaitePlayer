@@ -94,8 +94,8 @@ namespace UtaitePlayer
                 // 라이브러리 초기 작업
                 ConfigHelper.Instance.SetLang("ko-kr");
 
-                // 1.0초 대기
-                await Task.Run(() => Thread.Sleep(1000));
+                // 0.5초 대기
+                await Task.Run(() => Thread.Sleep(500));
 
                 // 프로그램 정보 확인
                 await Task.Run(() => checkProgramInfo());
@@ -118,6 +118,9 @@ namespace UtaitePlayer
                        iPCServerInfoManager.IPC_SERVER_NAME,
                        WellKnownObjectMode.SingleCall);
                 // ===========================================
+
+                // 0.5초 대기
+                await Task.Run(() => Thread.Sleep(500));
 
                 // AuthCheckManager 실행
                 // ===========================================

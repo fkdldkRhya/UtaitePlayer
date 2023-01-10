@@ -22,6 +22,7 @@ using UtaitePlayer.Classes.Core;
 using UtaitePlayer.Classes.DataVO;
 using UtaitePlayer.Classes.Utils;
 using System.Text;
+using UtaitePlayer.Layout.Pages;
 
 namespace UtaitePlayer.Layout
 {
@@ -114,6 +115,9 @@ namespace UtaitePlayer.Layout
         // Yes or No dialog 정보
         private YesOrNoDialogInfo yesOrNoDialogInfo;
 
+        // Equalizer 설정 저장 버튼 이벤트 분류
+        private int equalizerSettingSaveType = 0;
+
 
 
 
@@ -197,6 +201,17 @@ namespace UtaitePlayer.Layout
                         if (settingData.gs_start_mod == 1) Hide();
                         // isEnableReloadBtn
                         RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_RELOAD_BUTTON_STATE_SETTING, settingData.gs_enable_reload_btn ? Visibility.Visible : Visibility.Collapsed);
+                        // EQ Value Setting
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band1, settingData.ps_equalizer_gain_60);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band2, settingData.ps_equalizer_gain_170);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band3, settingData.ps_equalizer_gain_310);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band4, settingData.ps_equalizer_gain_600);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band5, settingData.ps_equalizer_gain_1000);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band6, settingData.ps_equalizer_gain_3000);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band7, settingData.ps_equalizer_gain_6000);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band8, settingData.ps_equalizer_gain_12000);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band9, settingData.ps_equalizer_gain_14000);
+                        PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band10, settingData.ps_equalizer_gain_16000);
                     }
                 }
                 catch (Exception ex)
@@ -2513,6 +2528,7 @@ namespace UtaitePlayer.Layout
                 if (RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userPlaylistInfoVOs.Count + musicUUIDs.Count > 100)
                 {
                     int stopIndex = (RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userPlaylistInfoVOs.Count + musicUUIDs.Count) - 100;
+
                     if (RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().myPlaylistIndex <= stopIndex)
                     {
                         // 노래 중지
@@ -2537,9 +2553,8 @@ namespace UtaitePlayer.Layout
                         // 노래 정보 재설정
                         RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_RESET_MUSIC_PANEL_INFO, null);
                         // 제거
-                        for (int i = 0; i < stopIndex; i++)
+                        for (int i = stopIndex; i > 0; i--)
                             RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userPlaylistInfoVOs.RemoveAt(i);
-                        
                     }
                     else
                     {
@@ -2547,7 +2562,7 @@ namespace UtaitePlayer.Layout
                         RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().myPlaylistIndex = RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().myPlaylistIndex - stopIndex;
                         new RHYANetwork.UtaitePlayer.Registry.RegistryManager().setMyPlaylistIndex(RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().myPlaylistIndex);
                         // 제거
-                        for (int i = 0; i < stopIndex; i++)
+                        for (int i = stopIndex; i > 0; i--)
                             RHYANetwork.UtaitePlayer.DataManager.UserResourcesVO.getInstance().userPlaylistInfoVOs.RemoveAt(i);
                     }
                 }
@@ -2599,14 +2614,16 @@ namespace UtaitePlayer.Layout
 
                 refreshMyPlaylist(null);
 
-                hideLoadingDialog();
-
                 // 전역 함수 호출
                 RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_REFRESH_MY_PLAYLIST, null);
             }
             catch (Exception ex)
             {
                 ExceptionManager.getInstance().showMessageBox(ex);
+            }
+            finally
+            {
+                hideLoadingDialog();
             }
         }
 
@@ -3932,32 +3949,32 @@ namespace UtaitePlayer.Layout
         /// Equalizer 설정 Dialog 출력
         /// </summary>
         /// <param name="type">Open 형식</param>
-        private async void showEqualizerSettingDialog(object type)
+        private void showEqualizerSettingDialog(object type)
         {
             try
             {
-                // ComboBox 설정
-                x_EQSettingDialog_EQSettingModeComboBox.Items.Clear();
-
-                await Task.Run(() => 
-                {
-                    try
-                    {
-
-                    }
-                    catch (Exception ex)
-                    {
-                        ExceptionManager.getInstance().showMessageBox(ex);
-                    }
-                });
-
                 if (type == null)
                 {
+                    // 버튼 이벤트 설정
+                    equalizerSettingSaveType = 1;
 
+                    // EQ 데이터 설정
+                    x_EQSettingDialog_eq_slider_60.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band1) + 30;
+                    x_EQSettingDialog_eq_slider_170.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band2) + 30;
+                    x_EQSettingDialog_eq_slider_310.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band3) + 30;
+                    x_EQSettingDialog_eq_slider_600.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band4) + 30;
+                    x_EQSettingDialog_eq_slider_1000.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band5) + 30;
+                    x_EQSettingDialog_eq_slider_3000.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band6) + 30;
+                    x_EQSettingDialog_eq_slider_6000.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band7) + 30;
+                    x_EQSettingDialog_eq_slider_12000.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band8) + 30;
+                    x_EQSettingDialog_eq_slider_14000.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band9) + 30;
+                    x_EQSettingDialog_eq_slider_16000.Value = PlayerService.getInstance().GetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band10) + 30;
+
+                    // UI 초기화
+                    x_EQSettingDialog.Visibility = Visibility.Visible;
+                    clickBlockPanelForEQSettingDialog.Visibility = Visibility.Visible;
+                    x_EQSettingDialog_SaveSettingForServerButton.Visibility = Visibility.Visible;
                 }
-
-                clickBlockPanelForEQSettingDialog.Visibility = Visibility.Visible;
-                x_EQSettingDialog.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
@@ -3990,6 +4007,172 @@ namespace UtaitePlayer.Layout
             {
                 clickBlockPanelForEQSettingDialog.Visibility = Visibility.Collapsed;
                 x_EQSettingDialog.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+
+
+        /// <summary>
+        /// Equalizer 설정 저장 버튼 클릭 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void x_EQSettingDialog_SaveSettingForServerButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                switch (equalizerSettingSaveType)
+                {
+                    case 1: // Target: Utaite Player (우타이테 플레이어)
+                        {
+                            x_EQSettingDialog_CloseButton.IsEnabled = false;
+                            x_EQSettingDialog_SaveSettingForServerButton.IsEnabled = false;
+                            x_EQSettingDialog_LoadingProgressBar.IsIndeterminate = false;
+                            x_EQSettingDialog_LoadingProgressBar.IsIndeterminate = true;
+                            x_EQSettingDialog_LoadingProgressBar.Visibility = Visibility.Visible;
+
+                            double value1 = x_EQSettingDialog_eq_slider_60.Value;
+                            double value2 = x_EQSettingDialog_eq_slider_170.Value;
+                            double value3 = x_EQSettingDialog_eq_slider_310.Value;
+                            double value4 = x_EQSettingDialog_eq_slider_600.Value;
+                            double value5 = x_EQSettingDialog_eq_slider_1000.Value;
+                            double value6 = x_EQSettingDialog_eq_slider_3000.Value;
+                            double value7 = x_EQSettingDialog_eq_slider_6000.Value;
+                            double value8 = x_EQSettingDialog_eq_slider_12000.Value;
+                            double value9 = x_EQSettingDialog_eq_slider_14000.Value;
+                            double value10 = x_EQSettingDialog_eq_slider_16000.Value;
+
+                            await Task.Run(() => 
+                            { 
+                                try
+                                {
+                                    SettingManager settingManager = new SettingManager();
+                                    SettingManager.SettingData settingData = settingManager.readSettingData();
+                                    settingData.ps_equalizer_gain_60 = (float)(value1 - 30);
+                                    settingData.ps_equalizer_gain_170 = (float)(value2 - 30);
+                                    settingData.ps_equalizer_gain_310 = (float)(value3 - 30);
+                                    settingData.ps_equalizer_gain_600 = (float)(value4 - 30);
+                                    settingData.ps_equalizer_gain_1000 = (float)(value5 - 30);
+                                    settingData.ps_equalizer_gain_3000 = (float)(value6 - 30);
+                                    settingData.ps_equalizer_gain_6000 = (float)(value7 - 30);
+                                    settingData.ps_equalizer_gain_12000 = (float)(value8 - 30);
+                                    settingData.ps_equalizer_gain_14000 = (float)(value9 - 30);
+                                    settingData.ps_equalizer_gain_16000 = (float)(value10 - 30);
+                                    settingManager.writeSettingData(settingData);
+
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band1, settingData.ps_equalizer_gain_60);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band2, settingData.ps_equalizer_gain_170);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band3, settingData.ps_equalizer_gain_310);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band4, settingData.ps_equalizer_gain_600);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band5, settingData.ps_equalizer_gain_1000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band6, settingData.ps_equalizer_gain_3000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band7, settingData.ps_equalizer_gain_6000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band8, settingData.ps_equalizer_gain_12000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band9, settingData.ps_equalizer_gain_14000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band10, settingData.ps_equalizer_gain_16000);
+                                }
+                                catch (Exception ex)
+                                {
+                                    ExceptionManager.getInstance().showMessageBox(ex);
+                                }
+                            });
+
+                            x_EQSettingDialog_CloseButton.IsEnabled = true;
+                            x_EQSettingDialog_SaveSettingForServerButton.IsEnabled = true;
+                            x_EQSettingDialog_LoadingProgressBar.Visibility = Visibility.Collapsed;
+
+                            break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+        }
+
+        private async void x_EQSettingDialog_SettingReset_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                switch (equalizerSettingSaveType)
+                {
+                    case 1: // Target: Utaite Player (우타이테 플레이어)
+                        {
+                            x_EQSettingDialog_CloseButton.IsEnabled = false;
+                            x_EQSettingDialog_SaveSettingForServerButton.IsEnabled = false;
+                            x_EQSettingDialog_LoadingProgressBar.IsIndeterminate = false;
+                            x_EQSettingDialog_LoadingProgressBar.IsIndeterminate = true;
+                            x_EQSettingDialog_LoadingProgressBar.Visibility = Visibility.Visible;
+
+                            x_EQSettingDialog_eq_slider_60.Value = 30;
+                            x_EQSettingDialog_eq_slider_170.Value = 30;
+                            x_EQSettingDialog_eq_slider_310.Value = 30;
+                            x_EQSettingDialog_eq_slider_600.Value = 30;
+                            x_EQSettingDialog_eq_slider_1000.Value = 30;
+                            x_EQSettingDialog_eq_slider_3000.Value = 30;
+                            x_EQSettingDialog_eq_slider_6000.Value = 30;
+                            x_EQSettingDialog_eq_slider_12000.Value = 30;
+                            x_EQSettingDialog_eq_slider_14000.Value = 30;
+                            x_EQSettingDialog_eq_slider_16000.Value = 30;
+
+                            double value1 = x_EQSettingDialog_eq_slider_60.Value;
+                            double value2 = x_EQSettingDialog_eq_slider_170.Value;
+                            double value3 = x_EQSettingDialog_eq_slider_310.Value;
+                            double value4 = x_EQSettingDialog_eq_slider_600.Value;
+                            double value5 = x_EQSettingDialog_eq_slider_1000.Value;
+                            double value6 = x_EQSettingDialog_eq_slider_3000.Value;
+                            double value7 = x_EQSettingDialog_eq_slider_6000.Value;
+                            double value8 = x_EQSettingDialog_eq_slider_12000.Value;
+                            double value9 = x_EQSettingDialog_eq_slider_14000.Value;
+                            double value10 = x_EQSettingDialog_eq_slider_16000.Value;
+
+                            await Task.Run(() =>
+                            {
+                                try
+                                {
+                                    SettingManager settingManager = new SettingManager();
+                                    SettingManager.SettingData settingData = settingManager.readSettingData();
+                                    settingData.ps_equalizer_gain_60 = (float)(value1 - 30);
+                                    settingData.ps_equalizer_gain_170 = (float)(value2 - 30);
+                                    settingData.ps_equalizer_gain_310 = (float)(value3 - 30);
+                                    settingData.ps_equalizer_gain_600 = (float)(value4 - 30);
+                                    settingData.ps_equalizer_gain_1000 = (float)(value5 - 30);
+                                    settingData.ps_equalizer_gain_3000 = (float)(value6 - 30);
+                                    settingData.ps_equalizer_gain_6000 = (float)(value7 - 30);
+                                    settingData.ps_equalizer_gain_12000 = (float)(value8 - 30);
+                                    settingData.ps_equalizer_gain_14000 = (float)(value9 - 30);
+                                    settingData.ps_equalizer_gain_16000 = (float)(value10 - 30);
+                                    settingManager.writeSettingData(settingData);
+
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band1, settingData.ps_equalizer_gain_60);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band2, settingData.ps_equalizer_gain_170);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band3, settingData.ps_equalizer_gain_310);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band4, settingData.ps_equalizer_gain_600);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band5, settingData.ps_equalizer_gain_1000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band6, settingData.ps_equalizer_gain_3000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band7, settingData.ps_equalizer_gain_6000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band8, settingData.ps_equalizer_gain_12000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band9, settingData.ps_equalizer_gain_14000);
+                                    PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band10, settingData.ps_equalizer_gain_16000);
+                                }
+                                catch (Exception ex)
+                                {
+                                    ExceptionManager.getInstance().showMessageBox(ex);
+                                }
+                            });
+
+                            x_EQSettingDialog_CloseButton.IsEnabled = true;
+                            x_EQSettingDialog_SaveSettingForServerButton.IsEnabled = true;
+                            x_EQSettingDialog_LoadingProgressBar.Visibility = Visibility.Collapsed;
+
+                            break;
+                        }
+                }
             }
             catch (Exception ex)
             {

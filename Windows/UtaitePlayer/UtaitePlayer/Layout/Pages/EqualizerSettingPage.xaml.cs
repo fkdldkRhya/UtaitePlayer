@@ -89,6 +89,8 @@ namespace UtaitePlayer.Layout.Pages
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     equalizerSettingDataListBox.Visibility = Visibility.Hidden;
+                    LoadingProgressBar.IsIndeterminate = false;
+                    LoadingProgressBar.IsIndeterminate = true;
                     LoadingProgressBar.Visibility = Visibility.Visible;
                 });
 

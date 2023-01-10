@@ -77,6 +77,10 @@
     <None Include="RHYA.Network.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RHYANetwork.UtaitePlayer.MutexManager\RHYANetwork.UtaitePlayer.MutexManager.csproj">
+      <Project>{0cad5b6c-da78-4cc0-81ac-6b3880d924bf}</Project>
+      <Name>RHYANetwork.UtaitePlayer.MutexManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RHYANetwork.UtaitePlayer.ProcessManager\RHYANetwork.UtaitePlayer.ProcessManager.csproj">
       <Project>{6201b734-7619-42fa-a230-f2bbf1319a75}</Project>
       <Name>RHYANetwork.UtaitePlayer.ProcessManager</Name>

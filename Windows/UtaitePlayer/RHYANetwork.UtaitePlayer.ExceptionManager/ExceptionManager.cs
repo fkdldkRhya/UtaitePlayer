@@ -13,6 +13,8 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
         private static ExceptionManager exceptionManager = null;
         // Mutex
         private Mutex mutex;
+        // Mutex name
+        private string mutexName = string.Empty;
 
 
 
@@ -33,21 +35,28 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
         /// <summary>
         /// Exception message box 출력
         /// 
-        /// ** 함수 기능 일시적으로 비활성화
+        /// ** Utaite Player에 관한 오류는 ExceptionManagerV2로 대신 처리
         /// </summary>
         /// <param name="exception">Exception</param>
         public void showMessageBox(Exception exception)
         {
-            /*
             const string DEFAULT_TITLE = "RHYA.Network ExceptionManager";
             StringBuilder stringBuilder = new StringBuilder();
 
             stringBuilder.AppendLine("우타이테 플레이어 (Utaite Player) 클라이언트에서 예외가 발생했습니다. 자세한 정보는 다음 내용을 참조하십시오.");
             stringBuilder.AppendLine("");
-            stringBuilder.AppendLine(exception.Message);
+            stringBuilder.AppendLine(exception.ToString());
 
-            System.Windows.MessageBox.Show(stringBuilder.ToString(), DEFAULT_TITLE, MessageBoxButton.OK, MessageBoxImage.Error);
-            */
+            MutexManager.MutexList mutexManager = new MutexManager.MutexList();
+
+            if (mutexName != string.Empty && mutexName.Equals(mutexManager.GetMutexName(MutexManager.MutexList.ServiceList.ROOT_SERVICE_UTAITE_PLAYER)))
+            {   // UtaitePlayer.exe 에서 발생한 오류
+
+            }
+            else
+            {   // 기타 오류
+                System.Windows.MessageBox.Show(stringBuilder.ToString(), DEFAULT_TITLE, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
@@ -145,6 +154,8 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
             bool createNew = false;
 
             mutex = new Mutex(true, name, out createNew);
+
+            mutexName = name;
 
             if (!createNew)
                 // 종료

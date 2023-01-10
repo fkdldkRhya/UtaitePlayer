@@ -6,6 +6,7 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Rel
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\Newtonsoft.Json.xml
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\System.Diagnostics.DiagnosticSource.xml
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.AssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.SuggestedBindingRedirects.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\Interop.IWshRuntimeLibrary.dll
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.ResolveComReference.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\Layout\Windows\MainWindow.g.cs
@@ -24,4 +25,3 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Rel
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.exe
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.pdb
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.SuggestedBindingRedirects.cache

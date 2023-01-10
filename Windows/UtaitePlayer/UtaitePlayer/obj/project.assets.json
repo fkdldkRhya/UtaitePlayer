@@ -70,7 +70,7 @@
           }
         }
       },
-      "HandyControls.Lang.ko-KR/3.4.4": {
+      "HandyControl.Lang.ko-KR/3.3.0": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -418,6 +418,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
@@ -541,7 +542,7 @@
           }
         }
       },
-      "HandyControls.Lang.ko-KR/3.4.4": {
+      "HandyControl.Lang.ko-KR/3.3.0": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -867,6 +868,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
@@ -990,7 +992,7 @@
           }
         }
       },
-      "HandyControls.Lang.ko-KR/3.4.4": {
+      "HandyControl.Lang.ko-KR/3.3.0": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -1316,6 +1318,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
@@ -1439,7 +1442,7 @@
           }
         }
       },
-      "HandyControls.Lang.ko-KR/3.4.4": {
+      "HandyControl.Lang.ko-KR/3.3.0": {
         "type": "package",
         "resource": {
           "lib/net462/ko-KR/HandyControl.resources.dll": {
@@ -1765,6 +1768,7 @@
       "RHYANetwork.UtaitePlayer.ExceptionHandler/1.0.0": {
         "type": "project",
         "dependencies": {
+          "RHYANetwork.UtaitePlayer.MutexManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.ProcessManager": "1.0.0",
           "RHYANetwork.UtaitePlayer.Registry": "1.0.0"
         },
@@ -2639,16 +2643,16 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "HandyControls.Lang.ko-KR/3.4.4": {
-      "sha512": "i7GT3q/q3EY184dyLwBQ1ilFLbtJL0Qw5TzlV59b1VdKaVTim1/00Z62CQMN5Bi8JyJ+u+59KdiB1Kvbqr2fMQ==",
+    "HandyControl.Lang.ko-KR/3.3.0": {
+      "sha512": "KNhbj2VR+CVxDHDRdUyTN52mxTdj6xsipouUvgKCpNsWGj4bSehqUNvON01SAZ4kuvvkY6CfblUYI42CQw6e9A==",
       "type": "package",
-      "path": "handycontrols.lang.ko-kr/3.4.4",
+      "path": "handycontrol.lang.ko-kr/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "handycontrols.lang.ko-kr.3.4.4.nupkg.sha512",
-        "handycontrols.lang.ko-kr.nuspec",
+        "handycontrol.lang.ko-kr.3.3.0.nupkg.sha512",
+        "handycontrol.lang.ko-kr.nuspec",
         "icon.png",
         "lib/net40/ko-KR/HandyControl.resources.dll",
         "lib/net45/ko-KR/HandyControl.resources.dll",
@@ -2661,10 +2665,7 @@
         "lib/net471/ko-KR/HandyControl.resources.dll",
         "lib/net472/ko-KR/HandyControl.resources.dll",
         "lib/net48/ko-KR/HandyControl.resources.dll",
-        "lib/net481/ko-KR/HandyControl.resources.dll",
         "lib/net5.0/ko-KR/HandyControl.resources.dll",
-        "lib/net6.0/ko-KR/HandyControl.resources.dll",
-        "lib/net7.0/ko-KR/HandyControl.resources.dll",
         "lib/netcoreapp3.0/ko-KR/HandyControl.resources.dll",
         "lib/netcoreapp3.1/ko-KR/HandyControl.resources.dll"
       ]
@@ -3260,7 +3261,7 @@
       "CefSharp.Common >= 100.0.230",
       "CefSharp.Wpf >= 100.0.230",
       "HandyControl >= 3.3.0",
-      "HandyControls.Lang.ko-KR >= 3.4.4",
+      "HandyControl.Lang.ko-KR >= 3.3.0",
       "LiveCharts.Wpf >= 0.9.7",
       "MaterialDesignColors >= 2.0.6",
       "MaterialDesignThemes >= 4.5.0",
@@ -3359,9 +3360,9 @@
             "target": "Package",
             "version": "[3.3.0, )"
           },
-          "HandyControls.Lang.ko-KR": {
+          "HandyControl.Lang.ko-KR": {
             "target": "Package",
-            "version": "[3.4.4, )"
+            "version": "[3.3.0, )"
           },
           "LiveCharts.Wpf": {
             "target": "Package",

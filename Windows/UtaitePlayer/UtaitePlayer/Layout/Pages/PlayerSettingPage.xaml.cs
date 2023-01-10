@@ -80,6 +80,8 @@ namespace UtaitePlayer.Layout.Pages
             {
                 // UI 설정
                 rootResultScrollViewer.Visibility = Visibility.Collapsed;
+                LoadingProgressBar.IsIndeterminate = false;
+                LoadingProgressBar.IsIndeterminate = true;
                 LoadingProgressBar.Visibility = Visibility.Visible;
 
                 isInit = true;

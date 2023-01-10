@@ -11,7 +11,12 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\bin
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\bin\x64\Release\RHYANetwork.UtaitePlayer.Client.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\bin\x64\Release\RHYANetwork.UtaitePlayer.Registry.pdb
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\bin\x64\Release\Newtonsoft.Json.xml
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.exe.config
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.exe
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\update\RHYANetwork.UtaitePlayer.UpdateManager.exe.config
+A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\update\RHYANetwork.UtaitePlayer.UpdateManager.exe
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.csproj.AssemblyReference.cache
+A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.csproj.SuggestedBindingRedirects.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\MainWindow.g.cs
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\App.g.cs
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager_MarkupCompile.cache
@@ -24,8 +29,3 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.exe
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.exe.config
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.exe
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\update\RHYANetwork.UtaitePlayer.UpdateManager.exe.config
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\update\RHYANetwork.UtaitePlayer.UpdateManager.exe
-A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Release\RHYANetwork.UtaitePlayer.UpdateManager.csproj.SuggestedBindingRedirects.cache
