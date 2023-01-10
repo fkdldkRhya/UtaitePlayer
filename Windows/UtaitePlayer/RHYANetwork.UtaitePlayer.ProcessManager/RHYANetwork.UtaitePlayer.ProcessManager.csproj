@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthCheckManagerProcessor.cs" />
+    <Compile Include="ExceptionHandlerV2Processor.cs" />
     <Compile Include="IPCServerInfoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
