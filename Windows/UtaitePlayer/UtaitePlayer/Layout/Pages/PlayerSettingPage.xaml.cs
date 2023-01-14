@@ -294,7 +294,7 @@ namespace UtaitePlayer.Layout.Pages
             try
             {
                 RHYANetwork.UtaitePlayer.Registry.RegistryManager registryManager = new RHYANetwork.UtaitePlayer.Registry.RegistryManager();
-                System.Diagnostics.Process.Start(string.Format("https://rhya-network.kro.kr/RhyaNetwork/webpage/jsp/auth.v1/edit_my_account.jsp?isNoRed=1&backurl=1&auth={0}", registryManager.getAuthToken()));
+                System.Diagnostics.Process.Start("https://rhya-network.kro.kr/RhyaNetwork/webpage/jsp/auth.v1/sign_in.jsp?rpid=16&ctoken=1");
             }
             catch (System.ComponentModel.Win32Exception noBrowser)
             {
