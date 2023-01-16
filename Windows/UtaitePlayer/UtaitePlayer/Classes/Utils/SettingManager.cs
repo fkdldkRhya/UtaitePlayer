@@ -49,6 +49,8 @@ namespace UtaitePlayer.Classes.Utils
             public float ps_equalizer_gain_14000 { get; set; }
             // Equalizer Gain 16K Value
             public float ps_equalizer_gain_16000 { get; set; }
+            // Error catch handler 1
+            public bool ps_error_catch_handler_1 { get; set; }
         }
 
 
@@ -128,6 +130,7 @@ namespace UtaitePlayer.Classes.Utils
                     stringBuilder.AppendLine("ps_equalizer_gain_12000: 0");
                     stringBuilder.AppendLine("ps_equalizer_gain_14000: 0");
                     stringBuilder.AppendLine("ps_equalizer_gain_16000: 0");
+                    stringBuilder.AppendLine("ps_error_catch_handler_1: true");
 
                     File.WriteAllText(getSettingFilePath(), stringBuilder.ToString());
                 }

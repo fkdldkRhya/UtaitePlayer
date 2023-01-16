@@ -6,3 +6,4 @@ C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwo
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.CopyComplete
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.exe
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.CrashHandler\obj\x64\Debug\RHYANetwork.UtaitePlayer.CrashHandler.csproj.SuggestedBindingRedirects.cache

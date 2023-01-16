@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\x64\Release\
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\obj\x64\Release\
 UtaitePlayer
 none
 false
 TRACE
-A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\App.xaml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\App.xaml
 221420423066
 811284457369
 72-1691866298
-161-969495897
+1611003603395
 Layout\LoginWindow.xaml;Layout\MainWindow.xaml;Layout\Pages\AnimAirInfoPage.xaml;Layout\Pages\AnimUploadInfoPage.xaml;Layout\Pages\AnnouncementPage.xaml;Layout\Pages\EqualizerSettingPage.xaml;Layout\Pages\MusicPlayCountPage.xaml;Layout\Pages\MyPlaylistPage.xaml;Layout\Pages\PixivTopImagePage.xaml;Layout\Pages\PlayerSettingPage.xaml;Layout\Pages\SearchResultPage.xaml;Layout\Pages\SongAddPage.xaml;Layout\Pages\SubscribeManagePage.xaml;Layout\SubSplashWindow.xaml;Layout\Pages\UtaitePlayerHomePage.xaml;Layout\SplashWindow.xaml;Themes\ColourfulDarkTheme.xaml;Themes\ColourfulLightTheme.xaml;Themes\DarkTheme.xaml;Themes\DictionaryContainingScrollbarStyle.xaml;Themes\LightTheme.xaml;Themes\MusicTimeSliderStyle.xaml;
 
 False

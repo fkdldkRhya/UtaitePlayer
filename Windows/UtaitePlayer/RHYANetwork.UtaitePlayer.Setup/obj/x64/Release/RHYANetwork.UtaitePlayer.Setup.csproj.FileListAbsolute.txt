@@ -25,3 +25,30 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Rel
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.exe
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\RHYANetwork.UtaitePlayer.Setup.exe.config
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\RHYANetwork.UtaitePlayer.Setup.exe
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\RHYANetwork.UtaitePlayer.Setup.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\HandyControl.xml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\MaterialDesignThemes.Wpf.xml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\bin\x64\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.AssemblyReference.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.SuggestedBindingRedirects.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.ResolveComReference.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\Layout\Windows\MainWindow.g.cs
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\Layout\Windows\SplashWindow.g.cs
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\App.g.cs
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup_MarkupCompile.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup_MarkupCompile.lref
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\App.baml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\Layout\Windows\MainWindow.baml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\Layout\Windows\SplashWindow.baml
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.g.resources
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.Properties.Resources.resources
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.GenerateResource.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.CoreCompileInputs.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.Fody.CopyLocal.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.csproj.CopyComplete
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.exe
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Release\RHYANetwork.UtaitePlayer.Setup.pdb

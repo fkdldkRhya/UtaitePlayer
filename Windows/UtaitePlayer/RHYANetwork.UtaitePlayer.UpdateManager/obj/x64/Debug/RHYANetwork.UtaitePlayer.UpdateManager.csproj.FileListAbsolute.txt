@@ -32,3 +32,4 @@ C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwo
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csproj.GenerateResource.cache
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csproj.CoreCompileInputs.cache
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csproj.CopyComplete
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.UpdateManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.UpdateManager.csproj.SuggestedBindingRedirects.cache

@@ -58,6 +58,9 @@ namespace UtaitePlayer.Classes.Core
             Band1, Band2, Band3, Band4, Band5, Band6, Band7, Band8, Band9, Band10
         }
 
+        // Error catch handler
+        public bool errorCatchHandler1 = false;
+
 
 
 
@@ -225,24 +228,32 @@ namespace UtaitePlayer.Classes.Core
                     wasapiOut = new WaveOutEvent() { DeviceNumber = registryManager.getAudioDeviceID() };
                 }
 
-                if (notificationClient == null)
+                // ==================================
+                // Error catch handler
+                // ==================================
+                if (errorCatchHandler1)
                 {
-                    deviceEnum = new NAudio.CoreAudioApi.MMDeviceEnumerator();
-                    notificationClient = new NotificationClientImplementation();
-                    notifyClient = (NAudio.CoreAudioApi.Interfaces.IMMNotificationClient)notificationClient;
-                    deviceEnum.RegisterEndpointNotificationCallback(notifyClient);
-                }
-                else
-                {
-                    notificationClient = null;
-                    notifyClient = null;
-                    deviceEnum = null;
+                    if (notificationClient == null)
+                    {
+                        deviceEnum = new NAudio.CoreAudioApi.MMDeviceEnumerator();
+                        notificationClient = new NotificationClientImplementation();
+                        notifyClient = (NAudio.CoreAudioApi.Interfaces.IMMNotificationClient) notificationClient;
+                        deviceEnum.RegisterEndpointNotificationCallback(notifyClient);
+                    }
+                    else
+                    {
+                        notificationClient = null;
+                        notifyClient = null;
+                        deviceEnum = null;
 
-                    deviceEnum = new NAudio.CoreAudioApi.MMDeviceEnumerator();
-                    notificationClient = new NotificationClientImplementation();
-                    notifyClient = (NAudio.CoreAudioApi.Interfaces.IMMNotificationClient)notificationClient;
-                    deviceEnum.RegisterEndpointNotificationCallback(notifyClient);
+                        deviceEnum = new NAudio.CoreAudioApi.MMDeviceEnumerator();
+                        notificationClient = new NotificationClientImplementation();
+                        notifyClient = (NAudio.CoreAudioApi.Interfaces.IMMNotificationClient) notificationClient;
+                        deviceEnum.RegisterEndpointNotificationCallback(notifyClient);
+                    }
                 }
+                // ==================================
+                // ==================================
 
                 if (equalizer == null)
                 {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/HR/WqYoCGdwH7xl3aQnO2TBg6VcpOEWGa/QTDvP7j4Sp6Ex2RVK6azlL0D/vrGHjn9j6qZKw6U25LeQ0LhHpA==",
+  "dgSpecHash": "E29z2SLyxEFzgI9rbKGoX1d+qA52BFMWPzqJF7EXoZ4411o0xs91zcd/cnOXKQfawlakVYaGicVq/FSYZweIWg==",
   "success": true,
-  "projectFilePath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj",
+  "projectFilePath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\UtaitePlayer\\UtaitePlayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ji055\\.nuget\\packages\\cef.redist.x64\\100.0.23\\cef.redist.x64.100.0.23.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\cef.redist.x86\\100.0.23\\cef.redist.x86.100.0.23.nupkg.sha512",

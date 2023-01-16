@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e7WY6ZCUTY0RDEedA5c6YEb0/5J5hpurnyILWf6s65+oV7OhXkC+tBxloDpkAS3zgqheUaV6LWu9Ex+DDVCKuQ==",
+  "dgSpecHash": "q9qqzUpNXh2zHZwwZpS3nej4mVGLYygQ8YXLG2ptp7IFaPnPkWCOGKi1Vl9ycON2m7Mn+hpKQ2rNatE96BEhYA==",
   "success": true,
-  "projectFilePath": "A:\\Utaite_Player\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj",
+  "projectFilePath": "C:\\Users\\ji055\\Desktop\\Dev Resources\\UtaitePlayer\\Windows\\UtaitePlayer\\RHYANetwork.UtaitePlayer.AuthCheckManager\\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ji055\\.nuget\\packages\\cef.redist.x64\\100.0.23\\cef.redist.x64.100.0.23.nupkg.sha512",
     "C:\\Users\\ji055\\.nuget\\packages\\cef.redist.x86\\100.0.23\\cef.redist.x86.100.0.23.nupkg.sha512",

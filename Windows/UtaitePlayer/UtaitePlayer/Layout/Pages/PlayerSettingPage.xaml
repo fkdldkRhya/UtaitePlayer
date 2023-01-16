@@ -278,6 +278,42 @@
                                 HorizontalAlignment="Left" />
                         </Grid>
 
+                        <!-- 
+                            우타이테 플레이어 업데이트 오류 해결 v1 ON/OFF
+                        
+                            << Exception >>
+                            오류 코드는 0xc0000005입니다.
+                            이 오류는 CLR 또는 안전하지 않은 부분의 버그이거나,
+                            사용자 코드의 확인할 수 없는 부분일 수도 있습니다.
+                            이 버그의 일반적인 원인은 COM-interop 또는 PInvoke에 대한 사용자 마샬링 오류이며,
+                            이러한 오류는 스택을 손상시킬 수 있습니다.
+                        
+                            << Resolve >>
+                            PlayerService.cs 의 디바이스 장치 변경 감지 확인시
+                            발생하는 오류 임으로 해당 코드를 활성화 및 비활성화 가능하도록 
+                            수정함
+                        -->
+                        <Grid Margin="0,10,0,0">
+                            <ToggleButton
+                                x:Name="ErrorCatchHandler1ToggleButton"
+                                Style="{DynamicResource ToggleButtonSwitch}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Width="40" 
+                                Margin="0" 
+                                Click="ErrorCatchHandler1ToggleButton_Click"/>
+
+                            <TextBlock
+                                Text="우타이테 플레이어 업데이트 오류 해결 v1 비활성화 여부"
+                                VerticalAlignment="Center"
+                                TextWrapping="Wrap"
+                                FontFamily="/Resources/font/#esamanru Light"
+                                FontSize="12"
+                                Foreground="{DynamicResource Color_White1}"
+                                Margin="50,0,0,0" 
+                                HorizontalAlignment="Left" />
+                        </Grid>
+
                         <!-- 프로그램 시작 모드 설정 -->
                         <Grid Margin="0,10,0,0">
                             <TextBlock

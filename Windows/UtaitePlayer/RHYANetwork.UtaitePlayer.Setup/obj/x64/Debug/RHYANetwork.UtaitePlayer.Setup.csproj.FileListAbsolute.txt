@@ -24,3 +24,4 @@ C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwo
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Debug\RHYANetwork.UtaitePlayer.Setup.csproj.CopyComplete
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Debug\RHYANetwork.UtaitePlayer.Setup.exe
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Debug\RHYANetwork.UtaitePlayer.Setup.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Setup\obj\x64\Debug\RHYANetwork.UtaitePlayer.Setup.csproj.SuggestedBindingRedirects.cache

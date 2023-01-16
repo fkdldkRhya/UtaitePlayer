@@ -557,3 +557,4 @@ C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePla
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\obj\x64\Debug\UtaitePlayer.csproj.CoreCompileInputs.cache
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\obj\x64\Debug\UtaitePlayer.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\UtaitePlayer\obj\x64\Debug\UtaitePlayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\obj\x64\Debug\UtaitePlayer.csproj.SuggestedBindingRedirects.cache

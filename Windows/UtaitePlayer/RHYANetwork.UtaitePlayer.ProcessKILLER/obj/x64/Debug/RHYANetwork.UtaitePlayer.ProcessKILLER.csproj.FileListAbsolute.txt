@@ -6,3 +6,4 @@ C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwo
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\x64\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.CopyComplete
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\x64\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.exe
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\x64\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessKILLER\obj\x64\Debug\RHYANetwork.UtaitePlayer.ProcessKILLER.csproj.SuggestedBindingRedirects.cache

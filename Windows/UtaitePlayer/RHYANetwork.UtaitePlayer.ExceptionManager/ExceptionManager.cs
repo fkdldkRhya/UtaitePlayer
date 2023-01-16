@@ -40,26 +40,30 @@ namespace RHYANetwork.UtaitePlayer.ExceptionHandler
         /// <param name="exception">Exception</param>
         public void showMessageBox(Exception exception)
         {
-            const string DEFAULT_TITLE = "RHYA.Network ExceptionManager";
-            StringBuilder stringBuilder = new StringBuilder();
-
-            MutexManager.MutexList mutexManager = new MutexManager.MutexList();
-
-            if (mutexName != string.Empty && mutexName.Equals(mutexManager.GetMutexName(MutexManager.MutexList.ServiceList.ROOT_SERVICE_UTAITE_PLAYER)))
+            try
             {
-                // UtaitePlayer.exe 에서 발생한 오류
-                RHYANetwork.UtaitePlayer.ProcessManager.ExceptionHandlerV2Processor exceptionHandlerV2Processor = new ProcessManager.ExceptionHandlerV2Processor();
-                exceptionHandlerV2Processor.startProcess(exception.Message);
-            }
-            else
-            {
-                stringBuilder.AppendLine("우타이테 플레이어 (Utaite Player) 클라이언트에서 예외가 발생했습니다. 자세한 정보는 다음 내용을 참조하십시오.");
-                stringBuilder.AppendLine("");
-                stringBuilder.AppendLine(exception.Message);
+                const string DEFAULT_TITLE = "RHYA.Network ExceptionManager";
+                StringBuilder stringBuilder = new StringBuilder();
 
-                // 기타 오류
-                System.Windows.MessageBox.Show(stringBuilder.ToString(), DEFAULT_TITLE, MessageBoxButton.OK, MessageBoxImage.Error);
+                MutexManager.MutexList mutexManager = new MutexManager.MutexList();
+
+                if (mutexName != string.Empty && mutexName.Equals(mutexManager.GetMutexName(MutexManager.MutexList.ServiceList.ROOT_SERVICE_UTAITE_PLAYER)))
+                {
+                    // UtaitePlayer.exe 에서 발생한 오류
+                    RHYANetwork.UtaitePlayer.ProcessManager.ExceptionHandlerV2Processor exceptionHandlerV2Processor = new ProcessManager.ExceptionHandlerV2Processor();
+                    exceptionHandlerV2Processor.startProcess(exception.Message);
+                }
+                else
+                {
+                    stringBuilder.AppendLine("우타이테 플레이어 (Utaite Player) 클라이언트에서 예외가 발생했습니다. 자세한 정보는 다음 내용을 참조하십시오.");
+                    stringBuilder.AppendLine("");
+                    stringBuilder.AppendLine(exception.Message);
+
+                    // 기타 오류
+                    System.Windows.MessageBox.Show(stringBuilder.ToString(), DEFAULT_TITLE, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
+            catch (Exception) { }
         }
 
 

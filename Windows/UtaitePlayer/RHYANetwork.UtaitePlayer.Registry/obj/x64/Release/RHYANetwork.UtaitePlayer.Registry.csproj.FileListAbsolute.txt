@@ -6,3 +6,9 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\Release\RHYANetwork.UtaitePlayer.Registry.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\Release\RHYANetwork.UtaitePlayer.Registry.dll
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\Release\RHYANetwork.UtaitePlayer.Registry.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.Registry.dll
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.Registry.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\Release\RHYANetwork.UtaitePlayer.Registry.csproj.AssemblyReference.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\Release\RHYANetwork.UtaitePlayer.Registry.csproj.CoreCompileInputs.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\Release\RHYANetwork.UtaitePlayer.Registry.dll
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.Registry\obj\x64\Release\RHYANetwork.UtaitePlayer.Registry.pdb

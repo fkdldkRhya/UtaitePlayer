@@ -86,3 +86,4 @@ C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwo
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.CopyComplete
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.AuthCheckManager.exe
 C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.AuthCheckManager.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.AuthCheckManager\obj\x64\Debug\RHYANetwork.UtaitePlayer.AuthCheckManager.csproj.SuggestedBindingRedirects.cache

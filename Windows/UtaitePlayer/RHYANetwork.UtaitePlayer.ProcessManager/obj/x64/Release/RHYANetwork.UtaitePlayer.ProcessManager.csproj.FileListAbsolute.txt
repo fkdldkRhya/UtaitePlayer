@@ -13,3 +13,10 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\ob
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CopyComplete
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.dll
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.dll
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.AssemblyReference.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CoreCompileInputs.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.csproj.CopyComplete
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.dll
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.ProcessManager\obj\x64\Release\RHYANetwork.UtaitePlayer.ProcessManager.pdb

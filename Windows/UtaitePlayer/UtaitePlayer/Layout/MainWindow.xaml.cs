@@ -212,6 +212,8 @@ namespace UtaitePlayer.Layout
                         PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band8, settingData.ps_equalizer_gain_12000);
                         PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band9, settingData.ps_equalizer_gain_14000);
                         PlayerService.getInstance().SetEqualizerBandGainValue(PlayerService.EqualizerBandSelect.Band10, settingData.ps_equalizer_gain_16000);
+                        // Error catch handler
+                        PlayerService.getInstance().errorCatchHandler1 = settingData.ps_error_catch_handler_1;
                     }
                 }
                 catch (Exception ex)

@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Windows",
+    "\\Windows\\UtaitePlayer",
+    "\\Windows\\UtaitePlayer\\UtaitePlayer",
+    "\\Windows\\UtaitePlayer\\UtaitePlayer\\Classes",
+    "\\Windows\\UtaitePlayer\\UtaitePlayer\\Classes\\Core"
+  ],
+  "SelectedNode": "\\Windows\\UtaitePlayer\\UtaitePlayer\\Classes\\Core\\PlayerService.cs",
+  "PreviewInSolutionExplorer": false
+}

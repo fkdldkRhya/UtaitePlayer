@@ -6,3 +6,9 @@ A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.csproj.CoreCompileInputs.cache
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.dll
 A:\Utaite_Player\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.dll
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\UtaitePlayer\bin\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.pdb
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.csproj.AssemblyReference.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.csproj.CoreCompileInputs.cache
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.dll
+C:\Users\ji055\Desktop\Dev Resources\UtaitePlayer\Windows\UtaitePlayer\RHYANetwork.UtaitePlayer.MutexManager\obj\x64\Release\RHYANetwork.UtaitePlayer.MutexManager.pdb

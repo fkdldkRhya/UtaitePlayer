@@ -112,7 +112,7 @@ namespace UtaitePlayer.Layout.Pages
                     CrashHandlerRunToggleButton.IsChecked = settingData.gs_use_crash_handler;
                     CloseButtonSettingToggleButton.IsChecked = settingData.gs_close_button_event == 0 ? false : true;
                     TopMostToggleButton.IsChecked = settingData.gs_window_top_most;
-
+                    ErrorCatchHandler1ToggleButton.IsChecked = settingData.ps_error_catch_handler_1;
                     ReloadButtonEnableToggleButton.IsChecked = settingData.gs_enable_reload_btn;
 
                     if (settingData.gs_start_mod == 0)
@@ -660,6 +660,53 @@ namespace UtaitePlayer.Layout.Pages
             }
         }
 
+
+        /// <summary>
+        /// 우타이테 플레이어를 가장 위에 있게 하기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void ErrorCatchHandler1ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_LOADING_DIALOG, "Saving settings...");
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS, new GrowlInfo()
+                {
+                    Message = "해당 설정은 재시작 후 적용됩니다."
+                });
+
+                bool value = (bool)((ToggleButton)sender).IsChecked;
+
+                if (!value)
+                {
+                    RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_SHOW_GROWL_MESSAGE_FOR_SUCCESS, new GrowlInfo()
+                    {
+                        Message = "오디오 장치 변경 자동 감지 기능이 비활성화되었습니다."
+                    });
+                }
+
+                await Task.Run(() =>
+                {
+                    SettingManager settingManager = new SettingManager();
+                    SettingManager.SettingData settingData = settingManager.readSettingData();
+
+                    settingData.ps_error_catch_handler_1 = value;
+                    settingManager.writeSettingData(settingData);
+                });
+
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_MAIN_WINDOW_TOP_MOST_SETTING, value);
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.getInstance().showMessageBox(ex);
+            }
+            finally
+            {
+                RHYAGlobalFunctionManager.NotifyColleagues(RHYAGlobalFunctionManager.FUNCTION_KEY_HIDE_LOADING_DIALOG, null);
+            }
+        }
 
 
         /// <summary>
